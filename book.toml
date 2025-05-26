@@ -1,0 +1,10 @@
+[book]
+authors = ["hydroperx"]
+language = "en"
+multilingual = false
+src = "src"
+title = ".AS Language Specification"
+
+[output.html]
+copy-fonts = false
+fold = { enable = true }
