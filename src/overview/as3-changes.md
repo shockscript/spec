@@ -21,7 +21,7 @@ The `include` directive is not implemented in Jet.
 
 The `default xml namespace =` E4X statement is not implemented in Jet due to WebAssembly limitations.
 
-## Object dynamicness
+## Dynamic
 
 The `Object` type is not dynamic per se, nor are there dynamic classes, nor are there legacy ECMAScript `prototype` objects. Only the `*` type is dynamic.
 
