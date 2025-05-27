@@ -53,3 +53,7 @@ The with statement is not implemented since using it with dynamic types such as 
 ## “this” capture
 
 The `this` object is always captured from the parent activation in nested activations; there is no way to override the `this` object with another value.
+
+## E4X
+
+XML markup does not produce `XML` or `XMLList`; the result of XML and XML list expressions is implementation-defined. Typically those expressions result in nodes suitable for rendering user interface components.
