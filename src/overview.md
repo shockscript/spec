@@ -6,7 +6,7 @@ ShockScript is a strongly typed, multi-paradigm scripting language, dialect of t
 
 ## Scope
 
-This document specifies the language syntax, semantics, execution and a part of the global objects included into the language.
+This document specifies the language syntax, semantics, execution and global objects included into the language.
 
 ## eXtensible Markup
 
