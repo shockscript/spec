@@ -1,6 +1,6 @@
 # What has changed from ActionScript 3
 
-The AS language is a deep modification of ActionScript 3. This section describes several details that changed on the language.
+The ShockScript language is a deep modification of ActionScript 3. This section describes several details that changed on the language.
 
 ## String type
 
@@ -15,11 +15,11 @@ The `String` type stores an UTF-8 encoded text, not an UTF-16 encoded text.
 
 ## Include directive
 
-The `include` directive is not implemented in AS.
+The `include` directive is not implemented in ShockScript.
 
 ## Default XML namespace
 
-The `default xml namespace =` E4X statement is not implemented in AS due to WebAssembly limitations.
+The `default xml namespace =` E4X statement is not implemented in ShockScript due to WebAssembly limitations.
 
 ## Dynamic
 

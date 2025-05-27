@@ -14,6 +14,14 @@ html {
     -webkit-text-size-adjust: none;
 }
 
+html {
+    background-image: url("../background-flag.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: contain;
+}
+
 body {
     margin: 0;
     font-size: 1.45rem;

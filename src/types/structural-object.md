@@ -1,6 +1,6 @@
 # Structural object
 
-Structural object types, `{ ... }`, are simple property records, whose field order and ASDoc comments are sensitive. Those types are compiled into efficient structures.
+Structural object types, `{ ... }`, are simple property records, whose field order and SXDoc comments are sensitive. Those types are compiled into efficient structures.
 
 ```
 { x : decimal, y : decimal }
@@ -18,13 +18,13 @@ Structural object types, `{ ... }`, are simple property records, whose field ord
 
 Due to sensitive field order, structural object types with equivalent fields but in different orders will be incompatible.
 
-## ASDoc
+## SXDoc
 
-Due to sensitive ASDoc comments, structural object types with equivalent fields (including their order) but differing ASDoc comments in their fields will be incompatible.
+Due to sensitive SXDoc comments, structural object types with equivalent fields (including their order) but differing SXDoc comments in their fields will be incompatible.
 
 ## Compatibility
 
-Two structural object types are compatible only if either a\) one is used as a subset of another or b\) fields are equivalent and consist of the same order and the same ASDoc comments.
+Two structural object types are compatible only if either a\) one is used as a subset of another or b\) fields are equivalent and consist of the same order and the same SXDoc comments.
 
 ## Rest
 
