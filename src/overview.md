@@ -1,6 +1,6 @@
 # Overview
 
-ShockScript is a strongly typed, multi-paradigm scripting language, dialect of the nonexistent fourth edition of ECMAScript.
+ShockScript is a strongly typed, multi-paradigm scripting language, dialect of the nonexistent ECMAScript 4th edition.
 
 > **Note**: The document is a work in progress, and may lack content.
 
