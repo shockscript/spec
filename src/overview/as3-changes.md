@@ -1,6 +1,6 @@
 # What has changed from ActionScript 3
 
-The ShockScript language is a deep modification of ActionScript 3. This section describes several details that changed on the language.
+The ShockScript language looks similiar to ActionScript 3. This section describes several details that changed on the language.
 
 ## String type
 
@@ -57,3 +57,7 @@ The `this` object is always captured from the parent activation in nested activa
 ## E4X
 
 XML markup does not produce `XML` or `XMLList`; the result of XML and XML list expressions is implementation-defined. Typically those expressions result in nodes suitable for rendering user interface components.
+
+## Events
+
+Events are declared without defining related static constants, as ShockScript performs vast type inference; thus, the ASDoc `@eventType` tag does not exist in ShockScript.
