@@ -2,6 +2,8 @@
 
 ShockScript is a strongly typed, multi-paradigm scripting language, dialect of the nonexistent fourth edition of ECMAScript.
 
+> **Note**: The document is a work in progress, and may lack content.
+
 ## Scope
 
 This document specifies the language syntax, semantics, execution and a part of the global objects included into the language.
