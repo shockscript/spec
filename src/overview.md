@@ -10,7 +10,7 @@ This document specifies the language syntax, semantics, execution and a part of 
 
 ## eXtensible Markup
 
-ShockScript incorporates eXtensible Markup suitable for for implementing reactive user interfaces.
+ShockScript incorporates eXtensible Markup suitable for implementing reactive user interfaces.
 
 ## Events
 
