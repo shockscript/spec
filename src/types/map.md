@@ -19,7 +19,7 @@ map.x = 10;
 const fns = new Map.<String, Function>();
 
 // m=function
-fns.m = function() { return 10 };
+fns.m = function() 10;
 
 // m()
 trace(fns.call("m"));
