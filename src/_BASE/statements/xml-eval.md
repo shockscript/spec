@@ -3,9 +3,9 @@
 The `xml eval =` directive determines how XML expressions evaluate for an entire block.
 
 ```
-// Jet UI components (default for Jet)
-xml eval = ui;
+// Jet UI components (default for the Jet Engine)
+xml eval = ReactNode;
 
-// XML
-xml eval = xml;
+// XML/XMLList
+xml eval = XML;
 ```
