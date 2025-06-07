@@ -40,10 +40,10 @@ The `in` operator behaves differently. It triggers `jet_proxy::has()` which is i
 
 ## Filter operator
 
-The filter operator has been modified to take a binding name (`.(pattern; test)`) rather than cluttering the lexical scope with dynamic names.
+The filter operator has been modified to take a binding name (`.(pattern if test)`) rather than cluttering the lexical scope with dynamic names.
 
 ```
-xnode.(o; o.@x.startsWith("abc"))
+xnode.(o if o.@x.startsWith("abc"))
 ```
 
 ## With statement
