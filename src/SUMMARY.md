@@ -1,6 +1,7 @@
 # Summary
 
 - [Overview](./overview.md)
+  - [Iteration capabilities](./overview/iteration.md)
   - [What has changed from ActionScript 3](./overview/as3-changes.md)
 - [Terminology](./terminology.md)
 - [Types](./types.md)
