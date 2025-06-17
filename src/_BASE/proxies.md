@@ -4,6 +4,14 @@
 
 > **Note**: Unlike with Adobe ActionScript 3, a `Proxy` class does not need to be extended for overriding language behavior.
 
+## Static sx_proxy::call()
+
+A static `sx_proxy::call()` method may be defined with any number of parameters and any result type, overidding the behavior of calling the class object.
+
+```
+sx_proxy static function call():T {}
+```
+
 ## sx_proxy::keys()
 
 Part of the `IterableKeys.<T>` interface. Must return an `Iterator.<T>` object. Used by the `for..in` statement.
