@@ -29,9 +29,9 @@ The `default xml namespace =` E4X statement is not included in ShockScript due t
 
 The `Object` type is not dynamic per se, nor are there dynamic classes, nor are there legacy ECMAScript `prototype` objects. Only the `*` type is dynamic.
 
-- Methods such as `str.match` therefore return an object slightly different than the standard, since `Array` can't be attached properties such as `index`.
-- Instead of `(o as Object).constructor` you do `o.ReflectionProperties::constructor`.
-- Methods such as `toString()` and `valueOf()` are defined in `Object` without `prototype`. This implies the language allows to override methods with additional optional parameters (including the rest parameter) and a more contravariant result type.
+**Matching**: The `str.match` resulting object is slightly different.
+
+**Obtaining constructor**: `o.ReflectionProperties::constructor`
 
 ## Overriding methods
 
