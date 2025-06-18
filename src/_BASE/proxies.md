@@ -104,7 +104,7 @@ sx_proxy function deleteAttribute(key:K):Boolean {
 
 ## sx_proxy::filter()
 
-Overrides the behavior of the filter operator (`.(pattern if test)`).
+Overrides the behavior of the filter operator (`.(test)`).
 
 ```
 sx_proxy function filter(testFn:function(T):Boolean):E {

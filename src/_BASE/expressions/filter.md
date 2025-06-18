@@ -1,12 +1,12 @@
 # Filter expression
 
 ```
-o.(pattern if test)
+o.(test)
 ```
 
 Instance usage:
 
 ```
 const list = ["foo", "bar", "qux"];
-trace( list.(a if a.includes("a")) ); // ["bar"]
+trace( list.(*.includes("a")) ); // ["bar"]
 ```

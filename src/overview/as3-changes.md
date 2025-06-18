@@ -6,12 +6,16 @@ The ShockScript language looks similiar to ActionScript 3. This section describe
 
 The `String` type stores an UTF-8 encoded text, not an UTF-16 encoded text.
 
-- Use `.length` for getting the string's byte count.
-- Use `.charAt()` and `.charCodeAt()` for reading an UTF-8 code point at the specified byte offset.
-- Use `.byteAt()` for getting the byte at the specified byte offset.
-- Use `.bytes()` to create an iterator over the UTF-8 bytes.
-- Use `.chars()` to create an iterator over the Unicode Code Points. Provides manual skipping, index control, peeking, taking or peeking a number of code points, EOF checking and more.
-- Use `.chars().length()` for getting the total of Unicode Code Points.
+```
+"\u{10FFFF}".length // UTF-8 length
+"\u{10FFFF}".charAt(0) // Code Point at byte 0
+
+for each (var ch in "shockscript".chars()) {
+    // ch:uint
+}
+
+"shockscript".chars().length() // Code Point length
+```
 
 ## Include directive
 
@@ -40,10 +44,10 @@ The `in` operator behaves differently. It triggers `sx_proxy::has()` which is in
 
 ## Filter operator
 
-The filter operator has been modified to take a binding name (`.(pattern if test)`) rather than cluttering the lexical scope with dynamic names.
+The filter operator has been modified to use a `*` identifier rather than cluttering the lexical scope with dynamic names.
 
 ```
-xnode.(o if o.@x.startsWith("abc"))
+xnode.(*.@x.startsWith("abc"))
 ```
 
 ## With statement
