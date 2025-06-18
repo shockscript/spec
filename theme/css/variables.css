@@ -9,8 +9,8 @@
     --page-padding: 15px;
     --content-max-width: 750px;
     --menu-bar-height: 50px;
-    --font: "Caladea", "Cambria", sans-serif;
-    --header-font: "Open Sans", "Segoe UI", sans-serif;
+    --font: "Crimson Pro", "Cambria", sans-serif;
+    --header-font: "Noto Sans", "Segoe UI", sans-serif;
     --mono-font: "Nimbus Mono", "Courier New", monospace;
     --code-font-size: 0.79em; /* please adjust the ace font size accordingly in editor.js */
 }
