@@ -3,7 +3,7 @@
 - [Overview](./overview.md)
   - [Iteration capabilities](./overview/iteration.md)
   - [ActionScript 3 relationship](./overview/as3.md)
-- [Terminology](./terminology.md)
+- [Definitions](./definitions.md)
 - [Types](./types.md)
   - [Wildcard](./types/wildcard.md)
   - [void](./types/void.md)

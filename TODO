@@ -1,4 +1,4 @@
-- [ ] Terminology
+- [ ] Definitions
 - [ ] Types
 - [ ] Type conversions
 - [ ] Packages
@@ -8,9 +8,10 @@
 - [ ] Interfaces
 - [ ] Methods
   - [ ] Multi-methods
+- [ ] Aliases
 - [ ] Lexical scopes
 - [ ] Expressions
 - [ ] Statements
 - [ ] Directives
-- [ ] Definitions
+- [ ] Definition constructs
 - [ ] Global objects
