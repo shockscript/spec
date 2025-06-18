@@ -19,11 +19,11 @@ for each (var ch in "shockscript".chars()) {
 
 ## Include directive
 
-The `include` directive is not implemented in ShockScript.
+The `include` directive is not included in ShockScript.
 
 ## Default XML namespace
 
-The `default xml namespace =` E4X statement is not implemented in ShockScript due to WebAssembly limitations.
+The `default xml namespace =` E4X statement is not included in ShockScript due to WebAssembly limitations.
 
 ## Dynamic
 
@@ -38,9 +38,23 @@ The `Object` type is not dynamic per se, nor are there dynamic classes, nor are 
 - Instance methods may override another method and include additional optional parameters (including the rest parameter).
 - Instance methods may override another method and return a more contravariant result type.
 
+```
+class A {
+    function m() {}
+}
+class B extends A {
+    override function m(...rest:[float]) {}
+}
+```
+
 ## “in” operator
 
 The `in` operator behaves differently. It triggers `sx_proxy::has()` which is in general used for determining whether a collection contains a specific value; for `Map`s it determines whether a pair key exists; for `XML` and `XMLList` objects it performs the same E4X behavior.
+
+```
+trace(e in arr);
+trace(k in m);
+```
 
 ## Filter operator
 
