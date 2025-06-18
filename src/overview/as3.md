@@ -132,7 +132,7 @@ trace(Embed("data.bin"));
 
 <blockquote>
 
-**Note**: Implementations may support interpolating an artifact directory at the `Embed`, such as `{target}`.
+**Note**: Implementations may support interpolating an artifact directory at the `Embed` path, such as `{target}`.
 
 ```
 trace(Embed("{target}/auto.generated.bin"));
