@@ -8,7 +8,7 @@ XML markup is directly used in ActionScript for rendering reactive user interfac
 
 ```
 package me.diantha.portfolio {
-    import j = jet.components.**;
+    import j = jet.**;
  
     /** Portfolio */
     public function Portfolio() {

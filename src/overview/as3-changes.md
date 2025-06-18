@@ -52,16 +52,60 @@ xnode.(*.@x.startsWith("abc"))
 
 ## With statement
 
-The with statement is not implemented since using it with dynamic types such as `XML` clutters the lexical scope.
+The with statement is modified to use the `*` identifier to avoid cluttering the lexical scope.
+
+```
+with (o) {
+    *.x =
+    *.y = 10;
+}
+```
 
 ## “this” capture
 
 The `this` object is always captured from the parent activation in nested activations; there is no way to override the `this` object with another value.
 
+```
+class A {
+    function m() {
+        function n() {
+            // this:A
+        }
+    }
+}
+```
+
 ## E4X
 
-XML markup does not produce `XML` or `XMLList`; the result of XML and XML list expressions is implementation-defined. Typically those expressions result in nodes suitable for rendering user interface components.
+XML expressions do not produce `XML` or `XMLList`; they are implementation-defined. Such expressions have also undergone incremental syntax additions.
+
+> **Note**: Jet Engine translates XML expressions into nodes suitable for a graphical user interface.
+
+```
+<j:VGroup>
+    <j:Label variant="heading">Welcome</j:Label>
+</j:VGroup>
+```
 
 ## Events
 
 Events are declared without defining related static constants, as ShockScript performs vast type inference; thus, the ASDoc `@eventType` tag does not exist in ShockScript.
+
+```
+/**
+ * Emitted on play.
+ */
+[Event(name="play", type="Event")]
+/**
+ * My class A
+ */
+class A extends EventEmitter {}
+```
+
+## Embedding
+
+Embedding raw files is much easier in ShockScript. Unlike Adobe Flex though, there is no preprocessing of such files, and they are included as either `String` (UTF-8 encoded) or `ByteArray` (octet stream) based on type inference.
+
+```
+trace(Embed("data.bin"));
+```
