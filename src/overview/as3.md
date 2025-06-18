@@ -124,8 +124,30 @@ class A extends EventTarget {}
 
 ## Embedding
 
-Embedding raw files is much easier in ShockScript. Unlike Adobe Flex though, there is no preprocessing of such files, and they are included as either `String` (UTF-8 encoded) or `ByteArray` (octet stream) based on type inference.
+Embedding raw files is much easier in ShockScript. By default there is no preprocessing of such files, and they are included as either `String` (UTF-8 encoded) or `ByteArray` (octet stream) based on type inference (`ByteArray` being preferred).
 
 ```
 trace(Embed("data.bin"));
 ```
+
+<blockquote>
+
+**Note**: Implementations may support interpolating an artifact directory at the `Embed`, such as `{target}`.
+
+```
+trace(Embed("{target}/auto.generated.bin"));
+```
+
+This is useful for when a build script generates a file at an artifact directory.
+
+</blockquote>
+
+<blockquote>
+
+**Note**: Implementations may support customized settings. For instance, if it is desired to embed a file and get a URL that may be loaded later, an option such as `url="true"` may be provided:
+
+```
+trace(Embed("pic.webp", url="true"));
+```
+
+</blockquote>
