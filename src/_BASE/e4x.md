@@ -42,7 +42,7 @@ If the event has no parameters, then the attribute above is equivalent to `event
 
 ### Markdown
 
-Use `<markdown>` tags for translating Markdown to HyperText Markup Language (HTML) text.
+Use `<markdown>` tags for translating Markdown to HTML text.
 
 > **Note:** Tags nested with `<markdown>` must comply with XHTML tags; for instance, use `<br/>` instead of `<br>`.
 
@@ -54,7 +54,7 @@ It is additionally allowed to interpolate text or arbitrary markup inside a `<ma
     Hi, {personName}
 
     <!-- interpolate HTML -->
-    Hi, <?hypertext {personName}?>
+    Hi, <?html {personName}?>
 
     <!-- interpolate Markdown (not XHTML) -->
     Hi, <?markdown {personName}?>
