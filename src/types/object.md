@@ -4,10 +4,10 @@ All types but \{ `void`, `null`, `uint`, `int`, `float`, `Number`, `decimal`, `B
 
 <blockquote>
 
-**Note**: When it is necessary to read the constructor of an object, use:
+**Note**: When it is necessary to obtain the constructor of an object, use:
 
 ```
-Reflect.constructor(obj)
+obj.ReflectionProperties::constructor
 ```
 
 </blockquote>
