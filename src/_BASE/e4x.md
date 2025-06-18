@@ -30,6 +30,16 @@ package me.diantha.portfolio {
 
 > **Note:** Unlike the E4X standard 2nd edition, markup does not result in `XML` or `XMLList` objects, but rather `ReactNode`; and there is support for `a` attributes without an attribute value, which equals `a={true}`.
 
+### Event handlers
+
+Inline event handlers may be expressed as `eventName&={statementList}` as a shortcut to `eventName={function(event){statementList}}`, as in:
+
+```
+<j:Button click&={trace("clicked!")}>Click me</j:Button>
+```
+
+If the event has no parameters, then the attribute above is equivalent to `eventName={function(){statementList}}`.
+
 ### Markdown
 
 Use `<markdown>` tags for translating Markdown to HyperText Markup Language (HTML) text.
