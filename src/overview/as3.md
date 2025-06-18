@@ -98,8 +98,6 @@ XML expressions do not produce `XML` or `XMLList` unless the inference type is o
 - `<?html={exp}?>` alternative for tag content `{exp}`
 - `<?markdown={exp}?>` alternative for tag content `{exp}`
 
-> **Note**: Jet Engine translates XML expressions into nodes suitable for a graphical user interface.
-
 ```
 <j:VGroup>
     <j:Label variant="heading">Welcome</j:Label>
