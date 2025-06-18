@@ -11,7 +11,7 @@
     --menu-bar-height: 50px;
     --font: "Caladea", "Cambria", sans-serif;
     --header-font: "Open Sans", "Segoe UI", sans-serif;
-    --mono-font: "Courier Prime", "Courier New", monospace;
+    --mono-font: "Nimbus Mono", "Courier New", monospace;
     --code-font-size: 0.79em; /* please adjust the ace font size accordingly in editor.js */
 }
 
