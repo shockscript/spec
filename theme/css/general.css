@@ -60,11 +60,7 @@ h1, h2, h3 {
 }
 
 h1, h2, h3 {
-    font-family: var(--header-font);
-}
-
-h1, h2, h3, h4, h5, h6 {
-    text-transform: lowercase
+    font-family: var(--font);
 }
 
 h2, h3 { margin-block-start: 2.5em; }

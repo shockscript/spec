@@ -520,7 +520,7 @@ html:not(.sidebar-resizing) .sidebar {
 }
 
 .chapter {
-    font-family: var(--header-font);
+    font-family: var(--ui-font);
     list-style: none outside none;
     padding-inline-start: 0;
     line-height: 2.2em;
