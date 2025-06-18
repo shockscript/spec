@@ -33,7 +33,7 @@ function f.<E extends Event(A,object)>(value: E) {
 ```
 package my.framework {
     //
-    public class EventEmitter {
+    public class EventTarget {
         //
         public function emit.<E extends Event(this,object)>(e:E) : Boolean {
             //

@@ -1,10 +1,10 @@
 # Events
 
-The native `EventEmitter` class is designated for dispatching and listening to events, and is the one used for implementing the hierarchic event model in the display list API.
+The native `EventTarget` class is designated for dispatching and listening to events, and actual implementations may use it for implementing a hierarchic DOM event model.
 
-In addition, the `IEventEmitter` interface may be implemented instead of extending the `EventEmitter` class.
+In addition, the `IEventTarget` interface may be implemented instead of extending the `EventTarget` class.
 
-## An event emitter
+## An event target
 
 ```
 /**
@@ -14,7 +14,7 @@ In addition, the `IEventEmitter` interface may be implemented instead of extendi
 /**
  * My player class.
  */
-class Player extends EventEmitter {
+class Player extends EventTarget {
 
     public function aMethod() {
         this.emit(new Event("play"));
@@ -37,7 +37,7 @@ Event constructors must always take the event type as the first argument; any ot
 ```
 class SomeEvent extends Event {
     //
-    public function SomeEvent(type: String) {
+    public function SomeEvent(type : String) {
         super(type);
     }
 }
@@ -45,7 +45,7 @@ class SomeEvent extends Event {
 
 ## Emitting
 
-The `EventEmitter#emit()` method is defined as follows:
+The `EventTarget#emit()` method is defined as follows:
 
 ```
 public function emit.<E extends Event(this,object)>(e:E) : Boolean {
@@ -57,12 +57,12 @@ When the `emit()` method is used, it will force a `new E(...)` expression to be 
 
 ## Listening
 
-The `EventEmitter#on()` method is roughly defined as follows:
+The `EventTarget#on()` method is roughly defined as follows:
 
 ```
 public function on.<E extends Event(this,type)>(
-    type: E.name,
-    listener: function(E.type):void,
+    type : E.name,
+    listener : function(E.type):void,
 ) : void {
     //
 }

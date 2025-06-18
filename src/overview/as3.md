@@ -95,8 +95,8 @@ XML expressions do not produce `XML` or `XMLList`; they are implementation-defin
 
 - `<t a/>` equals `<t a={true}/>`
 - `<t e&={}/>` equals `<t e={function(event){}}/>` or `<t e={function(){}}/>`
-- `<?html {exp}?>` alternative for `{exp}`
-- `<?markdown {exp}?>` alternative for `{exp}`
+- `<?html={exp}?>` alternative for `{exp}`
+- `<?markdown={exp}?>` alternative for `{exp}`
 
 > **Note**: Jet Engine translates XML expressions into nodes suitable for a graphical user interface.
 
@@ -119,7 +119,7 @@ Events are declared without defining related static constants, as ShockScript pe
 /**
  * My class A
  */
-class A extends EventEmitter {}
+class A extends EventTarget {}
 ```
 
 ## Embedding

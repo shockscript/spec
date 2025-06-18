@@ -54,9 +54,9 @@ It is additionally allowed to interpolate text or arbitrary markup inside a `<ma
     Hi, {personName}
 
     <!-- interpolate HTML -->
-    Hi, <?html {personName}?>
+    Hi, <?html={personName}?>
 
     <!-- interpolate Markdown (not XHTML) -->
-    Hi, <?markdown {personName}?>
+    Hi, <?markdown={personName}?>
 </markdown>
 ```
