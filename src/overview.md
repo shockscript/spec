@@ -4,13 +4,9 @@ ShockScript is a strongly typed, multi-paradigm scripting language, dialect of t
 
 > **Note**: The document is a work in progress, and may lack content.
 
-## Scope
+## eXtensible Markup Language
 
-This document specifies the language syntax, semantics, execution and global objects included into the language.
-
-## eXtensible Markup
-
-ShockScript incorporates eXtensible Markup suitable for implementing reactive user interfaces.
+ShockScript incorporates an eXtensible Markup Language suitable for implementing reactive user interfaces.
 
 ## Events
 
