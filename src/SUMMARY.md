@@ -2,7 +2,7 @@
 
 - [Overview](./overview.md)
   - [Iteration capabilities](./overview/iteration.md)
-  - [What has changed from ActionScript 3](./overview/as3-changes.md)
+  - [ActionScript 3 relationship](./overview/as3.md)
 - [Terminology](./terminology.md)
 - [Types](./types.md)
   - [Wildcard](./types/wildcard.md)

@@ -1,6 +1,6 @@
-# What has changed from ActionScript 3
+# ActionScript 3 relationship
 
-The ShockScript language looks similiar to ActionScript 3. This section describes several details that changed on the language.
+ShockScript looks like ActionScript 3. This section describes several details that changed on the language.
 
 ## String type
 
