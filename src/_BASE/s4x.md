@@ -1,34 +1,41 @@
-# E4X
+# S4X
 
-ECMAScript for XML (E4X) comprises XML markup and XML data manipulation facilities.
+ShockScript for XML (S4X) comprises the XML capabilities of the ShockScript language.
 
 ## Markup
 
-XML markup is directly used in ActionScript for rendering reactive user interface.
+XML expressions by default are used for building implementation-defined objects; however, when the inference type is `XML` or `XMLList`, XML expressions result in one of these types.
 
 ```
 package me.diantha.portfolio {
     import j = jet.**;
  
-    /** Portfolio */
     public function Portfolio() {
         return (
-            <>
-                <j:VGroup gap={5}>
-                    <!-- content -->
-                    <j:Label>
-                        <markdown>
-                            Hi **there**.
-                        </markdown>
-                    </j:Label>
-                </j:VGroup>
-            </>
+            <j:VGroup gap={5}>
+                <!-- content -->
+                <j:Label>
+                    <markdown>
+                        Hi **there**.
+                    </markdown>
+                </j:Label>
+            </j:VGroup>
+        );
+    }
+
+    public function data(a:String):XML {
+        return (
+            <tag>{a}</tag>
         );
     }
 }
+
+const xn = XML(<tag/>);
 ```
 
-> **Note:** Unlike the E4X standard 2nd edition, markup does not result in `XML` or `XMLList` objects, but rather `ReactNode`; and there is support for `a` attributes without an attribute value, which equals `a={true}`.
+### Attributes
+
+`<t a/>` is equivalent to `<t a={true}/>`.
 
 ### Event handlers
 
@@ -56,7 +63,7 @@ It is additionally allowed to interpolate text or arbitrary markup inside a `<ma
     <!-- interpolate HTML -->
     Hi, <?html={personName}?>
 
-    <!-- interpolate Markdown (not XHTML) -->
+    <!-- interpolate Markdown (use HTML tags; not XHTML tags) -->
     Hi, <?markdown={personName}?>
 </markdown>
 ```

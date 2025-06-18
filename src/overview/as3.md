@@ -91,12 +91,12 @@ class A {
 
 ## E4X
 
-XML expressions do not produce `XML` or `XMLList`; they are implementation-defined. Such expressions have also undergone incremental syntax additions:
+XML expressions do not produce `XML` or `XMLList` unless the inference type is one of these; they are implementation-defined by default. Such expressions have also undergone incremental syntax additions:
 
 - `<t a/>` equals `<t a={true}/>`
 - `<t e&={}/>` equals `<t e={function(event){}}/>` or `<t e={function(){}}/>`
-- `<?html={exp}?>` alternative for `{exp}`
-- `<?markdown={exp}?>` alternative for `{exp}`
+- `<?html={exp}?>` alternative for tag content `{exp}`
+- `<?markdown={exp}?>` alternative for tag content `{exp}`
 
 > **Note**: Jet Engine translates XML expressions into nodes suitable for a graphical user interface.
 
@@ -106,6 +106,8 @@ XML expressions do not produce `XML` or `XMLList`; they are implementation-defin
     <j:Button click&={trace("clicked me");}>Click me</j:Button>
 </j:VGroup>
 ```
+
+> **Note**: `XML(<tag/>)` equals `var _loc_0:XML = <tag/>;`.
 
 ## Events
 
