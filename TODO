@@ -1,4 +1,3 @@
-- [ ] Definitions
 - [70%] Types
 - [ ] Type conversions
   - [ ] Flag enumerations, constant conversion: from `undefined` or `null`
