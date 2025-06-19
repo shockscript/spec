@@ -23,3 +23,15 @@
 - [ ] Directives
 - [ ] Definition constructs
 - [ ] Global objects
+  - [ ] trace
+  - [ ] encodeURI
+  - [ ] decodeURI
+  - [ ] encodeURIComponent
+  - [ ] decodeURIComponent
+  - [ ] isNaN
+  - [ ] isFinite
+  - [ ] parseInt
+  - [ ] parseFloat
+  - [ ] Infinity
+  - [ ] NaN
+  - [ ] undefined
