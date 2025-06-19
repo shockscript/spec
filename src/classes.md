@@ -21,6 +21,11 @@ A class owns three namespaces:
 
 ## Inheritance
 
+```
+class A {}
+class B extends A {}
+```
+
 ### Default inheritance
 
 By default a class, excluding `Object`, inherits `Object`. A class can extend at most one class.
