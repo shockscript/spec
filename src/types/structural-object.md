@@ -3,15 +3,15 @@
 Structural object types, `{ ... }`, are simple property records, whose field order and documentation comments are sensitive. Those types are compiled into efficient structures.
 
 ```
-{ x : decimal, y : decimal }
+type N1 = { x : decimal, y : decimal };
 
-{
+type N2 = {
     /** x */
     x:Number,
 
     /** y */
     y?:Boolean,
-}
+};
 ```
 
 ## Field omission
