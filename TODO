@@ -1,10 +1,11 @@
 - [ ] Definitions
-- [50%] Types
+- [70%] Types
 - [ ] Type conversions
-- [50%] Packages
-- [50%] Namespaces
-- [50%] Classes
-- [ ] Enumerations
+  - [ ] Flag enumerations, constant conversion: from `undefined` or `null`
+- [70%] Packages
+- [70%] Namespaces
+- [70%] Classes
+- [70%] Enumerations
 - [ ] Interfaces
 - [ ] Methods
   - [ ] Multi-methods

@@ -28,3 +28,4 @@
 - [Packages](./packages.md)
 - [Namespaces](./namespaces.md)
 - [Classes](./classes.md)
+- [Enumerations](./enums.md)

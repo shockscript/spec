@@ -4,6 +4,8 @@
 o.(test)
 ```
 
+Creates a `*` binding within the test.
+
 Instance usage:
 
 ```
