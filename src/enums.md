@@ -196,8 +196,8 @@ Enumerations support customized methods:
 
 ```
 enum E {
-    const A;
-    function m() "a" in this;
+    const A, B, C;
+    function isA() this == "a";
 }
 ```
 
