@@ -12,6 +12,14 @@ enum Variant {
 
 > **Note**: Variable definitions within an `enum` define static constants which are referred to as *variants*.
 
+## Final
+
+Enumerations are final, so they cannot be extended.
+
+## Static
+
+Enumerations are static, so they cannot be instantiated through the `new` operator.
+
 ## Type inference
 
 When the inference type in a string literal is an enumeration, the literal may identify a variant by its name.
