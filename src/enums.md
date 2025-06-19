@@ -70,12 +70,12 @@ const obj:* = E(["a", "b"]);
 trace(obj == E(["a", "b"]));
 ```
 
-## Numeric type
+## Customizing the numeric type
 
-Enumerations use the `Number` type by default to represent the variant values. The user is allowed to change the type to another numeric type through the `Type` meta-data.
+Enumerations use the `Number` type by default to represent the variant values. The user is allowed to change the type to another numeric type through using a meta-data named after that numeric type.
 
 ```
-[Type(decimal)]
+[decimal]
 enum E1 {
     const A, B, C;
 }
