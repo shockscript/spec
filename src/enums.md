@@ -48,6 +48,18 @@ Obtain all variants of a flag enumeration by using the `**` expression with the 
 var f:F = **;
 ```
 
+## Internation
+
+Flag enumeration objects are interned so that flags may be compared correctly.
+
+```
+[Flags]
+enum E { const A, B, C }
+
+const obj:* = E(["a", "b"]);
+trace(obj == E(["a", "b"]));
+```
+
 ## Numeric type
 
 Enumerations use the `Number` type by default to represent the variant values. The user is allowed to change the type to another numeric type through the `Type` meta-data.
