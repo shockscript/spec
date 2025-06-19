@@ -122,7 +122,7 @@ The variant value as declared by the `const` is determined as follows:
     1. Throw a verify error
 5. Return r
 
-## Implicitly added properties and methods
+## Implicitly added methods
 
 ### For all enumerations
 
