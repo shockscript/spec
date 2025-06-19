@@ -2,6 +2,8 @@
 - [70%] Types
 - [ ] Type conversions
   - [ ] Flag enumerations, constant conversion: from `undefined` or `null`
+  - [ ] For enumerations, explicit conversion: from `String`
+  - [ ] For enumerations, explicit conversion: from their numeric type (flag enumerations take identified bits only)
 - [70%] Packages
 - [70%] Namespaces
 - [70%] Classes

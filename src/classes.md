@@ -9,6 +9,16 @@ class C1 {
 const obj = new C1();
 ```
 
+## Inner namespaces
+
+A class owns three namespaces:
+
+- `private`
+- `protected`
+- `static protected`
+
+`protected` and `static protected` are propagated to the block of subclasses.
+
 ## Inheritance
 
 ### Default inheritance

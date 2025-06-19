@@ -10,6 +10,8 @@ enum Variant {
 }
 ```
 
+> **Note**: Variable definitions within an `enum` define static constants which are referred to as *variants*.
+
 ## Type inference
 
 When the inference type in a string literal is an enumeration, the literal may identify a variant by its name.
@@ -174,3 +176,16 @@ public function toggled(v:E):E {
 ```
 
 Returns a new value toggling the specified flags, where `E` is the enumeration itself.
+
+## Customized methods
+
+Enumerations support customized methods:
+
+```
+enum E {
+    const A;
+    function m() "a" in this;
+}
+```
+
+Enumerations are prohibited from using variable definitions for purposes other than defining variants.
