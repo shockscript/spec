@@ -10,7 +10,7 @@ package com.ea.bf.arsenal {
 }
 ```
 
-> **Note**: One common convention is for packages to use a DNS like pattern from left-to-right; alternatively an user may use a domainless name (such as `skia` rather than `com.google.skia`). For DNS like patterns, the base most domain is usually one of ( `com`, `net`, `org`, `me` ), with `me` being used for personal content and the rest for organizations or groups.
+> **Note**: One common convention is for packages to use a domain name like pattern from left-to-right; alternatively an user may use a domainless name (such as `skia` rather than `com.google.skia`). For domain name like patterns, the base most domain is usually one of ( `com`, `net`, `org`, `me` ), with `me` being used for personal content and the rest for organizations or groups.
 
 ## Top-level package
 
