@@ -1,12 +1,12 @@
 # Overview
 
-ShockScript is a strongly typed, multi-paradigm scripting language, dialect of the nonexistent ECMAScript 4th edition.
+ShockScript is a strongly typed, multi-paradigm scripting language.
 
 > **Note**: The document is a work in progress, and may lack content.
 
 ## eXtensible Markup Language
 
-ShockScript incorporates an eXtensible Markup Language suitable for implementing reactive user interfaces.
+ShockScript incorporates eXtensible Markup Language (XML) expressions suitable for implementing user interfaces, and also includes capabilities for users interested on XML data processing.
 
 ## Events
 
