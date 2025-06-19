@@ -10,6 +10,8 @@ package me.diantha.calculator.enum {
 }
 ```
 
+> **Note**: One common convention is for packages to use a DNS like pattern from left-to-right; alternatively an user may use a domainless name (such as `skia` rather than `com.google.skia`). For DNS like patterns, the base most domain is usually one of ( `com`, `net`, `org`, `me` ), with `me` being used for personal content.
+
 ## Top-level package
 
 The top-level package, which defines global properties, is equivalent to:
