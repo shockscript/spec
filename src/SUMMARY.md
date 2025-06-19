@@ -24,3 +24,4 @@
   - [Structural object](./types/structural-object.md)
   - [Union](./types/union.md)
   - [Object](./types/object.md)
+- [Packages](./packages.md)

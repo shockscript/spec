@@ -1,5 +1,5 @@
 - [ ] Definitions
-- [ ] Types
+- [50%] Types
 - [ ] Type conversions
 - [ ] Packages
 - [ ] Namespaces
@@ -11,6 +11,7 @@
 - [ ] Aliases
 - [ ] Lexical scopes
 - [ ] Expressions
+- [ ] Type expressions
 - [ ] Statements
 - [ ] Directives
 - [ ] Definition constructs
