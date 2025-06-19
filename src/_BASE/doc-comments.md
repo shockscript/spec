@@ -1,4 +1,4 @@
-# SXDoc
+# Documentation comments
 
 Documentation comments use the format `/** */`, with lines optionally beginning with `*`. Markdown notation is supported in SXDoc comments.
 
@@ -24,6 +24,16 @@ Copies documentation comment from another definition. Use a `#x` component to re
 ```plain
 @deprecated [Description]
 ```
+
+### \@event
+
+Indicates that a structural object type's property is an event. The tag does nothing but move the item to the *Events* section of the documentation, similiar to the `Event` meta-data used in classes.
+
+```plain
+@event
+```
+
+> **Note**: This is 
 
 ### \@inheritDoc
 
