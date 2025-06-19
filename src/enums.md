@@ -120,7 +120,7 @@ The variant value as declared by the `const` is determined as follows:
 
 1. Let r = zero
 2. If the initializer does not contain a numeric literal
-    1. If there is no previous variant, return zero.
+    1. If there is no previous variant, return 0.
     2. Let k = previous variant's value
     3. r = k + 1
 3. Else
@@ -133,12 +133,12 @@ The variant value as declared by the `const` is determined as follows:
 
 1. Let r = zero
 2. If the initializer does not contain a numeric literal
-    1. If there is no previous variant, return one.
+    1. If there is no previous variant, return 1.
     2. Let k = previous variant's value
     3. r = k * 2
 3. Else
     1. r = the value of the numeric literal at the initializer.
-    2. If r is not one or a multiple of two
+    2. If r is not one or a power of two
         1. Throw a verify error
 4. If r is already used by another variant's value
     1. Throw a verify error
