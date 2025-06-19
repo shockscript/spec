@@ -1,12 +1,10 @@
 # Namespaces
 
-Names are three-dimensional, consisting of a namespace (the qualifier) and a local name. The `::` punctuator is used in qualified identifiers for using a namespace prefix and a local name, as in:
+Names are three-dimensional, consisting of a namespace (the *qualifier*) and a local name. The `::` punctuator is used in qualified identifiers for using a namespace prefix and a local name, as in:
 
 ```
-obj.sx_proxy::filter(function(a) a > 10)
-    // or just === obj.(* > 10)
-
-obj.ReflectionProperties::constructor
+q::n
+o.q::n
 ```
 
 Namespaces appear as optional access modifiers in annotatable definitions, as in:

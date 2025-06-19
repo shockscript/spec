@@ -25,10 +25,10 @@ interface I {
 }
 ```
 
-Interface methods may have an access modifier that is allowed to be an user namespace such as `sx_proxy`.
+Interface methods may have an access modifier that is allowed to be an user namespace such as `shock_proxy`.
 
 ```
 interface I {
-    sx_proxy function get(key:String):String;
+    shock_proxy function get(key:String):String;
 }
 ```

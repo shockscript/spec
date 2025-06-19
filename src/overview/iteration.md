@@ -8,4 +8,4 @@ iterator.some(function(v) v > 0)
 iterator.(* > 0) // filter
 ```
 
-The user may override the key and value iterators using the `sx_proxy` namespace.
+The user may override the key and value iterators using the `shock_proxy` namespace.
