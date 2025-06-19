@@ -1,10 +1,10 @@
 # Documentation comments
 
-Documentation comments use the format `/** */`, with lines optionally beginning with `*`. Markdown notation is supported in SXDoc comments.
+Documentation comments use the format `/** */`, with lines optionally beginning with `*`. Markdown notation is supported in documentation comments.
 
 ## Local images
 
-SXDoc comments may refer to relative images.
+Documentation comments may refer to relative images.
 
 ## Supported tags
 
