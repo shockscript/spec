@@ -10,6 +10,8 @@
   - [ ] Multi-methods
 - [ ] Aliases
 - [ ] Lexical scopes
+- [ ] Default lexical scope
+  - Discuss the parentmost scope, its imports and the `global` namespace being an alias.
 - [ ] Conditional compilation
 - [ ] Documentation comments
 - [ ] Expressions
