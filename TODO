@@ -28,7 +28,7 @@
 - [ ] Statements
 - [ ] Directives
 - [ ] Definition constructs
-  - [ ] Annotatable definitions beginning with `[` take the place of the array literal in the directive grammar, as they may begin with meta-data.
+  - [ ] Annotatable definitions beginning with `[` take the place of the array literal or non-parenthesized array destructuring assignment in the directive grammar, as they may begin with meta-data.
 - [ ] Global objects
   - [ ] trace
   - [ ] encodeURI
