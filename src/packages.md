@@ -2,15 +2,15 @@
 
 A package consists of a left-to-right identifying name sequence, a set of properties and two namespaces, `public` and `internal`.
 
-A package `me.diantha.arsenal` is expressed as:
+A package `com.ea.bf.arsenal` is expressed as:
 
 ```
-package me.diantha.arsenal {
+package com.ea.bf.arsenal {
     //
 }
 ```
 
-> **Note**: One common convention is for packages to use a DNS like pattern from left-to-right; alternatively an user may use a domainless name (such as `skia` rather than `com.google.skia`). For DNS like patterns, the base most domain is usually one of ( `com`, `net`, `org`, `me` ), with `me` being used for personal content.
+> **Note**: One common convention is for packages to use a DNS like pattern from left-to-right; alternatively an user may use a domainless name (such as `skia` rather than `com.google.skia`). For DNS like patterns, the base most domain is usually one of ( `com`, `net`, `org`, `me` ), with `me` being used for personal content and the rest for organizations or groups.
 
 ## Top-level package
 
@@ -36,8 +36,9 @@ When a package or a specific item of a package is imported, it is possible to fu
 
 ```
 import com.color.types.Color;
-var com = "shockscript";
+var com = 0;
 trace( com.color.types.Color(0x10_00_00) );
+trace( Color(0x10_00_00) );
 ```
 
 ## Documentation comment
