@@ -118,3 +118,18 @@ static class MyNamespace {
     public static const VALUE:Number = 10.5;
 }
 ```
+
+## Events
+
+The class, in convention when either extending `EventTarget` or implementing `IEventTarget`, may define possibly dispatched events through using multiple `Event` meta-data.
+
+```
+/**
+ * Event.
+ */
+[Event(name="eventName", type="T")]
+/**
+ * Target.
+ */
+class A extends EventTarget {}
+```

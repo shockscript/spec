@@ -52,3 +52,18 @@ interface I {
     shock_proxy function get(key:String):String;
 }
 ```
+
+## Events
+
+The interface, in convention when implementing `IEventTarget`, may define possibly dispatched events through using multiple `Event` meta-data.
+
+```
+/**
+ * Event.
+ */
+[Event(name="eventName", type="T")]
+/**
+ * Target.
+ */
+interface I extends IEventTarget {}
+```
