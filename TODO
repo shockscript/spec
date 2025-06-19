@@ -10,6 +10,7 @@
   - [ ] Multi-methods
 - [ ] Aliases
 - [ ] Lexical scopes
+- [ ] Conditional compilation
 - [ ] Documentation comments
 - [ ] Expressions
 - [ ] Type expressions
