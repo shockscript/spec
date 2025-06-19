@@ -5,6 +5,7 @@
   - [ActionScript 3 relationship](./overview/as3.md)
 - [Scope](./scope.md)
 - [Definitions](./definitions.md)
+- [Notational conventions](./notational-conventions.md)
 - [Types](./types.md)
   - [Wildcard](./types/wildcard.md)
   - [void](./types/void.md)
