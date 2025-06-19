@@ -28,13 +28,15 @@ When the inference type in a string literal is an enumeration, the literal may i
 var val:Variant = "variantOne";
 ```
 
-When the inference type in an array literal is a flag enumeration, the literal may be used to identify multiple variants.
+When the inference type in an array literal or object initializer is a flag enumeration, the literal may be used to identify multiple variants.
 
 ```
 [Flags]
 enum F { const A, B, C }
 
-var m:F = ["a", "b", "c"];
+const m:F = ["a", "b", "c"];
+    // or
+const m:F = { a: true, b: true, c: true };
 ```
 
 ## Flag enumerations

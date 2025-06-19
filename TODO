@@ -20,6 +20,10 @@
 - [ ] Documentation comments
 - [ ] Lexical structure
 - [ ] Expressions
+  - [ ] String literal is applicable to enumerations
+  - [ ] Null literal is applicable to flag enumerations
+  - [ ] Array literal is applicable to flag enumerations
+  - [ ] Object initializer is applicable to flag enumerations
 - [ ] Type expressions
 - [ ] Statements
 - [ ] Directives
