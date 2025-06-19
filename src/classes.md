@@ -1,6 +1,6 @@
 # Classes
 
-A class is an inheritable user defined type that may be used to create objects.
+A class is an inheritable user-defined type that may be used to create objects.
 
 ```
 class C1 {

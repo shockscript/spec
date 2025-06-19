@@ -7,7 +7,9 @@
 - [70%] Namespaces
 - [70%] Classes
 - [70%] Enumerations
-- [ ] Interfaces
+- [70%] Interfaces
+- [ ] Variables
+- [ ] Virtual variables
 - [ ] Methods
   - [ ] Multi-methods
 - [ ] Aliases

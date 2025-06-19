@@ -29,3 +29,4 @@
 - [Namespaces](./namespaces.md)
 - [Classes](./classes.md)
 - [Enumerations](./enums.md)
+- [Interfaces](./interfaces.md)
