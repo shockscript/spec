@@ -9,17 +9,13 @@ In addition, the `IEventTarget` interface may be implemented instead of extendin
 The following program demonstrates implementing a basic `EventTarget` subclass that is able to emit events:
 
 ```
-/**
- * On play event.
- */
-[Event(name="play", type="Event")]
-/**
- * My player class.
- */
-class Player extends EventTarget {
-
-    public function aMethod() {
-        this.emit(new Event("play"));
+/** Some event. */
+[Event(name="act", type="Event")]
+/** Some class. */
+class Actor extends EventTarget {
+    //
+    public function m() {
+        this.emit(new Event("act"));
     }
 }
 ```
@@ -29,7 +25,7 @@ class Player extends EventTarget {
 Subscribing to an event looks as follows:
 
 ```
-player.on("play", function() { trace("played") });
+actor.on("act", function() { trace("acting") });
 ```
 
 ## Implementing an event class
