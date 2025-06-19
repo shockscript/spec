@@ -2,6 +2,7 @@
 
 - [Overview](./overview.md)
   - [Iteration capabilities](./overview/iteration.md)
+  - [Event model](./overview/event-model.md)
   - [ActionScript 3 relationship](./overview/as3.md)
 - [Scope](./scope.md)
 - [Definitions](./definitions.md)

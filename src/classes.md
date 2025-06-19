@@ -121,7 +121,7 @@ static class MyNamespace {
 
 ## Events
 
-The class, in convention when either extending `EventTarget` or implementing `IEventTarget`, may define possibly dispatched events through using multiple `Event` meta-data.
+The class, in convention when either extending `EventTarget` or implementing `IEventTarget`, may define possibly emitted events through using multiple `Event` meta-data.
 
 ```
 /**

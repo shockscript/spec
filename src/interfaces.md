@@ -55,7 +55,7 @@ interface I {
 
 ## Events
 
-The interface, in convention when implementing `IEventTarget`, may define possibly dispatched events through using multiple `Event` meta-data.
+The interface, in convention when implementing `IEventTarget`, may define possibly emitted events through using multiple `Event` meta-data.
 
 ```
 /**
