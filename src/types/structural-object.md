@@ -14,6 +14,10 @@ Structural object types, `{ ... }`, are simple property records, whose field ord
 }
 ```
 
+## Field omission
+
+All fields are optional; however, if it is desired to default to `undefined`, a field such as `x?:T` is equivalent to `x:(void,T)`.
+
 ## Field order
 
 Due to sensitive field order, structural object types with equivalent fields but in different orders will be incompatible.
