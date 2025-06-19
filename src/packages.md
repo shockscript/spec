@@ -2,10 +2,10 @@
 
 A package consists of a left-to-right identifying name sequence, a set of properties and two namespaces, `public` and `internal`.
 
-A package `me.diantha.calculator.enum` is expressed as:
+A package `me.diantha.arsenal` is expressed as:
 
 ```
-package me.diantha.calculator.enum {
+package me.diantha.arsenal {
     //
 }
 ```
