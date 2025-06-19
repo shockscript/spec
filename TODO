@@ -31,6 +31,9 @@
   - [ ] Annotatable definitions beginning with `[` take the place of the array literal or non-parenthesized array destructuring assignment in the directive grammar, as they may begin with meta-data.
 - [ ] Global objects
   - [ ] trace
+  - [ ] assert
+  - [ ] assertEquals
+  - [ ] assertThrows
   - [ ] encodeURI
   - [ ] decodeURI
   - [ ] encodeURIComponent
