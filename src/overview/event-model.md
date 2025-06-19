@@ -58,8 +58,7 @@ The `on()` method is roughly defined as follows:
 
 ```
 public function on.<E extends Event(this,type)>(
-    type : E.name,
-    listener : function(E.type):void,
+    type:E.name, listener:function(E.type):void,
 ) : void {
     //
 }
