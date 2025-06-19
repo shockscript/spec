@@ -26,3 +26,4 @@
   - [Union](./types/union.md)
   - [Object](./types/object.md)
 - [Packages](./packages.md)
+- [Namespaces](./namespaces.md)
