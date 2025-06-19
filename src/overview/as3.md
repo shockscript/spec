@@ -112,15 +112,13 @@ XML expressions do not produce `XML` or `XMLList` unless the inference type is o
 Events are declared without defining related static constants, as ShockScript performs vast type inference; thus, the ASDoc `@eventType` tag does not exist in ShockScript.
 
 ```
-/**
- * Emitted on play.
- */
-[Event(name="play", type="Event")]
-/**
- * My class A
- */
+/** Some event */
+[Event(name="act", type="Event")]
+/** Some class */
 class A extends EventTarget {}
 ```
+
+> **Note**: The `@event` tag introduced in ShockScript is used for documenting events better in reactive systems that use structural object types rather than classes for component parameters.
 
 ## Embedding
 
