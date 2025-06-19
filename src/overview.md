@@ -12,6 +12,6 @@ ShockScript incorporates an eXtensible Markup Language suitable for implementing
 
 ShockScript incorporates a basic event model and allows easily declaring event types and documenting them. Implementations may extend the event model for working with a Document Object Model.
 
-## SXDoc
+## Documentation comments
 
-ShockScript supports documentation comments allowing for Markdown notation and special tags such as `@throws`.
+ShockScript supports documentation comments allowing for Markdown notation, special tags such as `@throws` and media inclusion.

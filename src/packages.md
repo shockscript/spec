@@ -37,3 +37,14 @@ import com.color.types.Color;
 var com = "shockscript";
 trace( com.color.types.Color(0x10_00_00) );
 ```
+
+## Documentation comment
+
+A `package` definition may have a prefix documentation comment, allowing to document the package once.
+
+```
+/**
+ * Enumerations used in the core runtime.
+ */
+package com.business.coreRT.enum {}
+```
