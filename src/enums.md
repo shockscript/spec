@@ -59,6 +59,19 @@ enum E1 {
 }
 ```
 
+## Variant initializer
+
+The initializer of a variant may be expressed in four different forms, or simply be omitted:
+
+```
+StringLiteral
+NumericLiteral
+[StringLiteral, NumericLiteral]
+[NumericLiteral, StringLiteral]
+```
+
+The *ArrayInitializer* syntax is used to allow specifying both a string and a number.
+
 ## Variant name
 
 The variant name as declared by the `const` is determined as follows:
