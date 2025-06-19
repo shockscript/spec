@@ -19,6 +19,10 @@ A class owns three namespaces:
 
 `protected` and `static protected` are propagated to the block of subclasses.
 
+## Documentation comment
+
+A class may be prefixed by a documentation comment.
+
 ## Inheritance
 
 ```

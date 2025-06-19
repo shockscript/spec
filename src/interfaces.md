@@ -17,6 +17,10 @@ interface Ia extends I {}
 
 The `interface` block may only contain function definitions, including regular methods, getters and setters.
 
+## Documentation comment
+
+An interface may be prefixed by a documentation comment.
+
 ## Required methods
 
 When interface methods omit their body, they are classified as *required* methods.
