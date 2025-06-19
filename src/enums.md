@@ -79,7 +79,7 @@ The variant name as declared by the `const` is determined as follows:
 1. Let r = empty string
 2. If the initializer does not contain a string literal
     1. Let orig = binding identifier name
-    2. r = a screaming snake case (`ABC_DEF`) to camel case (`abcDef`) conversion of n1.
+    2. r = a screaming snake case (`ABC_DEF`) to camel case (`abcDef`) conversion of orig.
 3. Else
     1. r = the value of the string literal at the initializer.
 4. If r is already used by another variant's name
