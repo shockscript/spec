@@ -48,3 +48,5 @@ package com.business.coreRT.events {
 
 - `Event(T, type)` yields the name-type pair of an event.
 - `Event(T, object)` ensures event creation is correct by analyzing the `new E(type, ...)` expression.
+
+> **Note**: The constraint's `name` field yields the `String` type, but its purpose is for auto completion in integrated development environments.
