@@ -35,3 +35,4 @@
 - [Variables](./variables.md)
 - [Virtual variables](./virtual-variables.md)
 - [Methods](./methods.md)
+- [Aliases](./aliases.md)

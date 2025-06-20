@@ -59,3 +59,31 @@ A `package` definition may have a prefix documentation comment, allowing to docu
  */
 package com.business.coreRT.enum {}
 ```
+
+## Package wildcard import
+
+A package wildcard import is aliased for the following directive:
+
+```
+import q = com.business.quantum.*;
+```
+
+Then `q` may be used as a qualifier to resolve to a name in the `quantum` package (excluding subpackages).
+
+```
+q::x
+```
+
+## Package recursive import
+
+A package recursive import is aliased for the following directive:
+
+```
+import q = com.business.quantum.**;
+```
+
+Then `q` may be used as a qualifier to resolve to a name in the `quantum` package and its subpackages in a recursive way.
+
+```
+q::x
+```
