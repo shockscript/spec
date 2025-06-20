@@ -62,7 +62,7 @@ package com.business.coreRT.enum {}
 
 ## Package single import
 
-A package single import is contributed to the lexical scope for the following directory:
+A package single import is contributed to the lexical scope for the following directive:
 
 ```
 import f.q.x;
