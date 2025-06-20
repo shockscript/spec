@@ -1,43 +1,6 @@
-# Conditional compilation
+(Migrate this to the Jet Engine documentation.)
 
-`NAMESPACE::CONSTANT` may match a set configuration constant.
-
-```
-NAMESPACE::CONSTANT {
-    //
-}
-
-NAMESPACE::CONSTANT var x
-```
-
-Inline constants:
-
-```
-trace(NAMESPACE::CONSTANT)
-```
-
-The following:
-
-```
-class MyClass {
-    //
-    CONFIG::debug {
-        //
-        private var x : Number;
-    }
-}
-```
-
-is equivalent to:
-
-```
-class MyClass {
-    //
-    CONFIG::debug private var x : Number;
-}
-```
-
-## Pre-defined configuration constants
+## Implicit configuration constants
 
 ## RT::client
 

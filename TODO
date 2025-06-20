@@ -15,7 +15,7 @@
 - [x] Generics
 - [x] Lexical scopes
 - [x] Default lexical scope
-- [ ] Conditional compilation
+- [x] Conditional compilation
 - [ ] Documentation comments
 - [ ] Lexical structure
 - [ ] Expressions
