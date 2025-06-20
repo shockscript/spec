@@ -60,6 +60,14 @@ A `package` definition may have a prefix documentation comment, allowing to docu
 package com.business.coreRT.enum {}
 ```
 
+## Package single import
+
+A package single import is contributed to the lexical scope for the following directory:
+
+```
+import f.q.x;
+```
+
 ## Package wildcard import
 
 A package wildcard import is aliased for the following directive:
@@ -74,6 +82,12 @@ Then `q` may be used as a qualifier to resolve to a name in the `quantum` packag
 q::x
 ```
 
+For the following directive, the package wildcard import is contributed to the lexical scope:
+
+```
+import com.business.quantum.*;
+```
+
 ## Package recursive import
 
 A package recursive import is aliased for the following directive:
@@ -86,4 +100,10 @@ Then `q` may be used as a qualifier to resolve to a name in the `quantum` packag
 
 ```
 q::x
+```
+
+For the following directive, the package recursive import is contributed to the lexical scope:
+
+```
+import com.business.quantum.**;
 ```
