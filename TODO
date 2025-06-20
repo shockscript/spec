@@ -12,6 +12,7 @@
 - [70%] Virtual variables
 - [ ] Methods
   - [ ] Multi-methods
+  - [ ] Overriding (explain getters and setters as well)
 - [ ] Aliases
 - [ ] Lexical scopes
 - [ ] Default lexical scope
