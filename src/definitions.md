@@ -6,7 +6,7 @@ A Code Point as specified by the Unicode standard.
 
 ## Scalar Value
 
-A Scalar Value as specified bhy the Unicode standard.
+A Scalar Value as specified by the Unicode standard.
 
 ## Required function
 
