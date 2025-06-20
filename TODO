@@ -13,11 +13,7 @@
 - [70%] Methods
 - [x] Aliases
 - [x] Generics
-- [ ] Lexical scopes
-  - [ ] Explain the parent.
-  - [ ] Explain the open namespace list.
-  - [ ] Explain the properties.
-  - [ ] Explain the import list. It may contain package single imports, package wildcard imports, and package recursive miports.
+- [x] Lexical scopes
 - [ ] Default lexical scope
   - Discuss the parentmost scope, its imports and the `global` namespace being an alias.
 - [ ] Conditional compilation

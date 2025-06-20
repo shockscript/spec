@@ -2,7 +2,7 @@
 
 Virtual variables consist of either:
 
-- a getter and a setter (writeable);
+- a getter and a setter (writable);
 - a getter (read-only);
 - a setter (write-only).
 
