@@ -2,34 +2,12 @@
 
 `shock_proxy` methods may be defined in a class or interface to allow overriding language behavior.
 
-> **Note**: Unlike with Adobe ActionScript 3, a `Proxy` class does not need to be extended for overriding language behavior.
-
-## Static shock_proxy::call()
+## static shock_proxy::call()
 
 A static `shock_proxy::call()` method may be defined with any number of parameters and any result type, overidding the behavior of calling the class object.
 
 ```
 shock_proxy static function call():T {}
-```
-
-## shock_proxy::keys()
-
-Part of the `Keys.<T>` interface. Must return an `Iterator.<T>` object. Used by the `for..in` statement.
-
-```
-shock_proxy function keys():Iterator.<T> {
-    //
-}
-```
-
-## shock_proxy::values()
-
-Part of the `Values.<T>` interface. Must return an `Iterator.<T>` object. Used by the `for each..in` statement.
-
-```
-shock_proxy function values():Iterator.<T> {
-    //
-}
 ```
 
 ## shock_proxy::get()

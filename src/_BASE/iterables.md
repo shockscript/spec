@@ -7,14 +7,14 @@ Any class that implements `Iterator.<T>`, `Keys.<T>` or `Values.<T>` may be iter
 ```
 class A implements Keys.<Number>, Values.<Number> {
     //
-    shock_proxy function keys() {
+    public function keys() {
         for (var i = 0; i < 10; i++) {
             yield i;
         }
     }
 
     //
-    shock_proxy function values() {
+    public function values() {
         for (var i = 0; i < 10; i++) {
             yield i;
         }

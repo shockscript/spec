@@ -17,6 +17,7 @@
 - [x] Default lexical scope
 - [x] Conditional compilation
 - [x] Documentation comments
+- [ ] Proxies
 - [ ] Lexical structure
 - [ ] Expressions
   - [ ] String literal is applicable to enumerations
@@ -45,6 +46,5 @@
   - [ ] NaN
   - [ ] undefined
   - [ ] Iterator (interface)
-  - [ ] Keys (interface) iterable proxy
-  - [ ] Values (interface) iterable proxy
-- [ ] Proxies
+  - [ ] Keys (interface) iterable interface
+  - [ ] Values (interface) iterable interface
