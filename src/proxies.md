@@ -1,6 +1,6 @@
 # Proxies
 
-`shock_proxy` methods may be defined in a class or interface to allow overriding language behavior.
+Methods of the `shock_proxy` namespace may be implemented in a class or interface for overriding language behavior, known as *proxies*.
 
 ## static shock_proxy::call()
 
