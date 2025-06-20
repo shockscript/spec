@@ -12,7 +12,7 @@
 - [70%] Virtual variables
 - [70%] Methods
 - [x] Aliases
-- [ ] Generics
+- [x] Generics
 - [ ] Lexical scopes
 - [ ] Default lexical scope
   - Discuss the parentmost scope, its imports and the `global` namespace being an alias.
