@@ -4,7 +4,7 @@ Methods of the `shock_proxy` namespace may be implemented in a class or interfac
 
 ## static shock_proxy::call()
 
-A static `shock_proxy::call()` method may be defined with any number of parameters and any result type, overidding the behavior of calling the class object.
+A static `shock_proxy::call()` method may be defined with any number of parameters and any result type, overriding the behavior of calling the class object.
 
 ```
 shock_proxy static function call():T {}
