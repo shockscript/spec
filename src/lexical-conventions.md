@@ -2,7 +2,7 @@
 
 This section defines the lexical grammar of the ShockScript language.
 
-The tokenizer scans one of the following input goal symbols depending on the syntactic context: * *InputElementDiv*, *InputElementRegExp*, *InputElementXMLTag*, *InputElementXMLPI*, *InputElementXMLContent*.
+The tokenizer scans one of the following input goal symbols depending on the syntactic context: *InputElementDiv*, *InputElementRegExp*, *InputElementXMLTag*, *InputElementXMLPI*, *InputElementXMLContent*.
 
 The following program illustrates how the tokenizer decides which is the input goal symbol to scan:
 
