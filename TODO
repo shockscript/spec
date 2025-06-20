@@ -26,7 +26,7 @@
   - [ ] Object initializer is applicable to flag enumerations
 - [ ] Type expressions
 - [ ] Statements
-  - [ ] For for each, Iterable, Keys and Values are iterable
+  - [ ] For for each, Iterable and Values are iterable
 - [ ] Directives
 - [ ] Definition constructs
   - [ ] Annotatable definitions beginning with `[` take the place of the array literal or non-parenthesized array destructuring assignment in the directive grammar, as they may begin with meta-data.
