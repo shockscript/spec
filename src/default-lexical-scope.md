@@ -4,7 +4,7 @@ The topmost scope from which all scopes inherit is implicitly created by ShockSc
 
 ## Imports
 
-The topmost scope imports the top-level package by wildcard.
+The topmost scope imports the top-level package by wildcard. It is allowed to shadow names from the top-level package, in which case, the `global` alias may be used to access the top-level package.
 
 ## global
 
