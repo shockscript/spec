@@ -31,3 +31,4 @@
 - [Classes](./classes.md)
 - [Enumerations](./enums.md)
 - [Interfaces](./interfaces.md)
+- [Variables](./variables.md)

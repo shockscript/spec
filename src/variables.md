@@ -1,0 +1,20 @@
+# Variables
+
+A variable may be read-only or writeable, and consists of a type.
+
+```
+var x = 0
+const y = 10
+```
+
+## Documentation comment
+
+A documentation comment can be applied to a variable.
+
+## Initializer
+
+If the initializer of a variable is a constant, then the variable consists of a constant initializer.
+
+```
+var x = 0
+```

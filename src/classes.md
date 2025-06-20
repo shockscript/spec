@@ -133,3 +133,11 @@ The class, in convention when either extending `EventTarget` or implementing `IE
  */
 class A extends EventTarget {}
 ```
+
+## Static properties
+
+Definitions marked `static` that appear within the `class` block are part of the static properties of the class, which are accessed as `C.n` where `C` is teh class and `n` the property name.
+
+## Instance properties
+
+Definitions not marked `static` that appear within the `class` block are part of the prototype of the class, and are called *instance* properties.

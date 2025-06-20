@@ -151,7 +151,7 @@ The variant value as declared by the `const` is determined as follows:
 #### valueOf()
 
 ```
-public function valueOf():T {
+public override function valueOf():T {
     //
 }
 ```
@@ -161,7 +161,7 @@ Returns the numeric value of the enumeration instance, where `T` is the numeric 
 #### toString()
 
 ```
-public function toString():String {
+public override function toString():String {
     //
 }
 ```
