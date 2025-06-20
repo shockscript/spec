@@ -32,20 +32,26 @@
 - [ ] Definition constructs
   - [ ] Annotatable definitions beginning with `[` take the place of the array literal or non-parenthesized array destructuring assignment in the directive grammar, as they may begin with meta-data.
 - [ ] Global objects
-  - [ ] trace
-  - [ ] assert
-  - [ ] assertEquals
-  - [ ] assertThrows
-  - [ ] encodeURI
-  - [ ] decodeURI
-  - [ ] encodeURIComponent
-  - [ ] decodeURIComponent
-  - [ ] isNaN
-  - [ ] isFinite
-  - [ ] parseInt
-  - [ ] parseFloat
+  - [ ] trace()
+  - [ ] assert()
+  - [ ] assertEquals()
+  - [ ] assertThrows()
+  - [ ] encodeURI()
+  - [ ] decodeURI()
+  - [ ] encodeURIComponent()
+  - [ ] decodeURIComponent()
+  - [ ] isNaN()
+  - [ ] isFinite()
+  - [ ] parseInt()
+  - [ ] parseFloat()
   - [ ] Infinity
   - [ ] NaN
   - [ ] undefined
   - [ ] Iterator.\<T> (interface)
   - [ ] Iterable.\<K, V> (interface) requires keys() and values()
+  - [ ] Object
+    - [ ] ReflectionProperties::constructor
+    - [ ] clone()
+    - [ ] toString()
+    - [ ] toLocaleString()
+    - [ ] valueOf()
