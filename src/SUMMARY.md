@@ -40,3 +40,4 @@
 - [Lexical scopes](./lexical-scopes.md)
 - [Default lexical scope](./default-lexical-scope.md)
 - [Conditional compilation](./conditional-compilation.md)
+- [Documentation comments](./doc-comments.md)

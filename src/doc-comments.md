@@ -1,10 +1,24 @@
 # Documentation comments
 
-Documentation comments use the format `/** */`, with lines optionally beginning with `*`. Markdown notation is supported in documentation comments.
+Documentation comments use the format `/** */`. Markdown notation is supported in documentation comments.
+
+For each line, the beginning whitespace is stripped, then the `*` character and a single following white space character are stripped, and the resting characters are the actual line contents.
+
+Line contents may start with a tag (such as `@deprecated`). Tags may span multiple lines until the next tag appears; tags that do not accept content do not span any more characters.
+
+Code blocks (whose delimiters consist of at least three backticks **\`\`\`**) as expressed in Markdown cause tags to be ignored in the code content, as in:
+
+```
+/**
+ * ```plain
+ * @deprecated
+ * ```
+ */
+```
 
 ## Local images
 
-Documentation comments may refer to relative images.
+Documentation comments may refer to relative images through the Markdown notation `![image](./path/to/image)`.
 
 ## Supported tags
 
@@ -27,7 +41,7 @@ Copies documentation comment from another definition. Use a `#x` component to re
 
 ### \@event
 
-Indicates that a structural object type's property is an event. The tag does nothing but move the item to the *Events* section of the documentation, similiar to the `Event` meta-data used in classes.
+Indicates that a structural object type's property is an event. The tag does nothing but move the item to the *Events* section of the documentation, similiar to the `Event` meta-data used in class definitions.
 
 ```plain
 @event

@@ -16,7 +16,7 @@
 - [x] Lexical scopes
 - [x] Default lexical scope
 - [x] Conditional compilation
-- [ ] Documentation comments
+- [x] Documentation comments
 - [ ] Lexical structure
 - [ ] Expressions
   - [ ] String literal is applicable to enumerations
