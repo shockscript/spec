@@ -1,11 +1,11 @@
 # Iterables
 
-Any class that implements `Iterator.<T>`, `IterableKeys.<T>` or `IterableValues.<T>` may be iterated.
+Any class that implements `Iterator.<T>`, `Keys.<T>` or `Values.<T>` may be iterated.
 
 ## shock_proxy usage
 
 ```
-class A implements IterableKeys.<Number>, IterableValues.<Number> {
+class A implements Keys.<Number>, Values.<Number> {
     //
     shock_proxy function keys() {
         for (var i = 0; i < 10; i++) {

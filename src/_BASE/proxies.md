@@ -14,7 +14,7 @@ shock_proxy static function call():T {}
 
 ## shock_proxy::keys()
 
-Part of the `IterableKeys.<T>` interface. Must return an `Iterator.<T>` object. Used by the `for..in` statement.
+Part of the `Keys.<T>` interface. Must return an `Iterator.<T>` object. Used by the `for..in` statement.
 
 ```
 shock_proxy function keys():Iterator.<T> {
@@ -24,7 +24,7 @@ shock_proxy function keys():Iterator.<T> {
 
 ## shock_proxy::values()
 
-Part of the `IterableValues.<T>` interface. Must return an `Iterator.<T>` object. Used by the `for each..in` statement.
+Part of the `Values.<T>` interface. Must return an `Iterator.<T>` object. Used by the `for each..in` statement.
 
 ```
 shock_proxy function values():Iterator.<T> {

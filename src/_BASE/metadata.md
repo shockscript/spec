@@ -17,4 +17,4 @@ Keyless entries are a single identifier or a string literal not accompanied by a
 
 ## Reserved meta-data
 
-Certain meta-data are reserved, such as `Event`.
+Certain meta-data are reserved in some contexts, such as `Event`.

@@ -12,6 +12,7 @@
 - [70%] Virtual variables
 - [70%] Methods
 - [ ] Aliases
+- [ ] Generics
 - [ ] Lexical scopes
 - [ ] Default lexical scope
   - Discuss the parentmost scope, its imports and the `global` namespace being an alias.
@@ -44,3 +45,7 @@
   - [ ] Infinity
   - [ ] NaN
   - [ ] undefined
+  - [ ] Iterator (interface)
+  - [ ] Keys (interface) iterable proxy
+  - [ ] Values (interface) iterable proxy
+- [ ] Proxies
