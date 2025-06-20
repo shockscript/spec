@@ -12,6 +12,14 @@ package com.business.enum {
 
 > **Note**: One common convention is for packages to use a prefix domain (one of ( `com`, `net`, `org`, `me` )); alternatively an user may use a prefixless domain name (such as `skia` rather than `com.google.skia`). The `me` prefix is used for personal content and the rest for companies, organizations and groups.
 
+The user defines properties under the package inside the `package` block, as in:
+
+```
+package f.q {
+    public function f() {}
+}
+```
+
 ## Top-level package
 
 The top-level package, which defines global properties, is equivalent to:
