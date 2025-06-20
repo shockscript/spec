@@ -2,10 +2,10 @@
 
 A package consists of a ascending domain name, a set of properties and two namespaces, `public` and `internal`.
 
-A package `com.ea.bf.arsenal` is expressed as:
+A package `com.business.enum` is expressed as:
 
 ```
-package com.ea.bf.arsenal {
+package com.business.enum {
     //
 }
 ```
