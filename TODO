@@ -17,7 +17,7 @@
 - [x] Default lexical scope
 - [x] Conditional compilation
 - [x] Documentation comments
-- [ ] Proxies
+- [x] Proxies
 - [ ] Lexical structure
 - [ ] Expressions
   - [ ] String literal is applicable to enumerations
@@ -26,7 +26,7 @@
   - [ ] Object initializer is applicable to flag enumerations
 - [ ] Type expressions
 - [ ] Statements
-  - [ ] For for each, Iterable and Values are iterable
+  - [ ] For `for each`: `Iterator` and `Iterable` are iterable
 - [ ] Directives
 - [ ] Definition constructs
   - [ ] Annotatable definitions beginning with `[` take the place of the array literal or non-parenthesized array destructuring assignment in the directive grammar, as they may begin with meta-data.
@@ -46,6 +46,5 @@
   - [ ] Infinity
   - [ ] NaN
   - [ ] undefined
-  - [ ] Iterator (interface)
-  - [ ] Keys (interface) iterable interface
-  - [ ] Values (interface) iterable interface
+  - [ ] Iterator.\<T> (interface)
+  - [ ] Iterable.\<K, V> (interface) requires keys() and values()

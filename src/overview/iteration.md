@@ -8,14 +8,14 @@ iterator.some(function(v) v > 0)
 iterator.(* > 0) // filter
 ```
 
-The user may override the key and value iterators by implementing the `Keys` and `Values` interfaces.
+The user may override the key and value iterators by implementing the `Iterable.<K, V>` interface.
 
 ```
-class A implements Keys.<Number>, Values.<Number> {
+class A implements Iterable.<String, Number> {
     //
     public function keys() {
         for (var i = 0; i < 10; i++) {
-            yield i;
+            yield i.toString();
         }
     }
     //
