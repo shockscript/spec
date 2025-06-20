@@ -14,8 +14,7 @@
 - [x] Aliases
 - [x] Generics
 - [x] Lexical scopes
-- [ ] Default lexical scope
-  - Discuss the parentmost scope, its imports and the `global` namespace being an alias.
+- [x] Default lexical scope
 - [ ] Conditional compilation
 - [ ] Documentation comments
 - [ ] Lexical structure

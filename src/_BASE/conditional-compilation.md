@@ -21,7 +21,7 @@ The following:
 ```
 class MyClass {
     //
-    CFG::debug {
+    CONFIG::debug {
         //
         private var x : Number;
     }
@@ -33,7 +33,7 @@ is equivalent to:
 ```
 class MyClass {
     //
-    CFG::debug private var x : Number;
+    CONFIG::debug private var x : Number;
 }
 ```
 
@@ -59,32 +59,32 @@ RT::server {
 }
 ```
 
-## CFG::debug
+## CONFIG::debug
 
-`CFG::debug` indicates whether compilation occurs in debugging mode.
+`CONFIG::debug` indicates whether compilation occurs in debugging mode.
 
 ```
-CFG::debug {
+CONFIG::debug {
     trace("debugging");
 }
 ```
 
-## CFG::release
+## CONFIG::release
 
-`CFG::release` indicates whether compilation occurs in release mode.
+`CONFIG::release` indicates whether compilation occurs in release mode.
 
 ```
-CFG::release {
+CONFIG::release {
     trace("release");
 }
 ```
 
-## CFG::test
+## CONFIG::test
 
-`CFG::test` indicates whether compilation occurs in test mode.
+`CONFIG::test` indicates whether compilation occurs in test mode.
 
 ```
-CFG::test {
+CONFIG::test {
     trace("testing");
 }
 ```
