@@ -32,3 +32,4 @@
 - [Enumerations](./enums.md)
 - [Interfaces](./interfaces.md)
 - [Variables](./variables.md)
+- [Virtual variables](./virtual-variables.md)

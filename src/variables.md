@@ -11,6 +11,21 @@ const y = 10
 
 A documentation comment can be applied to a variable.
 
+```
+/** Comment */
+var x
+```
+
+## Meta-data
+
+A variable may have zero or more meta-data.
+
+```
+[M1]
+[M2]
+var x
+```
+
 ## Initializer
 
 If the initializer of a variable is a constant, then the variable consists of a constant initializer.

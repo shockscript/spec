@@ -23,6 +23,21 @@ A class owns three namespaces:
 
 A class may be prefixed by a documentation comment.
 
+```
+/** Comment */
+class C1 {}
+```
+
+## Meta-data
+
+A class may have zero or more meta-data.
+
+```
+[M1]
+[M2]
+class C1 {}
+```
+
 ## Inheritance
 
 ```

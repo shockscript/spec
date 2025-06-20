@@ -21,6 +21,21 @@ The `interface` block may only contain function definitions, including regular m
 
 An interface may be prefixed by a documentation comment.
 
+```
+/** Comment */
+interface I {}
+```
+
+## Meta-data
+
+An interface may have zero or more meta-data.
+
+```
+[M1]
+[M2]
+interface I {}
+```
+
 ## Required methods
 
 When interface methods omit their body, they are classified as *required* methods.
