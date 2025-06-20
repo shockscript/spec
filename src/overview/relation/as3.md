@@ -1,4 +1,4 @@
-# ActionScript 3 relationship
+# ActionScript 3
 
 ShockScript looks like ActionScript 3. This section describes several details that changed on the language.
 
