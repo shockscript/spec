@@ -25,4 +25,4 @@ package com.business.components {
 
 In MXML, event handlers were expressed as `e="statementList"`. In ShockScript, they are expressed as `e&={statementList}` (note the ampersand **\&**) as a shorthand to `e={function(event){statementList}}`.
 
-> **Note**: Although not demanded as such, as opposed to React.js + DOM, event handlers are conventionally expressed without a `on` prefix, such as `click&={trace("clicked!")}` rather than React.js `onClick={e=>console.log("clicked!")}`. Event parameters are conventionally given the `@event` tag in the documentation comments. Classes continue using the `Event` meta-data, though without needing the `@eventType` tag.
+> **Note**: Although not demanded as such, as opposed to React.js + DOM, event handlers are conventionally expressed without a `on` prefix, such as `click&={trace("clicked!")}` rather than React.js `onClick={e=>{console.log("clicked!")}}`. Event parameters are conventionally given the `@event` tag in the documentation comments. Classes continue using the `Event` meta-data, though without needing the `@eventType` tag.
