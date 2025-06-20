@@ -1,6 +1,6 @@
 # Notational conventions
 
-## Syntactic and lexical Grammars
+## Syntactic and lexical grammars
 
 This document uses the following notation to define one or more productions of a nonterminal of the syntactic grammar:
 
