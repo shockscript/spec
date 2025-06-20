@@ -22,9 +22,9 @@ function f.<T extends A>(o:T) {
 }
 function f.<T implements I>(o:T) {
 }
-function f.<E extends Event(A,type)>(type:E.name, value:E.type) {
+function f.<E extends Event(A, type)>(type:E.name, value:E.type) {
 }
-function f.<E extends Event(A,object)>(value:E) {
+function f.<E extends Event(A, object)>(value:E) {
 }
 ```
 
