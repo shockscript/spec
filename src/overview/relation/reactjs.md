@@ -39,3 +39,18 @@ import com.business.components.*
 
 <AppBar/>
 ```
+
+## Interpolation
+
+Interpolation works similiarly to React.js, except for HTML.
+
+```
+<j:VGroup>
+    {undefined}
+    {null}
+    {node}
+    {nodeList}
+    {plainText}
+    <?html={someHTML}?>
+</j:VGroup>
+```

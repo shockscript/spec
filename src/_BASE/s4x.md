@@ -15,9 +15,7 @@ package me.diantha.portfolio {
             <j:VGroup gap={5}>
                 <!-- content -->
                 <j:Label>
-                    <markdown>
-                        Hi **there**.
-                    </markdown>
+                    Hi, <b>there</b>.
                 </j:Label>
             </j:VGroup>
         );
@@ -47,23 +45,15 @@ Inline event handlers may be expressed as `eventName&={statementList}` as a shor
 
 If the event has no parameters, then the attribute above is equivalent to `eventName={function(){statementList}}`.
 
-### Markdown
+### Interpolation
 
-Use `<markdown>` tags for translating Markdown to HTML text.
-
-> **Note:** Tags nested with `<markdown>` must comply with XHTML tags; for instance, use `<br/>` instead of `<br>`.
-
-It is additionally allowed to interpolate text or arbitrary markup inside a `<markdown>` tag:
-
-```xml
-<markdown>
-    <!-- interpolate plain text -->
-    Hi, {personName}
-
-    <!-- interpolate HTML -->
-    Hi, <?html={personName}?>
-
-    <!-- interpolate Markdown (use HTML tags; not XHTML tags) -->
-    Hi, <?markdown={personName}?>
-</markdown>
+```
+<j:VGroup>
+    {undefined}
+    {null}
+    {node}
+    {nodeList}
+    {plainText}
+    <?html={someHTML}?>
+</j:VGroup>
 ```

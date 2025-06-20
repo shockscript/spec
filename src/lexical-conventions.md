@@ -31,7 +31,7 @@ The following table indicates which is the input goal symbol that is scanned for
 | &gt; | *InputElementXMLTag* |
 | ; | *InputElementDiv* |
 
-The *InputElementXMLPI* goal symbol must be used when parsing the markups `<?markdown={exp}?>` and `<?html={exp}?>`.
+The *InputElementXMLPI* goal symbol must be used when parsing the `<?html={exp}?>` markup.
 
 **Syntax**
 
@@ -822,7 +822,6 @@ If a *XMLMarkup*, *XMLAttributeValue* or *XMLText* contains a *LineTerminator* a
         <i>XMLCDATA</i><br>
         <i>XMLPI</i><br>
         <b>&lt;?html=</b><br>
-        <b>&lt;?markdown=</b>
     </ul>
 </ul>
 
