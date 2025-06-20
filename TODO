@@ -10,9 +10,7 @@
 - [70%] Interfaces
 - [70%] Variables
 - [70%] Virtual variables
-- [ ] Methods
-  - [ ] Multi-methods
-  - [ ] Overriding (explain getters and setters as well)
+- [70%] Methods
 - [ ] Aliases
 - [ ] Lexical scopes
 - [ ] Default lexical scope

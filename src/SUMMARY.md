@@ -26,6 +26,7 @@
   - [Structural object](./types/structural-object.md)
   - [Union](./types/union.md)
   - [Object](./types/object.md)
+  - [This](./types/this.md)
 - [Packages](./packages.md)
 - [Namespaces](./namespaces.md)
 - [Classes](./classes.md)
@@ -33,3 +34,4 @@
 - [Interfaces](./interfaces.md)
 - [Variables](./variables.md)
 - [Virtual variables](./virtual-variables.md)
+- [Methods](./methods.md)
