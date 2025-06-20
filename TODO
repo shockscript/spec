@@ -18,7 +18,7 @@
 - [x] Conditional compilation
 - [x] Documentation comments
 - [x] Proxies
-- [ ] Lexical structure
+- [x] Lexical conventions
 - [ ] Expressions
   - [ ] String literal is applicable to enumerations
   - [ ] Null literal is applicable to flag enumerations
