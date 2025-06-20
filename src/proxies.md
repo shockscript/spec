@@ -89,3 +89,13 @@ shock_proxy function filter(testFn:function(T):Boolean):E {
     //
 }
 ```
+
+## shock_proxy::descendants()
+
+Overrides the behavior of the descendants operator (`..x`). The parameter is expected to be typed `String` or `QName`.
+
+```
+shock_proxy function descendants(name:QName):E {
+    //
+}
+```
