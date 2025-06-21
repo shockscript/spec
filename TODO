@@ -3,6 +3,7 @@
   - [ ] For enumerations, explicit conversion: from `String`
   - [ ] For enumerations, explicit conversion: from their numeric type (flag enumerations take identified bits only)
 - [ ] Property lookup
+  - [ ] `shock_env` qualifier causes DotEnv variable retrieval.
 - [70%] Packages
 - [70%] Namespaces
 - [70%] Classes
@@ -32,6 +33,8 @@
 - [ ] Definition constructs
   - [ ] Annotatable definitions beginning with `[` take the place of the array literal or non-parenthesized array destructuring assignment in the directive grammar, as they may begin with meta-data.
 - [ ] Global objects
+  - [ ] shock_proxy namespace
+  - [ ] shock_env namespace
   - [ ] trace()
   - [ ] assert()
   - [ ] assertEquals()
