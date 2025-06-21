@@ -54,7 +54,7 @@
   - [ ] Iterable.\<K, V> (interface) requires keys() and values()
   - [ ] Object
     - [ ] ReflectionProperties::constructor
-    - [ ] clone()
+    - [ ] clone() returns `this`
     - [ ] toString()
     - [ ] toLocaleString()
     - [ ] valueOf()
