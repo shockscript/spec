@@ -21,6 +21,10 @@
 - [x] Proxies
 - [x] Lexical conventions
 - [ ] Expressions
+  - [ ] `Embed()`
+    - [ ] URL behavior
+    - [ ] `static="application/text"`
+    - [ ] `static="application/octet-stream"`
   - [ ] Qualified identifier: when it solves to the `undefined` constant, it is applicable to flag enumerations
   - [ ] String literal is applicable to enumerations
   - [ ] Null literal is applicable to flag enumerations
