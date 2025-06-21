@@ -1,6 +1,5 @@
 - [70%] Types
 - [ ] Type conversions
-  - [ ] Flag enumerations, constant conversion: from `undefined` or `null`
   - [ ] For enumerations, explicit conversion: from `String`
   - [ ] For enumerations, explicit conversion: from their numeric type (flag enumerations take identified bits only)
 - [ ] Property lookup
@@ -21,6 +20,7 @@
 - [x] Proxies
 - [x] Lexical conventions
 - [ ] Expressions
+  - [ ] Qualified identifier: when it solves to the `undefined` constant, it is applicable to flag enumerations
   - [ ] String literal is applicable to enumerations
   - [ ] Null literal is applicable to flag enumerations
   - [ ] Array literal is applicable to flag enumerations
