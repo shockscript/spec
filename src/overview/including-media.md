@@ -1,4 +1,4 @@
-# Embed
+# Including media
 
 The `Embed()` expression may be used for embedding files and media into the program. Its default behavior is to return a `data:` or external URL.
 
@@ -8,9 +8,9 @@ Embed("thumb.webp")
 
 > **Note**: When returning an external URL, implementations such as Jet Engine use the `app://` scheme to fetch a file in the application's installation directory. Implementations targetting HTML5 may choose to preload these files in a virtual file system.
 
-## Static embedding
+## Including statically
 
-The user may embed files statically as either `application/text` (UTF-8 string) or `application/octet-stream` (`ByteArray`).
+The user may embed files statically as either `application/text` (`String`) or `application/octet-stream` (`ByteArray`), rather than obtaining a URL.
 
 ```
 Embed("data.txt", static="application/text")

@@ -2,6 +2,7 @@
 
 - [Overview](./overview.md)
   - [Iteration capabilities](./overview/iteration.md)
+  - [Including media](./overview/including-media.md)
   - [Event model](./overview/event-model.md)
   - [Relation](./overview/relation.md)
     - [ActionScript 3](./overview/relation/as3.md)
