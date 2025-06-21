@@ -8,7 +8,7 @@ Embed("thumb.webp")
 
 > **Note**: When returning an external URL, implementations such as Jet Engine use the `app://` scheme to fetch a file in the application's installation directory. Implementations targetting HTML5 may choose to preload these files in a virtual file system.
 
-<quoteblock>
+<blockquote>
 
 **Note**: Implementations may support an artifact path interpolation, as in:
 
@@ -18,7 +18,7 @@ Embed("{target}/auto.generated")
 
 That is useful when a build script is involved that generates files at the artifact path.
 
-</quoteblock>
+</blockquote>
 
 ## Including statically
 
