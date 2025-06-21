@@ -31,20 +31,6 @@ with (object.from.somewhere)
 | ------------------------- | ----------- |
 | \[\[*Object*]]            | Object used in the `with` statement. |
 
-### Filter scope
-
-The filter scope is created by the filter operator, causing the wildcard `*` expression to resolve to the test parameter.
-
-```
-objects.(*.x > 0)
-```
-
-#### Added internal properties
-
-| Name                      | Description |
-| ------------------------- | ----------- |
-| \[\[*Object*]]            | Base object of the filter operator. |
-
 ### Class scope
 
 #### Added internal properties
@@ -79,9 +65,12 @@ objects.(*.x > 0)
 
 ### Activation
 
+Method bodies create an activation as scope. The filter operator creates an activation specifying a \[\[*FilterBase*]] to create a wildcard **\*** binding.
+
 #### Added internal properties
 
 | Name                      | Description |
 | ------------------------- | ----------- |
 | \[\[*This*]]              | The `this` object. |
 | \[\[*Method*]]            | Method. |
+| \[\[*FilterBase*]]        | Base object of the filter operator. |
