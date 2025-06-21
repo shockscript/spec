@@ -121,10 +121,10 @@ class A extends EventTarget {}
 
 ## Embedding
 
-Embedding raw files is much easier in ShockScript. By default there is no preprocessing of such files, and they are included as either `String` (UTF-8 encoded) or `ByteArray` (octet stream) based on type inference (`ByteArray` being preferred).
+Embedding files is much easier in ShockScript. The following returns typically an `app://` URI for a file that will be automatically added to the application's installation directory.
 
 ```
-trace(Embed("data.bin"));
+trace(Embed("flower.webp"));
 ```
 
 <blockquote>
@@ -139,12 +139,9 @@ This is useful for when a build script generates a file at an artifact directory
 
 </blockquote>
 
-<blockquote>
-
-**Note**: Implementations may support customized settings. For instance, if it is desired to embed a file and get a URL that may be loaded later, an option such as `url="true"` may be provided:
+For static embedding, use the `static="mime type"` option.
 
 ```
-trace(Embed("pic.webp", url="true"));
+Embed("data.txt", static="application/text")
+Embed("data.bin", static="application/octet-stream")
 ```
-
-</blockquote>

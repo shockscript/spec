@@ -1,13 +1,18 @@
 # Embed
 
-The `Embed()` expression may be used for embedding static media into the program.
+The `Embed()` expression may be used for embedding files and media into the program. Its default behavior is to return an external URL.
 
 ```
-const text : String = Embed("data.txt");
+Embed("thumb.webp")
 ```
 
-> **Note**: In Flash Player, an `[Embed]` meta-data was used in definitions in order to embed static files; this is not the case with Jet engine.
+> **Note**: When returning an external URL, implementations such as Jet Engine use the `app://` scheme to fetch a file in the application's installation directory.
 
-## MIME type
+## Static embedding
 
-Through type inference, the `Embed()` expression results in either `String` (UTF-8 interpretation) or `ByteArray` (octet stream).
+The user may embed files statically as either `application/text` (UTF-8 string) or `application/octet-stream` (`ByteArray`).
+
+```
+Embed("data.txt", static="application/text")
+Embed("data.bin", static="application/octet-stream")
+```
