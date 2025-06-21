@@ -1,12 +1,12 @@
 # Embed
 
-The `Embed()` expression may be used for embedding files and media into the program. Its default behavior is to return an external URL.
+The `Embed()` expression may be used for embedding files and media into the program. Its default behavior is to return a `data:` or external URL.
 
 ```
 Embed("thumb.webp")
 ```
 
-> **Note**: When returning an external URL, implementations such as Jet Engine use the `app://` scheme to fetch a file in the application's installation directory.
+> **Note**: When returning an external URL, implementations such as Jet Engine use the `app://` scheme to fetch a file in the application's installation directory. Implementations targetting HTML5 may choose to preload these files in a virtual file system.
 
 ## Static embedding
 
