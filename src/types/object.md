@@ -7,7 +7,7 @@ All types but \{ `void`, `null`, `uint`, `int`, `float`, `Number`, `decimal`, `B
 **Note**: When it is necessary to obtain the constructor of an object, use:
 
 ```
-obj.ReflectionProperties::constructor
+obj.Reflect::constructor()
 ```
 
 </blockquote>
