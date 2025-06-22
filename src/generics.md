@@ -20,7 +20,7 @@ Type parameters may have at most one constraint, such as `extends`.
 ```
 function f.<T extends A>(o:T) {
 }
-function f.<T implements I>(o:T) {
+function f.<T implements Itrfc1 + Itrfc2>(o:T) {
 }
 function f.<E extends Event(A, type)>(type:E.name, value:E.type) {
 }
