@@ -8,6 +8,7 @@
     - [ActionScript 3](./overview/relation/as3.md)
     - [MXML](./overview/relation/mxml.md)
     - [React.js](./overview/relation/reactjs.md)
+    - [JavaScript](./overview/relation/javascript.md)
   - [Conditional compilation](./overview/conditional-compilation.md)
 - [Scope](./scope.md)
 - [Definitions](./definitions.md)
