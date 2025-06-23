@@ -39,7 +39,7 @@
 - [ ] Global objects
   - [ ] shock_proxy namespace
   - [ ] shock_env namespace
-  - [ ] Reflect namespace
+  - [ ] shock_reflect namespace
   - [ ] trace()
   - [ ] assert()
   - [ ] assertEquals()
@@ -58,7 +58,7 @@
   - [ ] Iterator.\<T> (interface)
   - [ ] Iterable.\<K, V> (interface) requires keys() and values()
   - [ ] Object
-    - [ ] Reflect::constructor()
+    - [ ] shock_reflect::constructor()
     - [ ] clone() returns `this`
     - [ ] toString()
     - [ ] toLocaleString()

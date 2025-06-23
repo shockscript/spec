@@ -31,7 +31,7 @@ The `Object` type is not dynamic per se, nor are there dynamic classes, nor are 
 
 **Matching**: The `str.match` resulting object is slightly different.
 
-**Obtaining constructor**: `o.Reflect::constructor()`
+**Obtaining constructor**: `o.shock_reflect::constructor()`
 
 ## Overriding methods
 
