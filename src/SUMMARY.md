@@ -2,7 +2,7 @@
 
 - [Overview](./overview.md)
   - [Iteration capabilities](./overview/iteration.md)
-  - [Including media](./overview/including-media.md)
+  - [Embedding resources](./overview/embedding-resources.md)
   - [Access control namespaces](./overview/access-control.md)
   - [Type matching](./overview/type-matching.md)
   - [Environment variables](./overview/env.md)
