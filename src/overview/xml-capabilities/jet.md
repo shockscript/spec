@@ -6,7 +6,7 @@ Native tags belong to the implicit `j` namespace, such as `j:Button`. The `j` na
 
 ## “data-” attributes
 
-`data-` attributes applied to native tags, such as `j:Button`, contribute `data-` attributes to the underlying HTML element.
+`data-` attributes applied to native tags, such as `j:Button`, contribute `data-` attributes to the underlying DOM element.
 
 ## Linking cascading style sheets
 
