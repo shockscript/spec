@@ -3,7 +3,7 @@
 ShockScript allows the user to define properties tied to a namespace, which is useful for version control and protection.
 
 ```
-package com.company.mrrunner {
+package com.company.runner {
     /** @private */
     public namespace runner_internals;
 
@@ -19,12 +19,28 @@ package com.company.mrrunner {
     }
 }
 
-package com.company.mrrunner.advanced {
-    import com.company.mrrunner.*;
+package com.company.runner.advanced {
+    import com.company.runner.*;
 
     //
     public function f(helper:Helper) {
         helper.runner_internals::cache.push(10);
     }
+}
+```
+
+Namespaces additionally apply to structural object types.
+
+```
+package com.company.products {
+    //
+    public namespace English;
+    public namespace Portuguese;
+
+    //
+    public type Product = {
+        English::name : String,
+        Portuguese::name : String,
+    };
 }
 ```
