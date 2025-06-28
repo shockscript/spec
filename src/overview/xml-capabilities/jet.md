@@ -17,11 +17,29 @@ const stylesheet = """
     :host { color: param(color) }
     """;
 
-<j:Button
-    s:link={stylesheet}
-    s:color={"yellow"}>
+<j:Button s:link={stylesheet} s:color={"yellow"}>
     <!-- content -->
 </j:Button>
+```
+
+If the style sheet is too large, it may be moved out of the ShockScript file using `Embed()`; for instance:
+
+```plain
+// CustomComponent.sx
+package me.diantha.components {
+    //
+    public function CustomComponent() {
+        const stylesheet = Embed("CustomComponent.css", static="application/text");
+
+        return (
+            <j:Button s:link={stylesheet} s:color={"yellow"}>Click me</j:Button>
+        );
+    }
+}
+/* CustomComponent.css */
+:host {
+    color: param(color);
+}
 ```
 
 ## Interpolating HTML
