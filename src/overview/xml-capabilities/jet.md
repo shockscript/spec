@@ -4,7 +4,7 @@
 
 Native tags belong to the implicit `j` namespace, such as `j:Button`. The `j` namespace is the `http://jet.net` URI, which, if overriden, may be aliased using a `namespace` definition, like `namespace jet = "http://jet.net";`
 
-## Data attributes
+## “data-” attributes
 
 `data-` attributes applied to native tags, such as `j:Button`, contribute `data-` attributes to the underlying HTML element.
 
@@ -14,7 +14,7 @@ Native tags belong to the implicit `j` namespace, such as `j:Button`. The `j` na
 
 ```
 const stylesheet = """
-    & { color: param(color) }
+    :host { color: param(color) }
     """;
 
 <j:Button
@@ -26,4 +26,4 @@ const stylesheet = """
 
 ## Interpolating HTML
 
-`<?html={exp}?>` is used for interpolating HTML, which translates to Jet Engine elements.
+`<?html={exp}?>` is used for interpolating HTML, which translates to Jet Markup Language.
