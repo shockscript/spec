@@ -1,9 +1,9 @@
 # Structural function
 
-Structural function types inherit from `Function`, taking the form `function(...) : E`.
+Structural function types inherit from `Function`, taking the form `function(...) : T`.
 
 ```
-function(T1, T2=, ...[T3]):E
+function(T1, T=, ...[T]):T
 ```
 
 A structural function type may specify:
