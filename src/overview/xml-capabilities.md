@@ -37,7 +37,7 @@ const xn = XML(<tag/>);
 
 - Native tags belong to the implicit `j` namespace, such as `j:Button`. The `j` namespace is the `http://jet.net` URI, which, if overriden, may be aliased using a `namespace` definition, like `namespace jet = "http://jet.net";`
 - `data-` attributes applied to native tags, such as `j:Button`, contribute `data-` attributes to the underlying HTML element.
-- `s:` attributes are used for linking a stylesheet (`s:link={fn}` where `fn : function(Map.<String, *>):String`) and passing properties to the stylesheet function (like `s:color={"red"}`), in native tags.
+- `s:` attributes are used for linking a style sheet (`s:link={source}` where `source:String`) and argumenting the stylesheet (like `s:color={"red"}`, which is referred by the style sheet as `param(color)`), in native tags.
 - `<?html={exp}?>` is used for interpolating HTML.
 
 ### Attributes
