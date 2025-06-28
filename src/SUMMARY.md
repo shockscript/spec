@@ -7,7 +7,7 @@
   - [Type matching](./overview/type-matching.md)
   - [Environment variables](./overview/env.md)
   - [XML capabilities](./overview/xml-capabilities.md)
-    - [Jet Engine features](./overview/jet.md)
+    - [Jet Engine features](./overview/xml-capabilities/jet.md)
   - [Meta-data](./overview/metadata.md)
   - [Generics](./overview/generics.md)
   - [Relation to other technologies](./overview/relation.md)
