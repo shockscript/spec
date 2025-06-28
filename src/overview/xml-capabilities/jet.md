@@ -17,7 +17,7 @@ const stylesheet = """
     :host { color: param(color) }
     """;
 
-<j:Button s:link={stylesheet} s:color={"yellow"}>
+<j:Button s:link={stylesheet} s:color="yellow">
     <!-- content -->
 </j:Button>
 ```
@@ -32,7 +32,7 @@ package me.diantha.components {
         const stylesheet = Embed("CustomComponent.css", static="application/text");
 
         return (
-            <j:Button s:link={stylesheet} s:color={"yellow"}>Click me</j:Button>
+            <j:Button s:link={stylesheet} s:color="yellow">Click me</j:Button>
         );
     }
 }
