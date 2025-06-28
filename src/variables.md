@@ -7,9 +7,9 @@ var x = 0
 const y = 10
 ```
 
-## Documentation comment
+## ShockDoc comment
 
-A documentation comment can be applied to a variable.
+A ShockDoc comment can be applied to a variable.
 
 ```
 /** Comment */
@@ -32,4 +32,14 @@ If the initializer of a variable is a constant, then the variable consists of a 
 
 ```
 var x = 0
+```
+
+## Local shadowing
+
+Re-declaring a variable is allowed inside activation blocks.
+
+```
+var m:* = complexCentral.manager;
+// more code...
+var m = Manager(m);
 ```

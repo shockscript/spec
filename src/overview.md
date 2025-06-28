@@ -12,6 +12,6 @@ ShockScript incorporates eXtensible Markup Language (XML) expressions suitable f
 
 ShockScript incorporates a basic event model and allows easily declaring event types and documenting them. Implementations may extend the event model for working with a Document Object Model.
 
-## Documentation comments
+## ShockDoc
 
 ShockScript supports documentation comments allowing for Markdown notation, special tags such as `@throws` and media inclusion.

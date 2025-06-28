@@ -19,9 +19,9 @@ A class owns three namespaces:
 
 `protected` and `static protected` are propagated to the block of subclasses.
 
-## Documentation comment
+## ShockDoc comment
 
-A class may be prefixed by a documentation comment.
+A class may be prefixed by a ShockDoc comment.
 
 ```
 /** Comment */
@@ -43,6 +43,19 @@ class C1 {}
 ```
 class A {}
 class B extends A {}
+```
+
+### Member shadowing
+
+Members from base classes **must not** be shadowed except for overriding methods.
+
+```
+class C1 {
+    function m() {}
+}
+class C2 extends C1 {
+    function m() {} // ERROR!
+}
 ```
 
 ### Default inheritance

@@ -21,9 +21,9 @@ class A {
 }
 ```
 
-## Documentation comment
+## ShockDoc comment
 
-A documentation comment can be applied to a method.
+A ShockDoc comment can be applied to a method.
 
 ```
 /** Comment */
@@ -86,7 +86,7 @@ If a method uses both `yield` and `await`, it is considered an iterator of `Prom
 
 ## Multi-methods
 
-A method may be defined more than once with varying signatures, being considered a *multi-method*.
+A method may be defined more than once with varying signatures, turning into a *multi-method*. Signatures must differ by the parameter list and not just the result type.
 
 ```
 function f():decimal {
@@ -107,7 +107,10 @@ override protected function m() {
 }
 ```
 
-A getter must override a getter, and a setter must override a setter.
+**Remarks**
+
+- A getter must override a getter, and a setter must override a setter.
+- For a multi method, the override shall match a specific signature.
 
 ### Overriding rules
 
@@ -117,3 +120,19 @@ A method S may override a method B with the following rules:
 - If B does not contain a rest parameter
   - S may include additional *optional* parameters and/or a *rest* parameter.
 - S must have the same result type of B, or a subtype of the B result type.
+
+## Bound methods
+
+Instance methods are *bound* such that retrieving a method from an instance will return a method tied to the instance.
+
+```
+class A {
+    function m():this {
+        return this;
+    }
+}
+const o = new A;
+const { m } = o
+trace(m == o.m); // true
+trace(o == m());
+```

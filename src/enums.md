@@ -219,8 +219,13 @@ Enumerations support customized methods:
 ```
 enum E {
     const A, B, C;
-    function isA() this == "a";
+    function get isA() this == "a";
 }
 ```
 
 Enumerations are prohibited from using variable definitions for purposes other than defining variants.
+
+## Default value
+
+- Regular enumerations produce a default value of `null`.
+- Flag enumerations produce a default value as an interned instance whose internal value is zero (**0**).

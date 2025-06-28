@@ -1,9 +1,16 @@
 - [70%] Types
-- [ ] Type conversions
-  - [ ] For enumerations, explicit conversion: from `String`
-  - [ ] For enumerations, explicit conversion: from their numeric type (flag enumerations take identified bits only)
-- [ ] Property lookup
-  - [ ] `shock_env` qualifier causes DotEnv variable retrieval.
+- [x] Conversions
+- [70%] Property lookup
+  - https://github.com/whackengine/sdk/blob/master/crates/mxmlsemantics/src/semantics/property_lookup.rs#L353
+  - [x] PropertyLookup: remind of `shock_proxy` stuff
+    - [x] `shock_proxy::get` allows for multiple signatures
+  - [ ] InScopeLookup: `shock_env` qualifier causes DotEnv variable retrieval.
+- [ ] Constants
+  - [ ] *EnumConstant* for both regular enumerations and flag enumerations
+- [ ] Reference values
+  - [ ] *DynamicReferenceValue*(*base*, *qual*, *key*.Value, *followedByCall*, *forceFixture*)
+  - [ ] *KeyValuePairReferenceValue*(*base*, *proxy method*, *qual*, *key*)
+  - [ ] Do not include XML reference values from Whack Engine
 - [70%] Packages
 - [70%] Namespaces
 - [70%] Classes
@@ -17,7 +24,7 @@
 - [x] Lexical scopes
 - [x] Default lexical scope
 - [x] Conditional compilation
-- [x] Documentation comments
+- [x] ShockDoc comments
 - [x] Proxies
 - [x] Lexical conventions
 - [ ] Expressions
@@ -25,14 +32,47 @@
     - [ ] URL behavior
     - [ ] `static="application/text"`
     - [ ] `static="application/octet-stream"`
-  - [ ] Qualified identifier: when it solves to the `undefined` constant, it is applicable to flag enumerations
-  - [ ] String literal is applicable to enumerations
-  - [ ] Null literal is applicable to flag enumerations
-  - [ ] Array literal is applicable to flag enumerations
-  - [ ] Object initializer is applicable to flag enumerations
+  - [ ] Qualified identifier
+  - [ ] Force fixture expression
+    - `<?fixed={}?>`
+  - [ ] String literal
+    - [ ] Is applicable to enumerations (also check for union)
+  - [ ] Null literal
+  - [ ] Array literal
+    - [ ] Is applicable to flag enumerations
+  - [ ] All literal `**`
+  - [ ] Object initializer
+    - [ ] Applicable to flag enumerations
+  - [ ] Parenthesized expression
+    - [ ] Does not propagate *followedByCall=true*
+    - [ ] Propagates *forceFixture=true* from given context
+  - [ ] Dot operator
+    - [ ] Propagates *forceFixture=true* from given context
+  - [ ] Brackets operator
+    - [ ] Propagates *forceFixture=true* from given context
+  - [ ] Descendants operator
+    - [ ] Takes a non-attribute qualified identifier.
+  - [ ] Call operator
+    - [ ] Watch for static `shock_proxy::call` when calling classes (supports multiple signatures too)
+    - [ ] `XML` and `XMLList` being called statically shall still pass themselves as the context type to the first call argument, even if they define `shock_proxy::call()`.
+  - [ ] Assignment expression
+    - [ ] When base is *KeyValuePairReferenceValue*, `shock_proxy::set()`
+    - [ ] When base is *AttributeReferenceValue*, `shock_proxy::setAttribute()`
+  - [ ] Delete operator
+    - [ ] `shock_proxy::delete()`
+    - [ ] `shock_proxy::deleteAttribute()`
+  - [ ] New operator
+    - [ ] Support a dynamically typed base (`*` or `Class`)
+    - [ ] Forbid instantiating `abstract` or `static` classes.
+    - [ ] Forbid instantiating enumerations.
 - [ ] Type expressions
+  - [ ] Structural object types
+    - [ ] Support field in namespaces
 - [ ] Statements
   - [ ] For `for each`: `Iterator` and `Iterable` are iterable
+  - [ ] `switch`
+    - [ ] No fallthroughs (demonstrate too).
+  - [ ] `switch type`
 - [ ] Directives
 - [ ] Definition constructs
   - [ ] Annotatable definitions beginning with `[` take the place of the array literal or non-parenthesized array destructuring assignment in the directive grammar, as they may begin with meta-data.
@@ -64,3 +104,31 @@
     - [ ] toString()
     - [ ] toLocaleString()
     - [ ] valueOf()
+  - [ ] Array
+    - [ ] shock_proxy::get() returns default value if out of bounds
+    - [ ] `clone()`
+  - [ ] Map
+    - [ ] shock_proxy::get() returns default value if key does not match
+    - [ ] `clone()`
+  - [ ] String
+    - [ ] `apply(vars:Map.<String, String>):String`
+      - Formats `{varName}` and `{"{"}` (allows whitespace between braces)
+  - [ ] RegExpMatches
+    - [ ] Implement indexing
+    - [ ] `substr : [String]`
+    - [ ] `clone()`
+  - [ ] XML
+    - [ ] Implement `Iterable`
+    - [ ] static `shock_proxy::call(arg:*):XML`
+    - [ ] `shock_proxy::has(name:QName):Boolean`
+    - [ ] `shock_proxy::get(index:int):XML`
+    - [ ] `shock_proxy::get(name:QName):XMLList`
+    - [ ] `shock_proxy::set(key:(int, QName), value:(XML, XMLList)):void`
+    - [ ] `shock_proxy::delete(arg:(int, QName)):Boolean`
+    - [ ] Attributes
+  - [ ] XMLList
+    - [ ] static `shock_proxy::call(arg:*):XMLList`
+  - [ ] ByteArray
+    - [ ] Indexing
+    - [ ] `shareable:Boolean`
+    - [ ] `clone()`

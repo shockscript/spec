@@ -49,9 +49,9 @@ trace( com.color.types.Color(0x10_00_00) );
 trace( Color(0x10_00_00) );
 ```
 
-## Documentation comment
+## ShockDoc comment
 
-A `package` definition may have a prefix documentation comment, allowing to document the package once.
+A `package` definition may have a prefix ShockDoc comment, allowing to document the package once.
 
 ```
 /**

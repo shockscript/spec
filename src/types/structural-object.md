@@ -14,6 +14,32 @@ type N2 = {
 };
 ```
 
+## Version control
+
+Fields of a structural object type may be tied to a namespace, which is useful for version control.
+
+```
+package com.business.product {
+    /**
+     * Flexible version control namespace.
+     */
+    public namespace Flexible = "http://business.com/product/flexible";
+
+    /**
+     * Judgement version control namespace.
+     */
+    public namespace Judgement = "http://business.com/product/judgement";
+
+    /**
+     * Pair.
+     */
+    public type Pair = {
+        Flexible::strength : [decimal],
+        Judgement::strength : [decimal],
+    };
+}
+```
+
 ## Field omission
 
 All fields are optional; however, if it is desired to default to `undefined`, a field such as `x?:T` is equivalent to `x:(void,T)`.

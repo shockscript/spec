@@ -27,9 +27,9 @@ The `default xml namespace =` E4X statement is not included in ShockScript due t
 
 ## Dynamic
 
-The `Object` type is not dynamic per se, nor are there dynamic classes, nor are there legacy ECMAScript `prototype` objects. Only the `*` type is dynamic.
+The `Object` type is not dynamic per se, nor does it contain `undefined`, nor are there dynamic classes, nor are there legacy ECMAScript `prototype` objects. Only the `*` type is dynamic and contains `undefined`.
 
-**Matching**: The `str.match` resulting object is slightly different.
+**Matching**: The `str.match` resulting object is slightly different, but still supports indexing.
 
 **Obtaining constructor**: `o.shock_reflect::constructor()`
 
@@ -144,4 +144,44 @@ For static embedding, use the `static="mime type"` option.
 ```
 Embed("data.txt", static="application/text")
 Embed("data.bin", static="application/octet-stream")
+```
+
+## Variable shadowing
+
+In ShockScript the following is valid in an activation:
+
+```
+var m:* = complexCentral.manager;
+// more code...
+var m = Manager(m);
+```
+
+## Switch fallthroughs
+
+The `switch` statement does not support fallthroughs, which helps preventing logical bugs by not requiring the `break` statement.
+
+```
+switch (v) {
+    case 0:
+        trace("zero");
+    case 1:
+        trace("one");
+    default:
+        trace("rest");
+}
+```
+
+## Switch type
+
+The `switch type` statement allows for simple type matching:
+
+```
+switch type (v) {
+    case (d : Date) {
+        //
+    }
+    default {
+        //
+    }
+}
 ```

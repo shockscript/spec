@@ -22,5 +22,5 @@ const fns = new Map.<String, Function>();
 fns.m = function() 10;
 
 // m()
-trace(fns.call("m"));
+trace((fns.m)());
 ```

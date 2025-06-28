@@ -13,6 +13,12 @@ shock_proxy static function call():T {}
 ## shock_proxy::get()
 
 > **Note**: Overriding the property accessor with a possibly `String` or `QName` key type (including base types `*` and `Object`) will override all names (like `.x`), except when calling a method (like `.m()`).
+>
+> If the user needs to access an instance variable in such a case it is recommended to use a force fixture access as in
+>
+> ```
+> <?fixed={object.q::n}?>
+> ```
 
 ```
 shock_proxy function get(key:K):V {

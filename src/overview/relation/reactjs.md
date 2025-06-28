@@ -5,8 +5,6 @@ ShockScript incorporates XML capabilities, and XML expressions allow for impleme
 The following demonstrates a basic XML expression for Jet Engine:
 
 ```
-import j = jet.**;
-
 <j:HGroup>
     <j:Button click&={trace("clicked!")}>button 1</j:Button>
 </j:HGroup>
@@ -53,4 +51,10 @@ Interpolation works similiarly to React.js, except for HTML.
     {plainText}
     <?html={someHTML}?>
 </j:VGroup>
+```
+
+Interpolating attributes uses `{ object }` and not `{ ...object }` and must appear at most once at the end of all attributes:
+
+```
+<j:Button {params}>click me</j:Button>
 ```

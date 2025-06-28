@@ -17,9 +17,9 @@ interface Ia extends I {}
 
 The `interface` block may only contain function definitions, including regular methods, getters and setters.
 
-## Documentation comment
+## ShockDoc comment
 
-An interface may be prefixed by a documentation comment.
+An interface may be prefixed by a ShockDoc comment.
 
 ```
 /** Comment */
@@ -34,6 +34,27 @@ An interface may have zero or more meta-data.
 [M1]
 [M2]
 interface I {}
+```
+
+## Inheritance
+
+An interface may extend other interfaces through the `extends` clause.
+
+```
+interface I3 extends I1, I2 {}
+```
+
+### Shadowing members
+
+Members from base interfaces **must not** be shadowed.
+
+```
+interface I1 {
+    function m() {}
+}
+interface I2 extends I1 {
+    function m() {} // ERROR!
+}
 ```
 
 ## Required methods
