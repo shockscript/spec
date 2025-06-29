@@ -53,6 +53,7 @@
   - [ ] Descendants operator
     - [ ] Takes a non-attribute qualified identifier.
   - [ ] Call operator
+    - [ ] Base is passed *followedByCall=true*
     - [ ] Watch for static `shock_proxy::call` when calling classes (supports multiple signatures too)
     - [ ] `XML` and `XMLList` being called statically shall still pass themselves as the context type to the first call argument, even if they define `shock_proxy::call()`.
   - [ ] Assignment expression
@@ -62,6 +63,7 @@
     - [ ] `shock_proxy::delete()`
     - [ ] `shock_proxy::deleteAttribute()`
   - [ ] New operator
+    - [ ] Base is passed *followedByCall=true*
     - [ ] Support a dynamically typed base (`*` or `Class`)
     - [ ] Forbid instantiating `abstract` or `static` classes.
     - [ ] Forbid instantiating enumerations.
