@@ -49,7 +49,6 @@ Interpolation works similiarly to React.js, except for HTML.
     {node}
     {nodeList}
     {plainText}
-    <?html={someHTML}?>
 </j:VGroup>
 ```
 

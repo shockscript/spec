@@ -45,7 +45,3 @@ package me.diantha.components {
     color: param(color);
 }
 ```
-
-## Interpolating HTML
-
-`<?html={exp}?>` is used for interpolating HTML, which translates to Jet Markup Language.

@@ -95,7 +95,6 @@ XML expressions do not produce `XML` or `XMLList` unless the inference type is o
 
 - `<t a/>` equals `<t a={true}/>`
 - `<t e&={}/>` equals `<t e={function(event){}}/>` or `<t e={function(){}}/>`
-- `<?html={exp}?>` alternative for tag content `{exp}`
 
 ```
 <j:VGroup>

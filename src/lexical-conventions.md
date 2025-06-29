@@ -31,7 +31,7 @@ The following table indicates which is the input goal symbol that is scanned for
 | &gt; | *InputElementXMLTag* |
 | ; | *InputElementDiv* |
 
-The *InputElementXMLPI* goal symbol must be used when parsing the `<?html={exp}?>` or `<?fixed={exp}?>` markups.
+The *InputElementXMLPI* goal symbol must be used when parsing the `<?fixed={exp}?>` markup.
 
 **Syntax**
 
@@ -64,6 +64,7 @@ The *InputElementXMLPI* goal symbol must be used when parsing the `<?html={exp}?
         <i>StringLiteral</i><br>
         <i>RegularExpressionLiteral</i><br>
         <i>XMLMarkup</i>
+        <b>&lt;?fixed=&#x7B;</b><br>
     </ul>
 </ul>
 
@@ -81,7 +82,6 @@ The *InputElementXMLPI* goal symbol must be used when parsing the `<?html={exp}?
 <ul>
     <i>InputElementXMLPI</i> ::
     <ul>
-        <b>&#x7B;</b><br>
         <b>?&gt;</b>
     </ul>
 </ul>
@@ -821,8 +821,6 @@ If a *XMLMarkup*, *XMLAttributeValue* or *XMLText* contains a *LineTerminator* a
         <i>XMLComment</i><br>
         <i>XMLCDATA</i><br>
         <i>XMLPI</i><br>
-        <b>&lt;?html=</b><br>
-        <b>&lt;?fixed=</b><br>
     </ul>
 </ul>
 
