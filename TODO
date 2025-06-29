@@ -110,6 +110,7 @@
     - [ ] shock_proxy::get() returns default value if out of bounds
     - [ ] `clone()`
   - [ ] Map
+    - [ ] `Map(weakKeys:Boolean = false)`
     - [ ] shock_proxy::get() returns default value if key does not match
     - [ ] `clone()`
   - [ ] Set
