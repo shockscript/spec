@@ -39,12 +39,12 @@ Copies ShockDoc comment from another definition. Use a `#x` component to refer t
 @deprecated [Description]
 ```
 
-### \@event
+### \@eventHandler
 
-Indicates that a structural object type's property is an event. The tag does nothing but move the item to the *Events* section of the documentation, similiar to the `Event` meta-data used in class definitions.
+Indicates that a structural object type's property is an event handler. The tag does nothing but move the item to the *Events* section of the documentation, similiar to how happens with the `Event` meta-data used in class definitions.
 
 ```plain
-@event
+@eventHandler
 ```
 
 > **Note**: This is 

@@ -117,7 +117,7 @@ Events are declared without defining related static constants, as ShockScript pe
 class A extends EventTarget {}
 ```
 
-> **Note**: The `@event` tag introduced in ShockScript is used for documenting events better in reactive systems that use structural object types rather than classes for component parameters.
+> **Note**: The `@eventHandler` tag introduced in ShockScript is used for documenting events better in reactive systems that use structural object types rather than classes for component parameters.
 
 ## Embedding
 
