@@ -14,6 +14,8 @@ type N2 = {
 };
 ```
 
+> **Note**: Structural object types do not match with types structurally. They are simply structures the user may express inline.
+
 ## Version control
 
 Fields of a structural object type may be tied to a namespace, which is useful for version control.

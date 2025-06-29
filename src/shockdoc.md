@@ -47,8 +47,6 @@ Indicates that a structural object type's property is an event handler. The tag 
 @eventHandler
 ```
 
-> **Note**: This is 
-
 ### \@inheritDoc
 
 Inherits documentation from base class or base class's item.
