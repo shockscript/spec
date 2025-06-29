@@ -22,3 +22,12 @@ var m:* = complexCentral.manager;
 // more code...
 var m = Manager(m);
 ```
+
+## “not” keyword
+
+`not` may be used to negate `in` or `is` operators:
+
+```
+e not in a
+v is not T
+```
