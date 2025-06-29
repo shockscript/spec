@@ -30,7 +30,7 @@
 - [ ] Expressions
   - [ ] `Embed()`
     - [ ] URL behavior
-    - [ ] `static="application/text"`
+    - [ ] `static="application/text"` or `static="text/plain"`
     - [ ] `static="application/octet-stream"`
   - [ ] Qualified identifier
   - [ ] Force fixture expression

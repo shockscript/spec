@@ -142,7 +142,7 @@ This is useful for when a build script generates a file at an artifact directory
 For static embedding, use the `static="mime type"` option.
 
 ```
-Embed("data.txt", static="application/text")
+Embed("data.txt", static="text/plain") // or "application/text"
 Embed("data.bin", static="application/octet-stream")
 ```
 
