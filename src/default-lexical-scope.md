@@ -8,7 +8,7 @@ The topmost scope imports the top-level package by wildcard. It is allowed to sh
 
 ## global
 
-The topmost scope defines a `global` property, which is a package wildcard import of the top-level package.
+The topmost scope defines a `global` property, which is an alias to a package wildcard import of the top-level package.
 
 ## Provided by Jet Engine
 
@@ -16,4 +16,4 @@ The following names are provided implicitly when targetting the Jet Engine.
 
 ### fuse
 
-The topmost scope defines a `fuse` property, which is a package recursive import of `com.jet.fuse.**`, used for the creating UI components using Fuse.
+The topmost scope defines a `fuse` property, which is an alias to a package recursive import of `com.jet.fuse.**`, used for the creating UI components using Fuse.
