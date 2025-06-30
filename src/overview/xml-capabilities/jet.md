@@ -19,20 +19,26 @@ The `key` attribute is reserved for uniquely identifying interpolated collection
 `s:` attributes are used for linking a style sheet (`s:link={source}` where `source:String`) and argumenting the stylesheet (like `s:color={"red"}`, which is referred by the style sheet as `param(color)`), in native tags.
 
 ```
-const stylesheet = """
-    :host { color: param(color) }
-    """;
+package me.matt.components {
+    //
+    public function CustomComponent() {
+        const stylesheet =
+            """
+            :host { color: param(color) }
+            """;
 
-<j:Button s:link={stylesheet} s:color="yellow">
-    <!-- content -->
-</j:Button>
+        return (
+            <j:Button s:link={stylesheet} s:color="yellow">click me</j:Button>
+        );
+    }
+}
 ```
 
 If the style sheet is too large, it may be moved out of the ShockScript file using `Embed()`; for instance:
 
 ```plain
 // CustomComponent.sx
-package me.diantha.components {
+package me.matt.components {
     //
     public function CustomComponent() {
         const stylesheet = Embed("CustomComponent.css", static="text/plain");
