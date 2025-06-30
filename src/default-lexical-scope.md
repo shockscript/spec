@@ -16,4 +16,4 @@ The following names are provided implicitly when targetting the Jet Engine.
 
 ### fuse
 
-The topmost scope defines a `fuse` property, which is an alias to a package recursive import of `com.jet.fuse.**`, used for the creating UI components using Fuse.
+The topmost scope defines a `fuse` property, which is an alias to a package recursive import of `fuse.**`, used for the creating UI components using Fuse.
