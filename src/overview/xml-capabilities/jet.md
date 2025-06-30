@@ -56,18 +56,20 @@ package me.matt.components {
 
 #### Linking style sheets in custom components
 
-For a component to support `s:` attributes, it simply needs to support a `stylesheet : [StyleSheetLinkage]` parameter.
+For a component to support `s:` attributes, it simply needs to support a `stylesheet : [fuse::StyleSheet]` parameter.
 
-- When a `s:link` attribute is given a `[StyleSheetLinkage]`, it will not consume the given `s:` parameters and will instead add the `StyleSheetLinkage` directly, in attribute order.
+- When a `s:link` attribute is given a `[fuse::StyleSheet]`, it will not consume the given `s:` parameters and will instead add the `fuse::StyleSheet`s directly, in attribute order.
 - The `s:link` attribute may appear multiple times.
 
 ```
 package me.matt.components {
+    import fuse = com.jet.fuse.**;
+
     //
     public function CustomComponent({
         stylesheet
     }: {
-        stylesheet : [StyleSheetLinkage],
+        stylesheet : [fuse::StyleSheet],
     }) {
         //
 
