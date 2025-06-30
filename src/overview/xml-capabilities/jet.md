@@ -58,7 +58,7 @@ package me.matt.components {
 
 For a component to support `s:` attributes, it simply needs to support a `stylesheet : [StyleSheetLinkage]` parameter.
 
-- When a `s:link` attribute is given a `StyleSheetLinkage`, it will not consume the given `s:` parameters and will instead add the `StyleSheetLinkage` directly, in attribute order.
+- When a `s:link` attribute is given a `[StyleSheetLinkage]`, it will not consume the given `s:` parameters and will instead add the `StyleSheetLinkage` directly, in attribute order.
 - The `s:link` attribute may appear multiple times.
 
 ```
