@@ -1,8 +1,10 @@
-# Jet Engine features
+# Jet Engine: XML features
+
+This section describes XML features specifically when applied to the Jet Engine UI.
 
 ## Native tags
 
-Native tags belong to the implicit `j` namespace, such as `j:Button`. The `j` namespace is the `http://jet.net` URI, which, if overriden, may be aliased using a `namespace` definition, like `namespace jet = "http://jet.net";`
+Native tags belong to the implicit `j` namespace, such as `j:Button`. The `j` namespace is not overridable.
 
 ## “data-” attributes
 
