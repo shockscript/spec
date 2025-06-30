@@ -12,7 +12,11 @@ The topmost scope defines a `global` property, which is an alias to a package wi
 
 ## Provided by Jet Engine
 
-The following names are provided implicitly when targetting the Jet Engine.
+The following names and imports are provided implicitly when targetting the Jet Engine.
+
+### jet.**
+
+The topmost scope imports `jet.**`, so that the Jet Engine APIs are made available globally.
 
 ### fuse
 
