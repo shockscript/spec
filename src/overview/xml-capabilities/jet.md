@@ -16,7 +16,7 @@ The `key` attribute is reserved for uniquely identifying interpolated collection
 
 ## Linking cascading style sheets
 
-`s:` attributes are used for linking a style sheet (`s:link={source}` where `source:String`) and argumenting the stylesheet (like `s:color={"red"}`, which is referred by the style sheet as `param(color)`), in native tags.
+`s:` attributes are used for linking style sheets (`s:link={source}`) and argumenting the stylesheet (like `s:color="red"`, which is referred by the style sheet as `param(color)`).
 
 ```
 package me.matt.components {
@@ -52,4 +52,36 @@ package me.matt.components {
 :host {
     color: param(color);
 }
+```
+
+#### Linking style sheets in custom components
+
+For a component to support `s:` attributes, it simply needs to support a `stylesheet : [StyleSheetLinkage]` parameter.
+
+- When a `s:link` attribute is given a `StyleSheetLinkage`, it will not consume the given `s:` parameters and will instead add the `StyleSheetLinkage` directly, in attribute order.
+- The `s:link` attribute may appear multiple times.
+
+```
+package me.matt.components {
+    //
+    public function CustomComponent({
+        stylesheet
+    }: {
+        stylesheet : [StyleSheetLinkage],
+    }) {
+        //
+
+        return (
+            <j:Button s:link={stylesheet}>Click me</j:Button>
+        );
+    }
+}
+```
+
+## Specifying inline styles
+
+Use `i:n={v}` attributes as a shortcut to `style={{ ..., n: v }}`.
+
+```
+<j:Button i:background="orange">button1</j:Button>
 ```
