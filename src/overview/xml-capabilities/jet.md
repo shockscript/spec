@@ -63,8 +63,6 @@ For a component to support `s:` attributes, it simply needs to support a `styles
 
 ```
 package me.matt.components {
-    import fuse = com.jet.fuse.**;
-
     //
     public function CustomComponent({
         stylesheet
