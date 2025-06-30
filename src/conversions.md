@@ -37,7 +37,7 @@ Implicit coercions occur implicitly both at compile-time and runtime, after tryi
 | From `*`                                  | |
 | To `*`                                    | |
 | Between numeric types                     | |
-| To covariant (includes base classes, implemented interfaces, unions and inherited structural object type) | |
+| To covariant (includes base classes, implemented interfaces, unions and inherited record type) | |
 | From `interface` to `Object`              | |
 | From union to compatible union            | |
 | From union member to union                | |
@@ -51,7 +51,7 @@ Explicit conversions occur when resolving `v as T` or `T(v)`, after trying an im
 | To contravariant (from `interface` to `interface` subtype, from `class` to subclass)  | |
 | To union member                           | |
 | From `*` or `Object` to `interface`       | |
-| To contravariant (subclass, subinterface or structural object subtype) | |
+| To contravariant (subclass, subinterface or record type subtype) | |
 | To another `[T]` type                     | An array filtering out incompatible elements. |
 | `String` to enumeration                   | Identification of an enumeration variant by its `String` name. |
 | Number to enumeration (using the same numeric type) | For regular enumerations, identifies a variant by its numeric value. For flag enumerations, identifies variant bits. |
@@ -63,4 +63,4 @@ Explicit conversions occur when resolving `v as T` or `T(v)`, after trying an im
 | To `int`                                  | |
 | To `uint`                                 | |
 | To `BigInt`                               | |
-| Structural object into equivalent structural object type of non-uniform field order | |
+| Record type into equivalent record type of non-uniform field order | |

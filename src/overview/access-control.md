@@ -29,7 +29,7 @@ package com.company.runner.advanced {
 }
 ```
 
-Namespaces additionally apply to structural object types.
+Namespaces additionally apply to record types.
 
 ```
 package com.company.products {

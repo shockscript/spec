@@ -68,8 +68,8 @@
     - [ ] Forbid instantiating `abstract` or `static` classes.
     - [ ] Forbid instantiating enumerations.
 - [ ] Type expressions
-  - [ ] Structural object types
-    - [ ] Support field in namespaces
+  - [ ] Record types
+    - [ ] Support field in namespaces `::`
 - [ ] Statements
   - [ ] For `for each`: `Iterator` and `Iterable` are iterable
   - [ ] `switch`

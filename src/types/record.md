@@ -1,6 +1,6 @@
-# Structural object
+# Record
 
-Structural object types, `{ ... }`, are simple property records, whose field order is sensitive. Those types are compiled into efficient structures.
+Record types `{ ... }` are simple property records, whose field order is sensitive. Those types are compiled into efficient structures.
 
 ```
 type N1 = { x : decimal, y : decimal };
@@ -14,11 +14,11 @@ type N2 = {
 };
 ```
 
-> **Note**: Structural object types do not match with types structurally. They are simply structures the user may express inline.
+> **Note**: Record types do not match with types structurally. They are simply structures the user may express inline.
 
 ## Version control
 
-Fields of a structural object type may be tied to a namespace, which is useful for version control.
+Fields of a record type may be tied to a namespace, which is useful for version control.
 
 ```
 package com.business.product {
@@ -48,15 +48,15 @@ All fields are optional; however, if it is desired to default to `undefined`, a 
 
 ## Field order
 
-Due to sensitive field order, structural object types with equivalent fields but in different orders will be incompatible.
+Due to sensitive field order, record types with equivalent fields but in different orders will be incompatible.
 
 ## Compatibility
 
-Two structural object types are compatible only if either a\) one is used as a subset of another or b\) fields are equivalent and appear in the same order.
+Two record types are compatible only if either a\) one is used as a subset of another or b\) fields are equivalent and appear in the same order.
 
 ## Rest
 
-`...rest` components may appear, where `rest` must be another structural object type; the resulting type may be a subtype of `rest` depending on whether properties do not collide and there is only one rest component.
+`...rest` components may appear, where `rest` must be another record type; the resulting type may be a subtype of `rest` depending on whether properties do not collide and there is only one rest component.
 
 ```
 // A

@@ -37,7 +37,7 @@
   - [Map](./types/map.md)
   - [Tuple](./types/tuple.md)
   - [Structural function](./types/structural-function.md)
-  - [Structural object](./types/structural-object.md)
+  - [Record](./types/record.md)
   - [Union](./types/union.md)
   - [Object](./types/object.md)
   - [This](./types/this.md)

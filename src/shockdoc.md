@@ -41,7 +41,7 @@ Copies ShockDoc comment from another definition. Use a `#x` component to refer t
 
 ### \@eventHandler
 
-Indicates that a structural object type's property is an event handler. The tag does nothing but move the item to the *Events* section of the documentation, similiar to how happens with the `Event` meta-data used in class definitions.
+Indicates that a record type's property is an event handler. The tag does nothing but move the item to the *Events* section of the documentation, similiar to how happens with the `Event` meta-data used in class definitions.
 
 ```plain
 @eventHandler
