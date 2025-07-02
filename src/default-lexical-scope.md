@@ -28,4 +28,4 @@ The topmost scope imports `jet.**`, so that the Jet Engine APIs are made availab
 
 ### fuse
 
-The topmost scope defines a `fuse` property, which is an alias to a package recursive import of `fuse.**`, used for the creating UI components using Fuse.
+The topmost scope defines a `fuse` property, which is an alias to a package recursive import of `jetx.fuse.**`, used for the creating UI components using Fuse.
