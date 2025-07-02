@@ -64,3 +64,4 @@ Explicit conversions occur when resolving `v as T` or `T(v)`, after trying an im
 | To `uint`                                 | |
 | To `BigInt`                               | |
 | Record type into equivalent record type of non-uniform field order | |
+| From type parameter                       | |
