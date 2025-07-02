@@ -17,6 +17,10 @@ interface Ia extends I {}
 
 The `interface` block may only contain function definitions, including regular methods, getters and setters.
 
+## Basemost type
+
+An `interface` is a subtype of `Object`, although compile-time property lookups do not inherit `Object` properties.
+
 ## ShockDoc comment
 
 An interface may be prefixed by a ShockDoc comment.
@@ -103,7 +107,3 @@ The interface, in convention when implementing `IEventTarget`, may define possib
  */
 interface I extends IEventTarget {}
 ```
-
-## Nullability
-
-A variable of an `interface` type may be assigned `null`.

@@ -41,9 +41,10 @@ Implicit coercions occur implicitly both at compile-time and runtime, after tryi
 | To `*`                                    | |
 | Between numeric types                     | |
 | To covariant (includes base classes, implemented interfaces, unions and inherited record type) | |
-| From `interface` to `Object`              | |
 | From union to compatible union            | |
 | From union member to union                | |
+
+> **Note**: `interface` types inherit `Object`.
 
 ## Explicit conversions
 
@@ -51,20 +52,21 @@ Explicit conversions occur when resolving `v as T` or `T(v)`, after trying an im
 
 | Kind                                      | Result                  |
 | ----------------------------------------- | ----------------------- |
-| To contravariant (from `interface` to `interface` subtype, from `class` to subclass)  | |
+| To contravariant (from `interface` to `interface` subtype, from `class` to subclass, or record type subtype)  | |
 | To union member                           | |
 | From `*` or `Object` to `interface`       | |
-| To contravariant (subclass, subinterface or record type subtype) | |
 | To another `[T]` type                     | An array filtering out incompatible elements. |
 | `String` to enumeration                   | Identification of an enumeration variant by its `String` name. |
 | Number to enumeration (using the same numeric type) | For regular enumerations, identifies a variant by its numeric value. For flag enumerations, identifies variant bits. |
-| To `String`                               | |
-| To `Boolean`                              | |
-| To `Number`                               | |
-| To `float`                                | |
-| To `decimal`                              | |
-| To `int`                                  | |
-| To `uint`                                 | |
-| To `BigInt`                               | |
+| To `String`                               | For `undefined`, returns `"undefined"`; for `null`, returns `"null"`; for other types, invokes `toString()`. |
+| To `Boolean`                              | Evaluates truthy value.  |
+| To `Number`                               | Forced conversion to double-precision floating point. |
+| To `float`                                | Forced conversion to single-precision floating point. |
+| To `decimal`                              | Forced conversion to quadruple-precision floating point (binary128). |
+| To `int`                                  | Forced conversion to 32-bit signed integer. |
+| To `uint`                                 | Forced conversion to 32-bit unsigned uninteger. |
+| To `BigInt`                               | Forced conversion to an arbitrary range integer. |
 | Record type into equivalent record type of non-uniform field order | |
 | From type parameter                       | |
+
+> **Note**: `interface` types inherit `Object`.
