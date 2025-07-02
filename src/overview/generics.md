@@ -15,38 +15,43 @@ function f.<T>():void {
 
 ## Parameter constraints
 
-Type parameters may have at most one constraint, such as `extends`.
+Type parameters may be attached multiple constraints.
 
 ```
-function f.<T extends A>(o:T) {
+[Where(T, subtypeOf="A")]
+function f.<T>(o:T) {
+    //
 }
-function f.<T implements Itrfc1 + Itrfc2>(o:T) {
+[Where(E, eventOf="A", match="type")]
+function f.<E>(type:E.name, value:E.type) {
+    //
 }
-function f.<E extends Event(A, type)>(type:E.name, value:E.type) {
-}
-function f.<E extends Event(A, object)>(value:E) {
+[Where(E, eventOf="A", match="object")]
+function f.<E>(value:E) {
+    //
 }
 ```
 
-### Event constraints
+### “eventOf” constraints
 
-`Event()` constraints allow inspecting available events as defined by the `Event` meta-data in classes and interfaces, including the inherited events and events from the implemented interfaces.
+`eventOf` constraints allow inspecting available events as defined by the `Event` meta-data in classes and interfaces, including the inherited events and events from the implemented interfaces.
 
-`Event()` constraints are allowed to take `this` as the base type, reflecting the current class's events:
+`eventOf` constraints are allowed to take `this` as the base type, reflecting the current class's events:
 
 ```
 package com.business.coreRT.events {
     //
     public class EventTarget {
         //
-        public function emit.<E extends Event(this, object)>(e:E):Boolean {
+        [Where(E, eventOf="this", match="object")]
+        public function emit.<E>(e:E):Boolean {
             //
         }
     }
 }
 ```
 
-- `Event(T, type)` yields the name-type pair of an event.
-- `Event(T, object)` ensures event creation is correct by analyzing the `new E(type, ...)` expression.
+- `match="type"` yields the name-type pair of an event.
+- `match="object"` ensures event creation is correct by analyzing the `new E(type, ...)` expression.
 
-> **Note**: The `Event(T, type)` constraint's `name` field yields the `String` type, but its purpose is for auto completion in integrated development environments.
+> **Note**: The `match="type"` constraint contributes a `name` field that yields the `String` type, but its purpose is for auto completion in integrated development environments.
