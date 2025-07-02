@@ -31,3 +31,10 @@ var m = Manager(m);
 e not in a
 v is not T
 ```
+
+## “this” binding
+
+The `this` binding is fixed and present only in instance methods.
+
+- Methods like `[object Function].apply()` do not take a `this` binding: only the parameters.
+- Instance methods are bound.
