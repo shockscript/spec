@@ -103,3 +103,7 @@ The interface, in convention when implementing `IEventTarget`, may define possib
  */
 interface I extends IEventTarget {}
 ```
+
+## Nullability
+
+A variable of an `interface` type may be assigned `null`.
