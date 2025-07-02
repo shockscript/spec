@@ -56,6 +56,8 @@
     - [ ] Base is passed *followedByCall=true*
     - [ ] Watch for static `shock_proxy::call` when calling classes (supports multiple signatures too)
     - [ ] `XML` and `XMLList` being called statically shall still pass themselves as the context type to the first call argument, even if they define `shock_proxy::call()`.
+  - [ ] `v as T` operator
+    - [ ] Passes context type `T` to `v`
   - [ ] Assignment expression
     - [ ] When base is *KeyValuePairReferenceValue*, `shock_proxy::set()`
     - [ ] When base is *AttributeReferenceValue*, `shock_proxy::setAttribute()`
