@@ -17,9 +17,12 @@ Constant coercions occur implicitly both at compile-time and runtime, converting
 | ----------------------------------------- | ------------------------ |
 | `undefined` to flag enumeration           | Interned instance whose value is zero (**0**). |
 | `null` to flag enumeration                | Interned instance whose value is zero (**0**). |
-| `undefined` to `T` containing `undefined` | `undefined` |
-| `undefined` to `T` containing `null` and no `undefined` | `null` |
-| `null` to `T` containing either `undefined` or `null`   | `null` |
+| `undefined` to `T` containing both `undefined` and `null` | `undefined` |
+| `undefined` to `T` containing `undefined` and no `null`   | `undefined` |
+| `undefined` to `T` containing `null` and no `undefined`   | `null` |
+| `null` to `T` containing `undefined` but not `null`       | `undefined` |
+| `null` to `T` containing `null` but not `undefined`       | `null` |
+| `null` to `T` containing both `undefined` or `null`       | `null` |
 | Numeric constant to `*` or `Object`  | Equivalent constant of the target type. |
 | String constant to `*` or `Object` or union containing `String` | Equivalent constant of the target type. |
 | Boolean constant to `*` or `Object` or union containing `Boolean` | Equivalent constant of the target type. |
