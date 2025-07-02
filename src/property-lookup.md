@@ -115,6 +115,14 @@
     - Call *prop*.Defer() (*if about to defer, implementation may report the cause as unresolved expression in a location*)
     - *r* = *prop*.Wrap()
   - Return r
+- If *base* is a *EventPairBoundType*(*base*) bound type
+  - If *localName* is undefined or (*qual* is specified)
+    - Return undefined.
+  - If *localName* = **name**
+    - Return *EventNameBoundType*(bound).Wrap()
+  - If *localName* = **type**
+    - Return *EventTypeBoundType*(previously introduced name bound).Wrap().
+  - Return undefined.
 - Return undefined.
 
 > **Note**: entity.Wrap() wraps entities into values. For instance, wrapping a variable into a property reference, where it belongs to a package, will produce a *PackageReferenceValue*.
