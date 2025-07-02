@@ -59,7 +59,7 @@ The `on()` method is roughly defined as follows:
 
 ```
 [Where(E, eventOf="this", match="type")]
-public function on.<E>(type:E.name, listener:function(E.type):void,) : void {
+public function on.<E>(type:E.name, listener:function(E.type):void) : void {
     //
 }
 ```
