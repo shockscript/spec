@@ -51,7 +51,7 @@ package com.business.coreRT.events {
 }
 ```
 
-- `match="type"` yields the name-type pair of an event.
+- `match="type"` yields the name-type pair of an event. The `.type` property of the pair relies on previous introduction of the respective `.name` somewhere.
 - `match="object"` ensures event creation is correct by analyzing the `new E(type, ...)` expression.
 
 > **Note**: The `match="type"` constraint contributes a `name` field that yields the `String` type, but its purpose is for auto completion in integrated development environments.
