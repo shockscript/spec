@@ -56,15 +56,11 @@ Two record types are compatible only if either a\) one is used as a subset of an
 
 ## Rest
 
-`...rest` components may appear, where `rest` must be another record type; the resulting type may be a subtype of `rest` depending on whether properties do not collide and there is only one rest component.
+One trailing `...rest` component may appear in a record, where `rest` must be another record type. The resulting type is a subtype of `rest` and properties **must not** collide.
 
 ```
 // A
 type A = { x:Number };
-// B
+// B < A
 type B = { y:Number, ...A };
-// U
-type U = { ...W, ...B };
-// W
-type W = { z:Number };
 ```
