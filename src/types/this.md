@@ -1,14 +1,14 @@
 # This
 
-The `this` type expression may be used to refer to the enclosing class. In subclasses, the `this` type expression will yield the subclass itself, not the original enclosing class.
+The `this` type expression may be used to match the `this` literal's type, which changes across subclasses.
 
 ```
 class A {
-    function m():this (this);
+    function chainable():this (this);
 }
 
 class B extends A {}
 
 const obj = new B();
-obj.m() // known as B
+obj.chainable() // known as B
 ```
