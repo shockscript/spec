@@ -131,6 +131,6 @@
 
 ## InScopeLookup()
 
-*InScopeLookup*(*scope*, *qual*, *key* as *LookupKey*, *followedByCall* as `Boolean`) takes the following steps in order:
+*InScopeLookup*(*scope*, *qual*, *key* as *LookupKey*, *followedByCall* as `Boolean`, *forceFixture* as `Boolean`) takes the following steps in order:
 
 > **Note**: Content lacking.
