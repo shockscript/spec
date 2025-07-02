@@ -39,12 +39,12 @@ Copies ShockDoc comment from another definition. Use a `#x` component to refer t
 @deprecated [Description]
 ```
 
-### \@eventHandler
+### \@eventparam
 
 Indicates that a record type's property is an event handler. The tag does nothing but move the item to the *Events* section of the documentation, similiar to how happens with the `Event` meta-data used in class definitions.
 
 ```plain
-@eventHandler
+@eventparam
 ```
 
 ### \@inheritDoc
