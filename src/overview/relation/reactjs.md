@@ -25,9 +25,9 @@ ShockScript allows for `<q:N>`, whose name resolution equals `q::N`. Dots may be
 For brevity, you do either:
 
 ```
-import bComps = com.business.components.**
+import bc = com.business.components.**
 
-<bComps:AppBar/>
+<bc:AppBar/>
 ```
 
 or:
