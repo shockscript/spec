@@ -55,7 +55,7 @@
   - Let *baseType* = static type of *base* or defer
   - If *baseType* is invalidation
     - Return invalidation
-  - If *baseType* is `(void, T)`
+  - If *baseType* is `(void, T)` or `(null, T)` or `(void, null, T)`
     - *baseType* = `T`
   - If (*followedByCall* == false and *forceFixture* == false) and *baseType* defines an instance method `shock_proxy::get` (possibly a multi method)
     - Let *foundRegularProperty* = false
