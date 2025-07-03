@@ -6,7 +6,7 @@ This section describes XML features specifically when applied as Jet Engine's Fu
 
 Native tags belong to the implicit `j` namespace, such as `j:Button`. The `j` namespace is not overridable.
 
-## Data attributes
+## DOM “data” attributes
 
 `data-` attributes applied to native tags, such as `j:Button`, contribute plain data attributes to the underlying DOM element.
 
