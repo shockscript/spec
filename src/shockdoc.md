@@ -33,6 +33,14 @@ Copies ShockDoc comment from another definition. Use a `#x` component to refer t
 @copy #x
 ```
 
+### \@default
+
+Default value as an uninterpreted expression.
+
+```
+@default exp
+```
+
 ### \@deprecated
 
 ```plain
