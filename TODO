@@ -113,11 +113,11 @@
     - [ ] toLocaleString()
     - [ ] valueOf()
   - [ ] Array
-    - [ ] shock_proxy::get() returns default value if out of bounds
+    - [ ] shock_proxy::get() throws if out of bounds
     - [ ] `clone()`
   - [ ] Map
     - [ ] `Map(weakKeys:Boolean = false)`
-    - [ ] shock_proxy::get() returns default value if key does not match
+    - [ ] shock_proxy::get() throws if key does not match
     - [ ] `clone()`
   - [ ] Set
     - [ ] `clone()`
@@ -132,7 +132,7 @@
     - [ ] Implement `Iterable`
     - [ ] static `shock_proxy::call(arg:*):XML`
     - [ ] `shock_proxy::has(name:QName):Boolean`
-    - [ ] `shock_proxy::get(index:int):XML`
+    - [ ] `shock_proxy::get(index:int):XML` (throws if out of bounds)
     - [ ] `shock_proxy::get(name:QName):XMLList`
     - [ ] `shock_proxy::set(key:(int, QName), value:(XML, XMLList)):void`
     - [ ] `shock_proxy::delete(arg:(int, QName)):Boolean`
