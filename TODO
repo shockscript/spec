@@ -74,6 +74,8 @@
 - [ ] Type expressions
   - [ ] Record types
     - [ ] Support field in namespaces `::`
+  - [ ] `?T` or `T?`
+  - [ ] `T!`
 - [ ] Statements
   - [ ] For `for each`: `Iterator` and `Iterable` are iterable
   - [ ] `switch`

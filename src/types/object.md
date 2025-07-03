@@ -1,6 +1,6 @@
 # Object
 
-All types but \{ `void`, `null`, `uint`, `int`, `float`, `Number`, `decimal`, `BigInt`, `Boolean` \} represent referenceable objects that may be `null`. The `Object` class is inherited by all types but \{ `*`, `void`, `null`, union \}.
+All types but \{ `void`, `null`, `uint`, `int`, `float`, `Number`, `decimal`, `BigInt`, `Boolean` \} represent referenceable objects, which are nullable by default. The `Object` class is inherited by all types but \{ `*`, `void`, `null`, union \}.
 
 <blockquote>
 

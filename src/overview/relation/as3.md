@@ -33,6 +33,10 @@ The `Object` type is not dynamic per se, nor does it contain `undefined`, nor ar
 
 **Obtaining constructor**: `o.shock_reflect::constructor()`
 
+## Nullability
+
+Types except `*` are non-nullable by default. Use `T?` or `?T` as a shorthand to `(null, T)`, and `T!` as a way to exclude `undefined` and/or `null`.
+
 ## Overriding methods
 
 - Instance methods may override another method and include additional optional parameters (including the rest parameter).

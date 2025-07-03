@@ -44,7 +44,7 @@ package com.business.product {
 
 ## Field omission
 
-All fields are optional; however, if it is desired to default to `undefined`, a field such as `x?:T` is equivalent to `x:(void,T)`.
+All fields are required unless they contain `undefined` or `null`. A field such as `x?:T` is equivalent to `x:(void, T)`.
 
 ## Field order
 
