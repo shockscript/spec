@@ -118,8 +118,12 @@
   - [ ] Map
     - [ ] `Map(weakKeys:Boolean = false)`
     - [ ] shock_proxy::get() throws if key does not match
+    - [ ] `length()`
+    - [ ] `clear()`
     - [ ] `clone()`
   - [ ] Set
+    - [ ] `length()`
+    - [ ] `clear()`
     - [ ] `clone()`
   - [ ] String
     - [ ] `apply(vars:Map.<String, String>):String`
