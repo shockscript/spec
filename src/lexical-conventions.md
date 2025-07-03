@@ -357,7 +357,6 @@ enum
 type
 
 Embed
-Event
 final
 
 native
