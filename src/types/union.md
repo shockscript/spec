@@ -17,7 +17,7 @@ The default value of an union type is determined as follows:
 
 1. If it contains `void`, then `undefined`.
 2. If it contains `null`, then `null`.
-3. Return the default value of the first member type.
+3. No default value.
 
 ## Nullability
 
