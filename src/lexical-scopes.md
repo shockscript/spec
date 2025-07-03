@@ -65,7 +65,7 @@ with (object.from.somewhere)
 
 ### Activation
 
-Method bodies create an activation as scope. The filter operator creates an activation specifying a \[\[*FilterBase*]] to create a wildcard **\*** binding.
+Method bodies create an activation as scope.
 
 #### Added internal properties
 
@@ -73,4 +73,3 @@ Method bodies create an activation as scope. The filter operator creates an acti
 | ------------------------- | ----------- |
 | \[\[*This*]]              | The `this` object. |
 | \[\[*Method*]]            | Method. |
-| \[\[*FilterBase*]]        | Base object of the filter operator. |
