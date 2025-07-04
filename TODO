@@ -107,7 +107,7 @@
     - [ ] `length():int`
     - [ ] `skip(count:int):void`
     - [ ] `shock_proxy::filter(...)`
-    - [ ] Other methods
+    - [ ] Other functional methods
   - [ ] Iterable.\<K, V> (interface) requires keys() and values()
   - [ ] Object
     - [ ] shock_reflect::constructor()
