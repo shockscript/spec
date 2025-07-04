@@ -1,10 +1,8 @@
 # MXML
 
-The MXML language, as part of the Apache Flex framework, is used for describing UI components in an intuitive way. ShockScript uses XML expressions similiar to what is known as ECMAScript for XML (E4X) which implementations may use similiarly to MXML.
+The MXML language, as part of the Apache Flex framework, was used for describing UI components in an intuitive way. ShockScript uses XML expressions semantically similiar to the React.js + JSX technologies, but designed to feel close to MXML in readability.
 
-Note however that the ShockScript approach is more related to the React.js framework which is often combined with the JSX language extension for TypeScript.
-
-The following demonstrates a basic UI component in Jet Engine:
+The following demonstrates a basic UI component implemented in Jet + Fuse:
 
 ```
 package com.business.components {
@@ -21,6 +19,6 @@ package com.business.components {
 
 ## Event handlers
 
-In MXML, event handlers were expressed as `e="statementList"`. In ShockScript, they are expressed as `e&={statementList}` (note the ampersand **\&**) as a shorthand to `e={function(event){statementList}}`.
+In MXML, event handlers were expressed as `e="statements"`. In ShockScript, they are expressed as `e&={statements}` (note the ampersand **\&**) as a shorthand to `e={function(event){statements}}`.
 
 > **Note**: Although not demanded as such, as opposed to React.js + DOM, event handlers are conventionally expressed without a `on` prefix, such as `click&={trace("clicked!")}` rather than React.js `onClick={e=>{console.log("clicked!")}}`. Event parameters are conventionally given the `@eventparam` tag in the ShockDoc comments. Classes continue using the `Event` meta-data, though without needing the `@eventType` tag.
