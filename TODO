@@ -128,6 +128,8 @@
   - [ ] String
     - [ ] `apply(vars:Map.<String, String>):String`
       - Formats `{varName}` and `{"{"}` (allows whitespace between braces)
+  - [ ] Chars
+    - [ ] Indexing (peeking using zero-based Unicode code point positions)
   - [ ] RegExpMatches
     - [ ] Implement indexing
     - [ ] `substr : [String]`
