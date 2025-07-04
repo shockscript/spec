@@ -18,6 +18,7 @@
     - [Java](./overview/relation/java.md)
   - [Event model](./overview/event-model.md)
   - [Conditional compilation](./overview/conditional-compilation.md)
+  - [Clonage](./overview/clonage.md)
 - [Scope](./scope.md)
 - [Definitions](./definitions.md)
 - [Notational conventions](./notational-conventions.md)

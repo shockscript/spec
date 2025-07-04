@@ -103,6 +103,7 @@
         - *prop* = *prop*.ResolveAlias()
         - Call *prop*.Defer() (*if about to defer, implementation may report the cause as unresolved expression in a location*)
         - Return *InstanceReferenceValue*(*base*, *prop*)
+    - *Lookup for the* `Object` *instance definitions*
   - Return undefined.
 - If *base* is a `package`
   - If *localName* is undefined or (*qual* is specified and *qual* is not a namespace nor a *NamespaceConstant*)
