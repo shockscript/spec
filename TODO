@@ -103,6 +103,11 @@
   - [ ] NaN
   - [ ] undefined
   - [ ] Iterator.\<T> (interface)
+    - [ ] required `next():{ done: Boolean, value?: T }`
+    - [ ] `length():int`
+    - [ ] `skip(count:int):void`
+    - [ ] `shock_proxy::filter(...)`
+    - [ ] Other methods
   - [ ] Iterable.\<K, V> (interface) requires keys() and values()
   - [ ] Object
     - [ ] shock_reflect::constructor()
@@ -128,7 +133,13 @@
     - [ ] `format(vars:Map.<String, String>):String`
       - Formats `{varName}` and `{"{"}` (allows whitespace between braces)
   - [ ] Chars
+    - [ ] `new Chars(str:String, offset:int = 0)`
     - [ ] Indexing (peeking using zero-based Unicode code point positions; returns U+00 if out of bounds)
+    - [ ] `seq(numCodePoints:int):String` (stops on end of stream)
+    - [ ] `peek():uint` (equivalent to `chars[0]`)
+    - [ ] `reachedEnd:Boolean`
+    - [ ] `hasRemaining:Boolean`
+    - [ ] `clone():Chars`
   - [ ] RegExpMatches
     - [ ] Implement indexing
     - [ ] `substr : [String]`
