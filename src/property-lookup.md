@@ -92,6 +92,8 @@
         - If *prop* is a namespace or *NamespaceConstant*
           - Return *NamespaceConstant*(*prop*) if *prop* is a namespace, or otherwise *prop* as is
         - Return *InstanceReferenceValue*(*base*, *prop*)
+    - For implemented interfaces of *baseType*
+      - *Lookup method (step required for optional methods)*
   - Else if *baseType* is an interface
     - For each descending *itrfc* in *baseType* hierarchy
       - Defer if *itrfc* is unresolved
