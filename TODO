@@ -83,8 +83,6 @@
   - [ ] `switch type`
 - [ ] Directives
 - [ ] Definition constructs
-  - [ ] Annotatable definitions beginning with `[` take the place of the array literal or non-parenthesized array destructuring assignment in the directive grammar, as they may begin with meta-data.
-  - [ ] Annotatable: configuration constant followed by meta-data shall have a line break in between, otherwise it is treated as qualified identifier followed by property operator.
 - [ ] Global objects
   - [ ] shock_proxy namespace
   - [ ] shock_env namespace
