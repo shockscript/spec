@@ -19,7 +19,7 @@
 - [70%] Variables
 - [70%] Virtual variables
 - [70%] Methods
-- [x] Aliases
+- [x] Aliasesclo
 - [x] Generics
 - [x] Lexical scopes
 - [x] Default lexical scope
@@ -112,7 +112,7 @@
   - [ ] Object
     - [ ] shock_reflect::constructor()
     - [ ] clone() returns `this`
-      - Default implementation clones most objects fine (records, tuples, arrays, maps and so on), but classes with a required constructor will require a custom clone() override.
+      - Default implementation clones most objects fine (records, tuples, arrays, maps and so on), but user class instances are by default not cloned (returned as they are).
     - [ ] toString()
     - [ ] toLocaleString()
     - [ ] valueOf()
