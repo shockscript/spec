@@ -86,7 +86,7 @@
 - [ ] Global objects
   - [ ] shock_proxy namespace
   - [ ] shock_env namespace
-  - [ ] shock_reflect namespace
+  - [ ] Reflect namespace
   - [ ] trace()
   - [ ] assert()
   - [ ] assertEquals()
@@ -110,9 +110,9 @@
     - [ ] Other functional methods
   - [ ] Iterable.\<K, V> (interface) requires keys() and values()
   - [ ] Object
-    - [ ] shock_reflect::constructor()
+    - [ ] Reflect::class()
     - [ ] clone() returns `this`
-      - Default implementation clones most objects fine (records, tuples, arrays, maps and so on), but user class instances are by default not cloned (returned as they are).
+      - Default implementation clones most objects fine (records, tuples, arrays, maps and so on), but classes with a required constructor will require a custom clone() override.
     - [ ] toString()
     - [ ] toLocaleString()
     - [ ] valueOf()

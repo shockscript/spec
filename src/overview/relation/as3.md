@@ -31,7 +31,7 @@ The `Object` type is not dynamic per se, nor does it contain `undefined`, nor ar
 
 **Matching**: The `str.match` resulting object is slightly different, but still supports indexing.
 
-**Obtaining constructor**: `o.shock_reflect::constructor()`
+**Obtaining constructor**: `o.Reflect::class()`
 
 ## Nullability
 
