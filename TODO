@@ -120,6 +120,8 @@
     - [ ] `shock_proxy::get(...)` throws if out of bounds
     - [ ] `shock_proxy::filter(...)`
     - [ ] `clone()`
+    - [ ] `shift(): (void, T)`
+    - [ ] `pop(): (void, T)`
     - [ ] `first : (void, T)`
     - [ ] `last : (void, T)`
   - [ ] Map
