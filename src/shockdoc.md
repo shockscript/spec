@@ -47,6 +47,13 @@ Default value as an uninterpreted expression.
 @deprecated [Description]
 ```
 
+### \@example
+
+```
+@example
+The following...
+```
+
 ### \@eventparam
 
 Indicates that a record type's property is an event handler. The tag does nothing but move the item to the *Events* section of the documentation, similiar to how happens with the `Event` meta-data used in class definitions.
