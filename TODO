@@ -117,15 +117,14 @@
     - [ ] toLocaleString()
     - [ ] valueOf()
   - [ ] Array
-    - [ ] shock_proxy::get() throws if out of bounds
+    - [ ] `shock_proxy::get(...)` throws if out of bounds
+    - [ ] `shock_proxy::filter(...)`
     - [ ] `clone()`
+    - [ ] `first : (void, T)`
+    - [ ] `last : (void, T)`
   - [ ] Map
     - [ ] `Map(weakKeys:Boolean = false)`
-    - [ ] shock_proxy::get() throws if key does not match
-    - [ ] `length()`
-    - [ ] `clear()`
-    - [ ] `clone()`
-  - [ ] Set
+    - [ ] `shock_proxy::get()` throws if key does not match
     - [ ] `length()`
     - [ ] `clear()`
     - [ ] `clone()`
