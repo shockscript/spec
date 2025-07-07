@@ -12,11 +12,11 @@ The topmost scope defines a `global` property, which is an alias to a package wi
 
 ## Intl
 
-The topmost scope defines a `Intl` property, which is an alias to `shockscript.intl.**`.
+The topmost scope defines a `Intl` property, which is an alias to `shock.intl.**`.
 
 ## Temporal
 
-The topmost scope defines a `Temporal` property, which is an alias to `shockscript.temporal.**`.
+The topmost scope defines a `Temporal` property, which is an alias to `shock.temporal.**`.
 
 ## Provided by Jet Engine
 
