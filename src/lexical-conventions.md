@@ -63,7 +63,7 @@ The *InputElementXMLPI* goal symbol must be used when parsing the `<?fixed={exp}
         <i>NumericLiteral</i><br>
         <i>StringLiteral</i><br>
         <i>RegularExpressionLiteral</i><br>
-        <i>XMLMarkup</i>
+        <i>XMLMarkup</i><br>
         <b>&lt;?fixed=&#x7B;</b><br>
     </ul>
 </ul>
