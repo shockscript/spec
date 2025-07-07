@@ -21,7 +21,7 @@ The `key` attribute is reserved for uniquely identifying interpolated collection
 `s:` attributes are used for linking style sheets (`s:link={source}`) and argumenting the stylesheet (like `s:color="red"`, which is referred by the style sheet as `param(color)`).
 
 ```
-package me.matt.components {
+package com.fun.components {
     //
     public function CustomComponent() {
         const stylesheet =
@@ -40,7 +40,7 @@ If the style sheet is too large, it may be moved out of the ShockScript file usi
 
 ```plain
 // CustomComponent.sx
-package me.matt.components {
+package com.fun.components {
     //
     public function CustomComponent() {
         const stylesheet = Embed("CustomComponent.css", static="text/plain");
@@ -64,7 +64,7 @@ For a component to support `s:` attributes, it simply needs to support a `styles
 - The `s:link` attribute may appear multiple times.
 
 ```
-package me.matt.components {
+package com.fun.components {
     //
     public function CustomComponent({
         stylesheet
