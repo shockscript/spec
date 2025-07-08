@@ -58,9 +58,9 @@ package com.fun.components {
 
 #### Linking style sheets in custom components
 
-For a component to support `s:` attributes, it simply needs to support a `stylesheet : [fuse::StyleSheet]` parameter.
+For a component to support `s:` attributes, it simply needs to support a `stylesheet : [Fuse::StyleSheet]` parameter.
 
-- When a `s:link` attribute is given a `[fuse::StyleSheet]`, it will not consume the given `s:` parameters and will instead add the `fuse::StyleSheet`s directly, in attribute order.
+- When a `s:link` attribute is given a `[Fuse::StyleSheet]`, it will not consume the given `s:` parameters and will instead add the `Fuse::StyleSheet`s directly, in attribute order.
 - The `s:link` attribute may appear multiple times.
 
 ```
@@ -69,7 +69,7 @@ package com.fun.components {
     public function CustomComponent({
         stylesheet
     }: {
-        stylesheet : [fuse::StyleSheet],
+        stylesheet : [Fuse::StyleSheet],
     }) {
         //
 

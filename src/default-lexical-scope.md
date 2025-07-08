@@ -22,10 +22,10 @@ The topmost scope defines a `Temporal` property, which is an alias to `shock.tem
 
 The following names and imports are provided implicitly when targetting the Jet Engine.
 
-### jet.**
+### jet.\*\*
 
 The topmost scope imports `jet.**`, so that the Jet Engine APIs are made available globally.
 
-### fuse
+### Fuse
 
-The topmost scope defines a `fuse` property, which is an alias to a package recursive import of `jetx.fuse.**`, used for the creating UI components using Fuse.
+The topmost scope defines a `Fuse` property, which is an alias to a package recursive import of `jetx.fuse.**`, used for the creating UI components using Fuse.
