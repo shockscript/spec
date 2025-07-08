@@ -18,7 +18,7 @@ The `key` attribute is reserved for uniquely identifying interpolated collection
 
 ## Linking cascading style sheets
 
-`s:` attributes are used for linking style sheets (`s:link={source}`) and argumenting the stylesheet (like `s:color="red"`, which is referred by the style sheet as `param(color)`).
+`stylesheet:` attributes are used for linking style sheets (`stylesheet:link={source}`) and argumenting the stylesheet (like `stylesheet:color="red"`, which is referred by the style sheet as `param(color)`).
 
 ```
 package com.fun.components {
@@ -30,7 +30,11 @@ package com.fun.components {
             """;
 
         return (
-            <j:Button s:link={stylesheet} s:color="yellow">click me</j:Button>
+            <j:Button
+                stylesheet:link={stylesheet}
+                stylesheet:color="yellow">
+                click me
+            </j:Button>
         );
     }
 }
@@ -46,7 +50,11 @@ package com.fun.components {
         const stylesheet = Embed("CustomComponent.css", static="text/plain");
 
         return (
-            <j:Button s:link={stylesheet} s:color="yellow">Click me</j:Button>
+            <j:Button
+                stylesheet:link={stylesheet}
+                stylesheet:color="yellow">
+                Click me
+            </j:Button>
         );
     }
 }
@@ -58,10 +66,10 @@ package com.fun.components {
 
 #### Linking style sheets in custom components
 
-For a component to support `s:` attributes, it simply needs to support a `stylesheet : [Fuse::StyleSheet]` parameter.
+For a component to support `stylesheet:` attributes, it simply needs to support a `stylesheet : [Fuse::StyleSheet]` parameter.
 
-- When a `s:link` attribute is given a `[Fuse::StyleSheet]`, it will not consume the given `s:` parameters and will instead add the `Fuse::StyleSheet`s directly, in attribute order.
-- The `s:link` attribute may appear multiple times.
+- When a `stylesheet:link` attribute is given a `[Fuse::StyleSheet]`, it will not consume the given `stylesheet:` parameters and will instead add the `Fuse::StyleSheet`s directly, in attribute order.
+- The `stylesheet:link` attribute may appear multiple times.
 
 ```
 package com.fun.components {
@@ -74,7 +82,7 @@ package com.fun.components {
         //
 
         return (
-            <j:Button s:link={stylesheet}>Click me</j:Button>
+            <j:Button stylesheet:link={stylesheet}>Click me</j:Button>
         );
     }
 }
@@ -82,8 +90,10 @@ package com.fun.components {
 
 ## Specifying inline styles
 
-Use `i:n={v}` attributes as a shortcut to `style={{ ..., n: v }}`.
+Use `style:n={v}` attributes as a shortcut to `style={{ ..., n: v }}`.
 
 ```
-<j:Button i:background="orange">button1</j:Button>
+<j:Button style:background="orange">button1</j:Button>
 ```
+
+Inline style values are converted to `String` automatically.
