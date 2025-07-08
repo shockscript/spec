@@ -18,21 +18,19 @@ The `key` attribute is reserved for uniquely identifying interpolated collection
 
 ## Linking cascading style sheets
 
-`stylesheet:` attributes are used for linking style sheets (`stylesheet:link={source}`) and argumenting the stylesheet (like `stylesheet:color="red"`, which is referred by the style sheet as `param(color)`).
+`<j:Style>` tags are used for linking style sheets to the parent tag and passing arguments to the style sheet (which are referred by the style sheet as `param(color)`).
 
 ```
 package com.fun.components {
     //
     public function CustomComponent() {
-        const stylesheet =
-            """
-            :host { color: param(color) }
-            """;
-
         return (
-            <j:Button
-                stylesheet:link={stylesheet}
-                stylesheet:color="yellow">
+            <j:Button>
+                <j:Style color="yellow">
+                    <![CDATA[
+                        :host { color: param(color) }
+                    ]]>
+                </j:Style>
                 click me
             </j:Button>
         );
@@ -50,9 +48,8 @@ package com.fun.components {
         const stylesheet = Embed("CustomComponent.css", static="text/plain");
 
         return (
-            <j:Button
-                stylesheet:link={stylesheet}
-                stylesheet:color="yellow">
+            <j:Button>
+                <j:Style source={stylesheet} color="yellow"/>
                 Click me
             </j:Button>
         );
@@ -66,10 +63,7 @@ package com.fun.components {
 
 #### Linking style sheets in custom components
 
-For a component to support `stylesheet:` attributes, it simply needs to support a `stylesheet : [Fuse::StyleSheet]` parameter.
-
-- When a `stylesheet:link` attribute is given a `[Fuse::StyleSheet]`, it will not consume the given `stylesheet:` parameters and will instead add the `Fuse::StyleSheet`s directly, in attribute order.
-- The `stylesheet:link` attribute may appear multiple times.
+For a component to support `<j:Style>` tags, it simply needs to support a `stylesheet : [Fuse::StyleSheet]` parameter.
 
 ```
 package com.fun.components {
@@ -82,7 +76,10 @@ package com.fun.components {
         //
 
         return (
-            <j:Button stylesheet:link={stylesheet}>Click me</j:Button>
+            <j:Button>
+                <j:Style source={stylesheet}/>
+                Click me
+            </j:Button>
         );
     }
 }
