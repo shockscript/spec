@@ -71,7 +71,7 @@ package com.fun.components {
     public function CustomComponent({
         stylesheet
     }: {
-        stylesheet : [Fuse::StyleSheet],
+        stylesheet? : [Fuse::StyleSheet],
     }) {
         //
 
