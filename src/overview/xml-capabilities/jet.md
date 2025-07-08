@@ -45,11 +45,11 @@ If the style sheet is too large, it may be moved out of the ShockScript file usi
 package com.fun.components {
     //
     public function CustomComponent() {
-        const stylesheet = Embed("CustomComponent.css", static="text/plain");
-
         return (
             <j:Button>
-                <j:Style source={stylesheet} color="yellow"/>
+                <j:Style
+                    source={Embed("CustomComponent.css", static="text/plain")}
+                    color="yellow"/>
                 Click me
             </j:Button>
         );
