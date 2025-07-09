@@ -60,7 +60,7 @@ Interpolating attributes uses `{ object }` and not `{ ...object }` and must appe
 
 ## Preventing outdated captures
 
-As in React.js, it is rarely possible to accidentally capture the outdated value of a state in nested functions. To prevent this, it is a common pratice to declare a store that reflects the state's current value, as the following component demonstrates.
+As in React.js, in Jet+Fuse it is rarely possible to accidentally capture the outdated value of a state in nested functions. To prevent this, it is a common pratice to declare a store that reflects the state's current value, as the following component demonstrates.
 
 ```
 package com.business.components {
