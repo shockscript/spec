@@ -93,9 +93,12 @@ package com.business.components {
 > ```
 > package com.business.components {
 >     public function HelloWorld() {
->         const [x, setX] = Fuse::useState.<decimal>(0);
+>         const [x, set_x] = Fuse::useState.<decimal>(0);
 >         return (
->             <j:Button click&={setX(x + 1)}>{x}</j:Button>
+>             <j:VGroup>
+>                 <j:Label>clicked {x} times</j:Label>
+>                 <j:Button click&={set_x(x + 1)}>click me</j:Button>
+>             </j:VGroup>
 >         );
 >     }
 > }
