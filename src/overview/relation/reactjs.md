@@ -58,48 +58,44 @@ Interpolating attributes uses `{ object }` and not `{ ...object }` and must appe
 <j:Button {params}>click me</j:Button>
 ```
 
-## Preventing outdated captures
+## States
 
-As in React.js, in Jet+Fuse it is rarely possible to accidentally capture the outdated value of a state in nested functions. To prevent this, it is a common pratice to declare a store that reflects the state's current value, as the following component demonstrates.
+Unlike React.js, in Jet+Fuse there is no risk of accessing an outdated state's value, due to how states are constructed.
 
 ```
 package com.business.components {
     public function HelloWorld() {
-        const [x, setX] = Fuse::useState.<decimal>(0);
-        const x$ = Fuse::useStore.<decimal>(0);
-
-        // reflect x
-        Fuse::useEffect(function() { x$.current = x }, [x]);
-
-        // a nested function that is stored somewhere...
-        function nested() {
-            trace(x);          // maybe outdated
-            trace(x$.current); // always current
-        }
-
-        // ...
+        [State]
+        var x:decimal = 0;
 
         return (
-            <j:Button>button 1</j:Button>
+            <j:VGroup>
+                <j:Label>clicked {x} times</j:Label>
+                <j:Button click&={x++}>click me</j:Button>
+            </j:VGroup>
         );
     }
 }
 ```
 
-> **Note**: This pratice does not apply to functions directly nested in the component, which directly appear in event handlers of resulting XML expressions; such functions will always read the latest state's value.
->
-> The following example uses an inline function, but an outer function also effectively works.
->
-> ```
-> package com.business.components {
->     public function HelloWorld() {
->         const [x, set_x] = Fuse::useState.<decimal>(0);
->         return (
->             <j:VGroup>
->                 <j:Label>clicked {x} times</j:Label>
->                 <j:Button click&={set_x(x + 1)}>click me</j:Button>
->             </j:VGroup>
->         );
->     }
-> }
-> ```
+## References
+
+In Jet+Fuse the concept of "refs" is more formally called *references*.
+
+```
+package com.business.components {
+    public function HelloWorld() {
+        [Reference]
+        var button:Button? = null;
+
+        // did mount
+        Fuse::useEffect(function() {
+            trace(button!);
+        }, []);
+
+        return (
+            <j:Button reference={button}>click me</j:Button>
+        );
+    }
+}
+```
