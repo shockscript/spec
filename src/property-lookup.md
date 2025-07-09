@@ -53,8 +53,9 @@
   - Return undefined
 - If *base* is a value
   - Let *baseType* = static type of *base* or defer
-  - If *baseType* is invalidation
-    - Return invalidation
+  - If *baseType* is invalid
+    - Return invalid
+  - *baseType* = *baseType*.ResolveAlias()
   - If (*followedByCall* == false and *forceFixture* == false) and *baseType* defines an instance method `shock_proxy::get` (possibly a multi method)
     - Let *foundRegularProperty* = false
     - For each `shock_proxy::get(k:K):V` method
