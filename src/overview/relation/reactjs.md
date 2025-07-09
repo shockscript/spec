@@ -57,3 +57,46 @@ Interpolating attributes uses `{ object }` and not `{ ...object }` and must appe
 ```
 <j:Button {params}>click me</j:Button>
 ```
+
+## Preventing outdated captures
+
+As in React.js, it is rarely possible to accidentally capture the outdated value of a state in nested functions. To prevent this, it is a common pratice to declare a store that reflects the state's current value, as the following component demonstrates.
+
+```
+package com.business.components {
+    public function HelloWorld() {
+        const [x, setX] = Fuse::useState.<decimal>(0);
+        const x$ = Fuse::useStore.<decimal>(0);
+
+        // reflect x
+        Fuse::useEffect(function() { x$.current = x }, [x]);
+
+        // a nested function that is stored somewhere...
+        function nested() {
+            trace(x);          // maybe outdated
+            trace(x$.current); // always current
+        }
+
+        // ...
+
+        return (
+            <j:Button>button 1</j:Button>
+        );
+    }
+}
+```
+
+> **Note**: This pratice does not apply to functions directly nested in the component, which directly appear in event handlers of resulting XML expressions; such functions will always read the latest state's value.
+>
+> The following example uses an inline function, but an outer function also effectively works.
+>
+> ```
+> package com.business.components {
+>     public function HelloWorld() {
+>         const [x, setX] = Fuse::useState.<decimal>(0);
+>         return (
+>             <j:Button click&={setX(x + 1)}>{x}</j:Button>
+>         );
+>     }
+> }
+> ```
