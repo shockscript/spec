@@ -28,8 +28,8 @@ Constant coercions occur implicitly both at compile-time and runtime, converting
 | Boolean constant to `*` or `Object` or union containing `Boolean` | Equivalent constant of the target type. |
 | Namespace constant to `*` or `Object` or union containing `Namespace` | Equivalent constant of the target type. |
 | Type constant to `*` or `Object` or union containing `Class` | Equivalent constant of the target type. |
-| Numeric constant to another numeric type | Numeric constant with value converted to target type. |
-| Numeric constant to union containing at least one numeric type | Numeric constant of the target type containing value converted to the containing numeric type, preferring the *same* numeric type or otherwise the first numeric type found. |
+| Numeric constant to another compatible numeric type | Numeric constant with value coerced to target type. |
+| Numeric constant to union containing at least one compatible numeric type | Numeric constant of the target type containing value coerced to the containing numeric type, preferring the *same* numeric type or otherwise the first numeric type found. |
 
 ## Implicit coercion
 
@@ -39,7 +39,7 @@ Implicit coercions occur implicitly both at compile-time and runtime, after tryi
 | ----------------------------------------- | ------------------------ |
 | From `*`                                  | |
 | To `*`                                    | |
-| Between numeric types                     | |
+| From numeric type to compatible numeric type | |
 | To covariant (includes base classes, implemented interfaces, unions and inherited record type) | |
 | From union to compatible union            | |
 | From union member to union                | |
