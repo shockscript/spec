@@ -78,6 +78,18 @@ package com.business.components {
 }
 ```
 
+Like React.js, there is no transitively detection of mutation methods; therefore, the following is preferred over an array `.push(v)`:
+
+```
+x = [...x, v];
+```
+
+As to Map objects:
+
+```
+m = { ...m, k: v };
+```
+
 ## References
 
 In Jet+Fuse the concept of "refs" is more formally called *references*.
