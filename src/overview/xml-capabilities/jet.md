@@ -38,7 +38,7 @@ package com.fun.components {
 }
 ```
 
-If the style sheet is too large, it may be moved out of the ShockScript file using `Embed()`; for instance:
+If the style sheet is too large, it may be moved out of the ShockScript file; for instance:
 
 ```plain
 // CustomComponent.sx
@@ -47,9 +47,7 @@ package com.fun.components {
     public function CustomComponent() {
         return (
             <j:Button>
-                <j:Style
-                    source={Embed("CustomComponent.css", static="text/plain")}
-                    color="yellow"/>
+                <j:Style source="CustomComponent.css" color="yellow"/>
                 Click me
             </j:Button>
         );
@@ -77,7 +75,7 @@ package com.fun.components {
 
         return (
             <j:Button>
-                <j:Style source={stylesheet}/>
+                <j:Style extend={stylesheet}/>
                 Click me
             </j:Button>
         );
