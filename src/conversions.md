@@ -43,6 +43,7 @@ Implicit coercions occur implicitly both at compile-time and runtime, after tryi
 | To covariant (includes base classes, implemented interfaces, unions and inherited record type) | |
 | From union to compatible union            | |
 | From union member to union                | |
+| From structural function type to another compatible function type | |
 
 > **Note**: `interface` types inherit `Object`.
 
