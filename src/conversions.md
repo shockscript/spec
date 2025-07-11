@@ -30,6 +30,12 @@ Constant coercions occur implicitly both at compile-time and runtime, converting
 | Type constant to `*` or `Object` or union containing `Class` | Equivalent constant of the target type. |
 | Numeric constant to another compatible numeric type | Numeric constant with value coerced to target type. |
 | Numeric constant to union containing at least one compatible numeric type | Numeric constant of the target type containing value coerced to the containing numeric type, preferring the *same* numeric type or otherwise the first numeric type found. |
+| `NaN` to `float`         | `NaN` |
+| `-Infinity` to `float`   | `-Infinity` |
+| `+Infinity` to `float`   | `+Infinity` |
+| `NaN` to `decimal`       | `NaN` |
+| `-Infinity` to `decimal` | `-Infinity` |
+| `+Infinity` to `decimal` | `+Infinity` |
 
 ## Implicit coercion
 
@@ -63,7 +69,7 @@ Explicit conversions occur when resolving `v as T` or `T(v)`, after trying an im
 | To `Boolean`                              | Evaluates truthy value.  |
 | To `Number`                               | Forced conversion to double-precision floating point. |
 | To `float`                                | Forced conversion to single-precision floating point. |
-| To `decimal`                              | Forced conversion to quadruple-precision floating point (binary128). |
+| To `decimal`                              | Forced conversion to Decimal128 floating point. |
 | To `int`                                  | Forced conversion to 32-bit signed integer. |
 | To `uint`                                 | Forced conversion to 32-bit unsigned uninteger. |
 | To `BigInt`                               | Forced conversion to an arbitrary range integer. |

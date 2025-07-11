@@ -1,3 +1,3 @@
 # decimal
 
-The `decimal` type represents an IEEE 754 quadruple-precision floating point (binary128).
+The `decimal` type represents a 128 bit IEEE 754 floating point (Decimal128).
