@@ -32,15 +32,23 @@ package com.company.runner.advanced {
 Namespaces additionally apply to record types.
 
 ```
-package com.company.products {
-    //
-    public namespace English;
-    public namespace Portuguese;
+package com.business.product {
+    /**
+     * Flexible version control namespace.
+     */
+    public namespace Flexible = "http://business.com/product/flexible";
 
-    //
-    public type Product = {
-        English::name : String,
-        Portuguese::name : String,
+    /**
+     * Judgement version control namespace.
+     */
+    public namespace Judgement = "http://business.com/product/judgement";
+
+    /**
+     * Pair.
+     */
+    public type Pair = {
+        Flexible::strength : [decimal],
+        Judgement::strength : [decimal],
     };
 }
 ```
