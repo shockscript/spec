@@ -33,9 +33,6 @@ Constant coercions occur implicitly both at compile-time and runtime, converting
 | `NaN` to `float`         | `NaN` |
 | `-Infinity` to `float`   | `-Infinity` |
 | `+Infinity` to `float`   | `+Infinity` |
-| `NaN` to `decimal`       | `NaN` |
-| `-Infinity` to `decimal` | `-Infinity` |
-| `+Infinity` to `decimal` | `+Infinity` |
 
 ## Implicit coercion
 
@@ -69,7 +66,7 @@ Explicit conversions occur when resolving `v as T` or `T(v)`, after trying an im
 | To `Boolean`                              | Evaluates truthy value.  |
 | To `Number`                               | Forced conversion to double-precision floating point. |
 | To `float`                                | Forced conversion to single-precision floating point. |
-| To `decimal`                              | Forced conversion to Decimal128 floating point. |
+| To `decimal`                              | Forced conversion to 128-bit decimal number. |
 | To `int`                                  | Forced conversion to 32-bit signed integer. |
 | To `uint`                                 | Forced conversion to 32-bit unsigned uninteger. |
 | To `BigInt`                               | Forced conversion to an arbitrary range integer. |
