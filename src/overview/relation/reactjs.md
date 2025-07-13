@@ -100,7 +100,7 @@ In Jet+Fuse the concept of "refs" is more formally called *references*.
 package com.business.components {
     public function HelloWorld() {
         [Reference]
-        var button:Button? = null;
+        var button:Button?;
 
         use effect [] {
             trace(button!);
