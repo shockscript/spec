@@ -22,3 +22,24 @@ package com.business.components {
 In MXML, event handlers were expressed as `e="statements"`. In ShockScript, they are expressed as `e&={statements}` (note the ampersand **\&**) as a shorthand to `e={function(event){statements}}`.
 
 > **Note**: Although not demanded as such, as opposed to React.js + DOM, event handlers are conventionally expressed without a `on` prefix, such as `click&={trace("clicked!")}` rather than React.js `onClick={e=>{console.log("clicked!")}}`. Event parameters are conventionally given the `@eventparam` tag in the ShockDoc comments. Classes continue using the `Event` meta-data, though without needing the `@eventType` tag.
+
+## Use effect
+
+The `use effect` statement may be used to detect state and parameter changes as well as the component mount and unmount phases.
+
+```
+use effect [] {
+    //
+}
+use effect [dep1, ...depN] {
+    //
+}
+use effect * {
+    //
+}
+use effect * {
+    cleanup {
+        //
+    }
+}
+```

@@ -359,8 +359,11 @@ type
 Embed
 final
 
+effect
 native
 static
+
+cleanup
 
 abstract
 override

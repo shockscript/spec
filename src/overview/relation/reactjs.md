@@ -102,14 +102,34 @@ package com.business.components {
         [Reference]
         var button:Button? = null;
 
-        // did mount
-        Fuse::useEffect(function() {
+        use effect [] {
             trace(button!);
-        }, []);
+        }
 
         return (
             <j:Button reference={button}>click me</j:Button>
         );
+    }
+}
+```
+
+## Effects
+
+The popular "use effect" hook is abbreviated as an `use effect` statement.
+
+```
+use effect [] {
+    //
+}
+use effect [dep1, ...depN] {
+    //
+}
+use effect * {
+    //
+}
+use effect * {
+    cleanup {
+        //
     }
 }
 ```
