@@ -43,3 +43,15 @@ use effect * {
     }
 }
 ```
+
+When the dependencies list is empty (`[]`), the `use effect` statement is equivalent to a component mount/unmount event, with the unmount phase handled through an inner `cleanup {}` statement.
+
+```
+use effect [] {
+    // did mount
+
+    cleanup {
+        // unmount
+    }
+}
+```
