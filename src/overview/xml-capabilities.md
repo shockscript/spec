@@ -56,6 +56,7 @@ If the event has no parameters, then the attribute above is equivalent to `event
     {node}
     {nodeList}
     {plainText}
+    {number}
 </j:VGroup>
 ```
 

@@ -49,6 +49,7 @@ Interpolation works similiarly to React.js, except for HTML.
     {node}
     {nodeList}
     {plainText}
+    {number}
 </j:VGroup>
 ```
 
