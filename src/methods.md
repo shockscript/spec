@@ -65,12 +65,12 @@ abstract class A {
 A method is a generator if the `yield` operator appears at least once in the method's body. A generator is a method that evaluates like an iterator, consumed in pauses of `yield` operators until it hits a `return` statement or the end of code.
 
 ```
-function g():Iterator.<decimal> {
+function g():Generator.<decimal> {
     yield 100.5;
 }
 ```
 
-If a method uses both `yield` and `await`, it is considered an iterator of `Promise`, therefore returning `Iterator.<Promise.<T>>`.
+If a method uses both `yield` and `await`, it is considered an iterator of `Promise`, therefore returning `Generator.<Promise.<T>>`.
 
 ## Asynchronous methods
 
@@ -82,7 +82,7 @@ function f() {
 }
 ```
 
-If a method uses both `yield` and `await`, it is considered an iterator of `Promise`, therefore returning `Iterator.<Promise.<T>>`.
+If a method uses both `yield` and `await`, it is considered an iterator of `Promise`, therefore returning `Generator.<Promise.<T>>`.
 
 ## Multi-methods
 

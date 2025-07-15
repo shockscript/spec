@@ -1,7 +1,6 @@
 # Summary
 
 - [Overview](./overview.md)
-  - [Iteration capabilities](./overview/iteration.md)
   - [Embedding resources](./overview/embedding-resources.md)
   - [Access control namespaces](./overview/access-control.md)
   - [Type matching](./overview/type-matching.md)
@@ -19,6 +18,7 @@
   - [Event model](./overview/event-model.md)
   - [Conditional compilation](./overview/conditional-compilation.md)
   - [Clonage](./overview/clonage.md)
+  - [Iteration capabilities](./overview/iteration.md)
 - [Scope](./scope.md)
 - [Definitions](./definitions.md)
 - [Notational conventions](./notational-conventions.md)

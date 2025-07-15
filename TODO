@@ -111,6 +111,7 @@
     - [ ] `shock_proxy::filter(...)`
     - [ ] Other functional methods
   - [ ] Iterable.\<K, V> (interface) requires keys() and values()
+  - [ ] Generator.\<T>
   - [ ] Object
     - [ ] Reflect::class()
     - [ ] clone() returns `this`
