@@ -2,7 +2,7 @@
 
 The MXML language, as part of the Apache Flex framework, was used for describing UI components in an intuitive way. ShockScript uses XML expressions semantically similiar to the React.js + JSX technologies, but designed to feel close to MXML in readability.
 
-The following demonstrates a basic UI component implemented in Jet + Fuse:
+The following demonstrates a basic UI component implemented in JET+FUSE:
 
 ```
 package com.business.components {

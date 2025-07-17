@@ -2,7 +2,7 @@
 
 ShockScript incorporates XML capabilities, and XML expressions allow for implementations to produce anything desired, similiar to JSX. There are certain differences to JSX or React.js.
 
-The following demonstrates a basic XML expression for Jet Engine:
+The following demonstrates a basic XML expression for JET™:
 
 ```
 <j:HGroup>
@@ -61,7 +61,7 @@ Interpolating attributes uses `{ object }` and not `{ ...object }` and must appe
 
 ## States
 
-Unlike React.js, in Jet+Fuse there is no risk of accessing an outdated state's value, due to how states are constructed.
+Unlike React.js, in JET+FUSE there is no risk of accessing an outdated state's value, due to how states are constructed.
 
 ```
 package com.business.components {
@@ -95,7 +95,7 @@ m = { ...m, k: v };
 
 ## References
 
-In Jet+Fuse the concept of "refs" is more formally called *references*.
+In JET+FUSE the concept of "refs" is more formally called *references*.
 
 ```
 package com.business.components {

@@ -10,7 +10,7 @@ Native tags belong to the implicit `j` namespace, such as `j:Button`. The `j` na
 
 `data-` attributes applied to native tags, such as `j:Button`, contribute plain data attributes to the underlying DOM element.
 
-Using a Fuse reference, the attribute would be accessed as `reference.current!.@["data-name"]`.
+Using a FUSE reference, the attribute would be accessed as `reference!.@["data-name"]`.
 
 ## “key” attribute
 

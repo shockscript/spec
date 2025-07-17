@@ -18,14 +18,14 @@ The topmost scope defines a `Intl` property, which is an alias to `shock.intl.**
 
 The topmost scope defines a `Temporal` property, which is an alias to `shock.temporal.**`.
 
-## Provided by Jet Engine
+## Provided by JET™
 
-The following names and imports are provided implicitly when targetting the Jet Engine.
+The following names and imports are provided implicitly when targetting JET™.
 
 ### jet.\*\*
 
-The topmost scope imports `jet.**`, so that the Jet Engine APIs are made available globally.
+The topmost scope imports `jet.**`, so that the JET™ APIs are made available globally.
 
 ### Fuse
 
-The topmost scope defines a `Fuse` property, which is an alias to a package recursive import of `jetx.fuse.**`, used for the creating UI components using Fuse.
+The topmost scope defines a `Fuse` property, which is an alias to a package recursive import of `jetx.fuse.**`, used for creating UI components using FUSE.
