@@ -1,6 +1,6 @@
-# Jet Engine: XML features
+# JET™: XML features
 
-This section describes XML features specifically when applied as Jet Engine's Fuse nodes.
+This section describes XML features specifically when applied as JET's FUSE nodes.
 
 ## Native tags
 
