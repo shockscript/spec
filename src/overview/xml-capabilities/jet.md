@@ -85,10 +85,10 @@ package com.fun.components {
 
 ## Specifying inline styles
 
-Use `style:n={v}` attributes as a shortcut to `style={{ ..., n: v }}`.
+Use `s:n={v}` attributes as a shortcut to `style={{ ..., n: v }}`.
 
 ```
-<j:Button style:background="orange">button1</j:Button>
+<j:Button s:background="orange">button1</j:Button>
 ```
 
 Inline style values are converted to `String` automatically.
