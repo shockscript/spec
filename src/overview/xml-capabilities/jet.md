@@ -1,4 +1,4 @@
-# JET™: XML features
+# Jet Engine: XML features
 
 This section describes XML features specifically when applied as JET's FUSE nodes.
 

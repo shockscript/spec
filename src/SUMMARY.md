@@ -4,7 +4,7 @@
   - [Embedding resources](./overview/embedding-resources.md)
   - [Access control namespaces](./overview/access-control.md)
   - [XML capabilities](./overview/xml-capabilities.md)
-    - [JET™: XML features](./overview/xml-capabilities/jet.md)
+    - [Jet Engine: XML features](./overview/xml-capabilities/jet.md)
   - [Meta-data](./overview/metadata.md)
   - [Generics](./overview/generics.md)
   - [Relation to other technologies](./overview/relation.md)
