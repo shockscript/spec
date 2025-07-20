@@ -12,12 +12,13 @@ package com.business.editor {
     public function SomeBar() {
         return (
             <j:VGroup gap={5}>
-                <!-- content -->
                 <j:Label>Hi, there.</j:Label>
             </j:VGroup>
         );
     }
+}
 
+package com.business.editor {
     //
     public function data(a:String):XML {
         return (
