@@ -13,9 +13,7 @@ package com.business.editor {
         return (
             <j:VGroup gap={5}>
                 <!-- content -->
-                <j:Label>
-                    Hi, <b>there</b>.
-                </j:Label>
+                <j:Label>Hi, there.</j:Label>
             </j:VGroup>
         );
     }
