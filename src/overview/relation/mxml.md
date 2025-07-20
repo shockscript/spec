@@ -6,7 +6,7 @@ The following demonstrates a basic UI component implemented in JET+FUSE:
 
 ```
 package com.business.components {
-    /** App bar */
+    //
     public function AppBar() {
         return (
             <j:HGroup>
