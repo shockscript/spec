@@ -65,6 +65,7 @@ Unlike React.js, in JET+FUSE there is no risk of accessing an outdated state's v
 
 ```
 package com.business.components {
+    //
     public function HelloWorld() {
         [State]
         var x:decimal = 0;
@@ -99,10 +100,12 @@ In JET+FUSE the concept of "refs" is more formally called *references*.
 
 ```
 package com.business.components {
+    //
     public function HelloWorld() {
         [Reference]
         var button:Button?;
 
+        //
         use effect [] {
             trace(button!);
         }
