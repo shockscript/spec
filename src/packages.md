@@ -107,3 +107,7 @@ For the following directive, the package recursive import is contributed to the 
 ```
 import com.business.quantum.**;
 ```
+
+## Source path
+
+- A package must contain exactly one definition item, and its name must match the source path.
