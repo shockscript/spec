@@ -6,7 +6,9 @@ ShockScript allows the user to define properties tied to a namespace, which is u
 package com.company.runner {
     /** @private */
     public namespace runner_internals;
+}
 
+package com.company.runner {
     //
     public class Helper {
         /** @private */
