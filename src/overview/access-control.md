@@ -37,12 +37,14 @@ package com.business.product {
      * Flexible version control namespace.
      */
     public namespace Flexible = "http://business.com/product/flexible";
-
+}
+package com.business.product {
     /**
      * Judgement version control namespace.
      */
     public namespace Judgement = "http://business.com/product/judgement";
-
+}
+package com.business.product {
     /**
      * Pair.
      */
