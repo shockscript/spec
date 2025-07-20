@@ -110,4 +110,5 @@ import com.business.quantum.**;
 
 ## Source path
 
-- A package must contain exactly one definition item, and its name must match the source path.
+- A package definition must contain exactly one definition item, and its name must match the source path.
+- A source file must consist of exactly one package definition.
