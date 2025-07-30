@@ -78,8 +78,6 @@
   - [ ] `T!`
 - [ ] Statements
   - [ ] For `for each`: `Iterator` and `Iterable` are iterable
-  - [ ] `use effect`
-    - [ ] `cleanup {}`
   - [ ] `switch`
     - [ ] No fallthroughs (demonstrate too).
   - [ ] `switch type`

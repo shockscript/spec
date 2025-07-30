@@ -106,9 +106,9 @@ package com.business.components {
         var button:Button?;
 
         //
-        use effect [] {
+        Fuse::useEffect(function() {
             trace(button!);
-        }
+        }, []);
 
         return (
             <j:Button reference={button}>click me</j:Button>
@@ -133,21 +133,17 @@ function ExampleComponent() {
 
 ## Effects
 
-The popular "use effect" hook is abbreviated as an `use effect` statement.
+The popular "useEffect" hook requires the second argument, preventing mistakes. For listening to any changes, use `"*"`.
 
 ```
-use effect [] {
+Fuse::useEffect(function() {
     //
-}
-use effect [dep1, ...depN] {
+    return function() {
+        // cleanup
+    };
+}, [dep1, ...depN]);
+
+Fuse::useEffect(function() {
     //
-}
-use effect * {
-    //
-}
-use effect * {
-    cleanup {
-        //
-    }
-}
+}, "*");
 ```

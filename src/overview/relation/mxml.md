@@ -23,35 +23,30 @@ In MXML, event handlers were expressed as `e="statements"`. In ShockScript, they
 
 > **Note**: Although not demanded as such, as opposed to React.js + DOM, event handlers are conventionally expressed without a `on` prefix, such as `click&={trace("clicked!")}` rather than React.js `onClick={e=>{console.log("clicked!")}}`. Event parameters are conventionally given the `@eventparam` tag in the ShockDoc comments. Classes continue using the `Event` meta-data, though without needing the `@eventType` tag.
 
-## Use effect
+## Effects
 
-The `use effect` statement may be used to detect state and parameter changes as well as the component mount and unmount phases.
+The `Fuse::useEffect` hook may be used to detect state, parameter or derived changes as well as the component mount and unmount phases.
 
 ```
-use effect [] {
-    //
-}
-use effect [dep1, ...depN] {
-    //
-}
-use effect * {
-    //
-}
-use effect * {
-    cleanup {
+Fuse::useEffect(function() {
+    // cleanup
+    return function() {
         //
-    }
-}
+    };
+}, [dep1, ...depN]);
+
+Fuse::useEffect(function() {
+    //
+}, "*");
 ```
 
-When the dependencies list is empty (`[]`), the `use effect` statement is equivalent to a component mount/unmount event, with the unmount phase handled through an inner `cleanup {}` statement.
+When the dependencies list is empty (`[]`), the hook is equivalent to a component mount/unmount event, with the unmount phase handled through the returned function.
 
 ```
-use effect [] {
+Fuse::useEffect(function() {
     // did mount
-
-    cleanup {
+    return function() {
         // unmount
-    }
-}
+    };
+}, []);
 ```
