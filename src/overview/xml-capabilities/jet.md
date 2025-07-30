@@ -1,6 +1,6 @@
 # Jet Engine: XML features
 
-This section describes XML features specifically when applied as JET's FUSE nodes.
+This section describes XML features specifically when applied as Jet+Fuse nodes.
 
 ## Native tags
 
@@ -8,9 +8,9 @@ Native tags belong to the implicit `j` namespace, such as `j:Button`. The `j` na
 
 ## DOM “data” attributes
 
-`data-` attributes applied to native tags, such as `j:Button`, contribute plain data attributes to the underlying DOM element.
+`data` attributes (like `data-x`) set over native tags, such as `j:Button`, contribute plain data attributes to the underlying DOM element.
 
-Using a FUSE reference, the attribute would be accessed as `reference!.@["data-name"]`.
+Using a Fuse reference, the attribute would be accessed as `reference!.@["data-name"]`.
 
 ## “key” attribute
 

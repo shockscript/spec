@@ -2,7 +2,6 @@
 
 - [Overview](./overview.md)
   - [Embedding resources](./overview/embedding-resources.md)
-  - [Access control namespaces](./overview/access-control.md)
   - [XML capabilities](./overview/xml-capabilities.md)
     - [Jet Engine: XML features](./overview/xml-capabilities/jet.md)
   - [Relation to other technologies](./overview/relation.md)
@@ -11,6 +10,7 @@
     - [ActionScript 3](./overview/relation/as3.md)
     - [JavaScript](./overview/relation/javascript.md)
     - [Java](./overview/relation/java.md)
+  - [Access control namespaces](./overview/access-control.md)
   - [Meta-data](./overview/metadata.md)
   - [Generics](./overview/generics.md)
   - [Event model](./overview/event-model.md)
