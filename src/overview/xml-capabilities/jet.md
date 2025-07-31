@@ -31,6 +31,7 @@ package com.fun.components {
                         :host { color: param(color) }
                     ]]>
                 </j:Style>
+
                 click me
             </j:Button>
         );
@@ -47,8 +48,10 @@ package com.fun.components {
     public function CustomComponent() {
         return (
             <j:Button>
-                <j:Style source="CustomComponent.css" color="yellow"/>
-                Click me
+                <j:Style
+                    source="CustomComponent.css"
+                    color="yellow"/>
+                click me
             </j:Button>
         );
     }
@@ -76,7 +79,8 @@ package com.fun.components {
         return (
             <j:Button>
                 <j:Style extend={stylesheet}/>
-                Click me
+
+                click me
             </j:Button>
         );
     }
