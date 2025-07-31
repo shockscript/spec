@@ -94,9 +94,9 @@ As to Map objects:
 m = { ...m, k: v };
 ```
 
-## References
+## Bindables
 
-In Jet+Fuse the concept of "refs" is more formally called *references*.
+In Jet+Fuse the concept of "refs" is called *bindables*.
 
 ```
 package com.business.components {
@@ -111,7 +111,7 @@ package com.business.components {
         }, []);
 
         return (
-            <j:Button reference={button}>click me</j:Button>
+            <j:Button bind={button}>click me</j:Button>
         );
     }
 }
