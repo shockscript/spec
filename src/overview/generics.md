@@ -18,15 +18,15 @@ function f.<T>():void {
 Type parameters may be attached multiple constraints.
 
 ```
-[Where(T, subtypeOf="A")]
+[Limit(T, subtypeOf="A")]
 function f.<T>(o:T) {
     //
 }
-[Where(E, eventOf="A", match="type")]
+[Limit(E, eventOf="A", match="type")]
 function f.<E>(type:E.name, value:E.type) {
     //
 }
-[Where(E, eventOf="A", match="object")]
+[Limit(E, eventOf="A", match="object")]
 function f.<E>(value:E) {
     //
 }
@@ -43,7 +43,7 @@ package com.business.coreRT.events {
     //
     public class EventTarget {
         //
-        [Where(E, eventOf="this", match="object")]
+        [Limit(E, eventOf="this", match="object")]
         public function emit.<E>(e:E):Boolean {
             //
         }

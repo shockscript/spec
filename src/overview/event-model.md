@@ -45,7 +45,7 @@ It is a rare case for the user to need to implement their own `EventTarget` clas
 The `emit()` method is defined as follows:
 
 ```
-[Where(E, eventOf="this", match="object")]
+[Limit(E, eventOf="this", match="object")]
 public function emit.<E>(e:E):Boolean {
     //
 }
@@ -58,7 +58,7 @@ When the `emit()` method is used, it will force a `new E(...)` expression to be 
 The `on()` method is roughly defined as follows:
 
 ```
-[Where(E, eventOf="this", match="type")]
+[Limit(E, eventOf="this", match="type")]
 public function on.<E>(type:E.name, listener:function(E.type):void) : void {
     //
 }
