@@ -82,7 +82,7 @@ package com.business.components {
 
 The state's initializer represents the state's initial value.
 
-Like React.js, there is no transitive detection of mutation methods; therefore, the following is preferred over an array `.push(v)`:
+Like React.js, there is no transitive detection of mutation methods; therefore, the following is necessary over an array `.push(v)`:
 
 ```
 x = [...x, v];
