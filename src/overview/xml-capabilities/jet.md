@@ -1,4 +1,4 @@
-# Jet Engine: XML features
+# Jet XML capabilities
 
 This section describes XML features specifically when applied as Jet+Spot nodes.
 

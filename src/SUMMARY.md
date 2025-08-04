@@ -3,7 +3,7 @@
 - [Overview](./overview.md)
   - [Embedding resources](./overview/embedding-resources.md)
   - [XML capabilities](./overview/xml-capabilities.md)
-    - [Jet Engine: XML features](./overview/xml-capabilities/jet.md)
+    - [Jet XML capabilities](./overview/xml-capabilities/jet.md)
   - [Relation to other technologies](./overview/relation.md)
     - [MXML](./overview/relation/mxml.md)
     - [React.js](./overview/relation/reactjs.md)
