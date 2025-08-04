@@ -1,6 +1,6 @@
 # Jet Engine: XML features
 
-This section describes XML features specifically when applied as Jet+Fuse nodes.
+This section describes XML features specifically when applied as Jet+Spot nodes.
 
 ## Native tags
 
@@ -10,7 +10,7 @@ Native tags belong to the implicit `j` namespace, such as `j:Button`. The `j` na
 
 `data` attributes (like `data-x`) set over native tags, such as `j:Button`, contribute plain data attributes to the underlying DOM element.
 
-Using a Fuse reference, the attribute would be accessed as `reference!.@["data-name"]`.
+Using a Spot reference, the attribute would be accessed as `reference!.@["data-name"]`.
 
 ## “key” attribute
 
@@ -64,7 +64,7 @@ package com.fun.components {
 
 #### Linking style sheets in custom components
 
-For a component to support `<j:Style>` tags, it simply needs to support a `stylesheet : [Fuse::StyleSheet]` parameter.
+For a component to support `<j:Style>` tags, it simply needs to support a `stylesheet : [Spot::StyleSheet]` parameter.
 
 ```
 package com.fun.components {
@@ -72,7 +72,7 @@ package com.fun.components {
     public function CustomComponent({
         stylesheet
     }: {
-        stylesheet? : [Fuse::StyleSheet],
+        stylesheet? : [Spot::StyleSheet],
     }) {
         //
 

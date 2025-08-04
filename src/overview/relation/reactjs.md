@@ -61,7 +61,7 @@ Interpolating attributes uses `{ object }` and not `{ ...object }` and must appe
 
 ## States
 
-Unlike React.js, in Jet+Fuse there is no risk of accessing an outdated state's value, due to how states are constructed.
+Unlike React.js, in Jet+Spot there is no risk of accessing an outdated state's value, due to how states are constructed.
 
 ```
 package com.business.components {
@@ -96,7 +96,7 @@ m = { ...m, k: v };
 
 ## References
 
-In Jet+Fuse the concept of "refs" is more formally called *references*.
+In Jet+Spot the concept of "refs" is more formally called *references*.
 
 ```
 package com.business.components {
@@ -106,7 +106,7 @@ package com.business.components {
         var button:Button?;
 
         //
-        Fuse::useEffect(function() {
+        Spot::useEffect(function() {
             trace(button!);
         }, []);
 
@@ -118,6 +118,8 @@ package com.business.components {
 ```
 
 ## Contexts
+
+Context usage is represented as `Spot::ContextReflection.<T>` objects, although they are used as natural `Context`-annotated locals.
 
 ```
 function ExampleComponent() {
@@ -136,14 +138,14 @@ function ExampleComponent() {
 The popular "useEffect" hook requires the second argument, preventing mistakes. For listening to any changes, use `"*"`.
 
 ```
-Fuse::useEffect(function() {
+Spot::useEffect(function() {
     //
     return function() {
         // cleanup
     };
 }, [dep1, ...depN]);
 
-Fuse::useEffect(function() {
+Spot::useEffect(function() {
     //
 }, "*");
 ```

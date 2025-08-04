@@ -2,7 +2,7 @@
 
 The MXML language, as part of the Apache Flex framework, was used for describing UI components in an intuitive way. ShockScript uses XML expressions semantically similiar to the React.js + JSX technologies, but designed to feel close to MXML in readability.
 
-The following demonstrates a basic UI component implemented in Jet+Fuse:
+The following demonstrates a basic UI component implemented in Jet+Spot:
 
 ```
 package com.business.components {
@@ -25,17 +25,17 @@ In MXML, event handlers were expressed as `e="statements"`. In ShockScript, they
 
 ## Effects
 
-The `Fuse::useEffect` hook may be used to detect state, parameter or derived changes as well as the component mount and unmount phases.
+The `Spot::useEffect` hook may be used to detect state, parameter or derived changes as well as the component mount and unmount phases.
 
 ```
-Fuse::useEffect(function() {
+Spot::useEffect(function() {
     // cleanup
     return function() {
         //
     };
 }, [dep1, ...depN]);
 
-Fuse::useEffect(function() {
+Spot::useEffect(function() {
     //
 }, "*");
 ```
@@ -43,7 +43,7 @@ Fuse::useEffect(function() {
 When the dependencies list is empty (`[]`), the hook is equivalent to a component mount/unmount event, with the unmount phase handled through the returned function.
 
 ```
-Fuse::useEffect(function() {
+Spot::useEffect(function() {
     // did mount
     return function() {
         // unmount

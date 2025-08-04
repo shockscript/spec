@@ -26,6 +26,6 @@ The following names and imports are provided implicitly when targetting Jet™.
 
 The topmost scope imports `jet.**`, so that the Jet™ APIs are made available globally.
 
-### Fuse
+### Spot
 
-The topmost scope defines a `Fuse` property, which is an alias to a package recursive import of `jetx.fuse.**`, used for creating UI components using Jet+Fuse.
+The topmost scope defines a `Spot` property, which is an alias to a package recursive import of `jetx.spot.**`, used for creating UI components using Jet+Spot.
