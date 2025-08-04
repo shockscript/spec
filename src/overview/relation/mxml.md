@@ -66,6 +66,12 @@ var counter:uint = 0;
 
 The initial value of `counter` is zero, although that initializer is only assigned to the state the first time the component renders.
 
+Note that, like with React.js, arrays and structures as states will not trigger a re-render on operations like `.push()`; instead the programmer needs to reconstruct the array or structure, like in:
+
+```
+list = [...list, v];
+```
+
 ## References
 
 In the top-level of a component, declare references by using the `Reference` meta-data. References have certain use-cases, such as persisting a value across renders, and extracting class-based components from certain tags (in which case the `bind` attribute is used).
