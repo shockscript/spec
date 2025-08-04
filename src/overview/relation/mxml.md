@@ -23,6 +23,10 @@ In MXML, event handlers were expressed as `e="statements"`. In ShockScript, they
 
 > **Note**: Although not demanded as such, as opposed to React.js + DOM, event handlers are conventionally expressed without a `on` prefix, such as `click&={trace("clicked!")}` rather than React.js `onClick={e=>{console.log("clicked!")}}`. Event parameters are conventionally given the `@eventparam` tag in the ShockDoc comments. Classes continue using the `Event` meta-data, though without needing the `@eventType` tag.
 
+## Rendering components
+
+The Jet Engine's Spot feature allows programmers to implement UI components as functions that wrap around the built-in class-based components of Jet Engine. The component is rendered by evaluating the function initially and whenever a state changes.
+
 ## Effects
 
 The `Spot::useEffect` hook may be used to detect state, parameter or derived changes as well as the component mount and unmount phases.
@@ -50,3 +54,40 @@ Spot::useEffect(function() {
     };
 }, []);
 ```
+
+## States
+
+In the top-level of a component, declare states using the `State` meta-data:
+
+```
+[State]
+var counter:uint = 0;
+```
+
+The initial value of `counter` is zero, although that initializer is only assigned to the state the first time the component renders.
+
+## References
+
+In the top-level of a component, declare references by using the `Reference` meta-data. References have certain use-cases, such as persisting a value across renders, and extracting class-based components from certain tags (in which case the `bind` attribute is used).
+
+```
+[Reference]
+var button:Button? = null;
+
+return (
+    <j:Button bind={button}>click me</j:Button>
+);
+```
+
+## Contexts
+
+In the top-level of a component, reflect inherited contexts by using the `Context` meta-data.
+
+```
+[Context(ThemeContext)]
+var theme:Theme;
+```
+
+## Capture safety
+
+Unlike in React.js combined with TypeScript, states, references and context reflections are captured by reference from nested functions, guaranteeing the "outdated" value of, say, a state, is never captured, which facilitates development by requiring no additional reference declaration.
