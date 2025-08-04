@@ -91,3 +91,21 @@ var theme:Theme;
 ## Capture safety
 
 Unlike in React.js combined with TypeScript, states, references and context reflections are captured by reference from nested functions, guaranteeing the "outdated" value of, say, a state, is never captured, which facilitates development by requiring no additional reference declaration.
+
+## Styling
+
+Unlike with React.js, there is built-in support for linking style sheets in a Spot component.
+
+```
+<j:Container>
+    <j:Style>
+        <![CDATA[
+            :host {
+                background: red;
+            }
+        ]]>
+    </j:Style>
+</j:Container>
+```
+
+[More on style sheets](../xml-capabilities/jet.md#linking-cascading-style-sheets)
