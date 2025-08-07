@@ -1,10 +1,14 @@
 - [70%] Types
 - [x] Conversions
+- [ ] Describe operations like GetQNameInNsSetOrAnyPublicNs() and possibly others used in property lookup
 - [70%] Property lookup
   - https://github.com/whackengine/sdk/blob/master/crates/mxmlsemantics/src/semantics/property_lookup.rs#L353
   - [x] PropertyLookup: remind of `shock_proxy` stuff
     - [x] `shock_proxy::get` allows for multiple signatures
-  - [ ] InScopeLookup: `shock_env` qualifier causes DotEnv variable retrieval.
+  - [ ] PropertyLookup: Introduce lazily imported source files based in source paths.
+  - [ ] InScopeLookup
+    - [ ] Introduce lazily imported source files based in source paths.
+    - [ ] `shock_env` qualifier causes DotEnv variable retrieval.
 - [ ] Constants
   - [ ] *EnumConstant* for both regular enumerations and flag enumerations
 - [ ] Reference values
