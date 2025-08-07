@@ -5,7 +5,8 @@
   - https://github.com/whackengine/sdk/blob/master/crates/mxmlsemantics/src/semantics/property_lookup.rs#L353
   - [x] PropertyLookup: remind of `shock_proxy` stuff
     - [x] `shock_proxy::get` allows for multiple signatures
-  - [ ] PropertyLookup: Introduce lazily imported source files based in source paths.
+    - [ ] Introduce lazily imported source files based in source paths, when lookuping from packages.
+    - [ ] Values whose static type is a type parameter will lookup for names in the type parameter's derived types.
   - [ ] InScopeLookup
     - [ ] Introduce lazily imported source files based in source paths.
     - [ ] `shock_env` qualifier causes DotEnv variable retrieval.
