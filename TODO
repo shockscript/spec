@@ -1,5 +1,6 @@
 - [70%] Types
 - [x] Conversions
+- [ ] Define "source paths"
 - [ ] Describe operations like GetQNameInNsSetOrAnyPublicNs() and possibly others used in property lookup
 - [70%] Property lookup
   - https://github.com/whackengine/sdk/blob/master/crates/mxmlsemantics/src/semantics/property_lookup.rs#L353
