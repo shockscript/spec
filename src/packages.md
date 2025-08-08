@@ -49,16 +49,9 @@ trace( com.color.types.Color(0x10_00_00) );
 trace( Color(0x10_00_00) );
 ```
 
-## ShockDoc comment
+## ReadMe
 
-A `package` definition may have a prefix ShockDoc comment, allowing to document the package once.
-
-```
-/**
- * Enumerations used in the core runtime.
- */
-package com.business.coreRT.enum {}
-```
+A directory identifying a package relative to a source path may contain a README file (either `README` or `README.md`) written as Markdown text, which serves as a means to attach documentation to the package.
 
 ## Package single import
 
