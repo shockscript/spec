@@ -117,13 +117,13 @@
     - Call *prop*.Defer() (*if about to defer, implementation may report the cause as unresolved expression in a location*)
     - *r* = *prop*.Wrap()
   - Return r
-- If *base* is a type parameter with an `eventOf=, match="type"` constraint
+- If *base* is a type parameter with a `Limit(..., eventOf="...", match="type")` constraint
   - If *localName* is undefined or (*qual* is specified)
     - Return undefined.
   - If *localName* = **name**
-    - Return *EventNameType*(type parameter).Wrap()
+    - Return *EventNameType*(*base* type parameter).Wrap()
   - If *localName* = **type**
-    - Return *EventTypeType*(previously introduced EventNameType).Wrap().
+    - Return *EventTypeType*(a previously introduced *EventNameType*).Wrap().
   - Return undefined.
 - Return undefined.
 
