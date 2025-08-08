@@ -10,7 +10,7 @@
     - [ ] Values whose static type is a type parameter will lookup for names in the type parameter's derived types.
   - [ ] InScopeLookup
     - [ ] Introduce lazily imported source files based in source paths.
-    - [ ] `shock_env` qualifier causes DotEnv variable retrieval.
+    - [ ] `DotEnv` qualifier causes DotEnv variable retrieval.
 - [ ] Constants
   - [ ] *EnumConstant* for both regular enumerations and flag enumerations
 - [ ] Reference values
@@ -91,7 +91,7 @@
 - [ ] Definition constructs
 - [ ] Global objects
   - [ ] shock_proxy namespace
-  - [ ] shock_env namespace
+  - [ ] DotEnv namespace
   - [ ] Reflect namespace
   - [ ] trace()
   - [ ] assert()
