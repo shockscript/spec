@@ -40,7 +40,7 @@ global::Math
 
 ## Name shadowing
 
-When a package or a specific item of a package is imported, it is possible to fully qualify a name in an expression using that package and the imported items, shadowing any other variables.
+It is possible to fully qualify a name in an expression using a package and one of its items, shadowing any other variables.
 
 ```
 import com.color.types.Color;
@@ -105,3 +105,4 @@ import com.business.quantum.**;
 
 - A package definition must contain exactly one definition item, and its name must match the source path.
 - A source file must consist of exactly one package definition.
+
