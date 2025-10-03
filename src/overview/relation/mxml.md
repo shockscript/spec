@@ -72,12 +72,12 @@ Note that, like with React.js, arrays and structures as states will not trigger 
 list = [...list, v];
 ```
 
-## References
+## Fixtures
 
-In the top-level of a component, declare references by using the `Reference` meta-data. References have certain use-cases, such as persisting a value across renders, and extracting class-based components from certain tags (in which case the `bind` attribute is used).
+In the top-level of a component, declare fixtures by using the `Fixture` meta-data. Fixtures have certain use-cases, such as persisting a value across renders, and extracting class-based components from certain tags (in which case the `bind` attribute is used).
 
 ```
-[Reference]
+[Fixture]
 var button:Button? = null;
 
 return (
@@ -113,5 +113,6 @@ Unlike with React.js, there is built-in support for linking style sheets in a Sp
     </j:Style>
 </j:Container>
 ```
+
 
 [More on style sheets](../xml-capabilities/jet.md#linking-cascading-style-sheets)
