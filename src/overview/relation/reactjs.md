@@ -94,15 +94,15 @@ As to Map objects:
 m = { ...m, k: v };
 ```
 
-## References
+## Fixtures
 
-In Jet+Spot the concept of "refs" is more formally called *references*.
+In Jet+Spot the concept of "refs" is called *fixtures*.
 
 ```
 package com.business.components {
     //
     public function HelloWorld() {
-        [Reference]
+        [Fixture]
         var button:Button?;
 
         //
@@ -165,5 +165,6 @@ Unlike with React.js, there is built-in support for linking style sheets in a Sp
     </j:Style>
 </j:Container>
 ```
+
 
 [More on style sheets](../xml-capabilities/jet.md#linking-cascading-style-sheets)
