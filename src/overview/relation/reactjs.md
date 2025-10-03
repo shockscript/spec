@@ -2,12 +2,12 @@
 
 ShockScript incorporates XML capabilities, and XML expressions allow for implementations to produce anything desired, similiar to JSX. There are certain differences to JSX or React.js.
 
-The following demonstrates a basic XML expression for Jet™:
+The following demonstrates a basic XML expression for WhackDS:
 
 ```
-<j:HGroup>
-    <j:Button click&={trace("clicked!")}>button 1</j:Button>
-</j:HGroup>
+<w:HGroup>
+    <w:Button click&={trace("clicked!")}>button 1</w:Button>
+</w:HGroup>
 ```
 
 ## Event handlers
@@ -43,25 +43,25 @@ import com.business.components.*
 Interpolation works similiarly to React.js, except for HTML.
 
 ```
-<j:VGroup>
+<w:VGroup>
     {undefined}
     {null}
     {node}
     {nodeList}
     {plainText}
     {number}
-</j:VGroup>
+</w:VGroup>
 ```
 
 Interpolating attributes uses `{ object }` and not `{ ...object }` and must appear at most once at the end of all attributes:
 
 ```
-<j:Button {params}>click me</j:Button>
+<w:Button {params}>click me</w:Button>
 ```
 
 ## States
 
-Unlike React.js, in Jet+Spot there is no risk of accessing an outdated state's value, due to how states are constructed.
+Unlike React.js, in WhackDS there is no risk of accessing an outdated state's value, due to how states are constructed.
 
 ```
 package com.business.components {
@@ -71,10 +71,10 @@ package com.business.components {
         var x:decimal = 0;
 
         return (
-            <j:VGroup>
-                <j:Label>clicked {x} times</j:Label>
-                <j:Button click&={x++}>click me</j:Button>
-            </j:VGroup>
+            <w:VGroup>
+                <w:Label>clicked {x} times</w:Label>
+                <w:Button click&={x++}>click me</w:Button>
+            </w:VGroup>
         );
     }
 }
@@ -96,7 +96,7 @@ m = { ...m, k: v };
 
 ## Fixtures
 
-In Jet+Spot the concept of "refs" is called *fixtures*.
+In WhackDS the concept of "refs" is called *fixtures*.
 
 ```
 package com.business.components {
@@ -106,12 +106,12 @@ package com.business.components {
         var button:Button?;
 
         //
-        Spot::useEffect(function() {
+        whack_ds::useEffect(function() {
             trace(button!);
         }, []);
 
         return (
-            <j:Button bind={button}>click me</j:Button>
+            <w:Button bind={button}>click me</w:Button>
         );
     }
 }
@@ -119,7 +119,7 @@ package com.business.components {
 
 ## Contexts
 
-Context usage is represented as `Spot::ContextReflection.<T>` objects, although they are used as natural `Context`-annotated locals.
+Context usage is represented as `whack_ds::ContextReflection.<T>` objects, although they are used as natural `Context`-annotated locals.
 
 ```
 function ExampleComponent() {
@@ -138,33 +138,33 @@ function ExampleComponent() {
 The popular "useEffect" hook requires the second argument, preventing mistakes. For listening to any changes, use `"*"`.
 
 ```
-Spot::useEffect(function() {
+whack_ds::useEffect(function() {
     //
     return function() {
         // cleanup
     };
 }, [dep1, ...depN]);
 
-Spot::useEffect(function() {
+whack_ds::useEffect(function() {
     //
 }, "*");
 ```
 
 ## Styling
 
-Unlike with React.js, there is built-in support for linking style sheets in a Spot component.
+Unlike with React.js, there is built-in support for linking style sheets in a WhackDS component.
 
 ```
-<j:Container>
-    <j:Style>
+<w:Container>
+    <w:Style>
         <![CDATA[
             :host {
                 background: red;
             }
         ]]>
-    </j:Style>
-</j:Container>
+    </w:Style>
+</w:Container>
 ```
 
 
-[More on style sheets](../xml-capabilities/jet.md#linking-cascading-style-sheets)
+[More on style sheets](../xml-capabilities/whack.md#linking-cascading-style-sheets)

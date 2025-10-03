@@ -3,7 +3,7 @@
 - [Overview](./overview.md)
   - [Embedding resources](./overview/embedding-resources.md)
   - [XML capabilities](./overview/xml-capabilities.md)
-    - [Jet XML capabilities](./overview/xml-capabilities/jet.md)
+    - [Whack XML capabilities](./overview/xml-capabilities/whack.md)
   - [Relation to other technologies](./overview/relation.md)
     - [MXML](./overview/relation/mxml.md)
     - [React.js](./overview/relation/reactjs.md)

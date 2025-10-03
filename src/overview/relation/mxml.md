@@ -2,16 +2,16 @@
 
 The MXML language, as part of the Apache Flex framework, was used for describing UI components in an intuitive way. ShockScript uses XML expressions semantically similiar to the React.js + JSX technologies, but designed to feel close to MXML in readability.
 
-The following demonstrates a basic UI component implemented in Jet+Spot:
+The following demonstrates a basic UI component implemented in WhackDS:
 
 ```
 package com.business.components {
     //
     public function AppBar() {
         return (
-            <j:HGroup>
-                <j:Button click&={trace("clicked!")}>button 1</j:Button>
-            </j:HGroup>
+            <w:HGroup>
+                <w:Button click&={trace("clicked!")}>button 1</w:Button>
+            </w:HGroup>
         );
     }
 }
@@ -25,21 +25,21 @@ In MXML, event handlers were expressed as `e="statements"`. In ShockScript, they
 
 ## Rendering components
 
-The Jet Engine's Spot feature allows programmers to implement UI components as functions that wrap around the built-in class-based components of Jet Engine. The component is rendered by evaluating the function initially and whenever a state changes.
+The Whack Engine's WhackDS feature allows programmers to implement UI components as functions that wrap around the built-in class-based components of Whack Engine. The component is rendered by evaluating the function initially and whenever a state changes.
 
 ## Effects
 
-The `Spot::useEffect` hook may be used to detect state, parameter or derived changes as well as the component mount and unmount phases.
+The `whack_ds::useEffect` hook may be used to detect state, parameter or derived changes as well as the component mount and unmount phases.
 
 ```
-Spot::useEffect(function() {
+whack_ds::useEffect(function() {
     // cleanup
     return function() {
         //
     };
 }, [dep1, ...depN]);
 
-Spot::useEffect(function() {
+whack_ds::useEffect(function() {
     //
 }, "*");
 ```
@@ -47,7 +47,7 @@ Spot::useEffect(function() {
 When the dependencies list is empty (`[]`), the hook is equivalent to a component mount/unmount event, with the unmount phase handled through the returned function.
 
 ```
-Spot::useEffect(function() {
+whack_ds::useEffect(function() {
     // did mount
     return function() {
         // unmount
@@ -81,7 +81,7 @@ In the top-level of a component, declare fixtures by using the `Fixture` meta-da
 var button:Button? = null;
 
 return (
-    <j:Button bind={button}>click me</j:Button>
+    <w:Button bind={button}>click me</w:Button>
 );
 ```
 
@@ -100,20 +100,20 @@ Unlike in React.js combined with TypeScript, states, fixtures ("refs") and conte
 
 ## Styling
 
-Unlike with React.js, there is built-in support for linking style sheets in a Spot component.
+Unlike with React.js, there is built-in support for linking style sheets in a WhackDS component.
 
 ```
-<j:Container>
-    <j:Style>
+<w:Container>
+    <w:Style>
         <![CDATA[
             :host {
                 background: red;
             }
         ]]>
-    </j:Style>
-</j:Container>
+    </w:Style>
+</w:Container>
 ```
 
 
-[More on style sheets](../xml-capabilities/jet.md#linking-cascading-style-sheets)
+[More on style sheets](../xml-capabilities/whack.md#linking-cascading-style-sheets)
 

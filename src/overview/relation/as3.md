@@ -101,10 +101,10 @@ XML expressions do not produce `XML` or `XMLList` unless the inference type is o
 - `<t e&={}/>` equals `<t e={function(event){}}/>` or `<t e={function(){}}/>`
 
 ```
-<j:VGroup>
-    <j:Label variant="heading">Welcome</j:Label>
-    <j:Button click&={trace("clicked me");}>Click me</j:Button>
-</j:VGroup>
+<w:VGroup>
+    <w:Label variant="heading">Welcome</w:Label>
+    <w:Button click&={trace("clicked me");}>Click me</w:Button>
+</w:VGroup>
 ```
 
 > **Note**: `XML(<tag/>)` equals `var _loc_0:XML = <tag/>;`.

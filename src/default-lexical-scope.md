@@ -18,14 +18,14 @@ The topmost scope defines a `Intl` property, which is an alias to `shock.intl.**
 
 The topmost scope defines a `Temporal` property, which is an alias to `shock.temporal.**`.
 
-## Provided by Jet™
+## Provided by Whack
 
-The following names and imports are provided implicitly when targetting Jet™.
+The following names and imports are provided implicitly when targetting Whack Engine.
 
-### jet.\*\*
+### whack.\*\*
 
-The topmost scope imports `jet.**`, so that the Jet™ APIs are made available globally.
+The topmost scope imports `whack.**`, so that the Whack APIs are made available globally.
 
-### Spot
+### whack_ds
 
-The topmost scope defines a `Spot` property, which is an alias to a package recursive import of `jetx.spot.**`, used for creating UI components using Jet+Spot.
+The topmost scope defines a `whack_ds` property, which is an alias to a package recursive import of `whackx.ds.**`, used for creating UI components using WhackDS.

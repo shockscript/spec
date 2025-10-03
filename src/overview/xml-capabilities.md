@@ -11,9 +11,9 @@ package com.business.components {
     //
     public function AppBar() {
         return (
-            <j:HGroup>
-                <j:Button click&={trace("clicked!")}>button 1</j:Button>
-            </j:HGroup>
+            <w:HGroup>
+                <w:Button click&={trace("clicked!")}>button 1</w:Button>
+            </w:HGroup>
         );
     }
 }
@@ -41,7 +41,7 @@ const xn = XML(<tag/>);
 Inline event handlers may be expressed as `eventName&={statementList}` as a shortcut to `eventName={function(event){statementList}}`, as in:
 
 ```
-<j:Button click&={trace("clicked!")}>Click me</j:Button>
+<w:Button click&={trace("clicked!")}>Click me</w:Button>
 ```
 
 If the event has no parameters, then the attribute above is equivalent to `eventName={function(){statementList}}`.
@@ -49,14 +49,14 @@ If the event has no parameters, then the attribute above is equivalent to `event
 ### Interpolation
 
 ```
-<j:VGroup {params}>
+<w:VGroup {params}>
     {undefined}
     {null}
     {node}
     {nodeList}
     {plainText}
     {number}
-</j:VGroup>
+</w:VGroup>
 ```
 
 ## Filtering

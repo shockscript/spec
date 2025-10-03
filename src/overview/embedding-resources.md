@@ -6,7 +6,7 @@ The `Embed()` expression may be used for embedding files and media into the prog
 Embed("thumb.webp")
 ```
 
-> **Note**: When returning an external URL, implementations such as Jet™ use the `app://` scheme to fetch a file in the application's installation directory.
+> **Note**: When returning an external URL, implementations such as Whack Engine use the `app://` scheme to fetch a file in the application's installation directory.
 
 <blockquote>
 
