@@ -56,9 +56,9 @@
   - If *baseType* is invalid
     - Return invalid
   - *baseType* = *baseType*.ResolveAlias()
-  - If (*followedByCall* == false and *forceFixture* == false) and *baseType* defines an instance method `shock_proxy::get` (possibly a multi method)
+  - If (*followedByCall* == false and *forceFixture* == false) and *baseType* defines an instance method `sx_proxy::get` (possibly a multi method)
     - Let *foundRegularProperty* = false
-    - For each `shock_proxy::get(k:K):V` method
+    - For each `sx_proxy::get(k:K):V` method
       - If *qual* != undefined
         - If *K* == `*` or *K* == (`Object` or defer) or *K* == (`QName` or defer) or *K* ?union contains (`QName` or defer)
           - Return *KeyValuePairReferenceValue*(*base*, *proxy method*, *qual* as a `Namespace` object, *key*.Value coerced to (`String` or defer))

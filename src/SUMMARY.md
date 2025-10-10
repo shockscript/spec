@@ -56,6 +56,6 @@
 - [Lexical scopes](./lexical-scopes.md)
 - [Default lexical scope](./default-lexical-scope.md)
 - [Conditional compilation](./conditional-compilation.md)
-- [ShockDoc](./shockdoc.md)
+- [SXDoc](./sxdoc.md)
 - [Proxies](./proxies.md)
 - [Lexical conventions](./lexical-conventions.md)

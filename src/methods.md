@@ -21,9 +21,9 @@ class A {
 }
 ```
 
-## ShockDoc comment
+## SXDoc comment
 
-A ShockDoc comment can be applied to a method.
+A SXDoc comment can be applied to a method.
 
 ```
 /** Comment */

@@ -1,6 +1,6 @@
-# ShockDoc
+# SXDoc
 
-ShockDoc are documentation comments that use the format `/** */`. Markdown notation is supported in ShockDoc comments.
+SXDoc are documentation comments that use the format `/** */`. Markdown notation is supported in SXDoc comments.
 
 For each line, the beginning whitespace is stripped, then the `*` character and a single following white space character are stripped, and the resting characters are the actual line contents.
 
@@ -18,13 +18,13 @@ Code blocks (whose delimiters consist of at least three backticks **\`\`\`**) as
 
 ## Local images
 
-ShockDoc comments may refer to relative images through the Markdown notation `![image](./path/to/image)`.
+SXDoc comments may refer to relative images through the Markdown notation `![image](./path/to/image)`.
 
 ## Supported tags
 
 ### \@copy
 
-Copies ShockDoc comment from another definition. Use a `#x` component to refer to an instance property.
+Copies SXDoc comment from another definition. Use a `#x` component to refer to an instance property.
 
 ```plain
 @copy A

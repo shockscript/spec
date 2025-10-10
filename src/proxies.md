@@ -1,16 +1,16 @@
 # Proxies
 
-Methods of the `shock_proxy` namespace may be implemented in a class or interface for overriding language behavior, known as *proxies*.
+Methods of the `sx_proxy` namespace may be implemented in a class or interface for overriding language behavior, known as *proxies*.
 
-## static shock_proxy::call()
+## static sx_proxy::call()
 
-A static `shock_proxy::call()` method may be defined with any number of parameters and any result type, overriding the behavior of calling the class object.
+A static `sx_proxy::call()` method may be defined with any number of parameters and any result type, overriding the behavior of calling the class object.
 
 ```
-shock_proxy static function call():T {}
+sx_proxy static function call():T {}
 ```
 
-## shock_proxy::get()
+## sx_proxy::get()
 
 > **Note**: Overriding the property accessor with a possibly `String` or `QName` key type (including base types `*` and `Object`) will override all names (like `.x`), except when calling a method (like `.m()`).
 >
@@ -21,87 +21,87 @@ shock_proxy static function call():T {}
 > ```
 
 ```
-shock_proxy function get(key:K):V {
+sx_proxy function get(key:K):V {
     //
 }
 ```
 
-## shock_proxy::set()
+## sx_proxy::set()
 
 > **Note**: Overriding the property accessor with a possibly `String` or `QName` key type (including base types `*` and `Object`) will override all names (like `.x`), except when calling a method (like `.m()`).
 
 ```
-shock_proxy function set(key:K, value:V):void {
+sx_proxy function set(key:K, value:V):void {
     //
 }
 ```
 
-## shock_proxy::delete()
+## sx_proxy::delete()
 
 > **Note**: Overriding the property accessor with a possibly `String` or `QName` key type (including base types `*` and `Object`) will override all names (like `.x`), except when calling a method (like `.m()`).
 
 ```
-shock_proxy function delete(key:K):Boolean {
+sx_proxy function delete(key:K):Boolean {
     //
 }
 ```
 
-## shock_proxy::has()
+## sx_proxy::has()
 
 Overrides the behavior of the `in` operator.
 
 ```
-shock_proxy function has(key:K):Boolean {
+sx_proxy function has(key:K):Boolean {
     //
 }
 ```
 
-## shock_proxy::getAttribute()
+## sx_proxy::getAttribute()
 
 Overrides the behavior of the `.@k` accessor.
 
 ```
-shock_proxy function getAttribute(key:K):V {
+sx_proxy function getAttribute(key:K):V {
     //
 }
 ```
 
-## shock_proxy::setAttribute()
+## sx_proxy::setAttribute()
 
 Overrides the behavior of the `.@k = v` accessor.
 
 ```
-shock_proxy function setAttribute(key:K, value:V):void {
+sx_proxy function setAttribute(key:K, value:V):void {
     //
 }
 ```
 
-## shock_proxy::deleteAttribute()
+## sx_proxy::deleteAttribute()
 
 Overrides the behavior of the `delete (...).@k` accessor.
 
 ```
-shock_proxy function deleteAttribute(key:K):Boolean {
+sx_proxy function deleteAttribute(key:K):Boolean {
     //
 }
 ```
 
-## shock_proxy::filter()
+## sx_proxy::filter()
 
 Overrides the behavior of the filter operator (`.(test)`).
 
 ```
-shock_proxy function filter(testFn:function(T):Boolean):E {
+sx_proxy function filter(testFn:function(T):Boolean):E {
     //
 }
 ```
 
-## shock_proxy::descendants()
+## sx_proxy::descendants()
 
 Overrides the behavior of the descendants operator (`..x`). The parameter is expected to be typed `String` or `QName`.
 
 ```
-shock_proxy function descendants(name:QName):E {
+sx_proxy function descendants(name:QName):E {
     //
 }
 ```

@@ -7,9 +7,9 @@ var x = 0
 const y = 10
 ```
 
-## ShockDoc comment
+## SXDoc comment
 
-A ShockDoc comment can be applied to a variable.
+A SXDoc comment can be applied to a variable.
 
 ```
 /** Comment */

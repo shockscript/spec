@@ -53,7 +53,7 @@ class B extends A {
 
 ## “in” operator
 
-The `in` operator behaves differently. It triggers `shock_proxy::has()` which is in general used for determining whether a collection contains a specific value; for `Map`s it determines whether a pair key exists; for `XML` and `XMLList` objects it performs the same E4X behavior.
+The `in` operator behaves differently. It triggers `sx_proxy::has()` which is in general used for determining whether a collection contains a specific value; for `Map`s it determines whether a pair key exists; for `XML` and `XMLList` objects it performs the same E4X behavior.
 
 ```
 trace(e in arr);

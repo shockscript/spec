@@ -9,9 +9,9 @@ type U = (decimal, String);
 namespace special_version;
 ```
 
-## ShockDoc comment
+## SXDoc comment
 
-An alias may be prefixed by a ShockDoc comment.
+An alias may be prefixed by a SXDoc comment.
 
 ```
 /** Comment */

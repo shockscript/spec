@@ -170,10 +170,10 @@ Returns the name of the enumeration instance. For a flag enumeration, returns th
 
 ### For flag enumerations
 
-#### shock_proxy::has()
+#### sx_proxy::has()
 
 ```
-shock_proxy function has(v:E):Boolean {
+sx_proxy function has(v:E):Boolean {
     //
 }
 ```
