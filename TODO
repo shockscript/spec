@@ -168,8 +168,9 @@
     - [ ] Indexing
     - [ ] `shareable:Boolean`
     - [ ] `clone()`
-  - [ ] JS.intl.**
+  - [ ] shock.intl.**
     - [ ] Like ECMA-262 `Intl`. Aliased globally as `Intl::` to avoid manual import.
-  - [ ] JS.temporal.**
+  - [ ] shock.temporal.**
 
     - [ ] Defines ECMA-262 like `Temporal` functionality, including classes and methods. That package is aliased globally as `Temporal::` to avoid manual import.
+
