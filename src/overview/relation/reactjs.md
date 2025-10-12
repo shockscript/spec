@@ -94,15 +94,15 @@ As to Map objects:
 m = { ...m, k: v };
 ```
 
-## Fixtures
+## Bindables
 
-In WhackDS the concept of "refs" is called *fixtures*.
+In WhackDS the concept of "refs" is called *bindables*.
 
 ```
 package com.business.components {
     //
     public function HelloWorld() {
-        [Fixture]
+        [Bindable]
         var button:Button?;
 
         //

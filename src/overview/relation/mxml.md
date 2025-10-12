@@ -72,12 +72,12 @@ Note that, like with React.js, arrays and structures as states will not trigger 
 list = [...list, v];
 ```
 
-## Fixtures
+## Bindables
 
-In the top-level of a component, declare fixtures by using the `Fixture` meta-data. Fixtures have certain use-cases, such as persisting a value across renders, and extracting class-based components from certain tags (in which case the `bind` attribute is used).
+In the top-level of a WhackDS component, declare bindables by using the `Bindable` meta-data. Bindables have certain use-cases, such as persisting a value across renders, and extracting class-based components from certain tags (in which case the `bind` attribute is used).
 
 ```
-[Fixture]
+[Bindable]
 var button:Button? = null;
 
 return (
@@ -96,7 +96,7 @@ var theme:Theme;
 
 ## Capture safety
 
-Unlike in React.js combined with TypeScript, states, fixtures ("refs") and context reflections are captured by reference from nested functions, guaranteeing the "outdated" value of, say, a state, is never captured, which facilitates development by requiring no additional fixture declaration.
+Unlike in React.js combined with TypeScript, states, bindables ("refs") and context values are captured by reference from nested functions, guaranting the "outdated" value of, say, a state, is never captured, which facilitates development by requiring no additional bindable declaration.
 
 ## Styling
 
