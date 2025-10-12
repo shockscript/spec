@@ -30,8 +30,6 @@ package com.business.editor {
 const xn = XML(<tag/>);
 ```
 
-> **Note**: The official ShockScript Compiler supports the compiler option `xmleval` which decides the APIs used for evaluating default XML expressions in a project, however only a limited number of technologies are supported.
-
 ### Attributes
 
 `<t a/>` is equivalent to `<t a={true}/>`. Accessing `XML` attributes can be directly done by the `@` operator, as in `xnode.@x`.

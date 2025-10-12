@@ -29,17 +29,17 @@ The Whack Engine's WhackDS feature allows programmers to implement UI components
 
 ## Effects
 
-The `whack_ds::useEffect` hook may be used to detect state, parameter or derived changes as well as the component mount and unmount phases.
+The `whackds.useEffect` hook may be used to detect state, parameter or derived changes as well as the component mount and unmount phases.
 
 ```
-whack_ds::useEffect(function() {
+whackds.useEffect(function() {
     // cleanup
     return function() {
         //
     };
 }, [dep1, ...depN]);
 
-whack_ds::useEffect(function() {
+whackds.useEffect(function() {
     //
 }, "*");
 ```
@@ -47,7 +47,7 @@ whack_ds::useEffect(function() {
 When the dependencies list is empty (`[]`), the hook is equivalent to a component mount/unmount event, with the unmount phase handled through the returned function.
 
 ```
-whack_ds::useEffect(function() {
+whackds.useEffect(function() {
     // did mount
     return function() {
         // unmount
