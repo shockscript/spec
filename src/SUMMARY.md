@@ -9,7 +9,7 @@
     - [JavaScript](./overview/relation/javascript.md)
     - [Java](./overview/relation/java.md)
   - [XML capabilities](./overview/xml-capabilities.md)
-    - [Whack XML capabilities](./overview/xml-capabilities/whack.md)
+    - [Whack](./overview/xml-capabilities/whack.md)
   - [Access control namespaces](./overview/access-control.md)
   - [Meta-data](./overview/metadata.md)
   - [Generics](./overview/generics.md)

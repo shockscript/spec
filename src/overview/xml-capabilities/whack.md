@@ -1,4 +1,4 @@
-# Whack XML capabilities
+# Whack
 
 This section describes XML features specifically when applied as WhackDS nodes.
 

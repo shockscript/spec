@@ -12,11 +12,11 @@ The topmost scope defines a `SX` property, which is an alias to a package wildca
 
 ## Intl
 
-The topmost scope defines a `Intl` property, which is an alias to `SX.intl.**`.
+The topmost scope defines a `Intl` property, which is an alias to `sx.intl.**`.
 
 ## Temporal
 
-The topmost scope defines a `Temporal` property, which is an alias to `SX.temporal.**`.
+The topmost scope defines a `Temporal` property, which is an alias to `sx.temporal.**`.
 
 ## Provided by Whack
 
