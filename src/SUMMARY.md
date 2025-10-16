@@ -10,6 +10,8 @@
     - [Java](./overview/relation/java.md)
   - [XML capabilities](./overview/xml-capabilities.md)
     - [Whack](./overview/xml-capabilities/whack.md)
+  - [WhackDS](./overview/whackds.md)
+  - [Tooling](./overview/tooling.md)
   - [Access control namespaces](./overview/access-control.md)
   - [Meta-data](./overview/metadata.md)
   - [Generics](./overview/generics.md)

@@ -116,10 +116,20 @@
     - [ ] Other functional methods
   - [ ] Iterable.\<K, V> (interface) requires keys() and values()
   - [ ] Generator.\<T>
+  - [ ] Comparable interface
+    - [ ] `compareTo(obj:this):int`
+    - [ ] This is used by default on array sorting (as long as element types are equal)
   - [ ] Object
     - [ ] Reflect::class()
     - [ ] clone() returns `this`
       - Default implementation clones most objects fine (records, tuples, arrays, maps and so on), but classes with a required constructor will require a custom clone() override.
+    - [ ] `equals(obj:*):Boolean`
+      - May be used in addition to reference equality (==, ===). Default object behavior is ===.
+      - Floating points should have an `equals()` implementation done like in React.js's memoization/state new value comparison.
+      - [ ] `Map.equals()` should look structurally using inner `.equals()`
+      - [ ] Array too
+      - [ ] Tuples too
+      - [ ] Records too
     - [ ] toString()
     - [ ] toLocaleString()
     - [ ] valueOf()
@@ -140,7 +150,7 @@
   - [ ] String
     - [ ] static `fromByte(...):String`
     - [ ] `format(vars:Map.<String, String>):String`
-      - Formats `{varName}` and `{"{"}` (allows whitespace between braces)
+      - Formats `$varName`, `${varName}` and `$$`
   - [ ] Chars
     - [ ] `new Chars(str:String, offset:int = 0)`
     - [ ] Indexing (peeking using zero-based Unicode code point positions; returns U+00 if out of bounds)
