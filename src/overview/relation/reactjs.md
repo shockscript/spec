@@ -106,7 +106,7 @@ package com.business.components {
         var button:Button?;
 
         //
-        whackds.useEffect(function() {
+        whack.ds.useEffect(function() {
             trace(button!);
         }, []);
 
@@ -119,7 +119,7 @@ package com.business.components {
 
 ## Contexts
 
-Context usage is represented as `whackds.ContextValue.<T>` objects, although they are used as natural `Context`-annotated locals.
+Context usage is represented as `whack.ds.ContextValue.<T>` objects, although they are used as natural `Context`-annotated locals.
 
 ```
 function ExampleComponent() {
@@ -138,14 +138,14 @@ function ExampleComponent() {
 The popular "useEffect" hook requires the second argument, preventing mistakes. For listening to any changes, use `"*"`.
 
 ```
-whackds.useEffect(function() {
+whack.ds.useEffect(function() {
     //
     return function() {
         // cleanup
     };
 }, [dep1, ...depN]);
 
-whackds.useEffect(function() {
+whack.ds.useEffect(function() {
     //
 }, "*");
 ```

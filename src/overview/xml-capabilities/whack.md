@@ -64,7 +64,7 @@ package com.fun.components {
 
 #### Linking style sheets in custom components
 
-For a component to support `<w:Style>` tags, it simply needs to support a `stylesheet : [whackds.StyleSheet]` parameter.
+For a component to support `<w:Style>` tags, it simply needs to support a `stylesheet : [whack.ds.StyleSheet]` parameter.
 
 ```
 package com.fun.components {
@@ -72,7 +72,7 @@ package com.fun.components {
     public function CustomComponent({
         stylesheet
     }: {
-        stylesheet? : [whackds.StyleSheet],
+        stylesheet? : [whack.ds.StyleSheet],
     }) {
         //
 
