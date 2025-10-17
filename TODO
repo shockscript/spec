@@ -43,6 +43,8 @@
     - `<?fixed={}?>`
   - [ ] String literal
     - [ ] Is applicable to enumerations (also check for union)
+  - [ ] XML expression
+    - [ ] XML tags applied as WhackDS nodes: The prefix, if any, will ignore anything that is not a namespace or package import (even if it is `*`; in that case, if the user needs, they can use interpolation for specifying the tag's type).
   - [ ] Null literal
   - [ ] Array literal
     - [ ] Is applicable to flag enumerations
@@ -182,3 +184,4 @@
     - [ ] Like ECMA-262 `Intl`. Aliased globally as `Intl::` for clarity.
   - [ ] sx.temporal.**
     - [ ] Defines ECMA-262 like `Temporal` functionality, including classes and methods. That package is aliased globally as `Temporal::` for clarity.
+
