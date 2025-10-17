@@ -22,9 +22,9 @@ That is useful when a build script is involved that generates files at the artif
 
 ## Including statically
 
-The user may embed files statically as either `text/plain` or `application/text` (`String`), or `application/octet-stream` (`ByteArray`), rather than obtaining a URL.
+The user may embed files statically as either an UTF-8 encoded string, or `ByteArray`, rather than obtaining an URL.
 
 ```
-Embed("data.txt", static="text/plain")
-Embed("data.bin", static="application/octet-stream")
+Embed("data.txt", String)
+Embed("data.bin", ByteArray)
 ```

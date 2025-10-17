@@ -142,11 +142,11 @@ This is useful for when a build script generates a file at an artifact directory
 
 </blockquote>
 
-For static embedding, use the `static="mime type"` option.
+For static embedding, use a second option as either `String` or `ByteArray`.
 
 ```
-Embed("data.txt", static="text/plain") // or "application/text"
-Embed("data.bin", static="application/octet-stream")
+Embed("data.txt", String)    // "text/plain"
+Embed("data.bin", ByteArray) // "application/octet-stream"
 ```
 
 ## Variable shadowing
