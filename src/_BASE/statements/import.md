@@ -25,14 +25,3 @@ import f = q.f.*;
 
 f::x
 ```
-
-Alias a package recursively:
-
-```
-package q.f.w {
-    public var x = 10;
-}
-
-import f = q.f.**;
-f::x
-```

@@ -69,7 +69,7 @@ A package wildcard import is aliased for the following directive:
 import q = com.business.quantum.*;
 ```
 
-Then `q` may be used as a qualifier to resolve to a name in the `quantum` package (excluding subpackages).
+Then `q` may be used as a qualifier to resolve to a name in the `com.business.quantum.*` package (excluding subpackages).
 
 ```
 q::x
@@ -79,26 +79,6 @@ For the following directive, the package wildcard import is contributed to the l
 
 ```
 import com.business.quantum.*;
-```
-
-## Package recursive import
-
-A package recursive import is aliased for the following directive:
-
-```
-import q = com.business.quantum.**;
-```
-
-Then `q` may be used as a qualifier to resolve to a name in the `quantum` package and its subpackages in a recursive way.
-
-```
-q::x
-```
-
-For the following directive, the package recursive import is contributed to the lexical scope:
-
-```
-import com.business.quantum.**;
 ```
 
 ## Source path

@@ -180,8 +180,9 @@
     - [ ] Indexing
     - [ ] `shareable:Boolean`
     - [ ] `clone()`
-  - [ ] sx.intl.**
+  - [ ] sx.intl.*
     - [ ] Like ECMA-262 `Intl`. Aliased globally as `Intl::` for clarity.
-  - [ ] sx.temporal.**
+    - [ ] Do not define subpackages for consistency with `Intl::`.
+  - [ ] sx.temporal.*
     - [ ] Defines ECMA-262 like `Temporal` functionality, including classes and methods. That package is aliased globally as `Temporal::` for clarity.
-
+    - [ ] Do not define subpackages for consistency with `Temporal::`.

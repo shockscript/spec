@@ -11,7 +11,7 @@
 
 ### Import list
 
-The import list may contain package single imports, package wildcard imports, and package recursive imports.
+The import list may contain package single imports and package wildcard imports.
 
 ## Scope variants
 
