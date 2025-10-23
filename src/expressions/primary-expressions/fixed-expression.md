@@ -15,7 +15,7 @@
 
 **Semantics**
 
-Deactivates lookup of dynamic properties (implemented through a `sx_proxy` proxy such as `sx_proxy::get()`) in the enclosed expression.
+Deactivates lookup of dynamic properties (implemented through a `sx_proxy` proxy such as `sx_proxy::get(k)` where `k` includes `String` or `QName`) in the enclosed expression.
 
 > **Note**: This is necessary in rare cases where, for example, a class implements its own dynamic properties which may collide with its prototype. In such cases, instance variables are not accessible unless the user uses the fixed expression `<?fixed={exp}?>`. In the case of `this`, the fixed expression is not necessary as in-scope lookup always uses fixed name lookup.
 

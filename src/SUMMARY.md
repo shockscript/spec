@@ -73,3 +73,4 @@
     - [Regular expression literal](./expressions/primary-expressions/regex-literal.md)
     - [XML literal](./expressions/primary-expressions/xml-literal.md)
     - [Fixed expression](./expressions/primary-expressions/fixed-expression.md)
+    - [Parenthesized expressions](./expressions/primary-expressions/paren-expressions.md)
