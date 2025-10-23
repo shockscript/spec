@@ -48,7 +48,7 @@
     <ul>
         <i>XMLWhitespace</i> <i>XMLName</i> [lookahead ≠ <i>XMLWhitespace</i><sub>opt</sub> <b>=</b> ] [lookahead ≠ <i>XMLWhitespace</i><sub>opt</sub> <b>&amp;=</b> ]<br>
         <i>XMLWhitespace</i> <i>XMLName</i> <i>XMLWhitespace</i><sub>opt</sub> <b>=</b> <i>XMLWhitespace</i><sub>opt</sub> <b>{</b> <i>AssignmentExpression</i><sup>allowIn</sup> <b>}</b><br>
-        <i>XMLWhitespace</i> <i>XMLName</i> <i>XMLWhitespace</i><sub>opt</sub> <b>&amp;=</b> <i>XMLWhitespace</i><sub>opt</sub> <b>{</b> <i>Directives</i> <b>}</b><br>
+        <i>XMLWhitespace</i> <i>XMLName</i> <i>XMLWhitespace</i><sub>opt</sub> <b>&amp;=</b> <i>XMLWhitespace</i><sub>opt</sub> <i>Block</i><br>
         <i>XMLWhitespace</i> <i>XMLName</i> <i>XMLWhitespace</i><sub>opt</sub> <b>=</b> <i>XMLWhitespace</i><sub>opt</sub> <i>XMLAttributeValue</i>
     </ul>
 </ul>

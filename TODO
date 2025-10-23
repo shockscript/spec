@@ -35,17 +35,17 @@
 - [x] Proxies
 - [x] Lexical conventions
 - [ ] Expressions
-  - [ ] `Embed()`
-    - [ ] URL behavior
-    - [ ] `"text/plain""`
-    - [ ] `"application/octet-stream"`
+  - [x] `Embed()`
+    - [x] URL behavior
+    - [x] `"text/plain""`
+    - [x] `"application/octet-stream"`
   - [ ] Qualified identifier
-  - [ ] Fixed expression (FixedExpression)
+  - [x] Fixed expression (FixedExpression)
     - `<?fixed={}?>`
   - [ ] String literal
     - [ ] Is applicable to enumerations (also check for union)
   - [ ] XML expression
-    - [ ] XML literals applied as `XML`/`XMLList` shall resolve namespace prefixes to lexical ShockScript names. (`namespace` definitions may be used as prefixes as well (definition name = URI); with implicit prefix.)
+    - [ ] XML literals applied as `XML`/`XMLList` shall still resolve namespace prefixes to lexical ShockScript names. (`namespace` definitions may be used as prefixes as well (definition name = URI); with implicit prefix.)
   - [ ] Null literal
   - [ ] Array literal
     - [ ] Is applicable to flag enumerations
@@ -87,7 +87,7 @@
     - [ ] Support field in namespaces `::`
   - [ ] `?T` or `T?`
   - [ ] `T!`
-- [ ] Destructuring patterns
+- [ ] Destructuring patterns (Pattern, ArrayPattern, ObjectPattern)
   - [ ] Describe that they are in specific occasions converted to from expressions.
 - [ ] Statements
   - [ ] For `for each`: `Iterator` and `Iterable` are iterable
