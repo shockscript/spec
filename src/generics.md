@@ -2,7 +2,7 @@
 
 Classes, interfaces, type aliases and functions may specify type parameters, turning into *generic* entities. ShockScript implements generic entities using polymorphism.
 
-> **Note**: `[Number]`, `[float]`, `[decimal]`, `[int]` and `[uint]` are specialized so they are represented in a memory efficient way.
+> **Note**: Array data types of `Number`, `float`, `decimal`, `int` and `uint` are specialized so they are represented in a memory efficient way.
 
 ```
 class A.<T> {

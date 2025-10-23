@@ -99,7 +99,7 @@
   - [ ] Reflect namespace
   - [ ] trace()
   - [ ] assert()
-  - [ ] assertEquals()
+  - [ ] assertEquals() (uses `[object Object].equals()` if each operand `is Object`)
   - [ ] assertThrows()
   - [ ] encodeURI()
   - [ ] decodeURI()
