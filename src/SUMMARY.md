@@ -61,7 +61,7 @@
 - [SXDoc](./sxdoc.md)
 - [Proxies](./proxies.md)
 - [Lexical conventions](./lexical-conventions.md)
-- [Expressions](./expressions.md)
+- [ShockScript: Expressions](./expressions.md)
   - [Identifiers](./expressions/identifiers.md)
   - [Primary expressions](./expressions/primary-expressions.md)
     - [Null literal](./expressions/primary-expressions/null-literal.md)

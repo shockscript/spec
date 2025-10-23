@@ -34,7 +34,7 @@
 - [x] SXDoc comments
 - [x] Proxies
 - [x] Lexical conventions
-- [ ] Expressions
+- [ ] ShockScript: Expressions
   - [x] `Embed()`
     - [x] URL behavior
     - [x] `"text/plain""`
@@ -82,20 +82,20 @@
     - [ ] Forbid instantiating enumerations.
   - [ ] Null coalescing `x ?? y`
     - [ ] Pass x type to y
-- [ ] Type expressions
+- [ ] ShockScript: Type expressions
   - [ ] Record types
     - [ ] Support field in namespaces `::`
   - [ ] `?T` or `T?`
   - [ ] `T!`
-- [ ] Destructuring patterns (Pattern, ArrayPattern, ObjectPattern)
+- [ ] ShockScript: Destructuring patterns (Pattern, ArrayPattern, ObjectPattern)
   - [ ] Describe that they are in specific occasions converted to from expressions.
-- [ ] Statements
+- [ ] ShockScript: Statements
   - [ ] For `for each`: `Iterator` and `Iterable` are iterable
   - [ ] `switch`
     - [ ] No fallthroughs (demonstrate too).
   - [ ] `switch type`
-- [ ] Directives
-- [ ] Definition constructs
+- [ ] ShockScript: Directives
+- [ ] ShockScript: Definitions
 - [ ] Global objects
   - [ ] sx_proxy namespace
   - [ ] DotEnv namespace
