@@ -27,7 +27,7 @@
 
 ## PropertyLookup()
 
-*PropertyLookup*(*base*, *openNsSet*, *qual*, *key* as *LookupKey*, *followedByCall* as `Boolean`, *forceFixture* as `Boolean`) takes the following steps in order, where *forceFixture* allows forcing access to a fixture property on dynamic types (used by the `<?fixed={}?>` expression):
+*PropertyLookup*(*base*, *openNsSet*, *qual*, *key* as *LookupKey*, *followedByCall* as `Boolean`, *fixed* as `Boolean`) takes the following steps in order, where *fixed* allows forcing access to a fixture property on dynamic types (used by the `<?fixed={}?>` expression):
 
 - If *base* is invalidation
   - Return invalidation
@@ -56,7 +56,7 @@
   - If *baseType* is invalid
     - Return invalid
   - *baseType* = *baseType*.ResolveAlias()
-  - If (*followedByCall* == false and *forceFixture* == false) and *baseType* defines an instance method `sx_proxy::get` (possibly a multi method)
+  - If (*followedByCall* == false and *fixed* == false) and *baseType* defines an instance method `sx_proxy::get` (possibly a multi method)
     - Let *foundRegularProperty* = false
     - For each `sx_proxy::get(k:K):V` method
       - If *qual* != undefined
@@ -79,9 +79,9 @@
       - If *i* < 0 or *i* >= *baseType*.ElementTypes.Length
         - Throw a verify error
       - Return *TupleReferenceValue*(*base*, *i*)
-    - Return *DynamicReferenceValue*(*base*, *qual*, *key*.Value, *followedByCall*, *forceFixture*)
+    - Return *DynamicReferenceValue*(*base*, *qual*, *key*.Value, *followedByCall*, *fixed*)
   - If *baseType* == `*`
-    - Return *DynamicReferenceValue*(*base*, *qual*, *key*.Value, *followedByCall*, *forceFixture*)
+    - Return *DynamicReferenceValue*(*base*, *qual*, *key*.Value, *followedByCall*, *fixed*)
   - If *baseType* is a class
     - For each descending *class* in *baseType* hierarchy
       - Defer if *class* is unresolved
@@ -133,6 +133,6 @@
 
 ## InScopeLookup()
 
-*InScopeLookup*(*scope*, *qual*, *key* as *LookupKey*, *followedByCall* as `Boolean`, *forceFixture* as `Boolean`) takes the following steps in order:
+*InScopeLookup*(*scope*, *qual*, *key* as *LookupKey*, *followedByCall* as `Boolean`, *fixed* as `Boolean`) takes the following steps in order:
 
 > **Note**: Content lacking.

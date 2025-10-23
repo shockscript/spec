@@ -63,3 +63,4 @@
 - [Lexical conventions](./lexical-conventions.md)
 - [Expressions](./expressions.md)
   - [Identifiers](./expressions/identifiers.md)
+  - [Primary expressions](./expressions/primary-expressions.md)

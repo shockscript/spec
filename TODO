@@ -15,7 +15,7 @@
 - [ ] Constants
   - [ ] *EnumConstant* for both regular enumerations and flag enumerations
 - [ ] Reference values
-  - [ ] *DynamicReferenceValue*(*base*, *qual*, *key*.Value, *followedByCall*, *forceFixture*)
+  - [ ] *DynamicReferenceValue*(*base*, *qual*, *key*.Value, *followedByCall*, *fixed*)
   - [ ] *KeyValuePairReferenceValue*(*base*, *proxy method*, *qual*, *key*)
   - [ ] Do not include XML reference values from Whack Engine
 - [70%] Packages
@@ -40,7 +40,7 @@
     - [ ] `String`
     - [ ] `ByteArray`
   - [ ] Qualified identifier
-  - [ ] Force fixture expression
+  - [ ] Fixed expression (FixedExpression)
     - `<?fixed={}?>`
   - [ ] String literal
     - [ ] Is applicable to enumerations (also check for union)
@@ -49,16 +49,16 @@
   - [ ] Null literal
   - [ ] Array literal
     - [ ] Is applicable to flag enumerations
-  - [ ] All literal `**`
+  - [ ] All literal `**` (AllLiteral)
   - [ ] Object initializer
     - [ ] Applicable to flag enumerations
   - [ ] Parenthesized expression
     - [ ] Does not propagate *followedByCall=true*
-    - [ ] Propagates *forceFixture=true* from given context
+    - [ ] Propagates *fixed=true* from given context
   - [ ] Dot operator
-    - [ ] Propagates *forceFixture=true* from given context
+    - [ ] Propagates *fixed=true* from given context
   - [ ] Brackets operator
-    - [ ] Propagates *forceFixture=true* from given context
+    - [ ] Propagates *fixed=true* from given context
   - [ ] Descendants operator
     - [ ] Takes a non-attribute qualified identifier.
   - [ ] Call operator
