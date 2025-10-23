@@ -13,7 +13,7 @@
         <i>AllLiteral</i><br>
         <i>RegularExpressionLiteral</i><br>
         <i>QualifiedIdentifier</i><br>
-        <i>XMLInitializer</i><br>
+        <i>XMLLiteral</i><br>
         <i>FixedExpression</i><br>
         <i>ParenListExpression</i><br>
         <i>ArrayLiteral</i><br>
