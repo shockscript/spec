@@ -101,3 +101,6 @@
   - [Function expression](./sx-expressions/function-expression.md)
   - [List expressions](./sx-expressions/list-expressions.md)
 - [ShockScript: Type expressions](./sx-type-expressions.md)
+- [ShockScript: Patterns](./sx-patterns.md)
+  - [Array pattern](./sx-patterns/array-pattern.md)
+  - [Object pattern](./sx-patterns/object-pattern.md)

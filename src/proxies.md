@@ -2,13 +2,15 @@
 
 Methods of the `sx_proxy` namespace may be implemented in a class or interface for overriding language behavior, known as *proxies*.
 
-## static sx_proxy::call()
+## sx_proxy::call()
 
 A static `sx_proxy::call()` method may be defined with any number of parameters and any result type, overriding the behavior of calling the class object.
 
 ```
 sx_proxy static function call():T {}
 ```
+
+A multi-method may be used, allowing for multiple call signatures.
 
 ## sx_proxy::get()
 
