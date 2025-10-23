@@ -77,3 +77,8 @@
     - [Embed expression](./expressions/primary-expressions/embed-expression.md)
     - [Fixed expression](./expressions/primary-expressions/fixed-expression.md)
     - [Parenthesized expressions](./expressions/primary-expressions/paren-expressions.md)
+  - [Super expression](./expressions/super-expression.md)
+  - [Postfix expressions](./expressions/postfix-expressions.md)
+    - [Property accessors](./expressions/postfix-expressions/property-accessors.md)
+    - [Query operators](./expressions/postfix-expressions/query-operators.md)
+    - [Call expressions](./expressions/postfix-expressions/call-expressions.md)
