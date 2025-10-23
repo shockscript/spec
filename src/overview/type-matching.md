@@ -10,11 +10,11 @@ v is T
 
 ```
 switch type (v) {
-    case (d:Date) {
-        trace("date");
+    case (regex : RegExp) {
+        trace("a regex");
     }
     case ([x, y] : [Number, Number]) {
-        trace("tuple of double");
+        trace("a tuple of double");
     }
     default {
         trace("any other");

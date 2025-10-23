@@ -5,9 +5,14 @@ Classes, interfaces, type aliases and functions may specify type parameters, tur
 > **Note**: `[Number]`, `[float]`, `[decimal]`, `[int]` and `[uint]` are specialized so they are represented in a memory efficient way.
 
 ```
-class A.<T> {}
-interface I.<T> {}
-type Alias.<T> = (decimal, Complex.<T>);
+class A.<T> {
+    // code
+}
+interface I.<T> {
+    // code
+}
+
+type Alias.<T> = (decimal, [T]);
 
 function f.<T>():void {
 }
@@ -19,14 +24,25 @@ Type parameters may be attached multiple constraints.
 
 ```
 [Limit(T, subtypeOf="A")]
+/**
+ * Some function.
+ */
 function f.<T>(o:T) {
     //
 }
+
 [Limit(E, eventOf="A", match="type")]
+/**
+ * Another function.
+ */
 function f.<E>(type:E.name, value:E.type) {
     //
 }
+
 [Limit(E, eventOf="A", match="object")]
+/**
+ * Yet another function.
+ */
 function f.<E>(value:E) {
     //
 }
@@ -40,10 +56,15 @@ function f.<E>(value:E) {
 
 ```
 package com.business.coreRT.events {
-    //
+    /**
+     * Event dispatcher.
+     */
     public class EventTarget {
-        //
+
         [Limit(E, eventOf="this", match="object")]
+        /**
+         * Dispatches an event.
+         */
         public function emit.<E>(e:E):Boolean {
             //
         }

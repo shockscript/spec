@@ -9,11 +9,17 @@ In addition, the `IEventTarget` interface may be implemented instead of extendin
 The following program demonstrates implementing a basic `EventTarget` subclass that is able to emit events:
 
 ```
-/** Some event. */
+/**
+ * Some event.
+ */
 [Event(name="act", type="Event")]
-/** Some class. */
+/**
+ * Some class.
+ */
 class Actor extends EventTarget {
-    //
+    /**
+     * Some method.
+     */
     public function m() {
         this.emit(new Event("act"));
     }
@@ -46,8 +52,11 @@ The `emit()` method is defined as follows:
 
 ```
 [Limit(E, eventOf="this", match="object")]
+/**
+ * Dispatches an event.
+ */
 public function emit.<E>(e:E):Boolean {
-    //
+    // code
 }
 ```
 
@@ -59,6 +68,9 @@ The `on()` method is roughly defined as follows:
 
 ```
 [Limit(E, eventOf="this", match="type")]
+/**
+ * Registers an event listener.
+ */
 public function on.<E>(type:E.name, listener:function(E.type):void) : void {
     //
 }
