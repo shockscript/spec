@@ -1,4 +1,4 @@
-# String
+# String type
 
 The `String` type represents an UTF-8 encoded character sequence.
 

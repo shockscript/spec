@@ -1,4 +1,4 @@
-# Array
+# Array type
 
 The `Array.<T>` type, abbreviated `[T]`, represents a growable list of elements.
 

@@ -87,7 +87,7 @@
     - [ ] Support field in namespaces `::`
   - [ ] `?T` or `T?`
   - [ ] `T!`
-- [ ] ShockScript: Destructuring patterns (Pattern, ArrayPattern, ObjectPattern)
+- [ ] ShockScript: Patterns (Pattern, ArrayPattern, ObjectPattern)
   - [ ] Describe that they are in specific occasions converted to from expressions.
 - [ ] ShockScript: Statements
   - [ ] For `for each`: `Iterator` and `Iterable` are iterable

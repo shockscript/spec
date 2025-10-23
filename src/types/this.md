@@ -1,4 +1,4 @@
-# This
+# This type
 
 The `this` type expression may be used to match the `this` literal's type, which changes across subclasses.
 

@@ -1,4 +1,4 @@
-# Map
+# Map type
 
 The `Map.<K, V>` type represents a hash map.
 

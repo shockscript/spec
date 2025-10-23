@@ -1,4 +1,4 @@
-# Record
+# Record types
 
 Record types `{ ... }` are simple property records, whose field order is sensitive. Those types are compiled into efficient structures.
 
@@ -53,6 +53,19 @@ All fields are required unless they contain `undefined` or `null`. A field such 
 ## Field order
 
 Due to sensitive field order, record types with equivalent fields but in different orders will be incompatible.
+
+## Writing SXDoc comments
+
+Fields may have a preceding SXDoc comment, as in:
+
+```
+type R = {
+    /**
+     * Comment.
+     */
+    x : Number,
+};
+```
 
 ## Compatibility
 

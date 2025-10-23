@@ -1,4 +1,4 @@
-# Structural function
+# Structural function types
 
 Structural function types inherit from `Function`, taking the form `function(...) : T`.
 
