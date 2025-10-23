@@ -64,7 +64,7 @@
   - [ ] Call operator
     - [ ] Base is passed *followedByCall=true*
     - [ ] Watch for static `sx_proxy::call` when calling classes (supports multiple signatures too)
-    - [ ] Take in consideration compatible overrides and overloads (also important for the `[object Object].equals()` method)
+    - [ ] Take in consideration compatible overrides and overloads (also important for the `[object Object].equals()` method (e.g. in case two types are entirely different, should use the basemost `.equals()` method (essentially a dummy `===` comparison)))
     - [ ] `XML` and `XMLList` being called statically shall still pass themselves as the context type to the first call argument, even if they define `sx_proxy::call()`.
   - [ ] `v as T` operator
     - [ ] Passes context type `T` to `v`
