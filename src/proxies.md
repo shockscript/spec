@@ -12,9 +12,9 @@ sx_proxy static function call():T {}
 
 ## sx_proxy::get()
 
-> **Note**: Overriding the property accessor with a possibly `String` or `QName` key type (including base types `*` and `Object`) will override all names (like `.x`), except when calling a method (like `.m()`).
+> **Note**: Overriding the property accessor with a possibly `String` or `QName` key type (including base types `*` and `Object`) will override all names (like `.x`), except when calling a method (like `.m()`). In that case, a class is said to be *dynamic*.
 >
-> If the user needs to access an instance variable in such a case it is recommended to use a force fixture access as in
+> If the user needs to access an instance variable in such a case it is recommended to use a fixed expression as in
 >
 > ```
 > <?fixed={object.q::n}?>
@@ -28,7 +28,7 @@ sx_proxy function get(key:K):V {
 
 ## sx_proxy::set()
 
-> **Note**: Overriding the property accessor with a possibly `String` or `QName` key type (including base types `*` and `Object`) will override all names (like `.x`), except when calling a method (like `.m()`).
+> **Note**: Overriding the property accessor with a possibly `String` or `QName` key type (including base types `*` and `Object`) will override all names (like `.x`), except when calling a method (like `.m()`). In that case, a class is said to be *dynamic*.
 
 ```
 sx_proxy function set(key:K, value:V):void {
@@ -38,7 +38,7 @@ sx_proxy function set(key:K, value:V):void {
 
 ## sx_proxy::delete()
 
-> **Note**: Overriding the property accessor with a possibly `String` or `QName` key type (including base types `*` and `Object`) will override all names (like `.x`), except when calling a method (like `.m()`).
+> **Note**: Overriding the property accessor with a possibly `String` or `QName` key type (including base types `*` and `Object`) will override all names (like `.x`), except when calling a method (like `.m()`). In that case, a class is said to be *dynamic*.
 
 ```
 sx_proxy function delete(key:K):Boolean {

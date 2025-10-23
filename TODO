@@ -11,7 +11,7 @@
   - [ ] InScopeLookup
     - [ ] Introduce lazily imported source files based in source paths.
     - [ ] `DotEnv` qualifier causes DotEnv variable retrieval.
-    - [ ] Force fixture access when doing property lookup (e.g. user should use `this` if the enclosing class is dynamic and needs to access a dynamic property).
+    - [ ] Use `fixed=true` access when doing property lookup in activation's `this` (e.g. user should use `this` if the enclosing class is dynamic and needs to access a dynamic property).
 - [ ] Constants
   - [ ] *EnumConstant* for both regular enumerations and flag enumerations
 - [ ] Reference values
@@ -49,7 +49,7 @@
   - [ ] Null literal
   - [ ] Array literal
     - [ ] Is applicable to flag enumerations
-  - [ ] All literal `**` (AllLiteral)
+  - [x] All literal `**` (AllLiteral)
   - [ ] Object initializer
     - [ ] Applicable to flag enumerations
   - [ ] Parenthesized expression

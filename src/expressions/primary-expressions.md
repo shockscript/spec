@@ -21,25 +21,3 @@
         <i>EmbedExpression</i>
     </ul>
 </ul>
-
-<ul>
-    <i>NullLiteral</i> :
-    <ul>
-        <b>null</b>
-    </ul>
-</ul>
-
-<ul>
-    <i>BooleanLiteral</i> :
-    <ul>
-        <b>true</b><br>
-        <b>false</b>
-    </ul>
-</ul>
-
-<ul>
-    <i>ThisLiteral</i> :
-    <ul>
-        <b>this</b>
-    </ul>
-</ul>
