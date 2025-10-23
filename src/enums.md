@@ -92,7 +92,7 @@ NumericLiteral
 [NumericLiteral, StringLiteral]
 ```
 
-The *ArrayInitializer* syntax is used to allow specifying both a string and a number.
+The *ArrayLiteral* syntax is used to allow specifying both a string and a number.
 
 ## Variant name
 

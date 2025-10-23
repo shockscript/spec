@@ -37,8 +37,8 @@
 - [ ] Expressions
   - [ ] `Embed()`
     - [ ] URL behavior
-    - [ ] `String`
-    - [ ] `ByteArray`
+    - [ ] `"text/plain""`
+    - [ ] `"application/octet-stream"`
   - [ ] Qualified identifier
   - [ ] Fixed expression (FixedExpression)
     - `<?fixed={}?>`
@@ -66,6 +66,7 @@
     - [ ] Watch for static `sx_proxy::call` when calling classes (supports multiple signatures too)
     - [ ] Take in consideration compatible overrides and overloads (also important for the `[object Object].equals()` method (e.g. in case two types are entirely different, should use the basemost `.equals()` method (essentially a dummy `===` comparison)))
     - [ ] `XML` and `XMLList` being called statically shall still pass themselves as the context type to the first call argument, even if they define `sx_proxy::call()`.
+    - [ ] Perform type inference for omitted generic parameters.
   - [ ] `v as T` operator
     - [ ] Passes context type `T` to `v`
   - [ ] Assignment expression
@@ -86,6 +87,8 @@
     - [ ] Support field in namespaces `::`
   - [ ] `?T` or `T?`
   - [ ] `T!`
+- [ ] Destructuring patterns
+  - [ ] Describe that they are in specific occasions converted to from expressions.
 - [ ] Statements
   - [ ] For `for each`: `Iterator` and `Iterable` are iterable
   - [ ] `switch`

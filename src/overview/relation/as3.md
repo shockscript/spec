@@ -142,11 +142,11 @@ This is useful for when a build script generates a file at an artifact directory
 
 </blockquote>
 
-For static embedding, use a second option as either `String` or `ByteArray`.
+For static embedding, use a second option as either `"text/plain"` or `"application/octet-stream"`.
 
 ```
-Embed("data.txt", String)    // "text/plain"
-Embed("data.bin", ByteArray) // "application/octet-stream"
+Embed("data.txt", "text/plain")               // :String
+Embed("data.bin", "application/octet-stream") // :ByteArray
 ```
 
 ## Variable shadowing

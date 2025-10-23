@@ -2,6 +2,10 @@
 
 **Syntax**
 
+```
+(x)
+```
+
 <ul>
     <i>ParenExpression</i> :
     <ul>

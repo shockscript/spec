@@ -25,6 +25,6 @@ That is useful when a build script is involved that generates files at the artif
 The user may embed files statically as either an UTF-8 encoded string, or `ByteArray`, rather than obtaining an URL.
 
 ```
-Embed("data.txt", String)
-Embed("data.bin", ByteArray)
+Embed("data.txt", "text/plain")
+Embed("data.bin", "application/octet-stream")
 ```
