@@ -6,7 +6,7 @@ ShockScript is a strongly typed, multi-paradigm scripting language.
 
 ## eXtensible Markup Language
 
-ShockScript incorporates eXtensible Markup Language (XML) expressions suitable for implementing GUIs, and also includes capabilities for users interested on XML data processing.
+ShockScript incorporates eXtensible Markup Language (XML) expressions suitable for implementing User Interfaces (UI), and also includes capabilities for users interested on XML data processing.
 
 For the Whack Engine, XML expressions create WhackDS nodes by default.
 

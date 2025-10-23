@@ -44,7 +44,7 @@
   - [ ] String literal
     - [ ] Is applicable to enumerations (also check for union)
   - [ ] XML expression
-    - [ ] XML tags applied as WhackDS nodes: The prefix, if any, will ignore anything that is not a namespace or package import (even if it is `*`; in that case, if the user needs, they can use interpolation for specifying the tag's type).
+    - [ ] XML literals applied as `XML`/`XMLList` shall resolve namespace prefixes to lexical ShockScript names. (`namespace` definitions may be used as prefixes as well (definition name = URI); with implicit prefix.)
   - [ ] Null literal
   - [ ] Array literal
     - [ ] Is applicable to flag enumerations
@@ -63,6 +63,7 @@
   - [ ] Call operator
     - [ ] Base is passed *followedByCall=true*
     - [ ] Watch for static `sx_proxy::call` when calling classes (supports multiple signatures too)
+    - [ ] Take in consideration compatible overrides and overloads (also important for the `[object Object].equals()` method)
     - [ ] `XML` and `XMLList` being called statically shall still pass themselves as the context type to the first call argument, even if they define `sx_proxy::call()`.
   - [ ] `v as T` operator
     - [ ] Passes context type `T` to `v`
@@ -114,7 +115,7 @@
     - [ ] required `next():{ done: Boolean, value?: T }`
     - [ ] `length():int`
     - [ ] `skip(count:int):void`
-    - [ ] `sx_proxy::filter(...)`
+    - [ ] `sx_proxy::filter(...)` (returns another iterator)
     - [ ] Other functional methods
   - [ ] Iterable.\<K, V> (interface) requires keys() and values()
   - [ ] Generator.\<T>
@@ -125,8 +126,9 @@
     - [ ] Reflect::class()
     - [ ] clone() returns `this`
       - Default implementation clones most objects fine (records, tuples, arrays, maps and so on), but classes with a required constructor will require a custom clone() override.
-    - [ ] `equals(obj:*):Boolean`
+    - [ ] `equals(obj:this):Boolean`
       - May be used in addition to reference equality (==, ===). Default object behavior is ===.
+      - Incompatible operands should use the most compatible base `.equals()` method (call operator specific behavior)
       - Floating points should have an `equals()` implementation done like in React.js's memoization/state new value comparison.
       - [ ] `Map.equals()` should look structurally using inner `.equals()`
       - [ ] Array too

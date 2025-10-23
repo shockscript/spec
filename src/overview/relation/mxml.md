@@ -7,7 +7,7 @@ The following demonstrates a basic UI component implemented in WhackDS:
 ```
 package com.business.components {
     //
-    public function AppBar() {
+    public function AppBar():whack.ds.Node {
         return (
             <w:HGroup>
                 <w:Button click&={trace("clicked!")}>button 1</w:Button>

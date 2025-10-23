@@ -4,12 +4,12 @@ The ShockScript language includes XML capabilities.
 
 ## XML expressions
 
-XML expressions by default are used for creating implementation-defined objects; however, when the inference type is `String`, `XML` or `XMLList`, XML expressions evaluate to one of these types.
+XML expressions by default are used for creating implementation-defined objects; however, when the inference type is `XML` or `XMLList`, XML expressions evaluate to one of these types.
 
 ```
 package com.business.components {
     //
-    public function AppBar() {
+    public function AppBar():whack.ds.Node {
         return (
             <w:HGroup>
                 <w:Button click&={trace("clicked!")}>button 1</w:Button>

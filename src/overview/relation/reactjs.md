@@ -66,10 +66,12 @@ Unlike React.js, in WhackDS there is no risk of accessing an outdated state's va
 ```
 package com.business.components {
     //
-    public function HelloWorld() {
+    public function HelloWorld():whack.ds.Node {
+        // x
         [State]
-        var x:decimal = 0;
+        var x:Number = 0;
 
+        // layout
         return (
             <w:VGroup>
                 <w:Label>clicked {x} times</w:Label>
@@ -101,7 +103,7 @@ In WhackDS the concept of "refs" is called *bindables*.
 ```
 package com.business.components {
     //
-    public function HelloWorld() {
+    public function HelloWorld():whack.ds.Node {
         [Bindable]
         var button:Button?;
 
@@ -122,7 +124,7 @@ package com.business.components {
 Context usage is represented as `whack.ds.ContextValue.<T>` objects, although they are used as natural `Context`-annotated locals.
 
 ```
-function ExampleComponent() {
+function ExampleComponent():whack.ds.Node {
     //
     [Context(ExampleContext)]
     const example:Number;
