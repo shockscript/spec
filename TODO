@@ -84,8 +84,8 @@
     - [ ] Pass x type to y
 - [x] ShockScript: Type expressions
   - [ ] Semantics
-- [ ] ShockScript: Patterns (Pattern, ArrayPattern, ObjectPattern)
-  - [ ] Describe that they are in specific occasions converted to from expressions.
+- [x] ShockScript: Patterns (Pattern, ArrayPattern, ObjectPattern)
+  - [ ] Semantics
 - [ ] ShockScript: Statements
   - [ ] For `for each`: `Iterator` and `Iterable` are iterable
   - [ ] `switch`
