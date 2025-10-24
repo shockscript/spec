@@ -29,7 +29,18 @@ q::[k]     ;
 <ul>
     <i>Qualifier</i> :
     <ul>
-        <i>PropertyIdentifier</i>
+        <i>PropertyIdentifier</i><br>
+        <i>ReservedNamespace</i>
+    </ul>
+</ul>
+
+<ul>
+    <i>ReservedNamespace</i> :
+    <ul>
+        <b>public</b><br>
+        <b>private</b><br>
+        <b>protected</b><br>
+        <b>internal</b>
     </ul>
 </ul>
 

@@ -123,3 +123,5 @@
   - [Return statement](./sx-statements/return-statement.md)
   - [Throw statement](./sx-statements/throw-statement.md)
   - [Try statement](./sx-statements/try-statement.md)
+- [ShockScript: Directives](./sx-directives.md)
+  - [Attributes](./sx-directives/attributes.md)
