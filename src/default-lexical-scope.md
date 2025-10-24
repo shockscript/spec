@@ -9,11 +9,3 @@ The topmost scope imports the top-level package by wildcard. It is allowed to sh
 ## SX
 
 The topmost scope defines a `SX` property, which is an alias to a package wildcard import of the top-level package.
-
-## Intl
-
-The topmost scope defines a `Intl` property, which is an alias to `sx.intl.*`.
-
-## Temporal
-
-The topmost scope defines a `Temporal` property, which is an alias to `sx.temporal.*`.
