@@ -157,7 +157,7 @@ whack.ds.useEffect(function() {
 Unlike with React.js, there is built-in support for linking style sheets in a WhackDS component.
 
 ```
-<w:Container>
+<w:Group>
     <w:Style>
         <![CDATA[
             :host {
@@ -165,7 +165,7 @@ Unlike with React.js, there is built-in support for linking style sheets in a Wh
             }
         ]]>
     </w:Style>
-</w:Container>
+</w:Group>
 ```
 
 
