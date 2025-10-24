@@ -86,10 +86,13 @@
   - [ ] Semantics
 - [x] ShockScript: Patterns (Pattern, ArrayPattern, ObjectPattern)
   - [ ] Semantics
-- [ ] ShockScript: Statements
+- [x] ShockScript: Statements
+  - [ ] Semantics
   - [ ] For `for each`: `Iterator` and `Iterable` are iterable
-- [ ] ShockScript: Directives
-- [ ] ShockScript: Definitions
+- [x] ShockScript: Directives
+  - [ ] Semantics
+- [x] ShockScript: Definitions
+  - [ ] Semantics
 - [ ] Global objects
   - [ ] sx_proxy namespace
   - [ ] DotEnv namespace

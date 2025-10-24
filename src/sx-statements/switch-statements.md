@@ -1,4 +1,4 @@
-# Switch statement
+# Switch statements
 
 The switch statement is similiar to that of Java. Unlike in Java, the switch statement does not include fallthroughs.
 
