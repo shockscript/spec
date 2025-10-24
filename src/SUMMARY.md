@@ -60,7 +60,7 @@
 - [Conditional compilation](./conditional-compilation.md)
 - [Integrated configuration constants](./integrated-configuration-constants.md)
 - [Unit testing](./unit-testing.md)
-- [SXDoc](./sxdoc.md)
+- [SXDoc comments](./sxdoc.md)
 - [Proxies](./proxies.md)
 - [Lexical conventions](./lexical-conventions.md)
 - [ShockScript: Expressions](./sx-expressions.md)
