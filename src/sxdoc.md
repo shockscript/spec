@@ -1,4 +1,4 @@
-# SXDoc
+# SXDoc comments
 
 SXDoc are documentation comments that use the format `/** */`. Markdown notation is supported in SXDoc comments.
 

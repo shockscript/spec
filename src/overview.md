@@ -14,6 +14,6 @@ For the Whack Engine, XML expressions create WhackDS nodes by default.
 
 ShockScript incorporates a basic event model and allows easily declaring event types and documenting them. Implementations may extend the event model for working with a Document Object Model.
 
-## SXDoc
+## SXDoc comments
 
 ShockScript supports documentation comments allowing for Markdown notation, special tags such as `@throws` and media inclusion.
