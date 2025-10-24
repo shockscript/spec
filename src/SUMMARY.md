@@ -37,7 +37,7 @@
   - [Array type](./types/array.md)
   - [Map type](./types/map.md)
   - [Tuple types](./types/tuple.md)
-  - [Structural function types](./types/function.md)
+  - [Function types](./types/function.md)
   - [Record types](./types/record.md)
   - [Union types](./types/union.md)
   - [Object type](./types/object.md)
