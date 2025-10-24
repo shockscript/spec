@@ -15,3 +15,11 @@ Where applicable, expressions are disambiguated into destructuring patterns, in 
         <i>ObjectPattern</i>
     </ul>
 </ul>
+
+<ul>
+    <i>TypedPattern</i> :
+    <ul>
+        <i>Pattern</i> [lookahead ≠ <b>:</b>]<br>
+        <i>Pattern</i> <b>:</b> <i>TypeExpression</i>
+    </ul>
+</ul>

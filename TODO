@@ -88,9 +88,6 @@
   - [ ] Semantics
 - [ ] ShockScript: Statements
   - [ ] For `for each`: `Iterator` and `Iterable` are iterable
-  - [ ] `switch`
-    - [ ] No fallthroughs (demonstrate too).
-  - [ ] `switch type`
 - [ ] ShockScript: Directives
 - [ ] ShockScript: Definitions
 - [ ] Global objects
