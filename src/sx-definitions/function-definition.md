@@ -5,7 +5,7 @@
 <ul>
     <i>FunctionDefinition</i> :
     <ul>
-        <b>function</b> <i>FunctionName</i> <i>FunctionCommon</i><sup>allowIn</sup>
+        <b>function</b> <i>FunctionName</i> <i>TypeParameters</i><sub>opt</sub> <i>FunctionCommon</i><sup>allowIn</sup>
     </ul>
 </ul>
 
@@ -29,6 +29,8 @@ function f(): void {}
 function get x(): Number (impl.x)
 function set x(v: Number): void { impl.x = v }
 ```
+
+*TypeParameters* may not appear in a function definition defining a getter, setter or constructor.
 
 ## Function body
 

@@ -13,6 +13,6 @@ Type definitions are only allowed in package blocks and top-level region.
 <ul>
     <i>TypeDefinition</i> :
     <ul>
-        <b>type</b> <i>IdentifierName</i> <b>=</b> <i>TypeExpression</i>
+        <b>type</b> <i>IdentifierName</i> <i>TypeParameters</i><sub>opt</sub> <b>=</b> <i>TypeExpression</i>
     </ul>
 </ul>
