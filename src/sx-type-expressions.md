@@ -100,12 +100,12 @@
 <ul>
     <i>TypeArguments</i> :
     <ul>
-        <b>.</b> <b>&lt;</b> <i>TypeArgumentsList</i> <i>ParameterGreaterThan</i>
+        <b>.</b> <b>&lt;</b> <i>TypeArgumentsList</i> <i>GenericGreaterThan</i>
     </ul>
 </ul>
 
 <ul>
-    <i>ParameterGreaterThan</i> :
+    <i>GenericGreaterThan</i> :
     <ul>
         <b>&gt;</b><br>
         first greater-than <b>&gt;</b> from the offending token

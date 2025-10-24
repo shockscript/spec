@@ -1,0 +1,1 @@
+# ShockScript: Definitions

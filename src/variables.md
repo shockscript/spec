@@ -39,7 +39,7 @@ var x = 0
 Re-declaring a variable is allowed inside activation blocks.
 
 ```
-var m:* = complexCentral.manager;
+var m:* = central.manager;
 // more code...
 var m = Manager(m);
 ```
