@@ -28,4 +28,4 @@ o.(*.name.startsWith("A"))
 
 **Semantics**
 
-The filter operator `o.(...)` looks at `o` for the `sx_proxy::filter()` method and creates a wildcard **\*** binding inside the parenthesized expression that represents the element being tested. The parenthesized expression must return a Boolean.
+The filter operator `o.(...)` looks at `o` for the `sx_proxy::filter()` method and creates a wildcard **\*** binding inside the parenthesized expression that represents the element being tested. The parenthesized expression must return a Boolean and represents an activation.
