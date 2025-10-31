@@ -187,5 +187,6 @@
     - [ ] Like ECMA-262 `Intl`. Aliased `Intl::`, as well.
   - [ ] shockscript.temporal.*
     - [ ] Like ECMA-262 like `Temporal`. Aliased `Temporal::`, as well.
-  - [ ] shockscript.globalreflection.*
+  - [ ] shockscript.reflection.global.*
+
     - Used for what the `Reflect` namespace cannot be used for. Aliased `GlobalReflection::`, as well.
