@@ -2,7 +2,7 @@
 
 This section describes which type conversions are available.
 
-Explicit conversions may occur as either `T(v)` (strict conversion) or `v as T` (optional conversion). The behavior of the call operator over a type may not always be a conversion depending on if `T` implements the static `sx_proxy::call()` method.
+Explicit conversions may occur as either `T(v)` (strict conversion) or `v as T` (optional conversion). The behavior of the call operator over a type may not always be a conversion depending on if `T` implements the static `shock_proxy::call()` method.
 
 ```
 T(v)       // failure throws a TypeError

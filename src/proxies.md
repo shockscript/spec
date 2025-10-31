@@ -1,18 +1,18 @@
 # Proxies
 
-Methods of the `sx_proxy` namespace may be implemented in a class or interface for overriding language behavior, known as *proxies*.
+Methods of the `shock_proxy` namespace may be implemented in a class or interface for overriding language behavior, known as *proxies*.
 
-## sx_proxy::call()
+## shock_proxy::call()
 
-A static `sx_proxy::call()` method may be defined with any number of parameters and any result type, overriding the behavior of calling the class object.
+A static `shock_proxy::call()` method may be defined with any number of parameters and any result type, overriding the behavior of calling the class object.
 
 ```
-sx_proxy static function call():T {}
+shock_proxy static function call():T {}
 ```
 
 A multi-method may be used, allowing for multiple call signatures.
 
-## sx_proxy::get()
+## shock_proxy::get()
 
 > **Note**: Overriding the property accessor with a possibly `String` or `QName` key type (including base types `*` and `Object`) will override all names (like `.x`), except when calling a method (like `.m()`). In that case, a class is said to be *dynamic*.
 >
@@ -23,87 +23,87 @@ A multi-method may be used, allowing for multiple call signatures.
 > ```
 
 ```
-sx_proxy function get(key:K):V {
+shock_proxy function get(key:K):V {
     //
 }
 ```
 
-## sx_proxy::set()
+## shock_proxy::set()
 
 > **Note**: Overriding the property accessor with a possibly `String` or `QName` key type (including base types `*` and `Object`) will override all names (like `.x`), except when calling a method (like `.m()`). In that case, a class is said to be *dynamic*.
 
 ```
-sx_proxy function set(key:K, value:V):void {
+shock_proxy function set(key:K, value:V):void {
     //
 }
 ```
 
-## sx_proxy::delete()
+## shock_proxy::delete()
 
 > **Note**: Overriding the property accessor with a possibly `String` or `QName` key type (including base types `*` and `Object`) will override all names (like `.x`), except when calling a method (like `.m()`). In that case, a class is said to be *dynamic*.
 
 ```
-sx_proxy function delete(key:K):Boolean {
+shock_proxy function delete(key:K):Boolean {
     //
 }
 ```
 
-## sx_proxy::has()
+## shock_proxy::has()
 
 Overrides the behavior of the `in` operator.
 
 ```
-sx_proxy function has(key:K):Boolean {
+shock_proxy function has(key:K):Boolean {
     //
 }
 ```
 
-## sx_proxy::getAttribute()
+## shock_proxy::getAttribute()
 
 Overrides the behavior of the `.@k` accessor.
 
 ```
-sx_proxy function getAttribute(key:K):V {
+shock_proxy function getAttribute(key:K):V {
     //
 }
 ```
 
-## sx_proxy::setAttribute()
+## shock_proxy::setAttribute()
 
 Overrides the behavior of the `.@k = v` accessor.
 
 ```
-sx_proxy function setAttribute(key:K, value:V):void {
+shock_proxy function setAttribute(key:K, value:V):void {
     //
 }
 ```
 
-## sx_proxy::deleteAttribute()
+## shock_proxy::deleteAttribute()
 
 Overrides the behavior of the `delete (...).@k` accessor.
 
 ```
-sx_proxy function deleteAttribute(key:K):Boolean {
+shock_proxy function deleteAttribute(key:K):Boolean {
     //
 }
 ```
 
-## sx_proxy::filter()
+## shock_proxy::filter()
 
 Overrides the behavior of the filter operator (`.(test)`).
 
 ```
-sx_proxy function filter(testFn:function(T):Boolean):E {
+shock_proxy function filter(testFn:function(T):Boolean):E {
     //
 }
 ```
 
-## sx_proxy::descendants()
+## shock_proxy::descendants()
 
 Overrides the behavior of the descendants operator (`..x`). The parameter is expected to be typed `String` or `QName`.
 
 ```
-sx_proxy function descendants(name:QName):E {
+shock_proxy function descendants(name:QName):E {
     //
 }
 ```

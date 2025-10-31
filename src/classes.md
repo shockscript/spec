@@ -19,9 +19,9 @@ A class owns three namespaces:
 
 `protected` and `static protected` are propagated to the block of subclasses.
 
-## SXDoc comment
+## ShockDoc comment
 
-A class may be prefixed by a SXDoc comment.
+A class may be prefixed by a ShockDoc comment.
 
 ```
 /** Comment */

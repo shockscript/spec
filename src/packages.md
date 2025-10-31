@@ -30,12 +30,12 @@ package {
 }
 ```
 
-When a global name is shadowed, the user may use the special `SX` namespace to lookup a global name:
+When a global name is shadowed, the user may use the special `global` namespace to lookup a global name:
 
 ```
 Math
     // or
-SX::Math
+global::Math
 ```
 
 ## Name shadowing

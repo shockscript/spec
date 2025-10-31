@@ -21,9 +21,9 @@ The `interface` block may only contain function definitions, including regular m
 
 An `interface` is a subtype of `Object`, although compile-time property lookups do not inherit `Object` properties.
 
-## SXDoc comment
+## ShockDoc comment
 
-An interface may be prefixed by a SXDoc comment.
+An interface may be prefixed by a ShockDoc comment.
 
 ```
 /** Comment */
@@ -89,7 +89,7 @@ As annotations, interface methods may have nothing but an access modifier that i
 
 ```
 interface I {
-    sx_proxy function get(key:String):String;
+    shock_proxy function get(key:String):String;
 }
 ```
 

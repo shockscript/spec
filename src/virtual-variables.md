@@ -15,9 +15,9 @@ function set x(val) {
 }
 ```
 
-## SXDoc comment
+## ShockDoc comment
 
-A virtual variable derives SXDoc comments from its getter or setter.
+A virtual variable derives ShockDoc comments from its getter or setter.
 
 ```
 /** Comment */

@@ -4,8 +4,8 @@
 - [ ] Describe operations like GetQNameInNsSetOrAnyPublicNs() and possibly others used in property lookup
 - [70%] Property lookup
   - https://github.com/whackengine/sdk/blob/master/crates/mxmlsemantics/src/semantics/property_lookup.rs#L353
-  - [x] PropertyLookup: remind of `sx_proxy` stuff
-    - [x] `sx_proxy::get` allows for multiple signatures
+  - [x] PropertyLookup: remind of `shock_proxy` stuff
+    - [x] `shock_proxy::get` allows for multiple signatures
     - [ ] Introduce lazily imported source files based in source paths, when lookuping from packages.
     - [ ] Values whose static type is a type parameter will lookup for names in the type parameter's derived types.
   - [ ] InScopeLookup
@@ -31,7 +31,7 @@
 - [x] Lexical scopes
 - [x] Default lexical scope
 - [x] Conditional compilation
-- [x] SXDoc comments
+- [x] ShockDoc comments
 - [x] Proxies
 - [x] Lexical conventions
 - [ ] ShockScript: Expressions
@@ -63,18 +63,18 @@
     - [ ] Takes a non-attribute qualified identifier.
   - [ ] Call operator
     - [ ] Base is passed *followedByCall=true*
-    - [ ] Watch for static `sx_proxy::call` when calling classes (supports multiple signatures too)
+    - [ ] Watch for static `shock_proxy::call` when calling classes (supports multiple signatures too)
     - [ ] Take in consideration compatible overrides and overloads (also important for the `[object Object].equals()` method (e.g. in case two types are entirely different, should use the basemost `.equals()` method (essentially a dummy `===` comparison)))
-    - [ ] `XML` and `XMLList` being called statically shall still pass themselves as the context type to the first call argument, even if they define `sx_proxy::call()`.
+    - [ ] `XML` and `XMLList` being called statically shall still pass themselves as the context type to the first call argument, even if they define `shock_proxy::call()`.
     - [ ] Perform type inference for omitted generic parameters.
   - [ ] `v as T` operator
     - [ ] Passes context type `T` to `v`
   - [ ] Assignment expression
-    - [ ] When base is *KeyValuePairReferenceValue*, `sx_proxy::set()`
-    - [ ] When base is *AttributeReferenceValue*, `sx_proxy::setAttribute()`
+    - [ ] When base is *KeyValuePairReferenceValue*, `shock_proxy::set()`
+    - [ ] When base is *AttributeReferenceValue*, `shock_proxy::setAttribute()`
   - [ ] Delete operator
-    - [ ] `sx_proxy::delete()`
-    - [ ] `sx_proxy::deleteAttribute()`
+    - [ ] `shock_proxy::delete()`
+    - [ ] `shock_proxy::deleteAttribute()`
   - [ ] New operator
     - [ ] Base is passed *followedByCall=true*
     - [ ] Support a dynamically typed base (`*` or `Class`)
@@ -94,7 +94,7 @@
 - [x] ShockScript: Definitions
   - [ ] Semantics
 - [ ] Global objects
-  - [ ] sx_proxy namespace
+  - [ ] shock_proxy namespace
   - [ ] DotEnv namespace
   - [ ] Reflect namespace
   - [ ] trace()
@@ -116,7 +116,7 @@
     - [ ] required `next():{ done: Boolean, value?: T }`
     - [ ] `length():int`
     - [ ] `skip(count:int):void`
-    - [ ] `sx_proxy::filter(...)` (returns another iterator)
+    - [ ] `shock_proxy::filter(...)` (returns another iterator)
     - [ ] Other functional methods
   - [ ] Iterable.\<K, V> (interface) requires keys() and values()
   - [ ] Generator.\<T>
@@ -139,8 +139,8 @@
     - [ ] toLocaleString()
     - [ ] valueOf()
   - [ ] Array
-    - [ ] `sx_proxy::get(...)` throws if out of bounds
-    - [ ] `sx_proxy::filter(...)`
+    - [ ] `shock_proxy::get(...)` throws if out of bounds
+    - [ ] `shock_proxy::filter(...)`
     - [ ] `clone()`
     - [ ] `shift(): (void, T)`
     - [ ] `pop(): (void, T)`
@@ -148,7 +148,7 @@
     - [ ] `last : (void, T)`
   - [ ] Map
     - [ ] `Map(weakKeys:Boolean = false)`
-    - [ ] `sx_proxy::get()` throws if key does not match
+    - [ ] `shock_proxy::get()` throws if key does not match
     - [ ] `length()`
     - [ ] `clear()`
     - [ ] `clone()`
@@ -170,15 +170,15 @@
     - [ ] `clone()`
   - [ ] XML
     - [ ] Implement `Iterable`
-    - [ ] static `sx_proxy::call(arg:*):XML`
-    - [ ] `sx_proxy::has(name:QName):Boolean`
-    - [ ] `sx_proxy::get(index:int):XML` (throws if out of bounds)
-    - [ ] `sx_proxy::get(name:QName):XMLList`
-    - [ ] `sx_proxy::set(key:(int, QName), value:(XML, XMLList)):void`
-    - [ ] `sx_proxy::delete(arg:(int, QName)):Boolean`
+    - [ ] static `shock_proxy::call(arg:*):XML`
+    - [ ] `shock_proxy::has(name:QName):Boolean`
+    - [ ] `shock_proxy::get(index:int):XML` (throws if out of bounds)
+    - [ ] `shock_proxy::get(name:QName):XMLList`
+    - [ ] `shock_proxy::set(key:(int, QName), value:(XML, XMLList)):void`
+    - [ ] `shock_proxy::delete(arg:(int, QName)):Boolean`
     - [ ] Attributes
   - [ ] XMLList
-    - [ ] static `sx_proxy::call(arg:*):XMLList`
+    - [ ] static `shock_proxy::call(arg:*):XMLList`
   - [ ] ByteArray
     - [ ] Indexing
     - [ ] `shareable:Boolean`

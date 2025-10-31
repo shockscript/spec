@@ -54,9 +54,9 @@ All fields are required unless they contain `undefined` or `null`. A field such 
 
 Due to sensitive field order, record types with equivalent fields but in different orders will be incompatible.
 
-## Writing SXDoc comments
+## Writing ShockDoc comments
 
-Fields may have a preceding SXDoc comment, as in:
+Fields may have a preceding ShockDoc comment, as in:
 
 ```
 type R = {
