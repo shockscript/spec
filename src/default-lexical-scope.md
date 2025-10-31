@@ -9,3 +9,15 @@ The topmost scope imports the top-level package by wildcard. It is allowed to sh
 ## SX
 
 The topmost scope defines a `SX` property, which is an alias to a package wildcard import of the top-level package.
+
+## Intl
+
+The topmost scope defines an `Intl` property, which is an alias to a package wildcard import of the `shockscript.intl` package.
+
+## Temporal
+
+The topmost scope defines an `Temporal` property, which is an alias to a package wildcard import of the `shockscript.temporal` package.
+
+## GlobalReflection
+
+The topmost scope defines an `GlobalReflection` property, which is an alias to a package wildcard import of the `shockscript.globalreflection` package.
