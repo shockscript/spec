@@ -20,4 +20,4 @@ The topmost scope defines an `Temporal` property, which is an alias to a package
 
 ## GlobalReflection
 
-The topmost scope defines an `GlobalReflection` property, which is an alias to a package wildcard import of the `shockscript.globalreflection` package.
+The topmost scope defines an `GlobalReflection` property, which is an alias to a package wildcard import of the `shockscript.reflection.global` package.
