@@ -62,6 +62,14 @@ package com.fun.components {
 }
 ```
 
+Style blocks can be conditional, as in:
+
+```
+<w:Style if={condition}>
+    ...
+</w:Style>
+```
+
 #### Linking style sheets in custom components
 
 For a component to support `<w:Style>` tags, it simply needs to support a `stylesheet : [whack.ds.StyleSheet]` parameter.
