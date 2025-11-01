@@ -102,5 +102,3 @@ Use `s:n={v}` attributes as a shortcut to `style={{ ..., n: v }}`.
 ```
 <w:Button s:background="orange">button1</w:Button>
 ```
-
-Inline style values are converted to `String` automatically.
