@@ -1,6 +1,8 @@
 # Record types
 
-Record types `{ ... }` are simple property records, whose field order is sensitive. Those types are compiled into efficient structures.
+Record types `{ ... }` are simple property records. Record types are memory-efficient in cost of a hash-map-like field access.
+
+> **Note**: The decision for having record types compiling into hash-map structures is because these types use to contain many fields, for instance, in WhackDS components.
 
 ```
 type N1 = { x : decimal, y : decimal };
@@ -14,7 +16,7 @@ type N2 = {
 };
 ```
 
-> **Note**: Record types do not match with types structurally. They are simply structures the user may express inline.
+> **Note**: Record types do not match with types structurally unlike in structural-type-first languages. They are simply structures the user may express inline.
 
 ## Version control
 
@@ -81,3 +83,4 @@ type A = { x:Number };
 // B < A
 type B = { y:Number, ...A };
 ```
+
