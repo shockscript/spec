@@ -90,8 +90,8 @@ return (
 In the top-level of a component, reflect inherited contexts by using the `Context` meta-data.
 
 ```
-[Context(ThemeContext)]
-var theme:Theme;
+[Context("ThemeContext")]
+const theme;
 ```
 
 ## Capture safety

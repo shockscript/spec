@@ -126,8 +126,8 @@ Context usage is represented as `whack.ds.ContextValue.<T>` objects, although th
 ```
 function ExampleComponent():whack.ds.Node {
     //
-    [Context(ExampleContext)]
-    const example:Number;
+    [Context("ExampleContext")]
+    const example;
 
     return (
         <></>
