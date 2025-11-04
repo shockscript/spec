@@ -70,6 +70,14 @@ Style blocks can be conditional, as in:
 </w:Style>
 ```
 
+An arbitrary map of parameters (`Map.<String, String>`) may be passed as well:
+
+```
+<w:Style {map}>
+    ...
+</w:Style>
+```
+
 #### Linking style sheets in custom components
 
 For a component to support `<w:Style>` tags, it simply needs to support a `stylesheet : [whack.ds.StyleSheet]` parameter.
@@ -102,3 +110,4 @@ Use `s:n={v}` attributes as a shortcut to `style={{ ..., n: v }}`.
 ```
 <w:Button s:background="orange">button1</w:Button>
 ```
+
