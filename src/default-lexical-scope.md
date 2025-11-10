@@ -12,12 +12,12 @@ The topmost scope defines a `global` property, which is an alias to a package wi
 
 ## Intl
 
-The topmost scope defines an `Intl` property, which is an alias to a package wildcard import of the `shockscript.intl` package.
+The topmost scope defines an `Intl` property, which is an alias to a package wildcard import of the `shock.intl` package.
 
 ## Temporal
 
-The topmost scope defines an `Temporal` property, which is an alias to a package wildcard import of the `shockscript.temporal` package.
+The topmost scope defines an `Temporal` property, which is an alias to a package wildcard import of the `shock.temporal` package.
 
 ## GlobalReflection
 
-The topmost scope defines an `GlobalReflection` property, which is an alias to a package wildcard import of the `shockscript.reflection.global` package.
+The topmost scope defines an `GlobalReflection` property, which is an alias to a package wildcard import of the `shock.reflection.global` package.

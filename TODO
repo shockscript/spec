@@ -183,10 +183,10 @@
     - [ ] Indexing
     - [ ] `shareable:Boolean`
     - [ ] `clone()`
-  - [ ] shockscript.intl.*
+  - [ ] shock.intl.*
     - [ ] Like ECMA-262 `Intl`. Aliased `Intl::`, as well.
-  - [ ] shockscript.temporal.*
+  - [ ] shock.temporal.*
     - [ ] Like ECMA-262 like `Temporal`. Aliased `Temporal::`, as well.
-  - [ ] shockscript.reflection.global.*
+  - [ ] shock.reflection.global.*
 
     - Used for what the `Reflect` namespace cannot be used for. Aliased `GlobalReflection::`, as well.
