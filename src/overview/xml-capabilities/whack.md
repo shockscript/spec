@@ -85,17 +85,14 @@ For a component to support `<w:Style>` tags, it simply needs to support a `style
 ```
 package com.fun.components {
     //
-    public function CustomComponent({
-        stylesheet
-    }: {
+    public function CustomComponent(arguments: {
         stylesheet? : [whack.ds.StyleSheet],
     }) {
         //
 
         return (
             <w:Button>
-                <w:Style extend={stylesheet}/>
-
+                <w:Style extend={arguments.stylesheet}/>
                 click me
             </w:Button>
         );
@@ -110,4 +107,3 @@ Use `s:n={v}` attributes as a shortcut to `style={{ ..., n: v }}`.
 ```
 <w:Button s:background="orange">button1</w:Button>
 ```
-
