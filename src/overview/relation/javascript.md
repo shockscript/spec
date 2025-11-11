@@ -18,7 +18,7 @@ m.length()
 In ShockScript the following is valid in an activation:
 
 ```
-var m:* = complexCentral.manager;
+var m:* = complex.manager;
 // more code...
 var m = Manager(m);
 ```
