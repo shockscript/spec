@@ -1,7 +1,7 @@
 # Summary
 
 - [Overview](./overview.md)
-  - [Embed](./overview/embedding-resources.md)
+  - [Embed](./overview/embed.md)
   - [Versus](./overview/versus.md)
     - [React.js](./overview/versus/reactjs.md)
     - [MXML](./overview/versus/mxml.md)
