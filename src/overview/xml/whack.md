@@ -1,4 +1,4 @@
-# Whack
+# Whack XML
 
 This section describes XML features specifically when applied as WhackDS nodes.
 
@@ -99,6 +99,8 @@ package com.fun.components {
     }
 }
 ```
+
+The `extend` attribute may be used to include externally loaded styles as well.
 
 ## Specifying inline styles
 

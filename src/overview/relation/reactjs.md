@@ -169,4 +169,4 @@ Unlike with React.js, there is built-in support for linking style sheets in a Wh
 ```
 
 
-[More on style sheets](../xml-capabilities/whack.md#linking-cascading-style-sheets)
+[More on style sheets](../xml/whack.md#linking-cascading-style-sheets)

@@ -1,4 +1,4 @@
-# XML capabilities
+# XML
 
 The ShockScript language includes XML capabilities.
 
