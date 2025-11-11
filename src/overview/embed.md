@@ -1,4 +1,4 @@
-# Embedding resources
+# Embed
 
 The `Embed()` expression may be used for embedding files and media into the program. Its default behavior is to return a `data:` (for small files) or external URL (for large files).
 

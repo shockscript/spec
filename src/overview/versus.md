@@ -1,3 +1,3 @@
-# Relation to other technologies
+# Versus
 
 This section compares ShockScript to other technologies and languages.

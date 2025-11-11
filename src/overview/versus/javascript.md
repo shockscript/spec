@@ -1,6 +1,6 @@
 # JavaScript
 
-ShockScript gets too many roots from JavaScript.
+ShockScript gets too many roots from JavaScript, although more particularly linked to a previously abandoned version, JavaScript 2 (or ECMAScript 4th).
 
 ## Map data type
 
@@ -11,7 +11,7 @@ m.x = 10
 m.length()
 ```
 
-> **Note**: For a customized type, it might be necessary to access a variable rather than a key-value pair; for that, the user may use a fixed expression as in `<?fixed={object.q::n}?>`.
+> **Note**: For a customized type, it might be necessary to access a fixed variable rather than an arbitrary key-value pair; for that, the user may use a fixed expression as in `<?fixed={object.q::n}?>`.
 
 ## Variable shadowing
 
