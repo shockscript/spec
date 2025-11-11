@@ -56,7 +56,7 @@ Interpolation works similiarly to React.js, except for HTML.
 Interpolating attributes uses `{ object }` and not `{ ...object }` and must appear at most once at the end of all attributes:
 
 ```
-<w:Button {params}>click me</w:Button>
+<w:Button {arguments}>click me</w:Button>
 ```
 
 ## States

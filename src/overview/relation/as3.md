@@ -7,14 +7,14 @@ ShockScript looks like ActionScript 3. This section describes several details th
 The `String` type stores an UTF-8 encoded text, not an UTF-16 encoded text.
 
 ```
-"\u{10FFFF}".length // UTF-8 length
-"\u{10FFFF}".charAt(0) // Code Point at byte 0
+"\u{10FFFF}".length // utf-8 length
+"\u{10FFFF}".charAt(0) // code point at byte 0
 
 for each (var ch in "shockscript".chars()) {
     // ch:uint
 }
 
-"shockscript".chars().length() // Code Point length
+"shockscript".chars().length() // code point length
 ```
 
 ## Include directive
