@@ -43,9 +43,9 @@ global::Math
 It is possible to fully qualify a name in an expression using a package and one of its items, shadowing any other variables.
 
 ```
-import org.colourful.color.types.Color;
+import org.colourful.color.Color;
 var com = 0;
-trace( org.colourful.color.types.Color(0x10_00_00) );
+trace( org.colourful.color.Color(0x10_00_00) );
 trace( Color(0x10_00_00) );
 ```
 
