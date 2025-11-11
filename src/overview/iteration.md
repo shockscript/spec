@@ -1,4 +1,4 @@
-# Iteration capabilities
+# Iteration
 
 ShockScript features full object-oriented iteration.
 

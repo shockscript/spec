@@ -1,6 +1,6 @@
-# Access control namespaces
+# Namespaces
 
-ShockScript allows the user to define properties tied to a namespace, which is useful for version control and protection.
+ShockScript define properties whose name is tied to a namespace, which is useful for version control and protection.
 
 ```
 package com.company.runner {
