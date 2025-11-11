@@ -8,7 +8,7 @@ WhackDS automatically memoizes components, allowing for user customizable parame
 
 Just like with React.js, memoizing components has drawbacks such as possibly volatile code regions (such as when internationalizing a product with locale-specific translation strings). In such cases, relying on a WhackDS context will re-render the component when the context changes regardless of whether parameters did or not change.
 
-WhackDS skips re-rendering component if the parent re-renders and the parameters are equals to the previous render; the WhackDS component's own states updating will always re-render it.
+WhackDS skips re-rendering component if the parent re-renders and the parameters are equals to the previous render; the WhackDS component's own states updating with a different value will always re-render it.
 
 ## Style blocks
 
