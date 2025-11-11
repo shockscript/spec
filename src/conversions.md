@@ -6,7 +6,7 @@ Explicit conversions may occur as either `T(v)` (strict conversion) or `v as T` 
 
 ```
 T(v)       // failure throws a TypeError
-v as T     // failure returns a default value
+v as T     // returns T?. failure returns null
 ```
 
 ## Constant coercions
