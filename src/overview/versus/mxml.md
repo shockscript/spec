@@ -64,7 +64,9 @@ In the top-level of a component, declare states using the `State` meta-data:
 var counter:uint = 0;
 ```
 
-The initial value of `counter` is zero, although that initializer is only assigned to the state the first time the component renders.
+The initial value of `counter` is zero, although that initializer evaluates only the first time the component renders.
+
+Overwriting a state with a different value (as by an `.equals()` comparison) will re-render the component.
 
 Note that, like with React.js, arrays and structures as states will not trigger a re-render on operations like `.push()`; instead the programmer needs to reconstruct the array or structure, like in:
 
