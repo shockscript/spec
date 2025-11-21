@@ -114,10 +114,10 @@
   - [ ] undefined
   - [ ] Iterator.\<T> (interface)
     - [ ] required `next():{ done: Boolean, value?: T }`
-    - [ ] `length():int`
+    - [ ] `length():int` (consumes the whole iterator)
     - [ ] `skip(count:int):void`
     - [ ] `shock_proxy::filter(...)` (returns another iterator)
-    - [ ] Other functional methods
+    - [ ] Other functional methods (iterator *helper methods* like `map`, `every`, `some`, `reduce`...)
   - [ ] Iterable.\<K, V> (interface) requires keys() and values()
   - [ ] Generator.\<T>
   - [ ] Comparable interface
@@ -190,3 +190,4 @@
   - [ ] shock.reflection.global.*
 
     - Used for what the `Reflect` namespace cannot be used for. Aliased `GlobalReflection::`, as well.
+
