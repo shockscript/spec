@@ -4,13 +4,13 @@ This section describes XML features specifically when applied as WhackDS nodes.
 
 ## Native tags
 
-Native tags belong to the implicit `w` namespace, such as `w:Button`. The `w` namespace is not overridable.
+Native tags belong to the implicit `w` namespace, such as `<w:Button>`. The `w` namespace is not overridable.
 
 ## DOM “data” attributes
 
-`data` attributes (like `data-x`) set over native tags, such as `w:Button`, contribute plain data attributes to the underlying DOM element.
+`data` attributes (like `data-x`) set over native tags, such as `<w:Button>`, contribute plain data attributes to the underlying DOM element.
 
-Using a WhackDS reference, the attribute would be accessed as `reference!.@["data-name"]`.
+Using a WhackDS bindable, the attribute would be accessed as `bindable!.@["data-name"]`.
 
 ## “key” attribute
 
@@ -109,3 +109,4 @@ Use `s:n={v}` attributes as a shortcut to `style={{ ..., n: v }}`.
 ```
 <w:Button s:background="orange">button1</w:Button>
 ```
+
