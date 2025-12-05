@@ -1,0 +1,320 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Classes - ShockScript Language Specification</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ShockScript Language Specification</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="classes"><a class="header" href="#classes">Classes</a></h1>
+<p>A class is an inheritable user-defined type that may be used to create objects.</p>
+<pre><code>class C1 {
+    //
+}
+const obj = new C1();
+</code></pre>
+<h2 id="inner-namespaces"><a class="header" href="#inner-namespaces">Inner namespaces</a></h2>
+<p>A class owns three namespaces:</p>
+<ul>
+<li><code>private</code></li>
+<li><code>protected</code></li>
+<li><code>static protected</code></li>
+</ul>
+<p><code>protected</code> and <code>static protected</code> are propagated to the block of subclasses.</p>
+<h2 id="shockdoc-comment"><a class="header" href="#shockdoc-comment">ShockDoc comment</a></h2>
+<p>A class may be prefixed by a ShockDoc comment.</p>
+<pre><code>/** Comment */
+class C1 {}
+</code></pre>
+<h2 id="meta-data"><a class="header" href="#meta-data">Meta-data</a></h2>
+<p>A class may have zero or more meta-data.</p>
+<pre><code>[M1]
+[M2]
+class C1 {}
+</code></pre>
+<h2 id="inheritance"><a class="header" href="#inheritance">Inheritance</a></h2>
+<pre><code>class A {}
+class B extends A {}
+</code></pre>
+<h3 id="member-shadowing"><a class="header" href="#member-shadowing">Member shadowing</a></h3>
+<p>Members from base classes <strong>must not</strong> be shadowed except for overriding methods.</p>
+<pre><code>class C1 {
+    function m() {}
+}
+class C2 extends C1 {
+    function m() {} // ERROR!
+}
+</code></pre>
+<h3 id="default-inheritance"><a class="header" href="#default-inheritance">Default inheritance</a></h3>
+<p>By default a class, excluding <code>Object</code>, inherits <code>Object</code>. A class can extend at most one class.</p>
+<h3 id="final-classes"><a class="header" href="#final-classes">Final classes</a></h3>
+<p>A final class may not be extended:</p>
+<pre><code>final class A {}
+
+class B extends A {} // ERROR!
+</code></pre>
+<h3 id="implementing-interfaces"><a class="header" href="#implementing-interfaces">Implementing interfaces</a></h3>
+<p>A class may implement zero or more interfaces:</p>
+<pre><code>class C1 implements I1, I2 {
+    //
+}
+</code></pre>
+<h3 id="constructor-inheritance"><a class="header" href="#constructor-inheritance">Constructor inheritance</a></h3>
+<p>If the constructor of a class is not explicitly defined, then it is based on the base class's constructor, using the same signature and initializing the instance with default field values:</p>
+<pre><code>class A {
+    var x:Number;
+    function A(x:Number) {
+        this.x = x;
+    }
+}
+class B extends A {
+    var y:Number = 10;
+}
+new B(0);
+new B(); // ERROR!
+</code></pre>
+<h2 id="constructor"><a class="header" href="#constructor">Constructor</a></h2>
+<p>The constructor of a class is a special initialization method named as the class itself, as in:</p>
+<pre><code>class C1 {
+    function C1() {}
+}
+</code></pre>
+<h3 id="super-statement"><a class="header" href="#super-statement">Super statement</a></h3>
+<p>The super statement is used to invoke the constructor from the base class from a subclass constructor.</p>
+<p>A constructor must contain the super statement if a class is inherited which consists of a required constructor.</p>
+<pre><code>class A {
+    function A(x:Number) {}
+}
+class B extends A {
+    function B() {
+        super(0);
+    }
+}
+</code></pre>
+<h2 id="abstract-classes"><a class="header" href="#abstract-classes">Abstract classes</a></h2>
+<p>An abstract class may not be directly instantiated through the <code>new</code> operator, and may define abstract methods. Non abstract subclasses are allowed to be instantiated.</p>
+<pre><code>abstract class A {
+    abstract function m():void;
+}
+</code></pre>
+<h2 id="static-classes"><a class="header" href="#static-classes">Static classes</a></h2>
+<p>A static class may not be instantiated or inherited, and by convention consists of static properties and methods.</p>
+<pre><code>static class MyNamespace {
+    public static const VALUE:Number = 10.5;
+}
+</code></pre>
+<h2 id="events"><a class="header" href="#events">Events</a></h2>
+<p>The class, in convention when either extending <code>EventTarget</code> or implementing <code>IEventTarget</code>, may define possibly emitted events through using multiple <code>Event</code> meta-data.</p>
+<pre><code>/**
+ * Event.
+ */
+[Event(name="eventName", type="T")]
+/**
+ * Target.
+ */
+class A extends EventTarget {}
+</code></pre>
+<h2 id="static-properties"><a class="header" href="#static-properties">Static properties</a></h2>
+<p>Definitions marked <code>static</code> that appear within the <code>class</code> block are part of the static properties of the class, which are accessed as <code>C.n</code> where <code>C</code> is teh class and <code>n</code> the property name.</p>
+<h2 id="instance-properties"><a class="header" href="#instance-properties">Instance properties</a></h2>
+<p>Definitions not marked <code>static</code> that appear within the <code>class</code> block are part of the prototype of the class, and are called <em>instance</em> properties.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="namespaces.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="enums.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="namespaces.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="enums.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
