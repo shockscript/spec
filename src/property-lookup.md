@@ -8,14 +8,14 @@
 
 *LookupKey*.Value returns:
 
-- For *LocalName*(*name*), a *StringConstant* equivalent to *name* or defer if `String` is unresolved.
+- For *LocalName*(*name*), a *StringConstant* equivalent to *name* or defer if `string` is unresolved.
 - For *Computed*(*value*), *value*.
 
 ### LookupKey.Type
 
 *LookupKey*.Type returns:
 
-- For *LocalName*(*name*), the `String` type or defer.
+- For *LocalName*(*name*), the `string` type or defer.
 - For *Computed*(*value*), the static type of *value* or defer.
 
 ### LookupKey.Double
@@ -23,11 +23,11 @@
 *LookupKey*.Double returns:
 
 - For *LocalName*(*name*), undefined.
-- For *Computed*(*value*), *value* is *NumberConstant*(*v*) ? force convert *v* to a `Number` : undefined.
+- For *Computed*(*value*), *value* is *NumberConstant*(*v*) ? force convert *v* to a `double` : undefined.
 
 ## PropertyLookup()
 
-*PropertyLookup*(*base*, *openNsSet*, *qual*, *key* as *LookupKey*, *followedByCall* as `Boolean`, *fixed* as `Boolean`) takes the following steps in order, where *fixed* allows forcing access to a fixture property on dynamic types (used by the `<?fixed={}?>` expression):
+*PropertyLookup*(*base*, *openNsSet*, *qual*, *key* as *LookupKey*, *followedByCall* as `boolean`, *fixed* as `boolean`) takes the following steps in order, where *fixed* allows forcing access to a fixture property on dynamic types (used by the `<?fixed={}?>` expression):
 
 - If *base* is invalidation
   - Return invalidation
@@ -56,21 +56,21 @@
   - If *baseType* is invalid
     - Return invalid
   - *baseType* = *baseType*.ResolveAlias()
-  - If (*followedByCall* == false and *fixed* == false) and *baseType* defines an instance method `shock_proxy::get` (possibly a multi method)
+  - If (*followedByCall* == false and *fixed* == false) and *baseType* defines an instance method `meta::get` (possibly a multi method)
     - Let *foundRegularProperty* = false
-    - For each `shock_proxy::get(k:K):V` method
+    - For each `meta::get(k:K):V` method
       - If *qual* != undefined
         - If *K* == `*` or *K* == (`Object` or defer) or *K* == (`QName` or defer) or *K* ?union contains (`QName` or defer)
-          - Return *KeyValuePairReferenceValue*(*base*, *proxy method*, *qual* as a `Namespace` object, *key*.Value coerced to (`String` or defer))
+          - Return *KeyValuePairReferenceValue*(*base*, *meta-method*, *qual* as a `Namespace` object, *key*.Value coerced to (`string` or defer))
         - Continue loop
-      - If *key*.Value is a (`String` or defer) value and (*K* == (`QName` or defer) or (*K* ?union does not contain `String` and *K* union contains `QName`))
-        - Return *KeyValuePairReferenceValue*(*base*, *proxy method*, undefined, *key*.Value)
-      - If *K* == `*` or *K* == (`Object` or defer) or *K* == (`String` or defer) or *K* == (`QName` or defer) or (*K* ?union contains `String` or *K* union contains `QName`)
+      - If *key*.Value is a (`string` or defer) value and (*K* == (`QName` or defer) or (*K* ?union does not contain `string` and *K* union contains `QName`))
+        - Return *KeyValuePairReferenceValue*(*base*, *meta-method*, undefined, *key*.Value)
+      - If *K* == `*` or *K* == (`Object` or defer) or *K* == (`string` or defer) or *K* == (`QName` or defer) or (*K* ?union contains `string` or *K* union contains `QName`)
         - *foundRegularProperty* = true
       - If (static type of *key*.Value or defer) fails on implicit coercion to *K*
         - Continue loop
-      - Return *KeyValuePairReferenceValue*(*base*, *proxy method*, undefined, *key*.Value implicitly coerced to *K*)
-    - If (static type of *key*.Value or defer) != (`String` or defer) or *foundRegularProperty*
+      - Return *KeyValuePairReferenceValue*(*base*, *meta-method*, undefined, *key*.Value implicitly coerced to *K*)
+    - If (static type of *key*.Value or defer) != (`string` or defer) or *foundRegularProperty*
       - Throw a verify error
   - Let *hasKnownNs* = *qual* == undefined or (*qual* is a namespace or *NamespaceConstant*)
   - If *localName* == undefined
@@ -133,6 +133,6 @@
 
 ## InScopeLookup()
 
-*InScopeLookup*(*scope*, *qual*, *key* as *LookupKey*, *followedByCall* as `Boolean`, *fixed* as `Boolean`) takes the following steps in order:
+*InScopeLookup*(*scope*, *qual*, *key* as *LookupKey*, *followedByCall* as `boolean`, *fixed* as `boolean`) takes the following steps in order:
 
 > **Note**: Content lacking.

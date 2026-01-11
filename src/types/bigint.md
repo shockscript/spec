@@ -1,3 +1,3 @@
-# BigInt type
+# bigint type
 
-The `BigInt` type represents an arbitrary range integer.
+The `bigint` type represents an arbitrary range integer.

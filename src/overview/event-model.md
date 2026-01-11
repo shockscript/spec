@@ -20,7 +20,7 @@ class Actor extends EventTarget {
     /**
      * Some method.
      */
-    public function m() {
+    function m() {
         this.emit(new Event("act"));
     }
 }
@@ -55,7 +55,7 @@ The `emit()` method is defined as follows:
 /**
  * Dispatches an event.
  */
-public function emit.<E>(e:E):Boolean {
+function emit.<E>(e:E):boolean {
     // code
 }
 ```
@@ -71,7 +71,7 @@ The `on()` method is roughly defined as follows:
 /**
  * Registers an event listener.
  */
-public function on.<E>(type:E.name, listener:function(E.type):void) : void {
+function on.<E>(type:E.name, listener:function(E.type):void) : void {
     //
 }
 ```

@@ -8,7 +8,7 @@ interface I {
     function m() : void;
 
     //
-    function get x() : Number;
+    function get x() : double;
     function set x(value);
 }
 
@@ -21,9 +21,9 @@ The `interface` block may only contain function definitions, including regular m
 
 An `interface` is a subtype of `Object`, although compile-time property lookups do not inherit `Object` properties.
 
-## ShockDoc comment
+## ESDoc comment
 
-An interface may be prefixed by a ShockDoc comment.
+An interface may be prefixed by a ESDoc comment.
 
 ```
 /** Comment */
@@ -89,7 +89,7 @@ As annotations, interface methods may have nothing but an access modifier that i
 
 ```
 interface I {
-    shock_proxy function get(key:String):String;
+    meta function get(key:string):string;
 }
 ```
 

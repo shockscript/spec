@@ -4,19 +4,19 @@
 - [ ] Describe operations like GetQNameInNsSetOrAnyPublicNs() and possibly others used in property lookup
 - [70%] Property lookup
   - https://github.com/whackengine/sdk/blob/master/crates/mxmlsemantics/src/semantics/property_lookup.rs#L353
-  - [x] PropertyLookup: remind of `shock_proxy` stuff
-    - [x] `shock_proxy::get` allows for multiple signatures
+  - [x] PropertyLookup: remind of `meta` stuff
+    - [x] `meta::get` allows for multiple signatures
     - [ ] Introduce lazily imported source files based in source paths, when lookuping from packages.
     - [ ] Values whose static type is a type parameter will lookup for names in the type parameter's derived types.
   - [ ] InScopeLookup
     - [ ] Introduce lazily imported source files based in source paths.
-    - [ ] `DotEnv` qualifier causes DotEnv variable retrieval.
+    - [ ] `env` qualifier causes DotEnv variable retrieval (or, depending on the implementation, may resolve to a predefined variable).
     - [ ] Use `fixed=true` access when doing property lookup in activation's `this` (e.g. user should use `this` if the enclosing class is dynamic and needs to access a dynamic property).
 - [ ] Constants
   - [ ] *EnumConstant* for both regular enumerations and flag enumerations
 - [ ] Reference values
   - [ ] *DynamicReferenceValue*(*base*, *qual*, *key*.Value, *followedByCall*, *fixed*)
-  - [ ] *KeyValuePairReferenceValue*(*base*, *proxy method*, *qual*, *key*)
+  - [ ] *KeyValuePairReferenceValue*(*base*, *meta-method*, *qual*, *key*)
   - [ ] Do not include XML reference values from Whack Engine
 - [70%] Packages
 - [70%] Namespaces
@@ -31,8 +31,8 @@
 - [x] Lexical scopes
 - [x] Default lexical scope
 - [x] Conditional compilation
-- [x] ShockDoc comments
-- [x] Proxies
+- [x] ESDoc comments
+- [x] Meta-methods
 - [x] Lexical conventions
 - [ ] ShockScript: Expressions
   - [x] `Embed()`
@@ -63,18 +63,17 @@
     - [ ] Takes a non-attribute qualified identifier.
   - [ ] Call operator
     - [ ] Base is passed *followedByCall=true*
-    - [ ] Watch for static `shock_proxy::call` when calling classes (supports multiple signatures too)
-    - [ ] Take in consideration compatible overrides and overloads (also important for the `[object Object].equals()` method (e.g. in case two types are entirely different, should use the basemost `.equals()` method (essentially a dummy `===` comparison)))
-    - [ ] `XML` and `XMLList` being called statically shall still pass themselves as the context type to the first call argument, even if they define `shock_proxy::call()`.
+    - [ ] Watch for static `meta::call` when calling classes (supports multiple signatures too)
+    - [ ] `XML` and `XMLList` being called statically shall still pass themselves as the context type to the first call argument, even if they define `meta::call()`.
     - [ ] Perform type inference for omitted generic parameters.
   - [ ] `v as T` operator
     - [ ] Passes context type `T` to `v`
   - [ ] Assignment expression
-    - [ ] When base is *KeyValuePairReferenceValue*, `shock_proxy::set()`
-    - [ ] When base is *AttributeReferenceValue*, `shock_proxy::setAttribute()`
+    - [ ] When base is *KeyValuePairReferenceValue*, `meta::set()`
+    - [ ] When base is *AttributeReferenceValue*, `meta::setAttribute()`
   - [ ] Delete operator
-    - [ ] `shock_proxy::delete()`
-    - [ ] `shock_proxy::deleteAttribute()`
+    - [ ] `meta::delete()`
+    - [ ] `meta::deleteAttribute()`
   - [ ] New operator
     - [ ] Base is passed *followedByCall=true*
     - [ ] Support a dynamically typed base (`*` or `Class`)
@@ -94,12 +93,16 @@
 - [x] ShockScript: Definitions
   - [ ] Semantics
 - [ ] Global objects
-  - [ ] shock_proxy namespace
-  - [ ] DotEnv namespace
-  - [ ] Reflect namespace
+  - [ ] (Whack engine) w namespace = "http://www.sweaxizone.com/whack/2015"
+  - [ ] ES4 namespace = "http://www.sweaxizone.com/shockscript/2015/global"
+  - [ ] Intl namespace = "org.shockscript.intl"
+  - [ ] Temporal namespace = "org.shockscript.temporal"
+  - [ ] env namespace (DotEnv special qualifier) = "http://www.sweaxizone.com/shockscript/2015/env"
+  - [ ] reflect namespace = "http://www.sweaxizone.com/shockscript/2015/reflect"
   - [ ] trace()
+  - [ ] etrace()
   - [ ] assert()
-  - [ ] assertEquals() (uses `[object Object].equals()` if each operand `is Object`)
+  - [ ] assertEqual() (uses `equal()`)
   - [ ] assertThrows()
   - [ ] encodeURI()
   - [ ] decodeURI()
@@ -113,81 +116,81 @@
   - [ ] NaN
   - [ ] undefined
   - [ ] Iterator.\<T> (interface)
-    - [ ] required `next():{ done: Boolean, value?: T }`
+    - [ ] required `next():[T]?` (the returned array must be of length 1)
     - [ ] `length():int` (consumes the whole iterator)
     - [ ] `skip(count:int):void`
-    - [ ] `shock_proxy::filter(...)` (returns another iterator)
+    - [ ] `meta::filter(...)` (returns another iterator)
     - [ ] Other functional methods (iterator *helper methods* like `map`, `every`, `some`, `reduce`...)
   - [ ] Iterable.\<K, V> (interface) requires keys() and values()
   - [ ] Generator.\<T>
   - [ ] Comparable interface
-    - [ ] `compareTo(obj:this):int`
-    - [ ] This is used by default on array sorting (as long as element types are equal)
+    - [ ] `compareTo(obj:Object):int`
+    - [ ] This is used by default on array sorting.
   - [ ] Object
-    - [ ] Reflect::class()
-    - [ ] clone() returns `this`
-      - Default implementation clones most objects fine (records, tuples, arrays, maps and so on), but classes with a required constructor will require a custom clone() override.
-    - [ ] `equals(obj:this):Boolean`
-      - May be used in addition to reference equality (==, ===). Default object behavior is ===.
-      - Incompatible operands should use the most compatible base `.equals()` method (call operator specific behavior)
-      - Floating points should have an `equals()` implementation done like in React.js's memoization/state new value comparison.
-      - [ ] `Map.equals()` should look structurally using inner `.equals()`
-      - [ ] Array too
-      - [ ] Tuples too
-      - [ ] Records too
+    - [ ] `clone(deep:boolean=):Object`
+      - \[protected]
+      - Default implementation clones most objects fine (records, tuples, arrays, maps and so on), but fails for classes with a required constructor.
+        - Clones are shallow (not deep) by default
+    - [ ] `equals(obj:Object):boolean`
+      - [ ] NaN = NaN
+      - [ ] Maps
+      - [ ] Array
+      - [ ] Tuples
+      - [ ] Records
+      - [ ] Maps
+      - [ ] (Other objects just use ===)
+    - [ ] `reflect::class()`
     - [ ] toString()
     - [ ] toLocaleString()
     - [ ] valueOf()
   - [ ] Array
-    - [ ] `shock_proxy::get(...)` throws if out of bounds
-    - [ ] `shock_proxy::filter(...)`
-    - [ ] `clone()`
+    - [ ] `meta::get(...)` throws if out of bounds
+    - [ ] `meta::filter(...)`
+    - [ ] `clone(deep=)`
     - [ ] `shift(): (void, T)`
     - [ ] `pop(): (void, T)`
     - [ ] `first : (void, T)`
     - [ ] `last : (void, T)`
   - [ ] Map
-    - [ ] `Map(weakKeys:Boolean = false)`
-    - [ ] `shock_proxy::get()` throws if key does not match
+    - [ ] `Map(weakKeys:boolean = false)`
+    - [ ] `meta::get()` throws if key does not match
     - [ ] `length()`
     - [ ] `clear()`
-    - [ ] `clone()`
-  - [ ] String
-    - [ ] static `fromByte(...):String`
-    - [ ] `format(vars:Map.<String, String>):String`
+    - [ ] `clone(deep=)`
+  - [ ] string
+    - [ ] static `fromByte(...):string`
+    - [ ] `format(vars:Map.<string, string>):string`
       - Formats `$varName`, `${varName}` and `$$`
   - [ ] Chars
-    - [ ] `new Chars(str:String, offset:int = 0)`
+    - [ ] `new Chars(str:string, offset:int = 0)`
     - [ ] Indexing (peeking using zero-based Unicode code point positions; returns U+00 if out of bounds)
-    - [ ] `seq(numCodePoints:int):String` (stops on end of stream)
+    - [ ] `seq(numCodePoints:int):string` (stops on end of stream)
     - [ ] `peek():uint` (equivalent to `chars[0]`)
-    - [ ] `reachedEnd:Boolean`
-    - [ ] `hasRemaining:Boolean`
-    - [ ] `clone():Chars`
+    - [ ] `reachedEnd:boolean`
+    - [ ] `hasRemaining:boolean`
+    - [ ] `clone(deep=):Chars`
   - [ ] RegExpMatches
     - [ ] Implement indexing
-    - [ ] `substr : [String]`
-    - [ ] `clone()`
+    - [ ] `substr : [string]`
+    - [ ] `clone(deep=)`
   - [ ] XML
     - [ ] Implement `Iterable`
-    - [ ] static `shock_proxy::call(arg:*):XML`
-    - [ ] `shock_proxy::has(name:QName):Boolean`
-    - [ ] `shock_proxy::get(index:int):XML` (throws if out of bounds)
-    - [ ] `shock_proxy::get(name:QName):XMLList`
-    - [ ] `shock_proxy::set(key:(int, QName), value:(XML, XMLList)):void`
-    - [ ] `shock_proxy::delete(arg:(int, QName)):Boolean`
+    - [ ] static `meta::call(arg:*):XML`
+    - [ ] `meta::has(name:QName):boolean`
+    - [ ] `meta::get(index:int):XML` (throws if out of bounds)
+    - [ ] `meta::get(name:QName):XMLList`
+    - [ ] `meta::set(key:(int, QName), value:(XML, XMLList)):void`
+    - [ ] `meta::delete(arg:(int, QName)):boolean`
     - [ ] Attributes
   - [ ] XMLList
-    - [ ] static `shock_proxy::call(arg:*):XMLList`
+    - [ ] static `meta::call(arg:*):XMLList`
   - [ ] ByteArray
     - [ ] Indexing
-    - [ ] `shareable:Boolean`
-    - [ ] `clone()`
-  - [ ] shock.intl.*
+    - [ ] `shareable:boolean`
+    - [ ] `clone(deep=)`
+  - [ ] org.shockscript.intl.*
     - [ ] Like ECMA-262 `Intl`. Aliased `Intl::`, as well.
-  - [ ] shock.temporal.*
+  - [ ] org.shockscript.temporal.*
     - [ ] Like ECMA-262 like `Temporal`. Aliased `Temporal::`, as well.
-  - [ ] shock.reflection.global.*
-
-    - Used for what the `Reflect` namespace cannot be used for. Aliased `GlobalReflection::`, as well.
-
+  - [ ] org.shockscript.reflect.*
+    - Used for what the `reflect` namespace cannot be used for (e.g. perhaps extracting a list of properties from a package name).

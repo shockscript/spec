@@ -11,11 +11,11 @@ iterator.(* > 0) // filter
 The user may override the key and value iterators by implementing the `Iterable.<K, V>` interface.
 
 ```
-class A implements Iterable.<String, Number> {
+class A implements Iterable.<string, double> {
     /**
      * Iterate keys.
      */
-    public function keys():Iterator.<String> {
+    function keys():Iterator.<string> {
         for (var i = 0; i < 10; i++) {
             yield i.toString();
         }
@@ -24,7 +24,7 @@ class A implements Iterable.<String, Number> {
     /**
      * Iterate values.
      */
-    public function values():Iterator.<Number> {
+    function values():Iterator.<double> {
         for (var i = 0; i < 10; i++) {
             yield i;
         }

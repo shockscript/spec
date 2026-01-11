@@ -1,22 +1,26 @@
 # Namespaces
 
-ShockScript define properties whose name is tied to a namespace, which is useful for version control and protection.
+ShockScript defines properties whose name is tied to a namespace, which is useful for version control and protection.
 
 ```
 package com.company.runner {
-    /** @private */
-    public namespace runner_internals;
+    /**
+     * @private
+     */
+    namespace product_internals = "http://www.company.com/runner/internals/2007";
 }
 
 package com.company.runner {
     //
-    public class Helper {
-        /** @private */
-        runner_internals const cache : [Number] = [];
+    class Helper {
+        /**
+         * @private
+         */
+        product_internals const cache : [double] = [];
 
         //
-        public function track() {
-            runner_internals::cache.push(0);
+        function track() {
+            product_internals::cache.push(0);
         }
     }
 }
@@ -25,8 +29,8 @@ package com.company.runner.advanced {
     import com.company.runner.*;
 
     //
-    public function f(helper:Helper) {
-        helper.runner_internals::cache.push(10);
+    function f(helper:Helper) {
+        helper.product_internals::cache.push(10);
     }
 }
 ```
@@ -38,21 +42,21 @@ package com.business.product {
     /**
      * Flexible version control namespace.
      */
-    public namespace Flexible = "http://business.com/product/flexible";
+    namespace Flexible = "http://business.com/product/flexible";
 }
 
 package com.business.product {
     /**
      * Judgement version control namespace.
      */
-    public namespace Judgement = "http://business.com/product/judgement";
+    namespace Judgement = "http://business.com/product/judgement";
 }
 
 package com.business.product {
     /**
      * Pair.
      */
-    public type Pair = {
+    type Pair = {
         Flexible::strength : [decimal],
         Judgement::strength : [decimal],
     };

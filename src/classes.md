@@ -19,9 +19,9 @@ A class owns three namespaces:
 
 `protected` and `static protected` are propagated to the block of subclasses.
 
-## ShockDoc comment
+## ESDoc comment
 
-A class may be prefixed by a ShockDoc comment.
+A class may be prefixed by a ESDoc comment.
 
 ```
 /** Comment */
@@ -88,13 +88,13 @@ If the constructor of a class is not explicitly defined, then it is based on the
 
 ```
 class A {
-    var x:Number;
-    function A(x:Number) {
+    var x:double;
+    function A(x:double) {
         this.x = x;
     }
 }
 class B extends A {
-    var y:Number = 10;
+    var y:double = 10;
 }
 new B(0);
 new B(); // ERROR!
@@ -118,7 +118,7 @@ A constructor must contain the super statement if a class is inherited which con
 
 ```
 class A {
-    function A(x:Number) {}
+    function A(x:double) {}
 }
 class B extends A {
     function B() {
@@ -143,7 +143,7 @@ A static class may not be instantiated or inherited, and by convention consists 
 
 ```
 static class MyNamespace {
-    public static const VALUE:Number = 10.5;
+    static const VALUE:double = 10.5;
 }
 ```
 
@@ -164,8 +164,26 @@ class A extends EventTarget {}
 
 ## Static properties
 
-Definitions marked `static` that appear within the `class` block are part of the static properties of the class, which are accessed as `C.n` where `C` is teh class and `n` the property name.
+Definitions marked `static` that appear within the `class` block are part of the static properties of the class, which are accessed as `C.n` where `C` is the class and `n` the property name.
 
 ## Instance properties
 
 Definitions not marked `static` that appear within the `class` block are part of the prototype of the class, and are called *instance* properties.
+
+## Nested classes
+
+ShockScript supports nested classes.
+
+> **Note**: The initial decision for supporting nested classes is that they allow reducing the number of ShockScript source files when a programmer attempts to express a type close to an algebraic data type consisting of many variants.
+
+Nested classes, due to the scope, may access both `protected` and `private` members of the enclosing classes.
+
+```
+//
+static class Outer {
+    //
+    class Inner {
+        //
+    }
+}
+```

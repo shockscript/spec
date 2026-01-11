@@ -21,9 +21,9 @@ class A {
 }
 ```
 
-## ShockDoc comment
+## ESDoc comment
 
-A ShockDoc comment can be applied to a method.
+A ESDoc comment can be applied to a method.
 
 ```
 /** Comment */
@@ -65,7 +65,7 @@ abstract class A {
 A method is a generator if the `yield` operator appears at least once in the method's body. A generator is a method that evaluates like an iterator, consumed in pauses of `yield` operators until it hits a `return` statement or the end of code. A generator returns a `Generator.<T>` object.
 
 ```
-function g():Number {
+function g():double {
     yield 100.5;
 }
 ```
@@ -86,14 +86,18 @@ If a method uses both `yield` and `await`, it is considered an iterator of `Prom
 
 ## Multi-methods
 
-A method may be defined more than once with varying signatures, turning into a *multi-method*. Signatures must differ by the parameter list and not just the result type.
+By using a `generic`-annotated header method, a method may be defined more than once with varying signatures, turning into a *multi-method*. Signatures must differ by the parameter list and not just the result type.
+
+A `generic` header method must consist of exactly an untyped rest parameter and must omit the result type. Its purpose is to declare that a method is a multi-method and may be re-defined multiple times in the same scope or in the same directly-enclosing class.
 
 ```
+generic function f(...);
+
 function f():decimal {
-    //
+    // code
 }
 function f(val:decimal):Chainable {
-    //
+    // code
 }
 ```
 
@@ -107,10 +111,11 @@ override protected function m() {
 }
 ```
 
-**Remarks**
+**Restrictions**
 
 - A getter must override a getter, and a setter must override a setter.
 - For a multi method, the override shall match a specific signature.
+- It is not allowed to have a `generic`-annotated function that overrides another function (whether `generic` or not).
 
 ### Overriding rules
 
@@ -121,13 +126,15 @@ A method S may override a method B with the following rules:
   - S may include additional *optional* parameters and/or a *rest* parameter.
 - S must have the same result type of B, or a subtype of the B result type.
 
+The above overriding rules apply to non-multi-methods; for multi methods, the override signature must be exactly the same.
+
 ## Bound methods
 
 Instance methods are *bound* such that retrieving a method from an instance will return a method tied to the instance.
 
 ```
 class A {
-    function m():this {
+    function m():A {
         return this;
     }
 }

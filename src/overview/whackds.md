@@ -10,18 +10,18 @@ Just like with React.js, memoizing components has drawbacks such as possibly vol
 
 WhackDS skips re-rendering component if the parent re-renders and the parameters are equals to the previous render; the WhackDS component's own states updating with a different value will always re-render it.
 
+> **Note**: To avoid *old state comparison issues*, the properties object must not be reused for mutation (since WhackDS does not know how to clone them).
+
 ## Style blocks
 
 WhackDS supports style sheets out of the box. Here is a simple example:
 
 ```
 <w:VGroup>
-    <w:Style>
-        <![CDATA[
-            :host {
-                background: red;
-            }
-        ]]>
-    </w:Style>
+    <w:Style><![CDATA[
+        :host {
+            background: red;
+        }
+    ]]></w:Style>
 </w:VGroup>
 ```

@@ -4,13 +4,10 @@ Basic unit testing may be done by defining functions with the `Test` meta-data a
 
 ```
 package com.example.foo.tests {
-    // Unit tests
-    CONFIG::TEST {
+    // unit tests
+    ES4::testing {
         [Test]
-        /**
-         * Test foo.
-         */
-        public function testFoo():void {
+        function testFoo():void {
             assertEquals(2 + 2, 4);
         }
     }

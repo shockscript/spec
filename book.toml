@@ -1,10 +1,8 @@
 [book]
-authors = ["hydroperx"]
+authors = ["MatheusDS4"]
 language = "en"
-multilingual = false
 src = "src"
 title = "ShockScript Language Specification"
 
 [output.html]
-copy-fonts = false
 fold = { enable = true }

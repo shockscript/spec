@@ -9,10 +9,10 @@ type N1 = { x : decimal, y : decimal };
 
 type N2 = {
     /** x */
-    x:Number,
+    x:double,
 
     /** y */
-    y?:Boolean,
+    y?:boolean,
 };
 ```
 
@@ -27,21 +27,21 @@ package com.business.product {
     /**
      * Flexible version control namespace.
      */
-    public namespace Flexible = "http://business.com/product/flexible";
+    namespace Flexible = "http://business.com/product/flexible";
 }
 
 package com.business.product {
     /**
      * Judgement version control namespace.
      */
-    public namespace Judgement = "http://business.com/product/judgement";
+    namespace Judgement = "http://business.com/product/judgement";
 }
 
 package com.business.product {
     /**
      * Pair.
      */
-    public type Pair = {
+    type Pair = {
         Flexible::strength : [decimal],
         Judgement::strength : [decimal],
     };
@@ -56,16 +56,16 @@ All fields are required unless they contain `undefined` or `null`. A field such 
 
 Due to sensitive field order, record types with equivalent fields but in different orders will be incompatible.
 
-## Writing ShockDoc comments
+## Writing ESDoc comments
 
-Fields may have a preceding ShockDoc comment, as in:
+Fields may have a preceding ESDoc comment, as in:
 
 ```
 type R = {
     /**
      * Comment.
      */
-    x : Number,
+    x : double,
 };
 ```
 
@@ -79,9 +79,9 @@ One trailing `...rest` component may appear in a record, where `rest` must be an
 
 ```
 // A
-type A = { x:Number };
+type A = { x:double };
 // B < A
-type B = { y:Number, ...A };
+type B = { y:double, ...A };
 ```
 
 

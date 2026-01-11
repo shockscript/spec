@@ -2,7 +2,7 @@
 
 Classes, interfaces, type aliases and functions may specify type parameters, turning into *generic* entities. ShockScript implements generic entities using polymorphism.
 
-> **Note**: Array data types of `Number`, `float`, `decimal`, `int` and `uint` are specialized so they are represented in a memory efficient way.
+> **Note**: Array data types of `double`, `float`, `decimal`, `int` and `uint` are specialised so they are represented in a memory efficient way.
 
 ```
 class A.<T> {
@@ -59,13 +59,13 @@ package com.business.coreRT.events {
     /**
      * Event dispatcher.
      */
-    public class EventTarget {
+    class EventTarget {
 
         [Limit(E, eventOf="this", match="object")]
         /**
          * Dispatches an event.
          */
-        public function emit.<E>(e:E):Boolean {
+        function emit.<E>(e:E):boolean {
             //
         }
     }
@@ -75,4 +75,4 @@ package com.business.coreRT.events {
 - `match="type"` yields the name-type pair of an event. The `.type` property of the pair relies on previous introduction of the respective `.name` somewhere.
 - `match="object"` ensures event creation is correct by analyzing the `new E(type, ...)` expression.
 
-> **Note**: The `match="type"` constraint contributes a `name` field that yields the `String` type, but its purpose is for auto completion in integrated development environments.
+> **Note**: The `match="type"` constraint contributes a `name` field that yields the `string` type, but its purpose is for auto completion in integrated development environments.

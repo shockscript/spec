@@ -354,6 +354,7 @@ set
 
 each
 enum
+meta
 type
 
 Embed
@@ -361,6 +362,8 @@ final
 
 native
 static
+
+generic
 
 abstract
 override

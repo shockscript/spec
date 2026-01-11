@@ -72,7 +72,7 @@ trace(obj == E(["a", "b"]));
 
 ## Customizing the numeric type
 
-Enumerations use the `Number` type by default to represent the variant values. The user is allowed to change the type to another numeric type through using a meta-data named after that numeric type.
+Enumerations use the `double` type by default to represent the variant values. The user is allowed to change the type to another numeric type through using a meta-data named after that numeric type.
 
 ```
 [decimal]
@@ -151,7 +151,7 @@ The variant value as declared by the `const` is determined as follows:
 #### valueOf()
 
 ```
-public override function valueOf():T {
+override function valueOf():T {
     //
 }
 ```
@@ -161,7 +161,7 @@ Returns the numeric value of the enumeration instance, where `T` is the numeric 
 #### toString()
 
 ```
-public override function toString():String {
+override function toString():string {
     //
 }
 ```
@@ -170,10 +170,10 @@ Returns the name of the enumeration instance. For a flag enumeration, returns th
 
 ### For flag enumerations
 
-#### shock_proxy::has()
+#### meta::has()
 
 ```
-shock_proxy function has(v:E):Boolean {
+meta function has(v:E):boolean {
     //
 }
 ```
@@ -185,7 +185,7 @@ This allows for `f in e` expressions.
 #### with()
 
 ```
-public function with(v:E):E {
+function with(v:E):E {
     //
 }
 ```
@@ -195,7 +195,7 @@ Returns a new value containing the specified flags, where `E` is the enumeration
 #### without()
 
 ```
-public function without(v:E):E {
+function without(v:E):E {
     //
 }
 ```
@@ -205,7 +205,7 @@ Returns a new value removing the specified flags, where `E` is the enumeration i
 #### toggled()
 
 ```
-public function toggled(v:E):E {
+function toggled(v:E):E {
     //
 }
 ```

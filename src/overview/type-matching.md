@@ -13,7 +13,7 @@ switch type (v) {
     case (regex : RegExp) {
         trace("a regex");
     }
-    case ([x, y] : [Number, Number]) {
+    case ([x, y] : [double, double]) {
         trace("a tuple of double");
     }
     default {

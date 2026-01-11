@@ -1,7 +1,9 @@
 # Environment variables
 
-Environment variables may be read from the project's `.env` file using the `DotEnv::VAR_NAME` expression:
+Environment variables may be read from the project's `.env` file using the `env::VAR_NAME` expression:
 
 ```
-DotEnv::SECRET
+env::SECRET
 ```
+
+Implementations may include predefined variables when using this expression.

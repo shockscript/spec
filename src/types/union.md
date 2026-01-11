@@ -3,7 +3,7 @@
 The structural union type, written `(m1, m2, ...mN)`, consists of two or more non-union member types containing all possible values of the member types.
 
 ```
-(decimal, String)
+(decimal, string)
 ```
 
 ## Restrictions

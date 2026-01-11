@@ -11,12 +11,12 @@ Map.<K, V>
 ## Instance usage
 
 ```
-const map = new Map.<String, Number>();
+const map = new Map.<string, double>();
 
 // x=10
 map.x = 10;
 
-const fns = new Map.<String, Function>();
+const fns = new Map.<string, Function>();
 
 // m=function
 fns.m = function() 10;

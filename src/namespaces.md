@@ -17,15 +17,16 @@ There are *reserved* namespaces and *user* namespaces.
 
 ## Reserved namespaces
 
-Reserved namespaces are created implicitly by the language:
+Reserved namespaces (or *system* namespaces) are created implicitly by the language:
 
 - `public`
 - `internal`
 - `protected`
 - `private`
 - `static protected`
+- `meta`
 
-They are tied to a parent (such as a package, a class or a scope).
+They are tied to a parent (such as a package, a class or a scope), except in the case of `meta`.
 
 A `namespace` definition that omits the URI creates an `internal` namespace:
 

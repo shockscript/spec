@@ -1,17 +1,17 @@
 # Conditional compilation
 
-The `NAMESPACE::CONSTANT` expression may match a configuration constant used for conditional compilation.
+The `NAMESPACE::constant` expression may match a configuration constant used for conditional compilation.
 
 ```
-NAMESPACE::CONSTANT {
+NAMESPACE::constant {
     //
 }
 
-NAMESPACE::CONSTANT var x
+NAMESPACE::constant var x
 ```
 
 The following program uses an inline constant.
 
 ```
-trace(NAMESPACE::CONSTANT)
+trace(NAMESPACE::constant)
 ```
