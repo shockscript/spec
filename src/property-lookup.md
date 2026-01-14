@@ -129,7 +129,7 @@
 
 > **Note**: entity.Wrap() wraps entities into values. For instance, wrapping a variable into a property reference, where it belongs to a package, will produce a *PackageReferenceValue*.
 
-> **Note**: entity.Defer() defers if an entity is unresolved or if a direct compound is unresolved.
+> **Note**: entity.Defer() defers if an entity is unresolved or if a direct compound (like an alias resolution) is unresolved.
 
 ## InScopeLookup()
 
