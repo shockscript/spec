@@ -7,7 +7,7 @@ All types but \{ `void`, `null`, `uint`, `int`, `float`, `double`, `decimal`, `b
 **Note**: When it is necessary to obtain the constructor of an object, use:
 
 ```
-obj.reflect::class()
+obj.meta::class()
 ```
 
 </blockquote>

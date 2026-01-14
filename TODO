@@ -98,7 +98,6 @@
   - [ ] Intl namespace = "org.shockscript.intl"
   - [ ] Temporal namespace = "org.shockscript.temporal"
   - [ ] env namespace (DotEnv special qualifier) = "http://www.sweaxizone.com/shockscript/2015/env"
-  - [ ] reflect namespace = "http://www.sweaxizone.com/shockscript/2015/reflect"
   - [ ] trace()
   - [ ] etrace()
   - [ ] assert()
@@ -139,7 +138,7 @@
       - [ ] Records
       - [ ] Maps
       - [ ] (Other objects just use ===)
-    - [ ] `reflect::class()`
+    - [ ] `meta::class()`
     - [ ] toString()
     - [ ] toLocaleString()
     - [ ] valueOf()

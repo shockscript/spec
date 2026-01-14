@@ -1,6 +1,6 @@
 # Meta-methods
 
-Methods of the `meta` namespace may be implemented in a class or interface for overriding language behavior; those are referred to as *meta-methods*.
+*Certain* methods of the `meta` namespace may be implemented in a class or interface for overriding language behavior; those are referred to as *meta-methods*.
 
 ## meta::call()
 
