@@ -15,22 +15,6 @@ The import list may contain package single imports and package wildcard imports.
 
 ## Scope variants
 
-### With scope
-
-The `with` scope is created by the `with` statement, causing the wildcard `*` expression to resolve to the parenthesized object.
-
-```
-with (object.from.somewhere)
-    *.x *= 10,
-    *.y *= 3;
-```
-
-#### Added internal properties
-
-| Name                      | Description |
-| ------------------------- | ----------- |
-| \[\[*Object*]]            | Object used in the `with` statement. |
-
 ### Class scope
 
 #### Added internal properties
