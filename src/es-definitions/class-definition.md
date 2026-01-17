@@ -1,8 +1,8 @@
-# Class definition
+﻿# Class definition
 
 **Syntax**
 
-Nested classes are allowed; however, classes are only allowed in package blocks and top-level region. When nested in another class, contributes a static property regardless of the `static` attribute.
+Nested classes are allowed; however, classes are only allowed in package blocks and top-level region. When nested in another class, contributes a static property.
 
 <ul>
     <i>ClassDefinition</i> :

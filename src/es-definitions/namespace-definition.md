@@ -17,7 +17,7 @@ namespace kunai = "com.inexistentninja.kunai";
 namespace ES4 = "http://www.sweaxizone.com/shockscript/2015/global";
 ```
 
-Namespaces are allowed to nest within blocks regardless of scope. When inside a class block, contributes a static property regardless of the `static` attribute.
+Namespaces are allowed to nest within blocks regardless of scope. When inside a class block, contributes a static property.
 
 **Syntax**
 

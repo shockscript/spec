@@ -2,7 +2,7 @@
 
 **Syntax**
 
-Nested enumerations are allowed; however, enumerations are only allowed in package blocks and top-level region. When inside a class block, contributes a static property regardless of the `static` attribute.
+Nested enumerations are allowed; however, enumerations are only allowed in package blocks and top-level region. When inside a class block, contributes a static property.
 
 <ul>
     <i>EnumDefinition</i> :

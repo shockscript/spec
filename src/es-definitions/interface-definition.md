@@ -1,8 +1,8 @@
-# Interface definition
+﻿# Interface definition
 
 **Syntax**
 
-Interfaces may nest inside classes; outside of classes, interfaces are only allowed in package blocks and top-level region. When inside a class block, contributes a static property regardless of the `static` attribute.
+Interfaces may nest inside classes; outside of classes, interfaces are only allowed in package blocks and top-level region. When inside a class block, contributes a static property.
 
 The interface block must only contain function definitions.
 

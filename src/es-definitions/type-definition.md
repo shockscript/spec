@@ -8,7 +8,7 @@ A type definition is used to define an alias to an existing type.
 type M = Map.<double, double>
 ```
 
-Type definitions are only allowed in package blocks and top-level region and inside class blocks. When inside a class block, contributes a static property regardless of the `static` attribute.
+Type definitions are only allowed in package blocks and top-level region and inside class blocks. When inside a class block, contributes a static property.
 
 <ul>
     <i>TypeDefinition</i> :
