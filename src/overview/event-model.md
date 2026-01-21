@@ -51,7 +51,7 @@ It is a rare case for the user to need to implement their own `EventTarget` clas
 The `emit()` method is defined as follows:
 
 ```
-[Limit(E, eventOf="this", match="object")]
+[Limit("E extends Event*(this)")]
 /**
  * Dispatches an event.
  */
@@ -67,7 +67,7 @@ When the `emit()` method is used, it will force a `new E(...)` expression to be 
 The `on()` method is roughly defined as follows:
 
 ```
-[Limit(E, eventOf="this", match="type")]
+[Limit("E extends Event(this)")]
 /**
  * Registers an event listener.
  */

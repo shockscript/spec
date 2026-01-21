@@ -10,7 +10,7 @@
         <i>ConfigurationConstant</i><sub>opt</sub> <i>Attributes</i><sub>opt</sub> <i>AnnotatableDirective</i><sup>ω</sup><br>
         <i>ConfigurationConstant</i> <i>Block</i><br>
         <i>ImportDirective</i> <i>Semicolon</i><sup>ω</sup><br>
-        <i>UseDirective</i> <i>Semicolon</i><sup>ω</sup>
+        <i>UseNamespaceDirective</i> <i>Semicolon</i><sup>ω</sup>
     </ul>
 </ul>
 

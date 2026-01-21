@@ -21,10 +21,6 @@ for each (var ch in "shockscript".chars()) {
 
 The `include` directive is not included in ShockScript.
 
-## Default XML namespace
-
-The `default xml namespace =` E4X statement is not included in ShockScript due to WebAssembly limitations.
-
 ## Dynamic
 
 The `Object` type is not dynamic per se, nor does it contain `undefined`, nor are there dynamic classes, nor are there legacy ECMAScript `prototype` objects. Only the `*` type is dynamic and contains `undefined`.

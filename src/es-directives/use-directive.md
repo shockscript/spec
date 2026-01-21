@@ -9,7 +9,7 @@ use namespace ns1
 **Syntax**
 
 <ul>
-    <i>UseDirective</i> :
+    <i>UseNamespaceDirective</i> :
     <ul>
         <b>use namespace</b> <i>ListExpression</i><sup>allowIn</sup>
     </ul>

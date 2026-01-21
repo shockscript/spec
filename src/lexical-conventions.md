@@ -351,6 +351,7 @@ implements
 ```plain
 get
 set
+xml
 
 each
 enum
@@ -363,6 +364,7 @@ final
 native
 static
 
+decimal
 generic
 
 abstract

@@ -23,7 +23,7 @@ function f.<T>():void {
 Type parameters may be attached multiple constraints.
 
 ```
-[Limit(T, subtypeOf="A")]
+[Limit("T extends A, B")]
 /**
  * Some function.
  */
@@ -31,7 +31,7 @@ function f.<T>(o:T) {
     //
 }
 
-[Limit(E, eventOf="A", match="type")]
+[Limit("E extends Event(A)")]
 /**
  * Another function.
  */
@@ -39,7 +39,7 @@ function f.<E>(type:E.name, value:E.type) {
     //
 }
 
-[Limit(E, eventOf="A", match="object")]
+[Limit("E extends Event*(A)")]
 /**
  * Yet another function.
  */
@@ -48,11 +48,11 @@ function f.<E>(value:E) {
 }
 ```
 
-### “eventOf” constraints
+### Event() constraints
 
-`eventOf` constraints allow inspecting available events as defined by the `Event` meta-data in classes and interfaces, including the inherited events and events from the implemented interfaces.
+`Event()` constraints allow inspecting available events as defined by the `Event` meta-data in classes and interfaces, including the inherited events and events from the implemented interfaces.
 
-`eventOf` constraints are allowed to take `this` as the base type, reflecting the current class's events:
+`Event()` constraints are allowed to take `this` as the base type, reflecting the current class's events:
 
 ```
 package com.business.coreRT.events {
@@ -61,7 +61,7 @@ package com.business.coreRT.events {
      */
     class EventTarget {
 
-        [Limit(E, eventOf="this", match="object")]
+        [Limit("E extends Event(this)")]
         /**
          * Dispatches an event.
          */
@@ -72,7 +72,7 @@ package com.business.coreRT.events {
 }
 ```
 
-- `match="type"` yields the name-type pair of an event. The `.type` property of the pair relies on previous introduction of the respective `.name` somewhere.
-- `match="object"` ensures event creation is correct by analyzing the `new E(type, ...)` expression.
+- `Event()` yields the name-type pair of an event. The `.type` property of the pair relies on previous introduction of the respective `.name` somewhere.
+- `Event*()` ensures event creation is correct by analyzing the `new E(type, ...)` expression.
 
-> **Note**: The `match="type"` constraint contributes a `name` field that yields the `string` type, but its purpose is for auto completion in integrated development environments.
+> **Note**: The `Event()` constraint contributes a `name` field that yields the `string` type, but its purpose is for auto completion in integrated development environments.

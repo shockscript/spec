@@ -107,6 +107,8 @@
 - [ShockScript: Statements](./es-statements.md)
   - [Empty statement](./es-statements/empty-statement.md)
   - [Expression statement](./es-statements/expression-statement.md)
+  - [Default XML namespace statement](./es-statements/dxns-statement.md)
+  - [Use decimal statement](./es-statements/use-decimal-statement.md)
   - [Super statement](./es-statements/super-statement.md)
   - [Block statement](./es-statements/block-statement.md)
   - [Labeled statement](./es-statements/labeled-statement.md)
