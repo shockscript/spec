@@ -5,7 +5,7 @@ The `default xml namespace` statement is used to specify the default E4X namespa
 ```
 namespace ninja = "http://www.ninja.com/build/2007"
 
-{
+function f(): void {
     default xml namespace = ninja
     // [[DefaultXMLNamespace]] = "http://www.ninja.com/build/2007"
 }
