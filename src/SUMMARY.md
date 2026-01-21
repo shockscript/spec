@@ -126,7 +126,7 @@
 - [ShockScript: Directives](./es-directives.md)
   - [Attributes](./es-directives/attributes.md)
   - [Import directive](./es-directives/import-directive.md)
-  - [Use directive](./es-directives/use-directive.md)
+  - [Use namespace directive](./es-directives/use-namespace-directive.md)
 - [ShockScript: Definitions](./es-definitions.md)
   - [Namespace definition](./es-definitions/namespace-definition.md)
   - [Variable definition](./es-definitions/variable-definition.md)

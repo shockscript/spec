@@ -1,4 +1,4 @@
-# Use directive
+# Use namespace directive
 
 The **use namespace** directive is used to contribute a namespace to the open namespace list of the enclosing scope.
 
