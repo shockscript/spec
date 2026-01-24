@@ -93,11 +93,11 @@
 - [x] ShockScript: Definitions
   - [ ] Semantics
 - [ ] Global objects
-  - [ ] (Whack engine) w namespace = "http://www.sweaxizone.com/whack/2015"
-  - [ ] ES4 namespace = "http://www.sweaxizone.com/shockscript/2015/global"
+  - [ ] (Whack engine) w namespace = "http://www.sweaxizone.com/2015/whack"
+  - [ ] ES4 namespace = "http://www.sweaxizone.com/2015/shockscript/global"
   - [ ] Intl namespace = "org.shockscript.intl"
   - [ ] Temporal namespace = "org.shockscript.temporal"
-  - [ ] env namespace (DotEnv special qualifier) = "http://www.sweaxizone.com/shockscript/2015/env"
+  - [ ] env namespace (DotEnv special qualifier) = "http://www.sweaxizone.com/2015/shockscript/env"
   - [ ] trace()
   - [ ] etrace()
   - [ ] assert()

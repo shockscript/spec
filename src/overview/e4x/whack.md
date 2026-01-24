@@ -9,7 +9,7 @@ Native tags belong to the implicit `w` namespace, such as `<w:Button>`.
 The `w` prefix may be shadowed by user definitions; in that case, to use native tags the user needs to define a namespace like follows:
 
 ```es
-namespace whack = "http://www.sweaxizone.com/whack/2015";
+namespace whack = "http://www.sweaxizone.com/2015/whack";
 ```
 
 ## DOM “data” attributes

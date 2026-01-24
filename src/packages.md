@@ -38,10 +38,10 @@ Math
 ES4::Math
 ```
 
-For defining a custom alias to the top-level package, define a namespace with the URI `http://www.sweaxizone.com/shockscript/2015/global`, as in:
+For defining a custom alias to the top-level package, define a namespace with the URI `http://www.sweaxizone.com/2015/shockscript/global`, as in:
 
 ```es
-namespace ES4 = "http://www.sweaxizone.com/shockscript/2015/global";
+namespace ES4 = "http://www.sweaxizone.com/2015/shockscript/global";
 ```
 
 ## Name shadowing

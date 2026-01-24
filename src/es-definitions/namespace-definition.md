@@ -4,7 +4,7 @@ The namespace definition may be primarily used to define a namespace that may be
 
 ```es
 namespace ns1
-namespace ns2 = "http://example.com/product/2015"
+namespace ns2 = "http://example.com/2015/product"
 ```
 
 In addition, the namespace definition may also be used to define aliases to a package wildcard import, as in:
@@ -14,7 +14,7 @@ In addition, the namespace definition may also be used to define aliases to a pa
 namespace kunai = "com.inexistentninja.kunai";
 
 // an alias to the top-level package.
-namespace ES4 = "http://www.sweaxizone.com/shockscript/2015/global";
+namespace ES4 = "http://www.sweaxizone.com/2015/shockscript/global";
 ```
 
 Namespaces are allowed to nest within blocks regardless of scope. When inside a class block, contributes a static property.
