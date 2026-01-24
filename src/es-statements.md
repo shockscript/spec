@@ -22,7 +22,6 @@ The **ω** superscript used throughout the specification translates to one of { 
         <i>TryStatement</i><br>
         <i>ExpressionStatement</i> <i>Semicolon</i><sup>ω</sup><br>
         <i>DefaultXMLNamespaceStatement</i> <i>Semicolon</i><sup>ω</sup><br>
-        <i>UseDecimalStatement</i> <i>Semicolon</i><sup>ω</sup><br>
         <i>LabeledStatement</i><sup>ω</sup>
     </ul>
 </ul>
