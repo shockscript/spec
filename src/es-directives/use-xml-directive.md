@@ -8,7 +8,7 @@ const ctx : XMLContext = {
 }
 
 {
-    use decimal ctx
+    use xml ctx
     new XML("<a>  </a>")
 }
 ```
