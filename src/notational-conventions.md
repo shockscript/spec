@@ -37,6 +37,7 @@ A bracketed clause or predicate may appear between the rules of a production, su
     <ul>
         [lookahead ∈ { <b>0</b> }] <i>Symbol1</i><br>
         [lookahead ∉ { <b>default</b> }] <i>Symbol2</i><br>
+        [lookahead ≠ <b>xml</b> ] <i>Symbol3</i><br>
         <i>SourceCharacters</i> [but no embedded <b>&lt;!&#x5b;CDATA&#x5b;</b>]
     </ul>
 </ul>
