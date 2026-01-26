@@ -2,6 +2,11 @@
 
 ShockScript looks like ActionScript 3. This section describes several details that changed on the language.
 
+## Primitive types
+
+- ShockScript does have more numeric types close to ECMAScript 4.
+- Primitive types are in a lowercase form, adapting more from the ECMAScript 4 proposal, but without backwards compatibility.
+
 ## string type
 
 The `string` type stores an UTF-8 encoded text, not an UTF-16 encoded text.
@@ -15,6 +20,18 @@ for each (var ch in "shockscript".chars()) {
 }
 
 "shockscript".chars().length() // code point length
+```
+
+## Short package
+
+The `package` definition required a block in ActionScript 3. ShockScript introduces a top pragma for declaring the whole program as a package.
+
+```
+package = org.generalrelativity.foam.equations;
+
+public class RungeKutta {
+    //
+}
 ```
 
 ## Include directive

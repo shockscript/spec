@@ -5,15 +5,14 @@ The MXML language, as part of the Apache Flex framework, was used for describing
 The following demonstrates a basic UI component implemented in WhackDS:
 
 ```
-package com.business.components {
-    //
-    function AppBar() : whack.ds.Node {
-        return (
-            <w:HGroup>
-                <w:Button click&={trace("clicked!")}>button 1</w:Button>
-            </w:HGroup>
-        );
-    }
+package = com.example.components;
+
+public function AppBar() : whack.ds.Node {
+    return (
+        <w:HGroup>
+            <w:Button click&={trace("clicked!")}>button 1</w:Button>
+        </w:HGroup>
+    );
 }
 ```
 

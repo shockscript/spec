@@ -5,21 +5,26 @@
 While importing definitions, the user can alias a definition, or even a package.
 
 ```
-package com.business.product.core {
+// ===== Chart.es =====
+
+package = com.example.product.core;
+
+public class Chart {
     //
-    class Chart {
-        //
-    }
-}
-package com.business.product.core {
-    //
-    enum ChartType {
-        const BAR;
-        const FLOW;
-    }
 }
 
-import p = com.business.product.*;
+// ===== ChartType.es =====
+
+package = com.example.product.core;
+
+public enum ChartType {
+    const BAR;
+    const FLOW;
+}
+
+// ===== usage =====
+
+import p = com.example.product.core.*;
 //
 const chartType : p::ChartType = "flow";
 //

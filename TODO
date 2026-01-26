@@ -100,9 +100,9 @@
   - [ ] env namespace (DotEnv special qualifier) = "http://www.sweaxizone.com/2015/shockscript/env"
   - [ ] trace()
   - [ ] etrace()
-  - [ ] assert()
-  - [ ] assertEqual() (uses `equal()`)
-  - [ ] assertThrows()
+  - [ ] assert() (a namespace-method)
+  - [ ] assert.equal() (uses `Object#equals()`)
+  - [ ] assert.throws()
   - [ ] encodeURI()
   - [ ] decodeURI()
   - [ ] encodeURIComponent()

@@ -27,40 +27,39 @@ The `key` attribute is reserved for uniquely identifying interpolated collection
 `<w:Style>` tags are used for linking style sheets to the parent tag and passing arguments to the style sheet (which are referred by the style sheet as `param(color)`).
 
 ```
-package com.fun.components {
-    //
-    function CustomComponent() : whack.ds.Node {
-        return (
-            <w:Button>
-                <w:Style color="yellow"><![CDATA[
-                    :host { color: param(color) }
-                ]]></w:Style>
+package = com.fun.components;
 
-                click me
-            </w:Button>
-        );
-    }
+public function Custom() : whack.ds.Node {
+    return (
+        <w:Button>
+            <w:Style color="yellow"><![CDATA[
+                :host { color: param(color) }
+            ]]></w:Style>
+            click me
+        </w:Button>
+    );
 }
 ```
 
 If the style sheet is too large, it may be moved out of the ShockScript file; for instance:
 
 ```plain
-// CustomComponent.es
-package com.fun.components {
-    //
-    function CustomComponent() : whack.ds.Node {
-        return (
-            <w:Button>
-                <w:Style
-                    source="CustomComponent.css"
-                    color="yellow"/>
-                click me
-            </w:Button>
-        );
-    }
+// ===== Custom.es =====
+
+package = com.fun.components;
+
+public function Custom() : whack.ds.Node {
+    return (
+        <w:Button>
+            <w:Style source="Custom.css"
+                     color="yellow" />
+            click me
+        </w:Button>
+    );
 }
-/* CustomComponent.css */
+
+// ===== Custom.css =====
+
 :host {
     color: param(color);
 }
@@ -87,20 +86,19 @@ An arbitrary map of parameters (`Map.<string, string>`) may be passed as well:
 For a component to support `<w:Style>` tags, it simply needs to support a `stylesheet : [whack.ds.StyleSheet]` parameter.
 
 ```
-package com.fun.components {
-    //
-    function CustomComponent(vars: {
-        stylesheet? : [whack.ds.StyleSheet],
-    }) : whack.ds.Node {
-        //
+package = com.fun.components;
 
-        return (
-            <w:Button>
-                <w:Style extend={vars.stylesheet}/>
-                click me
-            </w:Button>
-        );
-    }
+public function Custom(vars: {
+    stylesheet? : [whack.ds.StyleSheet],
+}) : whack.ds.Node {
+    //
+
+    return (
+        <w:Button>
+            <w:Style extend={vars.stylesheet}/>
+            click me
+        </w:Button>
+    );
 }
 ```
 

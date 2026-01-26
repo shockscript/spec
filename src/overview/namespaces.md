@@ -2,63 +2,73 @@
 
 ShockScript defines properties whose name is tied to a namespace, which is useful for version control and protection.
 
-```
-package com.company.runner {
+```es
+// ===== FunInternal.es =====
+
+package = com.fun.runner;
+
+/**
+ * @private
+ */
+public namespace FunInternal = "http://www.fun.com/2007/runner/internals";
+
+// ===== Helper.es =====
+
+package = com.fun.runner;
+
+public class Helper {
     /**
      * @private
      */
-    namespace product_internals = "http://www.company.com/runner/internals/2007";
-}
+    FunInternal const cache : [double] = [];
 
-package com.company.runner {
     //
-    class Helper {
-        /**
-         * @private
-         */
-        product_internals const cache : [double] = [];
-
-        //
-        function track() {
-            product_internals::cache.push(0);
-        }
+    public function foo() {
+        FunInternal::cache.push(0);
     }
 }
 
-package com.company.runner.advanced {
-    import com.company.runner.*;
+// ===== friend.es =====
 
-    //
-    function f(helper:Helper) {
-        helper.product_internals::cache.push(10);
-    }
+package = com.fun.runner.advanced;
+
+import com.fun.runner.*;
+
+public function friend(helper:Helper) {
+    helper.FunInternal::cache.push(10);
 }
 ```
 
 Namespaces additionally apply to record types.
 
 ```
-package com.business.product {
-    /**
-     * Flexible version control namespace.
-     */
-    namespace Flexible = "http://business.com/product/flexible";
-}
+// ===== Flexible.es =====
 
-package com.business.product {
-    /**
-     * Judgement version control namespace.
-     */
-    namespace Judgement = "http://business.com/product/judgement";
-}
+package = com.example.product;
 
-package com.business.product {
-    /**
-     * Pair.
-     */
-    type Pair = {
-        Flexible::strength : [decimal],
-        Judgement::strength : [decimal],
-    };
-}
+/**
+ * Flexible version control namespace.
+ */
+public namespace Flexible = "http://business.com/product/flexible";
+
+// ===== Judgement.es =====
+
+package = com.example.product;
+
+/**
+ * Judgement version control namespace.
+ */
+public namespace Judgement = "http://business.com/product/judgement";
+
+// ===== Pair.es =====
+
+package = com.example.product;
+
+/**
+ * Pair.
+ */
+public type Pair = {
+    Flexible::strength : [decimal],
+    Judgement::strength : [decimal],
+};
 ```

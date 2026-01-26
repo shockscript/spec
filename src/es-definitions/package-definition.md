@@ -5,7 +5,16 @@
 <ul>
     <i>PackageDefinition</i> :
     <ul>
-        <b>package</b> <i>PackageName</i><sub>opt</sub> <i>Block</i>
+        <b>package</b> <i>Block</i><br>
+        <b>package</b> [no line break] <i>PackageName</i> <i>Block</i>
+    </ul>
+</ul>
+
+<ul>
+    <i>ShortPackagePragma</i> :
+    <ul>
+        <b>package</b> <i>Semicolon</i><sup>full</sup><br>
+        <b>package =</b> <i>PackageName</i> <i>Semicolon</i><sup>full</sup><br>
     </ul>
 </ul>
 

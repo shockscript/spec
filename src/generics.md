@@ -55,19 +55,19 @@ function f.<E>(value:E) {
 `Event()` constraints are allowed to take `this` as the base type, reflecting the current class's events:
 
 ```
-package com.business.coreRT.events {
-    /**
-     * Event dispatcher.
-     */
-    class EventTarget {
+package = com.business.coreRT.events;
 
-        [Limit("E extends Event(this)")]
-        /**
-         * Dispatches an event.
-         */
-        function emit.<E>(e:E):boolean {
-            //
-        }
+/**
+ * Event dispatcher.
+ */
+public class EventTarget {
+
+    [Limit("E extends Event(this)")]
+    /**
+     * Dispatches an event.
+     */
+    public function emit.<E>(e:E):boolean {
+        //
     }
 }
 ```

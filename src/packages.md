@@ -5,6 +5,14 @@ A package consists of a name (typically a reverse domain name), a set of propert
 A package `com.business.enum` is expressed as:
 
 ```es
+package = com.business.enum;
+
+//
+```
+
+Or applied to a program block:
+
+```es
 package com.business.enum {
     //
 }
@@ -14,15 +22,33 @@ package com.business.enum {
 
 The user defines properties under the package inside the `package` block, as in:
 
+If using the `package;` or `package = ...` pragma, any definition in the program belongs to the package:
+
+```es
+package = f.q;
+
+public function f():void {}
+```
+
+Or when using a block:
+
 ```es
 package f.q {
-    function f() {}
+    public function f():void {}
 }
 ```
 
 ## Top-level package
 
 The top-level package, which defines global properties, is equivalent to:
+
+```es
+package;
+
+//
+```
+
+Or, alternatively:
 
 ```es
 package {
