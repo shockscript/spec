@@ -18,6 +18,7 @@
   - [Iteration](./overview/iteration.md)
   - [Environment variables](./overview/env.md)
   - [Type matching](./overview/type-matching.md)
+  - [Namespace methods](./overview/namespace-methods.md)
 - [Scope](./scope.md)
 - [Definitions](./definitions.md)
 - [Notational conventions](./notational-conventions.md)
