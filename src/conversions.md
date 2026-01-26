@@ -6,7 +6,7 @@ Explicit conversions may occur as either `T(v)` (strict conversion) or `v as T` 
 
 ```es
 v as T     // returns T?. failure returns null
-v as! T    // failure throws a TypeError
+v as! T    // failure throws a TypeError (as-strict)
 T(v)       // same as "v as! T"
 ```
 
