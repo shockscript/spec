@@ -188,6 +188,7 @@
     - [ ] Indexing
     - [ ] `shareable:boolean`
     - [ ] `clone(deep=)`
+  - [ ] Endian enum
   - [ ] org.shockscript.intl.*
     - [ ] Like ECMA-262 `Intl`. Aliased `Intl::`, as well.
   - [ ] org.shockscript.temporal.*
