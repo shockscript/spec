@@ -4,9 +4,9 @@ Enumerations are special classes consisting of zero or more variants.
 
 ```
 enum Variant {
-    const VARIANT_ONE;
-    const VARIANT_TWO = "variantTwo";
-    const VARIANT_THREE = [2, "variantThree"];
+    const VAR_ONE;
+    const VAR_TWO = "var_two";
+    const VAR_THREE = [2, "var_three"];
 }
 ```
 
@@ -101,7 +101,7 @@ The variant name as declared by the `const` is determined as follows:
 1. Let r = empty string
 2. If the initializer does not contain a string literal
     1. Let orig = binding identifier name
-    2. r = a screaming snake case (`ABC_DEF`) to camel case (`abcDef`) conversion of orig.
+    2. r = conversion of orig to lowercase.
 3. Else
     1. r = the value of the string literal at the initializer.
 4. If r is already used by another variant's name
