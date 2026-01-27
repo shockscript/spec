@@ -176,6 +176,7 @@
     - [ ] Implement `Iterable`
     - [ ] static `meta::call(arg:*):XML`
     - [ ] `meta::has(name:QName):boolean`
+      - [ ] `@` prefix in name = attribute
     - [ ] `meta::get(index:int):XML` (throws if out of bounds)
     - [ ] `meta::get(name:QName):XMLList`
     - [ ] `meta::set(key:(int, QName), value:(XML, XMLList)):void`
