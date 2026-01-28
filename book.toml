@@ -1,8 +1,0 @@
-[book]
-authors = ["MatheusDS4"]
-language = "en"
-src = "src"
-title = "ShockScript Language Specification"
-
-[output.html]
-fold = { enable = true }
