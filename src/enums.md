@@ -25,7 +25,7 @@ Enumerations are static, so they cannot be instantiated through the `new` operat
 When the inference type in a string literal is an enumeration, the literal may identify a variant by its name.
 
 ```
-var val:Variant = "variantOne";
+var val : Variant = "var_one";
 ```
 
 When the inference type in an array literal or object initializer is a flag enumeration, the literal may be used to identify multiple variants.
@@ -50,6 +50,8 @@ enum F { const A, B, C }
 
 Flag enumerations may be assigned `undefined`, `null` or `[]` to indicate absence of variants.
 
+When a flag enumeration's numeric type is a floating point, the values are internally cast between a unsigned 32 bit integer and that floating point's type; therefore their range may be less than what the floating point supports.
+
 ### All variants
 
 Obtain all variants of a flag enumeration by using the `**` expression with the enumeration as the inference type:
@@ -72,7 +74,7 @@ trace(obj == E(["a", "b"]));
 
 ## Customizing the numeric type
 
-Enumerations use the `double` type by default to represent the variant values. The user is allowed to change the type to another numeric type through using a meta-data named after that numeric type.
+Enumerations use the `uint` type by default to represent the variant values. The user is allowed to change the type to another numeric type through using a meta-data named after that numeric type.
 
 ```
 [decimal]
