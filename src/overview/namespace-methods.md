@@ -6,7 +6,7 @@ A `class` that implements the static `meta::call` hook may act as a *namespace m
 - Design language components (for instance, one source file declares the whole component, rather than one source file for the rendering method and another source file for the  properties record)
 
 ```es
-package = com.example.design.components;
+package = spark.components;
 
 public class Button {
     meta static function call(props:Props):whack.ds.Node {

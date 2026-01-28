@@ -25,3 +25,48 @@ WhackDS supports style sheets out of the box. Here is a simple example:
     ]]></w:Style>
 </w:VGroup>
 ```
+
+## How a component is defined
+
+There are different ways to declare a component. Here are some examples:
+
+```es
+// ===== Main.es =====
+
+package = com.pso2;
+
+public function Main():whack.ds.Node {
+    //
+}
+
+// ===== Button.es =====
+
+package = spark.components;
+
+public class Button {
+    meta static function call(props:Props):whack.ds.Node {
+        //
+    }
+
+    public type Props = {
+        //
+    };
+}
+
+// ===== Icon.es =====
+
+package = spark.components;
+
+public enum Icon {
+    const CALC;
+    const CAMERA;
+
+    public static function component(props:Props):whack.ds.Node {
+        //
+    }
+
+    public type Props = {
+        //
+    };
+}
+```
