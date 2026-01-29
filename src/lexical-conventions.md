@@ -408,7 +408,7 @@ The `@` punctuator must not be followed by a single quote <b>'</b> or a double q
 
 ## Numeric Literal
 
-*NumericLiteral* is similiar to *NumericLiteral* from the ECMA-262 third edition, with support for binary literals, underscore separators and certain flags:
+*NumericLiteral* is similiar to *NumericLiteral* from the ECMA-262 third edition, with support for binary literals, underscore separators and certain suffixes:
 
 ```plain
 0b1011
