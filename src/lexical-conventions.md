@@ -408,11 +408,15 @@ The `@` punctuator must not be followed by a single quote <b>'</b> or a double q
 
 ## Numeric Literal
 
-*NumericLiteral* is similiar to *NumericLiteral* from the ECMA-262 third edition, with support for binary literals and underscore separators:
+*NumericLiteral* is similiar to *NumericLiteral* from the ECMA-262 third edition, with support for binary literals, underscore separators and certain flags:
 
 ```plain
 0b1011
 1_000
+
+10f // float(10)
+10m // decimal(10)
+10n // bigint(10)
 ```
 
 **Syntax**
@@ -420,9 +424,38 @@ The `@` punctuator must not be followed by a single quote <b>'</b> or a double q
 <ul>
     <i>NumericLiteral</i> ::
     <ul>
-        <i>DecimalLiteral</i> [lookahead ∉ { <i>IdentifierStart</i>, <i>DecimalDigit</i> }]<br>
-        <i>HexIntegerLiteral</i> [lookahead ∉ { <i>IdentifierStart</i>, <i>DecimalDigit</i> }]<br>
-        <i>BinIntegerLiteral</i> [lookahead ∉ { <i>IdentifierStart</i>, <i>DecimalDigit</i> }]
+        <i>DecimalLiteral</i> <i>DecimalLiteralSuffix</i><sub>opt</sub> [lookahead ∉ { <i>IdentifierStart</i>, <i>DecimalDigit</i> }]<br>
+        <i>HexIntegerLiteral</i> <i>HexLiteralSuffix</i><sub>opt</sub> [lookahead ∉ { <i>IdentifierStart</i>, <i>DecimalDigit</i> }]<br>
+        <i>BinIntegerLiteral</i> <i>BinLiteralSuffix</i><sub>opt</sub> [lookahead ∉ { <i>IdentifierStart</i>, <i>DecimalDigit</i> }]
+    </ul>
+</ul>
+
+<ul>
+    <i>DecimalLiteralSuffix</i> ::
+    <ul>
+        <b>f</b><br>
+        <b>F</b><br>
+        <b>m</b><br>
+        <b>M</b><br>
+        <b>n</b><br>
+        <b>N</b>
+    </ul>
+</ul>
+
+<ul>
+    <i>HexLiteralSuffix</i> ::
+    <ul>
+        <b>m</b><br>
+        <b>M</b><br>
+        <b>n</b><br>
+        <b>N</b>
+    </ul>
+</ul>
+
+<ul>
+    <i>BinLiteralSuffix</i> ::
+    <ul>
+        <i>DecimalLiteralSuffix</i>
     </ul>
 </ul>
 
