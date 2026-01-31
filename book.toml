@@ -2,7 +2,8 @@
 authors = ["MatheusDS4"]
 language = "en"
 src = "src"
-title = "ShockScript Language Specification"
+title = "ShockScript"
 
 [output.html]
 fold = { enable = true }
+theme = "com.sweaxizone.metro/theme"
