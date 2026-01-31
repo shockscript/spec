@@ -1,13 +1,13 @@
 # Implicit configuration constants
 
-## ES4::debugging
+## __es4__::debugging
 
-The `ES4::debugging` constant indicates whether or not the program is targetting a debug build.
+The `__es4__::debugging` constant indicates whether or not the program is targetting a debug build.
 
-## ES4::releasing
+## __es4__::releasing
 
-The `ES4::releasing` constant indicates whether or not the program is targetting a release build.
+The `__es4__::releasing` constant indicates whether or not the program is targetting a release build.
 
-## ES4::testing
+## __es4__::testing
 
-The `ES4::testing` constant indicates whether or not the program is compiling for evaluating unit tests.
+The `__es4__::testing` constant indicates whether or not the program is compiling for evaluating unit tests.
