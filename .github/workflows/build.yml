@@ -46,7 +46,7 @@ jobs:
           rm -rf book
 
           # Git commit
-          git config --global user.name 'hydroperx'
+          git config --global user.name 'matheusds4'
           git config --global user.email 'hydroperfox@gmail.com'
           git switch -C ghpages
           git rm -r .github src .gitignore book.toml
