@@ -1,6 +1,6 @@
 # E4X application to Whack
 
-This section describes E4X features specifically when applied as WhackDS nodes.
+This section describes E4X features specifically when applied as Whack DS nodes.
 
 ## Native tags
 
@@ -16,7 +16,7 @@ namespace whack = "http://www.sweaxizone.com/2015/whack";
 
 `data` attributes (like `data-x`) set over native tags, such as `<w:Button>`, contribute plain data attributes to the underlying DOM element.
 
-Using a WhackDS bindable, the attribute would be accessed as `bindable!.@["data-name"]`.
+Using a Whack DS bindable, the attribute would be accessed as `bindable!.@["data-name"]`.
 
 ## “key” attribute
 

@@ -10,7 +10,7 @@
     - [Java](./overview/language-comparison/java.md)
   - [E4X](./overview/e4x.md)
     - [E4X application to Whack](./overview/e4x/whack.md)
-  - [WhackDS](./overview/whackds.md)
+  - [Whack DS](./overview/whack_ds.md)
   - [Tooling](./overview/tooling.md)
   - [Namespaces](./overview/namespaces.md)
   - [Event model](./overview/event-model.md)

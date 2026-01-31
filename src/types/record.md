@@ -2,7 +2,7 @@
 
 Record types `{ ... }` are simple property records. Record types are memory-efficient in cost of a hash-map-like field access.
 
-> **Note**: The decision for having record types compiling into hash-map structures is because these types use to contain many fields, for instance, in WhackDS components and in operations requiring a large number of options.
+> **Note**: The decision for having record types compiling into hash-map structures is because these types use to contain many fields, for instance, in Whack DS components and in operations requiring a large number of options.
 
 ```
 type N1 = { x : decimal, y : decimal };

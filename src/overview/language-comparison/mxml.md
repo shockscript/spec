@@ -2,7 +2,7 @@
 
 The MXML language, as part of the Apache Flex framework, was used for describing UI components in an intuitive way. ShockScript uses XML literals semantically similiar to the React.js + JSX technologies, but designed to feel close to MXML in readability.
 
-The following demonstrates a basic UI component implemented in WhackDS:
+The following demonstrates a basic UI component implemented in Whack DS:
 
 ```
 package = com.example.components;
@@ -24,7 +24,7 @@ In MXML, event handlers were expressed as `e="statements"`. In ShockScript, they
 
 ## Rendering components
 
-The Whack Engine's WhackDS feature allows programmers to implement UI components as functions that wrap around the built-in class-based components of Whack Engine. The component is rendered by evaluating the function initially and whenever a state changes.
+The Whack Engine's Whack DS feature allows programmers to implement UI components as functions that wrap around the built-in class-based components of Whack Engine. The component is rendered by evaluating the function initially and whenever a state changes.
 
 ## Effects
 
@@ -75,7 +75,7 @@ list = [...list, v];
 
 ## Bindables
 
-In the top-level of a WhackDS component, declare bindables by using the `Bindable` meta-data. Bindables have certain use-cases, such as persisting a value across renders, and extracting class-based components from certain tags (in which case the `bind` attribute is used).
+In the top-level of a Whack DS component, declare bindables by using the `Bindable` meta-data. Bindables have certain use-cases, such as persisting a value across renders, and extracting class-based components from certain tags (in which case the `bind` attribute is used).
 
 ```
 [Bindable]
@@ -101,7 +101,7 @@ Unlike in React.js combined with TypeScript, states, bindables ("refs") and cont
 
 ## Styling
 
-Unlike with React.js, there is built-in support for linking style sheets in a WhackDS component.
+Unlike with React.js, there is built-in support for linking style sheets in a Whack DS component.
 
 ```
 <w:Group>

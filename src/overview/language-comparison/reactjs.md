@@ -2,7 +2,7 @@
 
 ShockScript incorporates the XML language, and XML literals allow for implementations to produce anything desired, similiar to JSX. There are certain differences to JSX or React.js.
 
-The following demonstrates a basic XML literal for WhackDS:
+The following demonstrates a basic XML literal for Whack DS:
 
 ```
 <w:HGroup>
@@ -61,7 +61,7 @@ Interpolating attributes uses `{ object }` and not `{ ...object }` and must appe
 
 ## States
 
-Unlike React.js, in WhackDS there is no risk of accessing an outdated state's value, due to how states are constructed.
+Unlike React.js, in Whack DS there is no risk of accessing an outdated state's value, due to how states are constructed.
 
 ```
 package = com.example.components;
@@ -97,7 +97,7 @@ m = { ...m, k: v };
 
 ## Bindables
 
-In WhackDS the concept of "refs" is called *bindables*.
+In Whack DS the concept of "refs" is called *bindables*.
 
 ```
 package = com.example.components;
@@ -153,7 +153,7 @@ whack.ds.useEffect(function() {
 
 ## Styling
 
-Unlike with React.js, there is built-in support for linking style sheets in a WhackDS component.
+Unlike with React.js, there is built-in support for linking style sheets in a Whack DS component.
 
 ```
 <w:Group>
