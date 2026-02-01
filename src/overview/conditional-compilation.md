@@ -1,11 +1,11 @@
 # Conditional compilation
 
 ```
-NAMESPACE::CONSTANT
+__ns__::constant
 
-NAMESPACE::CONSTANT {
+__ns__::constant {
     //
 }
 
-NAMESPACE::CONSTANT var x
+__ns__::constant var x
 ```
