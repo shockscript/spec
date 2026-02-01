@@ -1,0 +1,16 @@
+<script>
+    (function() {
+        class Main {
+            constructor() {
+                this.initialize();
+            }
+
+            initialize() {
+                // var(--subtract-code-font)
+                document.documentElement.style.setProperty("--subtract-code-font", (window.devicePixelRatio - 1).toString() + "px");
+            }
+        }
+
+        new Main;
+    })();
+</script>

@@ -1,13 +1,12 @@
 /* Base styles and content styles */
 
 :root {
-    /* Browser default font-size is 16px, this way 1 rem = 10px */
-    font-size: 62.5%;
+    font-size: 16px;
     color-scheme: var(--color-scheme);
 }
 
 html {
-    font-family: "Open Sans", sans-serif;
+    font-family: var(--font);
     color: var(--fg);
     background-color: var(--bg);
     text-size-adjust: none;
@@ -16,7 +15,6 @@ html {
 
 body {
     margin: 0;
-    font-size: 1.6rem;
     overflow-x: hidden;
 }
 
@@ -46,6 +44,17 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
 .boring { opacity: 0.6; }
 .hide-boring .boring { display: none; }
 .hidden { display: none !important; }
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: lighter;
+}
+
+h1 { font-size: 45px }
+h2 { font-size: 40px }
+h3 { font-size: 35px }
+h4 { font-size: 30px }
+h5 { font-size: 25px }
+h6 { font-size: 20px }
 
 h2, h3 { margin-block-start: 2.5em; }
 h4, h5 { margin-block-start: 2em; }
@@ -105,9 +114,9 @@ html:not(.js) .page-wrapper,
     margin-inline-end: auto;
     max-width: var(--content-max-width);
 }
-.content p { line-height: 1.45em; }
-.content ol { line-height: 1.45em; }
-.content ul { line-height: 1.45em; }
+.content p { line-height: 33px; }
+.content ol { line-height: 33px; }
+.content ul { line-height: 33px; }
 .content a { text-decoration: none; }
 .content a:hover { text-decoration: underline; }
 .content img, .content video { max-width: 100%; }
@@ -125,21 +134,23 @@ table {
     border-collapse: collapse;
 }
 table td {
-    padding: 3px 20px;
-    border: 1px var(--table-border-color) solid;
+    padding: 13px 25px;
+    border: none;
 }
 table thead {
     background: var(--table-header-bg);
+    padding: 0;
 }
 table thead td {
     font-weight: 700;
     border: none;
 }
 table thead th {
-    padding: 3px 20px;
+    padding: 13px 25px;
+    text-align: left;
 }
-table thead tr {
-    border: 1px var(--table-header-bg) solid;
+table tbody tr {
+    background: var(--table-normal-bg);
 }
 /* Alternate background colors for rows */
 table tbody tr:nth-child(2n) {
@@ -149,11 +160,10 @@ table tbody tr:nth-child(2n) {
 
 blockquote {
     margin: 20px 0;
-    padding: 0 20px;
+    padding: 10px 20px;
     color: var(--fg);
     background-color: var(--quote-bg);
-    border-block-start: .1em solid var(--quote-border);
-    border-block-end: .1em solid var(--quote-border);
+    border: none;
 }
 
 /* TODO: Remove .warning in a future version of mdbook, it is replaced by
@@ -182,10 +192,10 @@ blockquote .warning:before {
 }
 
 kbd {
-    background-color: var(--table-border-color);
-    border-radius: 4px;
-    border: solid 1px var(--theme-popup-border);
-    box-shadow: inset 0 -1px 0 var(--theme-hover);
+    background-color: var(--quote-bg);
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
     display: inline-block;
     font-size: var(--code-font-size);
     font-family: var(--mono-font);

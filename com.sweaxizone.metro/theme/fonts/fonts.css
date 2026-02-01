@@ -1,9 +1,9 @@
 /* Open Sans is licensed under the Apache License, Version 2.0. See http://www.apache.org/licenses/LICENSE-2.0 */
-/* Source Code Pro is under the Open Font License. See https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL */
+/* Gourier (OGCourier) includes an IBM Courier copyright. */
 
 /* open-sans-300 - latin_vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'open sans';
   font-style: normal;
   font-weight: 300;
   src: local('Open Sans Light'), local('OpenSans-Light'),
@@ -12,7 +12,7 @@
 
 /* open-sans-300italic - latin_vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'open sans';
   font-style: italic;
   font-weight: 300;
   src: local('Open Sans Light Italic'), local('OpenSans-LightItalic'),
@@ -21,7 +21,7 @@
 
 /* open-sans-regular - latin_vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'open sans';
   font-style: normal;
   font-weight: 400;
   src: local('Open Sans Regular'), local('OpenSans-Regular'),
@@ -30,7 +30,7 @@
 
 /* open-sans-italic - latin_vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'open sans';
   font-style: italic;
   font-weight: 400;
   src: local('Open Sans Italic'), local('OpenSans-Italic'),
@@ -39,7 +39,7 @@
 
 /* open-sans-600 - latin_vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'open sans';
   font-style: normal;
   font-weight: 600;
   src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
@@ -48,7 +48,7 @@
 
 /* open-sans-600italic - latin_vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'open sans';
   font-style: italic;
   font-weight: 600;
   src: local('Open Sans SemiBold Italic'), local('OpenSans-SemiBoldItalic'),
@@ -57,7 +57,7 @@
 
 /* open-sans-700 - latin_vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'open sans';
   font-style: normal;
   font-weight: 700;
   src: local('Open Sans Bold'), local('OpenSans-Bold'),
@@ -66,7 +66,7 @@
 
 /* open-sans-700italic - latin_vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'open sans';
   font-style: italic;
   font-weight: 700;
   src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'),
@@ -75,7 +75,7 @@
 
 /* open-sans-800 - latin_vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'open sans';
   font-style: normal;
   font-weight: 800;
   src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'),
@@ -84,17 +84,41 @@
 
 /* open-sans-800italic - latin_vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'open sans';
   font-style: italic;
   font-weight: 800;
   src: local('Open Sans ExtraBold Italic'), local('OpenSans-ExtraBoldItalic'),
        url('{{ resource "fonts/open-sans-v17-all-charsets-800italic.woff2" }}') format('woff2');
 }
 
-/* source-code-pro-500 - latin_vietnamese_latin-ext_greek_cyrillic-ext_cyrillic */
+/* gourier */
 @font-face {
-  font-family: 'Source Code Pro';
+  font-family: 'gourier';
   font-style: normal;
-  font-weight: 500;
-  src: url('{{ resource "fonts/source-code-pro-v11-all-charsets-500.woff2" }}') format('woff2');
+  font-weight: 400;
+  src: url('{{ resource "fonts/OGCourier.woff2" }}') format('woff2');
+}
+
+/* gourier */
+@font-face {
+  font-family: 'gourier';
+  font-style: italic;
+  font-weight: 400;
+  src: url('{{ resource "fonts/OGCourier-Italic.woff2" }}') format('woff2');
+}
+
+/* gourier */
+@font-face {
+  font-family: 'gourier';
+  font-style: normal;
+  font-weight: 700;
+  src: url('{{ resource "fonts/OGCourier-Bold.woff2" }}') format('woff2');
+}
+
+/* gourier */
+@font-face {
+  font-family: 'gourierx';
+  font-style: italic;
+  font-weight: 700;
+  src: url('{{ resource "fonts/OGCourier-BoldItalic.woff2" }}') format('woff2');
 }
