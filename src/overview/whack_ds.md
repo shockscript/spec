@@ -53,13 +53,13 @@ public class Button {
     };
 }
 
-// ===== Icon.es =====
+// ===== AnotherWay.es =====
 
-package = spark.components;
+package = net.cowboy.components;
 
-public enum Icon {
-    const CALC;
-    const CAMERA;
+public enum AnotherWay {
+    const HIT;
+    const NOTHING;
 
     public function eval(props:Props):whack.ds.Node {
         //
