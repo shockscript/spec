@@ -87,7 +87,7 @@ html.sidebar-visible #mdbook-menu-bar {
 }
 
 .right-buttons {
-    margin: 0 15px;
+    margin: 0;
 }
 .right-buttons a {
     text-decoration: none;
@@ -95,7 +95,7 @@ html.sidebar-visible #mdbook-menu-bar {
 
 .left-buttons {
     display: flex;
-    margin: 0 5px;
+    margin: 0;
 }
 html:not(.js) .left-buttons button {
     display: none;
