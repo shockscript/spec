@@ -78,3 +78,41 @@ public enum AnotherWay {
 ## EyeExp
 
 Whack's approach to logotypes and icons is called the EyeExp feature, which uses dynamic icon names rather than `enum`.
+
+```
+// ===== Main.es =====
+
+package = com.actvn.thps;
+
+public function Main():whack.ds.Node {
+
+    whack.ds.useEffect(function() {
+        com.sweaxizone.metro.eyeexp.initialize();
+    }, []);
+
+    return (
+        <w:VGroup gap={13}>
+            <w:EyeExp name="camera" size={37}/>
+
+            <!-- usage as a css background -->
+
+            <w:Group s:background="eyeexp(camera) \
+                                   no-repeat center / contain"/>
+        </w:VGroup>
+    );
+}
+
+
+
+// ===== initialize.es =====
+
+package = com.sweaxizone.metro.eyeexp;
+
+import whack.eyeexp.EyeExp;
+
+public function initialize():void {
+    EyeExp.camera = { url: Embed("camera.svg"), monochrome: true };
+}
+```
+
+Monochrome icons are filled with the current CSS `color`.
