@@ -10,7 +10,7 @@ o.q::n
 Namespaces appear as optional access modifiers in annotatable definitions, as in:
 
 ```
-special_properties var acc:decimal = 0;
+Personal var x : decimal = 0
 ```
 
 There are *reserved* namespaces and *user* namespaces.
@@ -31,7 +31,7 @@ They are tied to a parent (such as a package, a class or a scope), except in the
 A `namespace` definition that omits the URI creates an `internal` namespace:
 
 ```
-namespace special_properties;
+namespace Personal
 ```
 
 ## User namespaces
@@ -39,5 +39,5 @@ namespace special_properties;
 User namespaces are identified by an URI.
 
 ```
-namespace observer_internals = "http://observer.net/internals";
+namespace Personal = "http://www.personal.net/2007"
 ```
