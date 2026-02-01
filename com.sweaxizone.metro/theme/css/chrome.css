@@ -75,6 +75,12 @@ html.sidebar-visible #mdbook-menu-bar {
     background: none;
     padding: 0;
     color: inherit;
+    width: 50px;
+    height: 50px;
+    opacity: 0.77;
+}
+.icon-button:hover {
+    opacity: 1.0;
 }
 .icon-button .fa-svg {
     margin: 0;
@@ -98,7 +104,7 @@ html:not(.js) .left-buttons button {
 .menu-title {
     display: inline-block;
     font-weight: 200;
-    font-size: 2.4rem;
+    font-size: 22px;
     line-height: var(--menu-bar-height);
     text-align: center;
     margin: 0;
@@ -184,6 +190,10 @@ html:not(.js) .left-buttons button {
     float: left;
     right: unset;
     left: var(--page-padding);
+}
+
+#mdbook-sidebar-toggle {
+    box-sizing: border-box;
 }
 
 @media only screen and (max-width: 1080px) {
@@ -383,7 +393,7 @@ mark.fade-out {
     margin-block-end: 0;
     margin-inline-start: auto;
     margin-inline-end: auto;
-    padding: 10px 16px;
+    padding: 7px 12px;
     transition: box-shadow 300ms ease-in-out;
     border: 2.5px solid var(--searchbar-border-color);
     border-radius: 0;
@@ -391,7 +401,7 @@ mark.fade-out {
     background-color: var(--bg);
     color: var(--searchbar-fg);
     font-family: var(--font);
-    font-size: 17px;
+    font-size: 18.5px;
 }
 #mdbook-searchbar:focus,
 #mdbook-searchbar.active {
@@ -399,8 +409,8 @@ mark.fade-out {
 }
 
 .searchresults-header {
-    font-weight: bold;
-    font-size: 1em;
+    font-weight: lighter;
+    font-size: 32px;
     padding-block-start: 18px;
     padding-block-end: 0;
     padding-inline-start: 5px;
@@ -412,7 +422,7 @@ mark.fade-out {
     margin-inline-start: auto;
     margin-inline-end: auto;
     max-width: var(--content-max-width);
-    border-block-end: 1px dashed var(--searchresults-border-color);
+    border-block-end: 2px solid var(--searchresults-border-color);
 }
 
 ul#mdbook-searchresults {
@@ -422,10 +432,14 @@ ul#mdbook-searchresults {
 ul#mdbook-searchresults li {
     margin: 10px 0px;
     padding: 2px;
-    border-radius: 2px;
+    border-radius: 0;
 }
 ul#mdbook-searchresults li.focus {
     background-color: var(--searchresults-li-bg);
+}
+ul#mdbook-searchresults li a {
+    font-size: 21px;
+    font-weight: lighter;
 }
 ul#mdbook-searchresults span.teaser {
     display: block;
@@ -435,6 +449,7 @@ ul#mdbook-searchresults span.teaser {
     margin-inline-start: 20px;
     margin-inline-end: 0;
     font-size: 0.8em;
+    color: var(--searchresults-header-fg);
 }
 ul#mdbook-searchresults span.teaser em {
     font-weight: bold;
@@ -633,9 +648,13 @@ html:not(.js) .sidebar-resize-handle {
 }
 
 .chapter li.chapter-item > span > a,
-.chapter .header-item > span > a {
-    font-weight: bold;
-    /* text-transform: uppercase; */
+.chapter .header-item > span > a,
+.chapter strong {
+    font-weight: lighter;
+}
+
+.chapter {
+    font-size: 17px;
 }
 
 /* When expanded, rotate the chevron to point down. */
@@ -683,16 +702,17 @@ html:not(.js) .sidebar-resize-handle {
 
 .theme-popup {
     position: absolute;
-    left: 10px;
+    left: 65px;
     top: var(--menu-bar-height);
     z-index: 1000;
-    border-radius: 4px;
-    font-size: 0.7em;
+    min-width: 150px;
+    border-radius: 0;
+    font-size: 14px;
     color: var(--fg);
     background: var(--theme-popup-bg);
-    border: 1px solid var(--theme-popup-border);
+    border: 2px solid var(--theme-popup-border);
     margin: 0;
-    padding: 0;
+    padding: 5px 0;
     list-style: none;
     display: none;
     /* Don't let the children's background extend past the rounded corners. */
@@ -706,7 +726,7 @@ html:not(.js) .sidebar-resize-handle {
     width: 100%;
     border: 0;
     margin: 0;
-    padding: 2px 20px;
+    padding: 5px 20px;
     line-height: 25px;
     white-space: nowrap;
     text-align: start;
@@ -714,6 +734,7 @@ html:not(.js) .sidebar-resize-handle {
     color: inherit;
     background: inherit;
     font-size: inherit;
+    font-family: var(--font);
 }
 .theme-popup .theme:hover {
     background-color: var(--theme-hover);
@@ -768,3 +789,122 @@ html:not(.js) .sidebar-resize-handle {
     /* mdbook's margin for h2 is way too large. */
     margin: 10px;
 }
+
+/* FontAwesome (fa) SVG overrides */
+
+    /* sidebar toggle */
+
+        #mdbook-sidebar-toggle {
+            position: relative;
+        }
+
+        #mdbook-sidebar-toggle svg {
+            display: none;
+        }
+
+        #mdbook-sidebar-toggle::before {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background: var(--sidebar-toggle-button);
+        }
+
+    /* theme toggle */
+
+        #mdbook-theme-toggle {
+            position: relative;
+        }
+
+        #mdbook-theme-toggle svg {
+            display: none;
+        }
+
+        #mdbook-theme-toggle::before {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background: var(--theme-toggle-button);
+        }
+
+    /* search toggle */
+
+        #mdbook-search-toggle {
+            position: relative;
+        }
+
+        #mdbook-search-toggle svg {
+            display: none;
+        }
+
+        #mdbook-search-toggle::before {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background: var(--search-toggle-button);
+        }
+
+    /* print button */
+
+        #print-button {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            opacity: 0.77;
+            box-sizing: border-box;
+            display: inline-block;
+        }
+
+        #print-button:hover {
+            opacity: 1.0;
+        }
+
+        #print-button svg {
+            display: none;
+        }
+
+        #print-button::before {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background: var(--print-button);
+        }
+
+    /* previous/next buttons */
+
+        .previous, .next {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            opacity: 0.77;
+            box-sizing: border-box;
+            display: inline-block;
+            border-radius: 0;
+        }
+
+        .previous:hover, .next:hover {
+            opacity: 1;
+        }
+
+        .previous svg, .next svg {
+            display: none;
+        }
+
+        .previous::before {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background: var(--previous-button);
+        }
+
+        .next::before {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background: var(--next-button);
+        }
