@@ -385,10 +385,13 @@ mark.fade-out {
     margin-inline-end: auto;
     padding: 10px 16px;
     transition: box-shadow 300ms ease-in-out;
-    border: 1px solid var(--searchbar-border-color);
-    border-radius: 3px;
-    background-color: var(--searchbar-bg);
+    border: 2.5px solid var(--searchbar-border-color);
+    border-radius: 0;
+    outline: none;
+    background-color: var(--bg);
     color: var(--searchbar-fg);
+    font-family: var(--font);
+    font-size: 17px;
 }
 #mdbook-searchbar:focus,
 #mdbook-searchbar.active {
@@ -621,8 +624,12 @@ html:not(.js) .sidebar-resize-handle {
 }
 
 .chapter li.chapter-item {
-    line-height: 1.5em;
     margin-block-start: 0.6em;
+}
+
+.chapter li.chapter-item,
+.chapter .header-item {
+    line-height: 30px;
 }
 
 .chapter li.chapter-item > span > a,
