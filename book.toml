@@ -1,9 +1,10 @@
 [book]
-authors = ["MatheusDS4"]
+authors = ["matheusds4"]
 language = "en"
 src = "src"
 title = "ShockScript"
 
 [output.html]
 fold = { enable = true }
+git-repository-url = "https://github.com/shockscript"
 theme = "com.sweaxizone.metro/theme"

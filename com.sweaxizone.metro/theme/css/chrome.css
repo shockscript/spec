@@ -855,6 +855,7 @@ html:not(.js) .sidebar-resize-handle {
             opacity: 0.77;
             box-sizing: border-box;
             display: inline-block;
+            vertical-align: middle;
         }
 
         #print-button:hover {
@@ -871,6 +872,65 @@ html:not(.js) .sidebar-resize-handle {
             width: 100%;
             height: 100%;
             background: var(--print-button);
+        }
+
+    /* git repository button */
+
+        a #git-repository-button {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            opacity: 0.77;
+            box-sizing: border-box;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        a #git-repository-button:hover {
+            opacity: 1.0;
+        }
+
+        a #git-repository-button svg {
+            display: none;
+        }
+
+        a #git-repository-button::before {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+        }
+
+        a[data-git-icon="fab-github"] #git-repository-button::before {
+            background: var(--github-button);
+        }
+
+    /* git edit button */
+
+        #git-edit-button {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            opacity: 0.77;
+            box-sizing: border-box;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        #git-edit-button:hover {
+            opacity: 1.0;
+        }
+
+        #git-edit-button svg {
+            display: none;
+        }
+
+        #git-edit-button::before {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background: var(--git-edit-button);
         }
 
     /* previous/next buttons */
