@@ -39,6 +39,8 @@ public function Main():whack.ds.Node {
     //
 }
 
+
+
 // ===== Button.es =====
 
 package = spark.components;
@@ -52,6 +54,8 @@ public class Button {
         //
     };
 }
+
+
 
 // ===== AnotherWay.es =====
 
@@ -70,3 +74,7 @@ public enum AnotherWay {
     };
 }
 ```
+
+## EyeExp
+
+Whack's approach to logotypes and icons is called the EyeExp feature, which uses dynamic icon names rather than `enum`.

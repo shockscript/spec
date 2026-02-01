@@ -12,6 +12,8 @@ package = com.fun.runner;
  */
 public namespace FunInternal = "http://www.fun.com/2007/runner/internals";
 
+
+
 // ===== Helper.es =====
 
 package = com.fun.runner;
@@ -27,6 +29,8 @@ public class Helper {
         FunInternal::cache.push(0);
     }
 }
+
+
 
 // ===== friend.es =====
 
@@ -51,6 +55,8 @@ package = com.example.product;
  */
 public namespace Flexible = "http://business.com/product/flexible";
 
+
+
 // ===== Judgement.es =====
 
 package = com.example.product;
@@ -59,6 +65,8 @@ package = com.example.product;
  * Judgement version control namespace.
  */
 public namespace Judgement = "http://business.com/product/judgement";
+
+
 
 // ===== Pair.es =====
 
