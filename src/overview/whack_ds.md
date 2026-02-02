@@ -87,7 +87,7 @@ package = com.actvn.thps;
 public function Main():whack.ds.Node {
 
     whack.ds.useEffect(function() {
-        com.sweaxizone.metro.eyeexp.initialize();
+        com.sweaxizone.metro.eyexp.initialize();
     }, []);
 
     return (
@@ -105,9 +105,9 @@ public function Main():whack.ds.Node {
 
 // ===== initialize.es =====
 
-package = com.sweaxizone.metro.eyeexp;
+package = com.sweaxizone.metro.eyexp;
 
-import whack.eyeexp.EyeExp;
+import whack.eyexp.EyeExp;
 
 public function initialize():void {
     EyeExp.camera = { url: Embed("camera.svg"), monochrome: true };
