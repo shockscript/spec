@@ -814,6 +814,7 @@ html:not(.js) .sidebar-resize-handle {
 
         #mdbook-theme-toggle {
             position: relative;
+            outline: none;
         }
 
         #mdbook-theme-toggle svg {
@@ -832,6 +833,7 @@ html:not(.js) .sidebar-resize-handle {
 
         #mdbook-search-toggle {
             position: relative;
+            outline: none;
         }
 
         #mdbook-search-toggle svg {
