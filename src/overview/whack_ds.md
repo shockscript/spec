@@ -18,11 +18,13 @@ Whack DS supports style sheets out of the box. Here is a simple example:
 
 ```
 <w:VGroup>
-    <w:Style><![CDATA[
+    <w:Style>
+    <![CDATA[
         :host {
             background: red;
         }
-    ]]></w:Style>
+    ]]>
+    </w:Style>
 </w:VGroup>
 ```
 
@@ -99,7 +101,7 @@ package com.actvn.thps {
 
                 <!-- usage as a css background -->
 
-                <w:Group s:background="eyexp(camera) no-repeat center / contain"/>
+                <w:Group s:background="eyexp(camera) noRepeat center / contain"/>
             </w:VGroup>
         );
     }

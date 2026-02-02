@@ -12,19 +12,13 @@ The user may override the key and value iterators by implementing the `Iterable.
 
 ```
 class A implements Iterable.<string, double> {
-    /**
-     * Iterate keys.
-     */
-    function keys():Iterator.<string> {
+    public function keys() : Iterator.<string> {
         for (var i = 0; i < 10; i++) {
             yield i.toString();
         }
     }
 
-    /**
-     * Iterate values.
-     */
-    function values():Iterator.<double> {
+    public function values() : Iterator.<double> {
         for (var i = 0; i < 10; i++) {
             yield i;
         }

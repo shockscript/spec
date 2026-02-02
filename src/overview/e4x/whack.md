@@ -12,11 +12,11 @@ The `w` prefix may be shadowed by user definitions; in that case, to use native 
 namespace whack = "http://www.sweaxizone.com/2015/whack";
 ```
 
-## DOM “data” attributes
+## DOM arbitrary attributes
 
-`data` attributes (like `data-x`) set over native tags, such as `<w:Button>`, contribute plain data attributes to the underlying DOM element.
+Arbitrary attributes (like `a:x`, or, in CSS selectors, `[a|x]`) may be set over native tags, such as `<w:Button>`, serving as meta-data.
 
-Using a Whack DS bindable, the attribute would be accessed as `bindable!.@["data-name"]`.
+Using a Whack DS bindable, the attribute would be accessed as `bindable!.@x`.
 
 ## “key” attribute
 
@@ -31,9 +31,11 @@ package com.jhunter.spark.components {
     public function Case() : whack.ds.Node {
         return (
             <w:Button>
-                <w:Style color="yellow"><![CDATA[
+                <w:Style color="yellow">
+                <![CDATA[
                     :host { color: param(color) }
-                ]]></w:Style>
+                ]]>
+                </w:Style>
                 click me
             </w:Button>
         );
@@ -44,14 +46,14 @@ package com.jhunter.spark.components {
 If the style sheet is too large, it may be moved out of the ShockScript file; for instance:
 
 ```plain
-// ===== Custom.sx =====
+// ===== Case.sx =====
 
 
 package com.jhunter.spark.components {
     public function Case() : whack.ds.Node {
         return (
             <w:Button>
-                <w:Style source="Custom.css"
+                <w:Style source="Case.css"
                          color="yellow" />
                 click me
             </w:Button>
@@ -61,7 +63,7 @@ package com.jhunter.spark.components {
 
 
 
-// ===== Custom.css =====
+// ===== Case.css =====
 
 
 :host {
