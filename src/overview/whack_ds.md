@@ -96,7 +96,7 @@ public function Main():whack.ds.Node {
 
             <!-- usage as a css background -->
 
-            <w:Group s:background="eyeexp(camera) no-repeat center / contain"/>
+            <w:Group s:background="eyexp(camera) no-repeat center / contain"/>
         </w:VGroup>
     );
 }
