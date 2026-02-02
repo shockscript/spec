@@ -8,7 +8,7 @@ XML literals by default are used for creating implementation-defined objects; ho
 
 ```
 // AppBar.es
-package = com.example.components;
+package = com.jhunter.spark.components;
 
 public function AppBar() : whack.ds.Node {
     return (
@@ -19,7 +19,7 @@ public function AppBar() : whack.ds.Node {
 }
 
 // data.es
-package = com.example.datagenerator;
+package = com.jhunter.datagenerator;
 
 public function data(a:string) : XML {
     return (

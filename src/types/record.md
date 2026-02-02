@@ -25,33 +25,39 @@ Fields of a record type may be tied to a namespace, which is useful for version 
 ```
 // ===== Flexible.es =====
 
-package = com.example.product;
 
-/**
- * Flexible version control namespace.
- */
-public namespace Flexible = "http://business.com/product/flexible";
+package com.jhunter.xy {
+    /**
+     * Flexible version control namespace.
+     */
+    public namespace Flexible = "http://www.yveltal.me/xy/flexible";
+}
+
 
 // ===== Judgement.es =====
 
-package = com.example.product;
 
-/**
- * Judgement version control namespace.
- */
-public namespace Judgement = "http://business.com/product/judgement";
+package com.jhunter.xy {
+    /**
+    * Judgement version control namespace.
+    */
+    public namespace Judgement = "http://www.yveltal.me/xy/judgement";
+}
+
+
 
 // ===== Pair.es =====
 
-package = com.example.product;
 
-/**
- * Pair.
- */
-public type Pair = {
-    Flexible::strength : [decimal],
-    Judgement::strength : [decimal],
-};
+package com.jhunter.xy {
+    /**
+    * Pair.
+    */
+    public type Pair = {
+        Flexible::strength : [decimal],
+        Judgement::strength : [decimal],
+    };
+}
 ```
 
 ## Field omission

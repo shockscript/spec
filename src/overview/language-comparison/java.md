@@ -7,7 +7,7 @@ While importing definitions, the user can alias a definition, or even a package.
 ```
 // ===== Chart.es =====
 
-package = com.example.product.core;
+package = com.jhunter.q1.core;
 
 public class Chart {
     //
@@ -15,7 +15,7 @@ public class Chart {
 
 // ===== ChartType.es =====
 
-package = com.example.product.core;
+package = com.jhunter.q1.core;
 
 public enum ChartType {
     const BAR;
@@ -24,7 +24,7 @@ public enum ChartType {
 
 // ===== usage =====
 
-import p = com.example.product.core.*;
+import p = com.jhunter.q1.core.*;
 //
 const chartType : p::ChartType = "flow";
 //

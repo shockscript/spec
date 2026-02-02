@@ -3,7 +3,7 @@
 Basic unit testing may be done by defining functions annotated with the `Test` meta-data at a package-level.
 
 ```
-package = com.example.foo.tests
+package = com.jhunter.q1.tests
 
 [Test]
 public function foo() : void {
@@ -14,7 +14,7 @@ public function foo() : void {
 Or the user may define a class annotated with the `Test` meta-data at a package-level, consisting of an empty constructor and instance methods annotated with the `Test` meta-data.
 
 ```
-package = com.example.foo.tests
+package = com.jhunter.q1.tests
 
 [Test]
 public class Tests {

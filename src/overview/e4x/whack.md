@@ -27,7 +27,7 @@ The `key` attribute is reserved for uniquely identifying interpolated collection
 `<w:Style>` tags are used for linking style sheets to the parent tag and passing arguments to the style sheet (which are referred by the style sheet as `param(color)`).
 
 ```
-package = com.fun.components;
+package = com.jhunter.spark.components;
 
 public function Custom() : whack.ds.Node {
     return (
@@ -46,7 +46,7 @@ If the style sheet is too large, it may be moved out of the ShockScript file; fo
 ```plain
 // ===== Custom.es =====
 
-package = com.fun.components;
+package = com.jhunter.spark.components;
 
 public function Custom() : whack.ds.Node {
     return (
@@ -86,7 +86,7 @@ An arbitrary map of parameters (`Map.<string, string>`) may be passed as well:
 For a component to support `<w:Style>` tags, it simply needs to support a `stylesheet : [whack.ds.StyleSheet]` parameter.
 
 ```
-package = com.fun.components;
+package = com.jhunter.spark.components;
 
 public function Custom(vars: {
     stylesheet? : [whack.ds.StyleSheet],

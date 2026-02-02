@@ -19,13 +19,13 @@ In ShockScript, event handlers are expressed as `e&={statementList}` (note the a
 ShockScript allows for `<q:N>`, whose name resolution equals `q::N`. Dots may be used for entities other than namespaces, as in:
 
 ```
-<com.example.components.AppBar/>
+<com.jhunter.spark.components.AppBar/>
 ```
 
 For brevity, you do either:
 
 ```
-import bc = com.example.components.*;
+import bc = com.jhunter.spark.components.*;
 
 <bc:AppBar/>
 ```
@@ -33,7 +33,7 @@ import bc = com.example.components.*;
 or:
 
 ```
-import com.example.components.*
+import com.jhunter.spark.components.*
 
 <AppBar/>
 ```
@@ -64,20 +64,20 @@ Interpolating attributes uses `{ object }` and not `{ ...object }` and must appe
 Unlike React.js, in Whack DS there is no risk of accessing an outdated state's value, due to how states are constructed.
 
 ```
-package = com.example.components;
+package com.jhunter.spark.components {
+    public function HelloWorld() : whack.ds.Node {
+        // x
+        [State]
+        var x:uint = 0;
 
-public function HelloWorld() : whack.ds.Node {
-    // x
-    [State]
-    var x:uint = 0;
-
-    // layout
-    return (
-        <w:VGroup>
-            <w:Label>clicked {x} times</w:Label>
-            <w:Button click&={x++}>click me</w:Button>
-        </w:VGroup>
-    );
+        // layout
+        return (
+            <w:VGroup>
+                <w:Label>clicked {x} times</w:Label>
+                <w:Button click&={x++}>click me</w:Button>
+            </w:VGroup>
+        );
+    }
 }
 ```
 
@@ -100,21 +100,21 @@ m = { ...m, k: v };
 In Whack DS the concept of "refs" is called *bindables*.
 
 ```
-package = com.example.components;
-
-//
-public function HelloWorld() : whack.ds.Node {
-    [Bindable]
-    var button:Button?;
-
+package com.jhunter.relic.site {
     //
-    whack.ds.useEffect(function() {
-        trace(button!);
-    }, []);
+    public function HelloWorld() : whack.ds.Node {
+        [Bindable]
+        var button:Button?;
 
-    return (
-        <w:Button bind={button}>click me</w:Button>
-    );
+        //
+        whack.ds.useEffect(function() {
+            trace(button!);
+        }, []);
+
+        return (
+            <w:Button bind={button}>click me</w:Button>
+        );
+    }
 }
 ```
 

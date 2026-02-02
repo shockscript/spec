@@ -10,14 +10,6 @@
     </ul>
 </ul>
 
-<ul>
-    <i>ShortPackagePragma</i> :
-    <ul>
-        <b>package</b> <i>Semicolon</i><sup>full</sup><br>
-        <b>package =</b> <i>PackageName</i> <i>Semicolon</i><sup>full</sup><br>
-    </ul>
-</ul>
-
 A *PackageDefinition* may be used in a *Program* before any *Directive* that is not a *PackageDefinition* is used.
 
 ## Package name

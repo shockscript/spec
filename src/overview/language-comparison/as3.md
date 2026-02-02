@@ -22,18 +22,6 @@ for each (var ch in "shockscript".chars()) {
 "shockscript".chars().length() // code point length
 ```
 
-## Short package
-
-The `package` definition required a block in ActionScript 3. ShockScript introduces a top pragma for declaring the whole program as a package.
-
-```
-package = org.generalrelativity.foam.equations;
-
-public class RungeKutta {
-    //
-}
-```
-
 ## Include directive
 
 The `include` directive is not included in ShockScript.
