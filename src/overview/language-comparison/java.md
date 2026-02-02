@@ -5,7 +5,7 @@
 While importing definitions, the user can alias a definition, or even a package.
 
 ```
-// ===== Chart.es =====
+// ===== Chart.sx =====
 
 
 package com.jhunter.q1.core {
@@ -16,7 +16,7 @@ package com.jhunter.q1.core {
 
 
 
-// ===== ChartType.es =====
+// ===== ChartType.sx =====
 
 
 package com.jhunter.q1.core {

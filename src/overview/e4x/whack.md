@@ -28,7 +28,7 @@ The `key` attribute is reserved for uniquely identifying interpolated collection
 
 ```
 package com.jhunter.spark.components {
-    public function Custom() : whack.ds.Node {
+    public function Case() : whack.ds.Node {
         return (
             <w:Button>
                 <w:Style color="yellow"><![CDATA[
@@ -44,15 +44,15 @@ package com.jhunter.spark.components {
 If the style sheet is too large, it may be moved out of the ShockScript file; for instance:
 
 ```plain
-// ===== Custom.es =====
+// ===== Custom.sx =====
 
 
 package com.jhunter.spark.components {
-    public function Custom() : whack.ds.Node {
+    public function Case() : whack.ds.Node {
         return (
             <w:Button>
                 <w:Style source="Custom.css"
-                        color="yellow" />
+                         color="yellow" />
                 click me
             </w:Button>
         );
@@ -91,14 +91,14 @@ For a component to support `<w:Style>` tags, it simply needs to support a `style
 
 ```
 package com.jhunter.spark.components {
-    public function Custom(vars: {
-        stylesheet? : [whack.ds.StyleSheet],
+    public function Case(props: {
+        stylesheet? : [ whack.ds.StyleSheet ],
     }) : whack.ds.Node {
         //
 
         return (
             <w:Button>
-                <w:Style extend={vars.stylesheet}/>
+                <w:Style extend={props.stylesheet}/>
                 click me
             </w:Button>
         );

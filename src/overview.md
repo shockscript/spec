@@ -14,10 +14,10 @@ For the Whack Engine, E4X literals create Whack DS nodes by default.
 
 ShockScript incorporates a basic event model and allows easily declaring event types and documenting them. Implementations may extend the event model for working with a Document Object Model.
 
-## ESDoc comments
+## ShockDoc comments
 
 ShockScript supports documentation comments allowing for Markdown notation, special tags such as `@throws` and media inclusion.
 
 ## Abbreviation
 
-ShockScript is often abbreviated as ES or ES4 since it looks like the non-existing ECMAScript 4th edition. The conventional ShockScript file extension is `.es`.
+ShockScript is abbreviated as SX and uses the conventional file extension ".sx".

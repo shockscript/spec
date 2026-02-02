@@ -3,7 +3,7 @@
 ShockScript defines properties whose name is tied to a namespace, which is useful for version control and protection.
 
 ```es
-// ===== FunInternal.es =====
+// ===== FunInternal.sx =====
 
 
 package org.lazy.runner {
@@ -15,7 +15,7 @@ package org.lazy.runner {
 
 
 
-// ===== Helper.es =====
+// ===== Helper.sx =====
 
 
 package org.lazy.runner {
@@ -34,7 +34,7 @@ package org.lazy.runner {
 
 
 
-// ===== friend.es =====
+// ===== friend.sx =====
 
 
 package org.lazy.runner.advanced {
@@ -49,7 +49,7 @@ package org.lazy.runner.advanced {
 Namespaces additionally apply to record types.
 
 ```
-// ===== Flexible.es =====
+// ===== Flexible.sx =====
 
 
 package com.jhunter.xy {
@@ -60,7 +60,7 @@ package com.jhunter.xy {
 }
 
 
-// ===== Judgement.es =====
+// ===== Judgement.sx =====
 
 
 package com.jhunter.xy {
@@ -72,7 +72,7 @@ package com.jhunter.xy {
 
 
 
-// ===== Pair.es =====
+// ===== Pair.sx =====
 
 
 package com.jhunter.xy {

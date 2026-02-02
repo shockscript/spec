@@ -23,7 +23,7 @@ type N2 = {
 Fields of a record type may be tied to a namespace, which is useful for version control.
 
 ```
-// ===== Flexible.es =====
+// ===== Flexible.sx =====
 
 
 package com.jhunter.xy {
@@ -34,7 +34,7 @@ package com.jhunter.xy {
 }
 
 
-// ===== Judgement.es =====
+// ===== Judgement.sx =====
 
 
 package com.jhunter.xy {
@@ -46,7 +46,7 @@ package com.jhunter.xy {
 
 
 
-// ===== Pair.es =====
+// ===== Pair.sx =====
 
 
 package com.jhunter.xy {
@@ -68,9 +68,9 @@ All fields are required unless they contain `undefined` or `null`. A field such 
 
 Due to sensitive field order, record types with equivalent fields but in different orders will be incompatible.
 
-## Writing ESDoc comments
+## Writing ShockDoc comments
 
-Fields may have a preceding ESDoc comment, as in:
+Fields may have a preceding ShockDoc comment, as in:
 
 ```
 type R = {

@@ -31,7 +31,7 @@ Whack DS supports style sheets out of the box. Here is a simple example:
 There are different ways to declare a component. Here are some examples:
 
 ```es
-// ===== Main.es =====
+// ===== Main.sx =====
 
 
 package com.pso2.relic {
@@ -42,7 +42,7 @@ package com.pso2.relic {
 
 
 
-// ===== Button.es =====
+// ===== Button.sx =====
 
 
 package spark.components {
@@ -59,7 +59,7 @@ package spark.components {
 
 
 
-// ===== AnotherWay.es =====
+// ===== AnotherWay.sx =====
 
 
 package net.cowboy.components {
@@ -83,7 +83,7 @@ package net.cowboy.components {
 Whack's approach to logotypes and icons is called the EyeExp feature, which uses dynamic icon names rather than `enum`.
 
 ```
-// ===== Main.es =====
+// ===== Main.sx =====
 
 
 package com.actvn.thps {
@@ -107,7 +107,7 @@ package com.actvn.thps {
 
 
 
-// ===== initialize.es =====
+// ===== initialize.sx =====
 
 
 package com.sweaxizone.metro.eyexp {

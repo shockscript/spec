@@ -9,9 +9,9 @@ type U = (decimal, string);
 namespace special_version;
 ```
 
-## ESDoc comment
+## ShockDoc comment
 
-An alias may be prefixed by a ESDoc comment.
+An alias may be prefixed by a ShockDoc comment.
 
 ```
 /** Comment */

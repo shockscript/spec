@@ -30,18 +30,18 @@ package {
 }
 ```
 
-When a global name is shadowed, the user may use the `ES4` namespace to lookup a global name:
+When a global name is shadowed, the user may use the `SX` namespace to lookup a global name:
 
 ```es
 Math
     // or
-ES4::Math
+SX::Math
 ```
 
 For defining a custom alias to the top-level package, define a namespace with the URI `http://www.sweaxizone.com/2015/shockscript/global`, as in:
 
 ```es
-namespace ES4 = "http://www.sweaxizone.com/2015/shockscript/global";
+namespace SX = "http://www.sweaxizone.com/2015/shockscript/global";
 ```
 
 ## Name shadowing

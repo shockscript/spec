@@ -31,7 +31,7 @@
 - [x] Lexical scopes
 - [x] Default lexical scope
 - [x] Conditional compilation
-- [x] ESDoc comments
+- [x] ShockDoc comments
 - [x] Meta-methods
 - [x] Lexical conventions
 - [ ] ShockScript: Expressions
@@ -94,7 +94,7 @@
   - [ ] Semantics
 - [ ] Global objects
   - [ ] (Whack engine) w namespace = "http://www.sweaxizone.com/2015/whack"
-  - [ ] ES4 namespace = "http://www.sweaxizone.com/2015/shockscript/global"
+  - [ ] SX namespace = "http://www.sweaxizone.com/2015/shockscript/global"
   - [ ] Intl namespace = "org.shockscript.intl"
   - [ ] Temporal namespace = "org.shockscript.temporal"
   - [ ] env namespace (DotEnv special qualifier) = "http://www.sweaxizone.com/2015/shockscript/env"

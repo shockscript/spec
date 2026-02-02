@@ -21,9 +21,9 @@ class A {
 }
 ```
 
-## ESDoc comment
+## ShockDoc comment
 
-A ESDoc comment can be applied to a method.
+A ShockDoc comment can be applied to a method.
 
 ```
 /** Comment */

@@ -14,7 +14,7 @@ In addition, the namespace definition may also be used to define aliases to a pa
 namespace kunai = "com.inexistentninja.kunai";
 
 // an alias to the top-level package.
-namespace ES4 = "http://www.sweaxizone.com/2015/shockscript/global";
+namespace SX = "http://www.sweaxizone.com/2015/shockscript/global";
 ```
 
 Namespaces are allowed to nest within blocks regardless of scope. When inside a class block, contributes a static property.

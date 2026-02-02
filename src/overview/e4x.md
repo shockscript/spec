@@ -7,7 +7,7 @@ E4X (ECMAScript for XML) comprises the ShockScript language features specificall
 XML literals by default are used for creating implementation-defined objects; however, when the inference type is `XML` or `XMLList`, XML literals evaluate to one of these types.
 
 ```
-// ===== AppBar.es =====
+// ===== AppBar.sx =====
 
 
 package com.jhunter.relic {
@@ -22,7 +22,7 @@ package com.jhunter.relic {
 
 
 
-// ===== fn.es =====
+// ===== fn.sx =====
 
 
 package com.jhunter.data.generator {
@@ -51,12 +51,12 @@ If the event has no parameters, then the attribute above is equivalent to `event
 ### Interpolation
 
 ```
-<w:VGroup {params}>
+<w:VGroup {rest}>
     {undefined}
     {null}
     {node}
-    {nodeList}
-    {plainText}
+    {node_list}
+    {plain_text}
     {number}
 </w:VGroup>
 ```

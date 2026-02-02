@@ -21,9 +21,9 @@ The `interface` block may only contain function definitions, including regular m
 
 An `interface` is a subtype of `Object`, although compile-time property lookups do not inherit `Object` properties.
 
-## ESDoc comment
+## ShockDoc comment
 
-An interface may be prefixed by a ESDoc comment.
+An interface may be prefixed by a ShockDoc comment.
 
 ```
 /** Comment */
