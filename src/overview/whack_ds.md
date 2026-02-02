@@ -33,45 +33,48 @@ There are different ways to declare a component. Here are some examples:
 ```es
 // ===== Main.es =====
 
-package = com.pso2;
 
-public function Main():whack.ds.Node {
-    //
+package com.pso2.relic {
+    public function Main():whack.ds.Node {
+        //
+    }
 }
 
 
 
 // ===== Button.es =====
 
-package = spark.components;
 
-public class Button {
-    meta static function call(props:Props):whack.ds.Node {
-        //
+package spark.components {
+    public class Button {
+        meta static function call(props:Props):whack.ds.Node {
+            //
+        }
+
+        public type Props = {
+            //
+        };
     }
-
-    public type Props = {
-        //
-    };
 }
 
 
 
 // ===== AnotherWay.es =====
 
-package = net.cowboy.components;
 
-public enum AnotherWay {
-    const HIT;
-    const NOTHING;
+package net.cowboy.components {
+    public enum AnotherWay {
+        const HIT;
+        const NOTHING;
 
-    public function eval(props:Props):whack.ds.Node {
-        //
+        public function eval(props:Props):whack.ds.Node {
+            //
+        }
+
+        public type Props = {
+            //
+        };
     }
-
-    public type Props = {
-        //
-    };
 }
 ```
 
@@ -82,35 +85,37 @@ Whack's approach to logotypes and icons is called the EyeExp feature, which uses
 ```
 // ===== Main.es =====
 
-package = com.actvn.thps;
 
-public function Main():whack.ds.Node {
+package com.actvn.thps {
+    public function Main():whack.ds.Node {
+        // initialize
+        whack.ds.useEffect(function() {
+            com.sweaxizone.metro.eyexp.initialize();
+        }, []);
 
-    whack.ds.useEffect(function() {
-        com.sweaxizone.metro.eyexp.initialize();
-    }, []);
+        return (
+            <w:VGroup gap={13}>
+                <w:EyeExp name="camera" size={37}/>
 
-    return (
-        <w:VGroup gap={13}>
-            <w:EyeExp name="camera" size={37}/>
+                <!-- usage as a css background -->
 
-            <!-- usage as a css background -->
-
-            <w:Group s:background="eyexp(camera) no-repeat center / contain"/>
-        </w:VGroup>
-    );
+                <w:Group s:background="eyexp(camera) no-repeat center / contain"/>
+            </w:VGroup>
+        );
+    }
 }
 
 
 
 // ===== initialize.es =====
 
-package = com.sweaxizone.metro.eyexp;
 
-import whack.eyexp.EyeExp;
+package com.sweaxizone.metro.eyexp {
+    import whack.eyexp.EyeExp;
 
-public function initialize():void {
-    EyeExp.camera = { url: Embed("camera.svg"), monochrome: true };
+    public function initialize():void {
+        EyeExp.camera = { url: Embed("camera.svg"), monochrome: true };
+    }
 }
 ```
 

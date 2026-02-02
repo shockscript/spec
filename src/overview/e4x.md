@@ -7,28 +7,30 @@ E4X (ECMAScript for XML) comprises the ShockScript language features specificall
 XML literals by default are used for creating implementation-defined objects; however, when the inference type is `XML` or `XMLList`, XML literals evaluate to one of these types.
 
 ```
-// AppBar.es
-package = com.jhunter.spark.components;
+// ===== AppBar.es =====
 
-public function AppBar() : whack.ds.Node {
-    return (
-        <w:HGroup>
-            <w:Button click&={trace("clicked!")}>button 1</w:Button>
-        </w:HGroup>
-    );
+
+package com.jhunter.relic {
+    public function AppBar() : whack.ds.Node {
+        return (
+            <w:HGroup>
+                <w:Button click&={trace("clicked!")}>button 1</w:Button>
+            </w:HGroup>
+        );
+    }
 }
 
-// data.es
-package = com.jhunter.datagenerator;
 
-public function data(a:string) : XML {
-    return (
-        <tag>{a}</tag>
-    );
-}
 
-{
-    const xn = XML(<tag/>);
+// ===== fn.es =====
+
+
+package com.jhunter.data.generator {
+    public function fn(a : string) : XML {
+        return (
+            <tag>{a}</tag>
+        );
+    }
 }
 ```
 
