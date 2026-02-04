@@ -143,6 +143,7 @@
     - [ ] toLocaleString()
     - [ ] valueOf()
   - [ ] Array
+    - [ ] `new Array` supports taking iterables or iterators
     - [ ] `meta::get(...)` throws if out of bounds
     - [ ] `meta::filter(...)`
     - [ ] `clone(deep=)`
