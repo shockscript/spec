@@ -181,6 +181,7 @@
     - [ ] `meta::get(name:QName):XMLList`
     - [ ] `meta::set(key:(int, QName), value:(XML, XMLList)):void`
     - [ ] `meta::delete(arg:(int, QName)):boolean`
+    - [ ] `sibling(n)` - e.g. `sibling(-1)` (previous) and `sibling(1)` (next) - uses `parent` internally.
     - [ ] Attributes
   - [ ] XMLList
     - [ ] static `meta::call(arg:*):XMLList`
