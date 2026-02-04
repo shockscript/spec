@@ -9,7 +9,7 @@
 /* Comment */
 .hljs-comment,
 .hljs-quote {
-  color: #575757;
+  color: #666;
 }
 
 .hljs-variable,
@@ -22,7 +22,7 @@
 .hljs-link,
 .hljs-selector-id,
 .hljs-selector-class {
-  color: #000;
+  color: #333;
 }
 
 .hljs-number,
@@ -32,29 +32,29 @@
 .hljs-literal,
 .hljs-type,
 .hljs-params {
-  color: #000;
+  color: #333;
 }
 
 .hljs-string,
 .hljs-symbol,
 .hljs-bullet {
-  color: #000;
+  color: #333;
 }
 
 .hljs-title,
 .hljs-section {
-  color: #000;
+  color: #333;
 }
 
 .hljs-keyword,
 .hljs-selector-tag {
-  color: #000;
+  color: #333;
 }
 
 .hljs {
   display: block;
   overflow-x: auto;
-  color: #000;
+  color: #333;
 }
 
 pre > .hljs {

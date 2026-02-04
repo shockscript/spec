@@ -1,5 +1,5 @@
 /* Open Sans is licensed under the Apache License, Version 2.0. See http://www.apache.org/licenses/LICENSE-2.0 */
-/* Gourier (OGCourier) includes an IBM Courier copyright. */
+/* Courier 10 Pitch includes the Bitstream Inc. trademark and a specific license. */
 
 /* open-sans-300 - latin_vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic */
 @font-face {
@@ -91,34 +91,34 @@
        url('{{ resource "fonts/open-sans-v17-all-charsets-800italic.woff2" }}') format('woff2');
 }
 
-/* gourier */
+/* courier_10_pitch */
 @font-face {
-  font-family: 'gourier';
+  font-family: 'courier 10 pitch';
   font-style: normal;
   font-weight: 400;
-  src: url('{{ resource "fonts/OGCourier.woff2" }}') format('woff2');
+  src: url('{{ resource "fonts/cour10p_r.woff2" }}') format('woff2');
 }
 
-/* gourier */
+/* courier_10_pitch */
 @font-face {
-  font-family: 'gourier';
+  font-family: 'courier 10 pitch';
   font-style: italic;
   font-weight: 400;
-  src: url('{{ resource "fonts/OGCourier-Italic.woff2" }}') format('woff2');
+  src: url('{{ resource "fonts/cour10p_i.woff2" }}') format('woff2');
 }
 
-/* gourier */
+/* courier_10_pitch */
 @font-face {
-  font-family: 'gourier';
+  font-family: 'courier 10 pitch';
   font-style: normal;
   font-weight: 700;
-  src: url('{{ resource "fonts/OGCourier-Bold.woff2" }}') format('woff2');
+  src: url('{{ resource "fonts/cour10p_b.woff2" }}') format('woff2');
 }
 
-/* gourier */
+/* courier_10_pitch */
 @font-face {
-  font-family: 'gourierx';
+  font-family: 'courier 10 pitch';
   font-style: italic;
   font-weight: 700;
-  src: url('{{ resource "fonts/OGCourier-BoldItalic.woff2" }}') format('woff2');
+  src: url('{{ resource "fonts/cour10p_bi.woff2" }}') format('woff2');
 }

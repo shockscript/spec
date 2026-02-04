@@ -5,6 +5,7 @@ src = "src"
 title = "ShockScript"
 
 [output.html]
+hash-files = false
 fold = { enable = true }
 git-repository-url = "https://github.com/shockscript"
 theme = "com.sweaxizone.metro/theme"
