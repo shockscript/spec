@@ -82,41 +82,25 @@ package net.cowboy.components {
 
 ## EyeExp
 
-Whack's approach to logotypes and icons is called the EyeExp feature, which uses dynamic icon names rather than `enum`.
+Whack's approach to logotypes and icons is called the EyeExp feature, which uses dynamic icon names rather than `enum`, as well as namespace prefixes to prevent collision between libraries.
 
 ```
 // ===== Main.sx =====
 
 
-package com.actvn.thps {
-    public function Main():whack.ds.Node {
-        // initialize
-        whack.ds.useEffect(function() {
-            com.sweaxizone.metro.eyexp.initialize();
-        }, []);
+package com.sweaxizone.ie {
+    import mx = com.sweaxizone.metro.components.*;
 
+    public function Main():whack.ds.Node {
         return (
-            <w:VGroup gap={13}>
+            <mx:Wrap>
                 <w:EyeExp name="camera" size={37}/>
 
                 <!-- usage as a css background -->
 
                 <w:Group s:background="eyexp(camera) noRepeat center / contain"/>
-            </w:VGroup>
+            </mx:Wrap>
         );
-    }
-}
-
-
-
-// ===== initialize.sx =====
-
-
-package com.sweaxizone.metro.eyexp {
-    import whack.eyexp.EyeExp;
-
-    public function initialize():void {
-        EyeExp.camera = { url: Embed("camera.svg"), monochrome: true };
     }
 }
 ```
