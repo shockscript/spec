@@ -1,3 +1,7 @@
+Font name = "Courier 10 Pitch" (NOT "Yunoga")
+
+=================
+
 (c) Copyright 1989-1992, Bitstream Inc., Cambridge, MA.
 
 You are hereby granted permission under all Bitstream propriety rights

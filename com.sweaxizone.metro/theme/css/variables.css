@@ -10,7 +10,7 @@
     --content-max-width: 750px;
     --menu-bar-height: 50px;
     --font: "segoe ui", "open sans", sans-serif;
-    --mono-font: 'courier 10 pitch';
+    --mono-font: yunoga, consolas, monospace;
     --subtract-code-font: 0px;
     /* --code-font-size: calc(11.9px - var(--subtract-code-font)); */
     --code-font-size: 13.9px; /* please adjust the ace font size accordingly in editor.js */
