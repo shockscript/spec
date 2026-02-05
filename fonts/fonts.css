@@ -1,0 +1,132 @@
+/* Open Sans is licensed under the Apache License, Version 2.0. See http://www.apache.org/licenses/LICENSE-2.0 */
+/* Yunoga (actually called "Courier 10 Pitch", not "Yunoga")
+ * includes the Bitstream Inc. trademark and a specific license.
+   See YUNOGA-LICENSE.txt for the actual license terms.
+   (Disregard it being called "Yunoga"; I preferred that name over
+    "Courier 10 Pitch".) */
+
+/* open-sans-300 - latin_vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: 'open sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'),
+       url('../fonts/open-sans-v17-all-charsets-300.woff2') format('woff2');
+}
+
+/* open-sans-300italic - latin_vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: 'open sans';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Open Sans Light Italic'), local('OpenSans-LightItalic'),
+       url('../fonts/open-sans-v17-all-charsets-300italic.woff2') format('woff2');
+}
+
+/* open-sans-regular - latin_vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: 'open sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+       url('../fonts/open-sans-v17-all-charsets-regular.woff2') format('woff2');
+}
+
+/* open-sans-italic - latin_vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: 'open sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'),
+       url('../fonts/open-sans-v17-all-charsets-italic.woff2') format('woff2');
+}
+
+/* open-sans-600 - latin_vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: 'open sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+       url('../fonts/open-sans-v17-all-charsets-600.woff2') format('woff2');
+}
+
+/* open-sans-600italic - latin_vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: 'open sans';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Open Sans SemiBold Italic'), local('OpenSans-SemiBoldItalic'),
+       url('../fonts/open-sans-v17-all-charsets-600italic.woff2') format('woff2');
+}
+
+/* open-sans-700 - latin_vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: 'open sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+       url('../fonts/open-sans-v17-all-charsets-700.woff2') format('woff2');
+}
+
+/* open-sans-700italic - latin_vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: 'open sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'),
+       url('../fonts/open-sans-v17-all-charsets-700italic.woff2') format('woff2');
+}
+
+/* open-sans-800 - latin_vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: 'open sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'),
+       url('../fonts/open-sans-v17-all-charsets-800.woff2') format('woff2');
+}
+
+/* open-sans-800italic - latin_vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: 'open sans';
+  font-style: italic;
+  font-weight: 800;
+  src: local('Open Sans ExtraBold Italic'), local('OpenSans-ExtraBoldItalic'),
+       url('../fonts/open-sans-v17-all-charsets-800italic.woff2') format('woff2');
+}
+
+/* yunoga */
+@font-face {
+  font-family: 'yunoga';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Courier 10 Pitch Regular'), local('Courier10Pitch-Regular'), local('Courier10Pitch'), local('Courier 10 Pitch'),
+       url('../fonts/yunoga.woff2') format('woff2');
+}
+
+/* yunoga */
+@font-face {
+  font-family: 'yunoga';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Courier 10 Pitch Italic'), local('Courier10Pitch-Italic'),
+       url('../fonts/yunoga_i.woff2') format('woff2');
+}
+
+/* yunoga */
+@font-face {
+  font-family: 'yunoga';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Courier 10 Pitch Bold'), local('Courier10Pitch-Bold'),
+       url('../fonts/yunoga_b.woff2') format('woff2');
+}
+
+/* yunoga */
+@font-face {
+  font-family: 'yunoga';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Courier 10 Pitch Bold Italic'), local('Courier10Pitch-BoldItalic'),
+       url('../fonts/yunoga_bi.woff2') format('woff2');
+}
