@@ -84,7 +84,8 @@ Attributes are in the sequence of meta-data followed by modifiers. A parser shal
     <ul>
         <i>MetadataName</i><br>
         <i>MetadataName</i> <b>&#x28;&#x29;</b><br>
-        <i>MetadataName</i> <b>&#x28;</b> <i>MetadataEntryList</i> <b>&#x29;</b>
+        <i>MetadataName</i> <b>&#x28;</b> <i>MetadataEntryList</i> <b>&#x29;</b><br>
+        <i>MetadataName</i> <b>&#x28;</b> <i>MetadataEntryList</i> <b>,</b> <b>&#x29;</b>
     </ul>
 </ul>
 

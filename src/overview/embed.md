@@ -20,6 +20,14 @@ That is useful when a build script is involved that generates files at the artif
 
 </blockquote>
 
+## Forcing external embedding
+
+With the following, files are never embedded inside the program, even if they are short:
+
+```
+Embed("flower.webp", "external")
+```
+
 ## Including statically
 
 The user may embed files statically as either an UTF-8 encoded string, or `ByteArray`, rather than obtaining an URL.

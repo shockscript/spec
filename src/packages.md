@@ -59,6 +59,8 @@ trace( Color(0x10_00_00) );
 
 A directory identifying a package relative to a source path may contain a README file (either `README` or `README.md`) written as Markdown text, which serves as a means to attach documentation to the package.
 
+You may omit a package from the API reference by prepending a `<!-- @private -->` comment at the top of the ReadMe file.
+
 ## Package single import
 
 A package single import is contributed to the lexical scope for the following directive:

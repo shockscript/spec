@@ -5,6 +5,10 @@
 ```
 Embed("flower.webp")
 
+// force embedding externally
+// even if file is short
+Embed("flower.webp", "external")
+
 // UTF-8 text
 Embed("data.txt", "text/plain")
 

@@ -35,7 +35,7 @@ Copies ShockDoc comment from another definition. Use a `#x` component to refer t
 
 ### \@default
 
-Default value as an uninterpreted expression.
+Default value as a plain expression.
 
 ```
 @default exp
@@ -111,3 +111,7 @@ Where `item` maybe an item reference with optional `#x` instance property, or ju
 ```plain
 @throws ClassName [Description]
 ```
+
+## Omitting a package from the API
+
+To omit a package from the API reference, insert a `<!-- @private -->` comment at the top of its README or README.md file.

@@ -10,7 +10,7 @@ ShockScript is mixed with the eXtensible Markup Language (XML), based on the leg
 
 For the Whack Engine, E4X literals create Whack DS nodes by default.
 
-## Events
+## Event model
 
 ShockScript incorporates a basic event model and allows easily declaring event types and documenting them. Implementations may extend the event model for working with a Document Object Model.
 

@@ -25,7 +25,7 @@
         <i>ClassDefinition</i><br>
         <i>EnumDefinition</i><br>
         <i>InterfaceDefinition</i><br>
-        <i>TypeDefinition</i> <i>Semicolon</i><sup>ω</sup>
+        <i>TypeDefinition</i><sup>ω</sup>
     </ul>
 </ul>
 

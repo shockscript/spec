@@ -27,6 +27,7 @@
         [lookahead ≠ <b>&#x28;</b> ] <i>QualifiedIdentifier</i><br>
         <b>&#x28;</b> <i>TypeExpression</i> <b>&#x29;</b><br>
         <b>&#x28;</b> <i>TypeExpression</i> <b>,</b> <i>TypeExpressionList</i> <b>&#x29;</b><br>
+        <b>&#x28;</b> <i>TypeExpression</i> <b>,</b> <i>TypeExpressionList</i> <b>,</b> <b>&#x29;</b><br>
         <i>TupleTypeExpression</i><br>
         <i>RecordTypeExpression</i><br>
         <i>FunctionTypeExpression</i><br>
@@ -75,7 +76,8 @@
     <i>FunctionTypeExpression</i> :
     <ul>
         <b>function</b> <b>&#x28;</b> <b>&#x29;</b> <b>:</b> <i>TypeExpression</i><br>
-        <b>function</b> <b>&#x28;</b> <i>FunctionTypeParameterList</i> <b>&#x29;</b> <b>:</b> <i>TypeExpression</i>
+        <b>function</b> <b>&#x28;</b> <i>FunctionTypeParameterList</i> <b>&#x29;</b> <b>:</b> <i>TypeExpression</i><br>
+        <b>function</b> <b>&#x28;</b> <i>FunctionTypeParameterList</i> <b>,</b> <b>&#x29;</b> <b>:</b> <i>TypeExpression</i>
     </ul>
 </ul>
 

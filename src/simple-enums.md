@@ -1,6 +1,6 @@
-# Enumerations
+# Simple enumerations
 
-Enumerations are special classes consisting of zero or more variants.
+Simple enumerations — specifically those that are not Algebraic Data Types containing `type X()` definitions — are special classes consisting of zero or more variants.
 
 ```
 enum Variant {

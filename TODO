@@ -9,6 +9,7 @@
     - [ ] Introduce lazily imported source files based in source paths, when lookuping from packages.
     - [ ] Values whose static type is a type parameter will lookup for names in the type parameter's derived types.
   - [ ] InScopeLookup
+    - [ ] Lexical attribute lookups shall be used for type inference for algebraic enum variants (e.g. `var exp : Exp = @Sum(left, right)`, `var i : I = @Loc.Get(idx)`)
     - [ ] Introduce lazily imported source files based in source paths.
     - [ ] `env` qualifier causes DotEnv variable retrieval (or, depending on the implementation, may resolve to a predefined variable).
     - [ ] Use `fixed=true` access when doing property lookup in activation's `this` (e.g. user should use `this` if the enclosing class is dynamic and needs to access a dynamic property).
@@ -143,25 +144,30 @@
     - [ ] toLocaleString()
     - [ ] valueOf()
   - [ ] Array
+    - [ ] +Iterable
     - [ ] `new Array` supports taking iterables or iterators
     - [ ] `meta::get(...)` throws if out of bounds
     - [ ] `meta::filter(...)`
+    - [ ] `filter(...)` (alternative for the optional chaining operator)
     - [ ] `clone(deep=)`
     - [ ] `shift(): (void, T)`
     - [ ] `pop(): (void, T)`
     - [ ] `first : (void, T)`
     - [ ] `last : (void, T)`
   - [ ] Map
+    - [ ] +Iterable
     - [ ] `Map(weakKeys:boolean = false)`
     - [ ] `meta::get()` throws if key does not match
     - [ ] `length()`
     - [ ] `clear()`
     - [ ] `clone(deep=)`
   - [ ] string
+    - [ ] +Iterable
     - [ ] static `fromByte(...):string`
     - [ ] `format(vars:Map.<string, string>):string`
       - Formats `$varName`, `${varName}` and `$$`
   - [ ] Chars
+    - [ ] +Iterator
     - [ ] `new Chars(str:string, offset:int = 0)`
     - [ ] Indexing (peeking using zero-based Unicode code point positions; returns U+00 if out of bounds)
     - [ ] `seq(numCodePoints:int):string` (stops on end of stream)
@@ -170,6 +176,7 @@
     - [ ] `hasRemaining:boolean`
     - [ ] `clone(deep=):Chars`
   - [ ] RegExpMatches
+    - [ ] +Iterable
     - [ ] Implement indexing
     - [ ] `substr : [string]`
     - [ ] `clone(deep=)`
@@ -187,6 +194,7 @@
   - [ ] XMLList
     - [ ] static `meta::call(arg:*):XMLList`
   - [ ] ByteArray
+    - [ ] +Iterable
     - [ ] Indexing
     - [ ] `shareable:boolean`
     - [ ] `clone(deep=)`

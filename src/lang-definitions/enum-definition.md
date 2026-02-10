@@ -7,6 +7,6 @@ Nested enumerations are allowed; however, enumerations are only allowed in packa
 <ul>
     <i>EnumDefinition</i> :
     <ul>
-        <b>enum</b> <i>IdentifierName</i> <i>Block</i>
+        <b>enum</b> <i>IdentifierName</i> <i>TypeParameters</i><sub>opt</sub> <i>Block</i>
     </ul>
 </ul>

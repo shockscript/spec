@@ -1,6 +1,6 @@
 # Generics
 
-Classes, interfaces, type aliases and functions may specify type parameters, turning into *generic* entities. ShockScript implements generic entities using polymorphism.
+Classes, algebraic enumerations, interfaces, type aliases and functions may specify type parameters, turning into *generic* entities. ShockScript implements generic entities using polymorphism.
 
 > **Note**: Array data types of `double`, `float`, `decimal`, `int` and `uint` are specialised so they are represented in a memory efficient way.
 
@@ -8,13 +8,17 @@ Classes, interfaces, type aliases and functions may specify type parameters, tur
 class A.<T> {
     // code
 }
+enum E.<T> {
+    type A(v : T)
+}
 interface I.<T> {
     // code
 }
 
-type Alias.<T> = (decimal, [T]);
+type Alias.<T> = (decimal, [T])
 
-function f.<T>():void {
+function f.<T>() : void {
+    // code
 }
 ```
 
