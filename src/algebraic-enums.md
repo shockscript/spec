@@ -29,13 +29,13 @@ var exp : Exp = @Plus({ left: x, right: y })
 var exp : Exp = @Plus(x, y)
 
 switch type (exp) {
-    case ({ value } : Number) {
+    case ({ value } : @Number) {
         //
     }
-    case ({ left, right } : Plus) {
+    case ({ left, right } : @Plus) {
         //
     }
-    case ({} : Empty) {
+    case ({} : @Empty) {
         //
     }
 }
