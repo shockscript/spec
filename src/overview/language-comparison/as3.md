@@ -11,15 +11,17 @@ ShockScript looks like ActionScript 3. This section describes several details th
 
 The `string` type stores an UTF-8 encoded text, not an UTF-16 encoded text.
 
-```
+```sx
 "\u{10ffff}".length    // utf-8 length
 "\u{10ffff}".charAt(0) // code point at byte 0
+
 
 for each (var ch in "shockscript".chars()) {
     // ch:uint
 }
 
-"shockscript".chars().length() // code point length
+
+"shockscript".chars().length() // Code Point length
 ```
 
 ## Include directive
@@ -179,7 +181,7 @@ switch (v) {
 
 The `switch type` statement allows for simple type matching:
 
-```
+```sx
 switch type (v) {
     case (d : Date) {
         //

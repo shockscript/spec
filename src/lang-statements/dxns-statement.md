@@ -1,16 +1,14 @@
 # Default XML namespace statement
 
-The `default xml namespace` statement is used to specify the default E4X namespace used for lookups where the XML prefix is omitted, influencing the surrounding frame's *\[\[DefaultXMLNamespace\]\]* internal property.
+The `default xml namespace` statement is used to specify the default E4X namespace used for lookups where the XML prefix is omitted, influencing the surrounding frame's *\[\[DefaultXMLNamespace\]\]* internal property; in other words, it can be said that `default xml namespace` is block-scoped.
 
-```
-namespace ninja = "http://www.ninja.com/2007/build"
+```sx
+namespace Samurai = "http://www.samurai.com/2007"
 
 {
-    default xml namespace = ninja
-    // [[DefaultXMLNamespace]] = "http://www.ninja.com/2007/build"
+    default xml namespace = Samurai
+    xn = <Envato> swiss </Envato>
 }
-
-// [[DefaultXMLNamespace]] = ""
 ```
 
 **Syntax**
