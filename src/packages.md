@@ -10,7 +10,7 @@ package com.business.enum {
 }
 ```
 
-> **Note**: One common convention is for packages to use a prefix domain (one of ( `com`, `net`, `org`, `me` )); alternatively an user may use a prefixless domain name (such as `skia` rather than `com.google.skia`). The `me` prefix is used for personal content and the rest for companies, organizations and groups.
+> **Note**: One common convention is for packages to use a prefix domain (one of ( `com`, `net`, `org`, `me`, `goog` )); alternatively an user may use a prefixless domain name (such as `skia` rather than `goog.skia`). The `me` prefix is used for personal content and the rest for companies, organizations and groups.
 
 The user defines properties under the package inside the `package` block, as in:
 
