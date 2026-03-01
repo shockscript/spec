@@ -9,9 +9,9 @@
     - [ ] Introduce lazily imported source files based in source paths, when lookuping from packages.
     - [ ] Values whose static type is a type parameter will lookup for names in the type parameter's derived types.
   - [ ] InScopeLookup
-    - [ ] Lexical attribute lookups shall be used for type inference for algebraic enum variants (e.g. `var exp : Exp = @Sum(left, right)`, `var i : I = @Loc.Get(idx)`)
+    - [ ] Lookups with an algebraic enum as context type may infer a variant/variant namespace (e.g. `var exp : Exp = Sum(left, right)`, `var i : I = Loc.Get(idx)`)
     - [ ] Introduce lazily imported source files based in source paths.
-    - [ ] `env` qualifier causes DotEnv variable retrieval (or, depending on the implementation, may resolve to a predefined variable).
+    - [ ] `DotEnv` qualifier causes DotEnv variable retrieval (or, depending on the implementation, may resolve to a predefined variable).
     - [ ] Use `fixed=true` access when doing property lookup in activation's `this` (e.g. user should use `this` if the enclosing class is dynamic and needs to access a dynamic property).
 - [ ] Constants
   - [ ] *EnumConstant* for both regular enumerations and flag enumerations
@@ -45,6 +45,8 @@
     - `<?fixed={}?>`
   - [ ] String literal
     - [ ] Is applicable to enumerations (also check for union)
+  - [ ] Numeric literal
+    - [ ] Final type, when literal contains no suffix, is decided smartly (e.g. considers unions and possible meta-method parameters (including `meta::get` in a brackets operator)).
   - [ ] XML expression
     - [ ] XML literals applied as `XML`/`XMLList` shall still resolve namespace prefixes to lexical ShockScript names. (`namespace` definitions may be used as prefixes as well (definition name = URI); with implicit prefix.)
   - [ ] Null literal
@@ -62,13 +64,20 @@
     - [ ] Propagates *fixed=true* from given context
   - [ ] Descendants operator
     - [ ] Takes a non-attribute qualified identifier.
+  - [ ] Relational, arithmetic and bitwise operations using the `Number` union (from the ShockScript global objects) at either or both sides should be allowed, causing a forced conversion if necessary.
   - [ ] Call operator
     - [ ] Base is passed *followedByCall=true*
     - [ ] Watch for static `meta::call` when calling classes (supports multiple signatures too)
     - [ ] `XML` and `XMLList` being called statically shall still pass themselves as the context type to the first call argument, even if they define `meta::call()`.
     - [ ] Perform type inference for omitted generic parameters.
+  - [ ] `v is T` operator
+    - [ ] Verify `v` first
+    - [ ] Verify `T` with `v`'s static type as the context type (for allowing algebraic enumeration's variant inference).
+    - [ ] Evaluation: Support matching union members
   - [ ] `v as T` operator
-    - [ ] Passes context type `T` to `v`
+    - (... different from `T(v)`, do not verify T first ... this is mostly useless... and it being that way helps algebraic enum's variant inference)
+    - [ ] Verify `v` first
+    - [ ] Verify `T` with `v`'s static type as the context type (for allowing algebraic enumeration's variant inference).
   - [ ] Assignment expression
     - [ ] When base is *KeyValuePairReferenceValue*, `meta::set()`
     - [ ] When base is *AttributeReferenceValue*, `meta::setAttribute()`
@@ -82,13 +91,17 @@
     - [ ] Forbid instantiating enumerations.
   - [ ] Null coalescing `x ?? y`
     - [ ] Pass x type to y
+  - [ ] `typeof`
+    - [ ] Returns `"xml"` for XML/XMLList
+    - [ ] Returns `"number"` for any types comprising the `Number` union
 - [x] ShockScript: Type expressions
   - [ ] Semantics
 - [x] ShockScript: Patterns (Pattern, ArrayPattern, ObjectPattern)
   - [ ] Semantics
 - [x] ShockScript: Statements
   - [ ] Semantics
-  - [ ] For `for each`: `Iterator` and `Iterable` are iterable
+    - [ ] For `for each`: `Iterator` and `Iterable` are iterable
+    - [ ] For `switch type`: Provide context type for type inference on `case(...)` parameters when matching over an algebraic enumeration
 - [x] ShockScript: Directives
   - [ ] Semantics
 - [x] ShockScript: Definitions
@@ -96,9 +109,10 @@
 - [ ] Global objects
   - [ ] (Whack engine) w namespace = "http://www.sweaxizone.com/2015/whack"
   - [ ] SX namespace = "http://www.sweaxizone.com/2015/shockscript/global"
-  - [ ] Intl namespace = "org.shockscript.intl"
-  - [ ] Temporal namespace = "org.shockscript.temporal"
-  - [ ] env namespace (DotEnv special qualifier) = "http://www.sweaxizone.com/2015/shockscript/env"
+  - [ ] generic namespace = "http://www.sweaxizone.com/2015/shockscript/generic"
+  - [ ] Intl namespace = "com.sweaxizone.shock.intl"
+  - [ ] Temporal namespace = "com.sweaxizone.shock.temporal"
+  - [ ] DotEnv namespace (DotEnv special qualifier) = "http://www.sweaxizone.com/2015/shockscript/DotEnv"
   - [ ] trace()
   - [ ] etrace()
   - [ ] assert() (a namespace-method)
@@ -115,6 +129,7 @@
   - [ ] Infinity
   - [ ] NaN
   - [ ] undefined
+  - [ ] Number = union `(byte, short, int, uint, long, bigint, float, double, decimal)`
   - [ ] Iterator.\<T> (interface)
     - [ ] required `next():[T]?` (the returned array must be of length 1)
     - [ ] `length():int` (consumes the whole iterator)
@@ -127,11 +142,8 @@
     - [ ] `compareTo(obj:Object):int`
     - [ ] This is used by default on array sorting.
   - [ ] Object
-    - [ ] `clone(deep:boolean=):Object`
-      - \[protected]
-      - Default implementation clones most objects fine (records, tuples, arrays, maps and so on), but fails for classes with a required constructor.
-        - Clones are shallow (not deep) by default
     - [ ] `equals(obj:Object):boolean`
+      - Structural and appropriate for e.g. Whack DS
       - [ ] NaN = NaN
       - [ ] Maps
       - [ ] Array
@@ -139,6 +151,10 @@
       - [ ] Records
       - [ ] Maps
       - [ ] (Other objects just use ===)
+    - [ ] `generic::clone(deep:boolean=):Object`
+      - Default implementation clones most objects fine (records, tuples, arrays, maps and so on), but fails for classes with a required constructor.
+        - Clones are shallow (not deep) by default
+      - Circular references are preserved, like JavaScript's `structuredClone()`.
     - [ ] `meta::class()`
     - [ ] toString()
     - [ ] toLocaleString()
@@ -199,9 +215,14 @@
     - [ ] `shareable:boolean`
     - [ ] `clone(deep=)`
   - [ ] Endian enum
-  - [ ] org.shockscript.intl.*
+  - [ ] com.sweaxizone.shock.intl.*
     - [ ] Like ECMA-262 `Intl`. Aliased `Intl::`, as well.
-  - [ ] org.shockscript.temporal.*
+  - [ ] com.sweaxizone.shock.temporal.*
     - [ ] Like ECMA-262 like `Temporal`. Aliased `Temporal::`, as well.
-  - [ ] org.shockscript.reflect.*
-    - Used for what the `reflect` namespace cannot be used for (e.g. perhaps extracting a list of properties from a package name).
+  - [ ] com.sweaxizone.shock.meta.*
+    - Used for what the `meta` namespace RTI reflection methods cannot be used for (e.g. perhaps extracting a list of properties from a package name).
+  - [ ] com.sweaxizone.shock.meta.context.*
+    - Special compiler functions for reflecting lexical contexts.
+    - [ ] decimal() - DecimalContext
+    - [ ] dxns() - default xml namespace
+    - [ ] xml() - XMLContext

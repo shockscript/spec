@@ -12,8 +12,8 @@ Classes annotated with the `Remote` meta-data may be serialized or deserialized 
 package {
     [Remote(tag="type")]
     public enum Item {
-        [Remote::Rename(flyout)]
-        [Remote::RenameField(backdropBlur, "backdrop_blur")]
+        [Remote::rename(flyout)]
+        [Remote::renameField(backdropBlur, "backdrop_blur")]
         type Flyout(
             color : uint,
             backdropBlur : boolean,

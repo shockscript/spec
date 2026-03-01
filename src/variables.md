@@ -5,6 +5,10 @@ A variable may be read-only or writeable, and consists of a type.
 ```
 var x = 0
 const y = 10
+
+// Equivalent to above
+let x = 0
+let const y = 10
 ```
 
 ## ShockDoc comment

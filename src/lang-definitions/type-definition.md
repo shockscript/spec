@@ -13,7 +13,7 @@ type M = Map.<double, double>
 type X(n : decimal)
 ```
 
-Alias type definitions are only allowed in package blocks and top-level region and inside class blocks. When inside a class block, contributes a static property.
+Alias type definitions are allowed anywhere. When inside a class block, contributes a static property.
 
 Variant type definitions are only allowed directly in the block of an algebraic `enum`.
 

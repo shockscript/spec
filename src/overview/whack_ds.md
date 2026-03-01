@@ -10,7 +10,7 @@ Just like with React.js, memoizing components has drawbacks such as possibly vol
 
 Whack DS skips re-rendering component if the parent re-renders and the parameters are equals to the previous render; the Whack DS component's own states updating with a different value will always re-render it.
 
-> **Note**: To avoid *old state comparison issues*, the properties object must not be reused for mutation (since Whack DS does not know how to clone them).
+Whack DS implementation stores previous state or previous properties by performing a `generic::clone()`, so you do not have to worry about later reuse and mutation. For using custom classes inside states or properties — like when a tuple, record, `Array` or `Map` is not enough — ensure you implement a `clone()` method that returns an object of the same kind, otherwise you get an error for safety.
 
 ## Style blocks
 
@@ -32,7 +32,7 @@ Whack DS supports style sheets out of the box. Here is a simple example:
 
 There are different ways to declare a component. Here are some examples:
 
-```es
+```sx
 // ===== Main.sx =====
 
 
@@ -44,54 +44,66 @@ package com.pso2.relic {
 
 
 
-// ===== Button.sx =====
+// ===== TabBar.sx =====
 
 
-package spark.components {
-    public class Button {
-        meta static function call(props:Props):whack.ds.Node {
-            //
-        }
-
-        public type Props = {
-            //
-        };
-    }
-}
-
-
-
-// ===== AnotherWay.sx =====
-
-
-package net.cowboy.components {
-    public enum AnotherWay {
-        const HIT;
-        const NOTHING;
+package com.sweaxizone.metro.components {
+    public class TabBar {
+        // Constructor (optional)
+        public function TabBar(props:Props) {}
 
         public function eval(props:Props):whack.ds.Node {
             //
         }
 
-        public type Props = {
-            //
-        };
+        public type Props = {}
     }
 }
 ```
+
+It's recommended to avoid locals other than `State`, `Context` or `Bindable` annotatated locals inside a component, as that avoids accidental accesses of stale values.
+
+### Class-based components
+
+Instances of class-based components are throwaway. It's not recommended to explicitly construct such classes or share instances with other code locations.
+
+Such components may define `State`, `Context` and `Bindable` instance fields and assign their initial values in the constructor:
+
+```sx
+package {
+    public class Counter {
+        [State]
+        let n:bigint
+
+        public function Counter(props:Props) {
+            n = props.start
+        }
+
+        public function eval(props:Props):whack.ds.Node {
+            //
+        }
+
+        public type Props = {}
+    }
+}
+```
+
+Even though the constructor is frequently re-evaluated, the initial value of `State` or `Bindable` fields only runs in the initial rendering phase.
+
+> **Curiosity**: Class-based components provide not only the advantage of better encapsulating helpers and associated types, but if all fields are compiler special ones as recommended (`State`, `Bindable` or `Context`), it also prevents bugs with stale locals.
 
 ## EyeExp
 
 Whack's approach to logotypes and icons is called the EyeExp feature, which uses dynamic icon names rather than `enum`, as well as namespace prefixes to prevent collision between libraries.
 
-```
-// ===== Main.sx =====
+```sx
+// ===== HelloWorld.sx =====
 
 
-package com.sweaxizone.ie {
+package {
     import mx = com.sweaxizone.metro.components.*;
 
-    public function Main():whack.ds.Node {
+    public function HelloWorld():whack.ds.Node {
         return (
             <mx:Wrap>
                 <w:EyeExp name="camera" size={37}/>

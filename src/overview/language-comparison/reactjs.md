@@ -4,10 +4,12 @@ ShockScript incorporates the XML language, and XML literals allow for implementa
 
 The following demonstrates a basic XML literal for Whack DS:
 
-```
-<w:HGroup>
-    <w:Button click&={trace("clicked!")}>button 1</w:Button>
-</w:HGroup>
+```sx
+const xn : whack.ds.Node = (
+    <w:VGroup>
+        <w:Button click&={trace("clicked!")}>button 1</w:Button>
+    </w:VGroup>
+);
 ```
 
 ## Event handlers
@@ -19,23 +21,23 @@ In ShockScript, event handlers are expressed as `e&={statementList}` (note the a
 ShockScript allows for `<q:N>`, whose name resolution equals `q::N`. Dots may be used for entities other than namespaces, as in:
 
 ```
-<com.jhunter.spark.components.AppBar/>
+<com.zero.spark.components.AppBar/>
 ```
 
 For brevity, you do either:
 
 ```
-import bc = com.jhunter.spark.components.*;
+import bc = com.zero.spark.components.*;
 
-<bc:AppBar/>
+xn = <bc:AppBar/>
 ```
 
 or:
 
 ```
-import com.jhunter.spark.components.*
+import com.zero.spark.components.*
 
-<AppBar/>
+xn = <AppBar/>
 ```
 
 ## Interpolation
@@ -64,7 +66,7 @@ Interpolating attributes uses `{ object }` and not `{ ...object }` and must appe
 Unlike React.js, in Whack DS there is no risk of accessing an outdated state's value, due to how states are constructed.
 
 ```
-package com.jhunter.spark.components {
+package com.zero.spark.components {
     public function HelloWorld() : whack.ds.Node {
         // x
         [State]
@@ -100,7 +102,7 @@ m = { ...m, k: v };
 In Whack DS the concept of "refs" is called *bindables*.
 
 ```
-package com.jhunter.relic.site {
+package com.zero.relic.site {
     //
     public function HelloWorld() : whack.ds.Node {
         [Bindable]
@@ -167,3 +169,7 @@ Unlike with React.js, there is built-in support for linking style sheets in a Wh
 
 
 [More on style sheets](../e4x/whack.md#linking-cascading-style-sheets)
+
+## Class-based components
+
+[Whack DS supports class-based components](../whack_ds.md#class-based-components), which are more flexible than function-based components.

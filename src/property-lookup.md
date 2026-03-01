@@ -18,12 +18,12 @@
 - For *LocalName*(*name*), the `string` type or defer.
 - For *Computed*(*value*), the static type of *value* or defer.
 
-### LookupKey.Double
+### LookupKey.Number
 
-*LookupKey*.Double returns:
+*LookupKey*.Number returns:
 
 - For *LocalName*(*name*), undefined.
-- For *Computed*(*value*), *value* is *NumberConstant*(*v*) ? force convert *v* to a `double` : undefined.
+- For *Computed*(*value*), *value* is *NumberConstant*(*v*) ? *v* : undefined.
 
 ## PropertyLookup()
 
@@ -32,7 +32,7 @@
 - If *base* is invalidation
   - Return invalidation
 - Let *localName* = *key* is *LocalName*(*name*) ? *name* : undefined
-- Let *doubleKey* = *key*.Double
+- Let *numberKey* = *key*.Number
 - If *base* is a *TypeConstant*(*type*)
   - *base* = *type*
 - Else if *base* is a *FixtureReferenceValue* and *base*.Property is a type
@@ -69,13 +69,15 @@
         - *foundRegularProperty* = true
       - If (static type of *key*.Value or defer) fails on implicit coercion to *K*
         - Continue loop
+      - If *K* is a `Number` member and (static type of *key*.Value or defer) is a `Number` member
+        - Return *KeyValuePairReferenceValue*(*base*, *meta-method*, undefined, forced conversion of *key*.Value to *K*)
       - Return *KeyValuePairReferenceValue*(*base*, *meta-method*, undefined, *key*.Value implicitly coerced to *K*)
     - If (static type of *key*.Value or defer) != (`string` or defer) or *foundRegularProperty*
       - Throw a verify error
   - Let *hasKnownNs* = *qual* == undefined or (*qual* is a namespace or *NamespaceConstant*)
   - If *localName* == undefined
-    - If *doubleKey* != undefined and *baseType* is a tuple
-      - Let *i* = *doubleKey* coercion to integer
+    - If *numberKey* != undefined and *baseType* is a tuple
+      - Let *i* = *numberKey* coercion to `uint`
       - If *i* < 0 or *i* >= *baseType*.ElementTypes.Length
         - Throw a verify error
       - Return *TupleReferenceValue*(*base*, *i*)
@@ -133,6 +135,6 @@
 
 ## InScopeLookup()
 
-*InScopeLookup*(*scope*, *qual*, *key* as *LookupKey*, *followedByCall* as `boolean`, *fixed* as `boolean`) takes the following steps in order:
+*InScopeLookup*(*scope*, *qual*, *key* as *LookupKey*, *followedByCall* as `boolean`, *fixed* as `boolean`, *contextType*) takes the following steps in order:
 
 > **Note**: Content lacking.

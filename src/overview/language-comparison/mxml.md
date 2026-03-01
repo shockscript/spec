@@ -5,8 +5,8 @@ The MXML language, as part of the Apache Flex framework, was used for describing
 The following demonstrates a basic UI component implemented in Whack DS:
 
 ```
-package com.jhunter.spark.components {
-    public function AppBar() : whack.ds.Node {
+package com.zero.spark.components {
+    public function AppBar():whack.ds.Node {
         return (
             <w:HGroup>
                 <w:Button click&={trace("clicked!")}>button 1</w:Button>
@@ -116,3 +116,6 @@ Unlike with React.js, there is built-in support for linking style sheets in a Wh
 
 [More on style sheets](../e4x/whack.md#linking-cascading-style-sheets)
 
+## Class-based components
+
+[Whack DS supports class-based components](../whack_ds.md#class-based-components), which are more flexible than function-based components.

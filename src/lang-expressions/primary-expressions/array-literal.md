@@ -2,16 +2,36 @@
 
 **Syntax**
 
-```
+```sx
 ["shock", "script"]
+```
+
+The following:
+
+```sx
+[0, 1, 2] : [byte]
+```
+
+is equivalent to `Array.<byte>([0, 1, 2])`, or:
+
+```sx
+type B = [byte]
+B([0, 1, 2])
 ```
 
 <ul>
     <i>ArrayLiteral</i> :
     <ul>
-        <b>[</b> <i>Elision</i><sub>opt</sub> <b>]</b><br>
-        <b>[</b> <i>ElementList</i> <b>]</b><br>
-        <b>[</b> <i>ElementList</i> <b>,</b> <i>Elision</i><sub>opt</sub> <b>]</b>
+        <b>[</b> <i>Elision</i><sub>opt</sub> <b>]</b> <i>ArrayLiteralTypeAnnotation</i><sub>opt</sub><br>
+        <b>[</b> <i>ElementList</i> <b>]</b> <i>ArrayLiteralTypeAnnotation</i><sub>opt</sub><br>
+        <b>[</b> <i>ElementList</i> <b>,</b> <i>Elision</i><sub>opt</sub> <b>]</b> <i>ArrayLiteralTypeAnnotation</i><sub>opt</sub>
+    </ul>
+</ul>
+
+<ul>
+    <i>ArrayLiteralTypeAnnotation</i> :
+    <ul>
+        <b>:</b> <i>TypeExpression</i>
     </ul>
 </ul>
 

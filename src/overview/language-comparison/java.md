@@ -8,7 +8,7 @@ While importing definitions, the user can alias a definition, or even a package.
 // ===== Chart.sx =====
 
 
-package com.jhunter.q1.core {
+package com.zero.q1.core {
     public class Chart {
         //
     }
@@ -19,7 +19,7 @@ package com.jhunter.q1.core {
 // ===== ChartType.sx =====
 
 
-package com.jhunter.q1.core {
+package com.zero.q1.core {
     public enum ChartType {
         const BAR;
         const FLOW;
@@ -31,7 +31,7 @@ package com.jhunter.q1.core {
 // ===== usage =====
 
 
-import p = com.jhunter.q1.core.*;
+import p = com.zero.q1.core.*;
 //
 const chartType : p::ChartType = "flow";
 //

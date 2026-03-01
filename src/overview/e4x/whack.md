@@ -8,7 +8,7 @@ Native tags belong to the implicit `w` namespace, such as `<w:Button>`.
 
 The `w` prefix may be shadowed by user definitions; in that case, to use native tags the user needs to define a namespace like follows:
 
-```es
+```sx
 namespace whack = "http://www.sweaxizone.com/2015/whack";
 ```
 
@@ -27,8 +27,8 @@ The `key` attribute is reserved for uniquely identifying interpolated collection
 `<w:Style>` tags are used for linking style sheets to the parent tag and passing arguments to the style sheet (which are referred by the style sheet as `param(color)`).
 
 ```
-package com.jhunter.spark.components {
-    public function Case() : whack.ds.Node {
+package com.zero.spark.components {
+    public function Case():whack.ds.Node {
         return (
             <w:Button>
                 <w:Style color="yellow">
@@ -49,7 +49,7 @@ If the style sheet is too large, it may be moved out of the ShockScript file; fo
 // ===== Case.sx =====
 
 
-package com.jhunter.spark.components {
+package com.zero.spark.components {
     public function Case() : whack.ds.Node {
         return (
             <w:Button>
@@ -79,7 +79,7 @@ Style blocks can be conditional, as in:
 </w:Style>
 ```
 
-An arbitrary map of parameters (`Map.<string, string>`) may be passed as well:
+An arbitrary map of parameters (`Map.<string, *>`) may be passed as well:
 
 ```
 <w:Style {map}>
@@ -87,12 +87,30 @@ An arbitrary map of parameters (`Map.<string, string>`) may be passed as well:
 </w:Style>
 ```
 
+#### Objects as style sheet parameters
+
+A style sheet parameter passed as an object will be treated as immutable. If it is set to, say, a surrounding component's property, context or state, it is said to be reactive to that.
+
+The `param(...)` property supports very simple operators without whitespace, like dot (`.x`, `.q::x` (relies on the `@namespace` CSS declarations)) and brackets (`[0]`, `["x"]`, `['x']`).
+
+```css
+.skinMe {
+    color: param(theme.colors.foreground);
+}
+
+@namespace Ark "http://www.zero.com/ark";
+
+.skinMe {
+    background: param(character.Ark::yay);
+}
+```
+
 #### Linking style sheets in custom components
 
 For a component to support `<w:Style>` tags, it simply needs to support a `stylesheet : [whack.ds.StyleSheet]` parameter.
 
 ```
-package com.jhunter.spark.components {
+package com.zero.spark.components {
     public function Case(props: {
         stylesheet? : [ whack.ds.StyleSheet ],
     }) : whack.ds.Node {

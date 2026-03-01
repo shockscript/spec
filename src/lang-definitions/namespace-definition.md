@@ -2,14 +2,14 @@
 
 The namespace definition may be primarily used to define a namespace that may be used for protecting or versioning other definitions and XML data processing.
 
-```es
+```sx
 namespace ns1
 namespace ns2 = "http://example.com/2015/product"
 ```
 
 In addition, the namespace definition may also be used to define aliases to a package wildcard import, as in:
 
-```es
+```sx
 // com.inexistentninja.kunai.*
 namespace kunai = "com.inexistentninja.kunai";
 

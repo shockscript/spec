@@ -153,7 +153,7 @@ The variant value as declared by the `const` is determined as follows:
 #### valueOf()
 
 ```
-override function valueOf():T {
+override public function valueOf():T {
     //
 }
 ```
@@ -163,7 +163,7 @@ Returns the numeric value of the enumeration instance, where `T` is the numeric 
 #### toString()
 
 ```
-override function toString():string {
+override public function toString():string {
     //
 }
 ```
@@ -187,7 +187,7 @@ This allows for `f in e` expressions.
 #### with()
 
 ```
-function with(v:E):E {
+public function with(v:E):E {
     //
 }
 ```
@@ -197,7 +197,7 @@ Returns a new value containing the specified flags, where `E` is the enumeration
 #### without()
 
 ```
-function without(v:E):E {
+public function without(v:E):E {
     //
 }
 ```
@@ -207,7 +207,7 @@ Returns a new value removing the specified flags, where `E` is the enumeration i
 #### toggled()
 
 ```
-function toggled(v:E):E {
+public function toggled(v:E):E {
     //
 }
 ```

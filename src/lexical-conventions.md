@@ -213,7 +213,7 @@ Virtual semicolons are inserted in the following occasions:
 
 ## Identifier
 
-The *Identifier* symbol is similiar to that from the ECMA-262 third edition, but with support for scalar Unicode escapes.
+The *Identifier* symbol is similiar to that from the ECMA-262 third edition, but with support for scalar Unicode escapes, `\xXX` escapes and a `\x{...}` escape (alias to `\u{...}`).
 
 **Syntax**
 
@@ -298,6 +298,7 @@ in
 is
 
 for
+let
 new
 not
 try
@@ -414,9 +415,12 @@ The `@` punctuator must not be followed by a single quote <b>'</b> or a double q
 0b1011
 1_000
 
-10f // float(10)
-10m // decimal(10)
-10n // bigint(10)
+10d     // double(10) or simply 10
+10f     // float(10)
+10i     // int(10)
+10m     // decimal(10). "m" for money
+10n     // bigint(10)
+10u     // uint(10)
 ```
 
 **Syntax**
@@ -433,22 +437,32 @@ The `@` punctuator must not be followed by a single quote <b>'</b> or a double q
 <ul>
     <i>DecimalLiteralSuffix</i> ::
     <ul>
+        <b>d</b><br>
+        <b>D</b><br>
         <b>f</b><br>
         <b>F</b><br>
+        <b>i</b><br>
+        <b>I</b><br>
         <b>m</b><br>
         <b>M</b><br>
         <b>n</b><br>
-        <b>N</b>
+        <b>N</b><br>
+        <b>u</b><br>
+        <b>U</b>
     </ul>
 </ul>
 
 <ul>
     <i>HexLiteralSuffix</i> ::
     <ul>
+        <b>i</b><br>
+        <b>I</b><br>
         <b>m</b><br>
         <b>M</b><br>
         <b>n</b><br>
-        <b>N</b>
+        <b>N</b><br>
+        <b>u</b><br>
+        <b>U</b>
     </ul>
 </ul>
 
@@ -641,7 +655,7 @@ The `@` punctuator must not be followed by a single quote <b>'</b> or a double q
 
 *StringLiteral* is similiar to the *StringLiteral* symbol from the ECMA-262 third edition. The following additional features are included:
 
-* Scalar *UnicodeEscapeSequence* using the `\u{...}` form
+* Scalar *UnicodeEscapeSequence* using the `\u{...}` or `\x{...}` form
 * Triple string literals
 * Raw string literals using the `@` prefix
 
@@ -784,7 +798,6 @@ Escape sequences are described by the following table:
         <b>&#x5C;</b> <i>CharacterEscapeSequence</i><br>
         <b>&#x5C;0</b> [lookahead ∉ <i>DecimalDigit</i>]<br>
         <b>&#x5C;</b> <i>LineTerminator</i><br>
-        <i>HexEscapeSequence</i><br>
         <i>UnicodeEscapeSequence</i>
     </ul>
 </ul>
@@ -830,16 +843,11 @@ Escape sequences are described by the following table:
 </ul>
 
 <ul>
-    <i>HexEscapeSequence</i> ::
-    <ul>
-        <b>&#x5C;x</b> <i>HexDigit</i> <i>HexDigit</i>
-    </ul>
-</ul>
-
-<ul>
     <i>UnicodeEscapeSequence</i> ::
     <ul>
+        <b>&#x5C;x</b> <i>HexDigit</i> <i>HexDigit</i><br>
         <b>&#x5c;u</b> <i>HexDigit</i><sub>{4}</sub><br>
+        <b>&#x5c;x</b> <b>&#x7b;</b> <i>HexDigit</i><sub>{1,}</sub> <b>&#x7d;</b><br>
         <b>&#x5c;u</b> <b>&#x7b;</b> <i>HexDigit</i><sub>{1,}</sub> <b>&#x7d;</b>
     </ul>
 </ul>

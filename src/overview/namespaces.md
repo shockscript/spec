@@ -2,7 +2,7 @@
 
 ShockScript defines properties whose name is tied to a namespace, which is useful for version control and protection.
 
-```es
+```sx
 // ===== FunInternal.sx =====
 
 
@@ -52,7 +52,7 @@ Namespaces additionally apply to record types.
 // ===== Flexible.sx =====
 
 
-package com.jhunter.xy {
+package com.zero.xy {
     /**
      * Flexible version control namespace.
      */
@@ -63,7 +63,7 @@ package com.jhunter.xy {
 // ===== Judgement.sx =====
 
 
-package com.jhunter.xy {
+package com.zero.xy {
     /**
     * Judgement version control namespace.
     */
@@ -75,7 +75,7 @@ package com.jhunter.xy {
 // ===== Pair.sx =====
 
 
-package com.jhunter.xy {
+package com.zero.xy {
     /**
     * Pair.
     */

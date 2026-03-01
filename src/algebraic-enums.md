@@ -4,7 +4,7 @@ Algebraic enumerations, as opposed to simple enumerations, contain `type X()` de
 
 ## Example
 
-```es
+```sx
 package com.q.calculator {
     public enum Exp {
         /**
@@ -20,22 +20,22 @@ package com.q.calculator {
 import com.q.calculator.*
 
 // type inference -
-// use lexical @ (attribute) syntax
+// use a basemost lexical name
 
 // each variant implements a meta::call multi-method,
 // so it can accept values in different ways.
-var exp : Exp = @Empty()
-var exp : Exp = @Plus({ left: x, right: y })
-var exp : Exp = @Plus(x, y)
+var exp : Exp = Empty()
+var exp : Exp = Plus({ left: x, right: y })
+var exp : Exp = Plus(x, y)
 
 switch type (exp) {
-    case ({ value } : @Number) {
+    case ({ value } : Number) {
         //
     }
-    case ({ left, right } : @Plus) {
+    case ({ left, right } : Plus) {
         //
     }
-    case ({} : @Empty) {
+    case ({} : Empty) {
         //
     }
 }
@@ -43,34 +43,35 @@ switch type (exp) {
 
 ## Type inference
 
-An E4X attribute syntactic construct, when used lexically, is used to infer an algebraic enum variant.
+```sx
+var e:E = A()
+var e:E = Subcategory.A()
 
-```es
-var e:E = @A()
-var e:E = @Subcategory.A()
+v is A
+v as Subcategory.A
 ```
 
 ## Namespaces
 
 The variants of an algebraic enum may be under namespaces for extra conciseness, by using dots in their name:
 
-```es
+```sx
 enum I {
     type Loc.Get(index : uint)
 }
 ```
 
-When using an E4X attribute syntactic construct for inference, one would basically have:
+With type inference, one would basically have:
 
-```es
-var i : I = @Loc.Get(idx)
+```sx
+var i : I = Loc.Get(idx)
 ```
 
 ## Shared properties
 
 When an algebraic enum defines an instance variable, the constructors of each variant expect that variable inside a plain object if the variable isn't optional.
 
-```es
+```sx
 enum Fragment {
     public const location:Location;
 

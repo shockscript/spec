@@ -4,7 +4,7 @@ A package consists of a name (typically a reverse domain name), a set of propert
 
 A package `com.business.enum` is expressed as:
 
-```es
+```sx
 package com.business.enum {
     //
 }
@@ -14,7 +14,7 @@ package com.business.enum {
 
 The user defines properties under the package inside the `package` block, as in:
 
-```es
+```sx
 package f.q {
     public function f():void {}
 }
@@ -24,7 +24,7 @@ package f.q {
 
 The top-level package, which defines global properties, is equivalent to:
 
-```es
+```sx
 package {
     //
 }
@@ -32,7 +32,7 @@ package {
 
 When a global name is shadowed, the user may use the `SX` namespace to lookup a global name:
 
-```es
+```sx
 Math
     // or
 SX::Math
@@ -40,7 +40,7 @@ SX::Math
 
 For defining a custom alias to the top-level package, define a namespace with the URI `http://www.sweaxizone.com/2015/shockscript/global`, as in:
 
-```es
+```sx
 namespace SX = "http://www.sweaxizone.com/2015/shockscript/global";
 ```
 
@@ -48,7 +48,7 @@ namespace SX = "http://www.sweaxizone.com/2015/shockscript/global";
 
 It is possible to fully qualify a name in an expression using a package and one of its items, shadowing any other variables.
 
-```es
+```sx
 import org.colourful.color.Color;
 var com = 0;
 trace( org.colourful.color.Color(0x10_00_00) );
@@ -73,24 +73,27 @@ import f.q.x;
 
 A package wildcard import is aliased for the following directive:
 
-```es
+```sx
 import q = com.business.quantum.*;
 ```
 
 Then `q` may be used as a qualifier to resolve to a name in the `com.business.quantum.*` package (excluding subpackages).
 
-```es
+```sx
 q::x
 ```
 
 For the following directive, the package wildcard import is contributed to the lexical scope:
 
-```es
+```sx
 import com.business.quantum.*;
 ```
 
 ## Source path
 
+Depending on where the ShockScript program is applied, the following apply:
+
 - A package definition must contain exactly one definition item, and its name must match the source path.
 - A source file must consist of exactly one package definition.
 
+A script that is literally a script per se typically does not follow these rules.

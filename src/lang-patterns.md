@@ -2,7 +2,7 @@
 
 Destructuring patterns may be used in a number of contexts, including variable bindings, `try..catch` clauses, `switch type` cases and assignment left-hand sides.
 
-Where applicable, expressions are disambiguated into destructuring patterns, in which case any incompatible or illegal expression results in a syntax error; for example, an expression is disambiguated in a pattern in an assignment whose left-hand side starts with a bracket **&#x5b;** or a brace **&#x7b;**.
+Where applicable, expressions are disambiguated into destructuring patterns, in which case any incompatible or illegal expression results in a syntax error; for example, an expression is disambiguated into a pattern inside an assignment whose left-hand side is either an array or object literal.
 
 **Syntax**
 

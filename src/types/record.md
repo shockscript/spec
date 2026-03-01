@@ -26,7 +26,7 @@ Fields of a record type may be tied to a namespace, which is useful for version 
 // ===== Flexible.sx =====
 
 
-package com.jhunter.xy {
+package com.zero.xy {
     /**
      * Flexible version control namespace.
      */
@@ -37,7 +37,7 @@ package com.jhunter.xy {
 // ===== Judgement.sx =====
 
 
-package com.jhunter.xy {
+package com.zero.xy {
     /**
     * Judgement version control namespace.
     */
@@ -49,7 +49,7 @@ package com.jhunter.xy {
 // ===== Pair.sx =====
 
 
-package com.jhunter.xy {
+package com.zero.xy {
     /**
     * Pair.
     */

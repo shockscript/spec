@@ -4,7 +4,7 @@ This section describes which type conversions are available.
 
 Explicit conversions may occur as either `T(v)` (strict conversion) or `v as T` (optional conversion). The behavior of the call operator over a type may not always be a conversion depending on if `T` implements the static `meta::call()` hook.
 
-```es
+```sx
 v as T     // returns T?. failure returns null
 v as! T    // failure throws a TypeError (as-strict)
 T(v)       // same as "v as! T"
@@ -71,8 +71,11 @@ Explicit conversions occur when resolving `v as T` or `T(v)`, after trying an im
 | To `double`                               | Forced conversion to double-precision floating point. |
 | To `float`                                | Forced conversion to single-precision floating point. |
 | To `decimal`                              | Forced conversion to 128-bit decimal number. |
+| To `byte`                                 | Forced conversion to 8-bit unsigned integer. |
+| To `short`                                | Forced conversion to 16-bit signed integer. |
 | To `int`                                  | Forced conversion to 32-bit signed integer. |
 | To `uint`                                 | Forced conversion to 32-bit unsigned uninteger. |
+| To `long`                                 | Forced conversion to 64-bit signed integer. |
 | To `bigint`                               | Forced conversion to an arbitrary range integer. |
 | Record type into equivalent record type of non-uniform field order | |
 | From type parameter                       | |
