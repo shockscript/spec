@@ -45,6 +45,7 @@
     - `<?fixed={}?>`
   - [ ] String literal
     - [ ] Is applicable to enumerations (also check for union)
+    - [ ] Is applicable to byte (ASCII), int, uint or the Number union (strictly one character allowed)
   - [ ] Numeric literal
     - [ ] Final type, when literal contains no suffix, is decided smartly (e.g. considers unions and possible meta-method parameters (including `meta::get` in a brackets operator)).
   - [ ] XML expression
@@ -94,18 +95,19 @@
   - [ ] `typeof`
     - [ ] Returns `"xml"` for XML/XMLList
     - [ ] Returns `"number"` for any types comprising the `Number` union
+  - [ ] Ternary conditional operator
+    - [ ] Ensure test is not an accidental binding of a function/method (where the user meant to "call" it)
 - [x] ShockScript: Type expressions
-  - [ ] Semantics
-- [x] ShockScript: Patterns (Pattern, ArrayPattern, ObjectPattern)
-  - [ ] Semantics
+- [x] ShockScript: Patterns
 - [x] ShockScript: Statements
-  - [ ] Semantics
-    - [ ] For `for each`: `Iterator` and `Iterable` are iterable
-    - [ ] For `switch type`: Provide context type for type inference on `case(...)` parameters when matching over an algebraic enumeration
+  - [ ] If statement
+    - [ ] Ensure test is not an accidental binding of a function/method (where the user meant to "call" it)
+  - [ ] If let statement
+    - [ ] For non-nullable assignment, ensure test is not an accidental binding of a function/method (where the user meant to "call" it)
+  - [ ] `for each`: `Iterator` and `Iterable` are iterable
+  - [ ] `switch type`: Provide context type for type inference on `case(...)` parameters when matching over an algebraic enumeration
 - [x] ShockScript: Directives
-  - [ ] Semantics
 - [x] ShockScript: Definitions
-  - [ ] Semantics
 - [ ] Global objects
   - [ ] (Whack engine) w namespace = "http://www.sweaxizone.com/2015/whack"
   - [ ] SX namespace = "http://www.sweaxizone.com/2015/shockscript/global"
@@ -130,6 +132,8 @@
   - [ ] NaN
   - [ ] undefined
   - [ ] Number = union `(byte, short, int, uint, long, bigint, float, double, decimal)`
+  - [ ] DecimalContext
+    - [ ] Supports "precision" and "rounding" options for now (look at decimal.js's API to get some ideas)
   - [ ] Iterator.\<T> (interface)
     - [ ] required `next():[T]?` (the returned array must be of length 1)
     - [ ] `length():int` (consumes the whole iterator)

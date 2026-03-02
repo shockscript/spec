@@ -83,7 +83,7 @@ package {
             //
         }
 
-        public type Props = {}
+        public type Props = { start:bigint }
     }
 }
 ```

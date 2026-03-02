@@ -3,13 +3,13 @@
 The `use xml` directive is used to provide a `XMLContext` object at the surrounding frame for configuring the `XML`/`XMLList` data types.
 
 ```
-const ctx : XMLContext = {
-    ignoreWhitespace: true,
-}
+var ctx:XMLContext, xn:XML
+
+ctx = { ignoreWhitespace: true }
 
 {
     use xml ctx
-    new XML("<a>  </a>")
+    xn = <information>  content  </information>
 }
 ```
 

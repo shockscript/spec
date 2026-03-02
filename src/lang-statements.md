@@ -10,6 +10,7 @@ The **ω** superscript used throughout the specification translates to one of { 
         <i>SuperStatement</i> <i>Semicolon</i><sup>ω</sup><br>
         <i>Block</i><br>
         <i>IfStatement</i><sup>ω</sup><br>
+        <i>IfLetStatement</i><sup>ω</sup><br>
         <i>SwitchStatement</i><br>
         <i>DoStatement</i> <i>Semicolon</i><sup>ω</sup><br>
         <i>WhileStatement</i><sup>ω</sup><br>

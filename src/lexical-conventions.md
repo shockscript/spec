@@ -64,7 +64,7 @@ The *InputElementXMLPI* goal symbol must be used when parsing the `<?fixed={exp}
         <i>StringLiteral</i><br>
         <i>RegularExpressionLiteral</i><br>
         <i>XMLMarkup</i><br>
-        <b>&lt;?fixed=&#x7B;</b><br>
+        <b>&lt;?fixed=&#x7B;</b>
     </ul>
 </ul>
 
@@ -372,6 +372,7 @@ abstract
 override
 
 namespace
+undefined
 ```
 
 ## Punctuator

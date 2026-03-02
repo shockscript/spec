@@ -20,3 +20,11 @@
         <b>...</b> <i>Pattern</i>
     </ul>
 </ul>
+
+**Semantics**
+
+Applications:
+
+- May be used to destructure an `Array`-like collection.
+- May be used to destructure a tuple.
+- May be used to destructure an algebraic enumeration's variant.

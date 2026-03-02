@@ -2,7 +2,7 @@
 
 The switch statement is similiar to that of Java. Unlike in Java, the switch statement does not include fallthroughs.
 
-```
+```sx
 switch (v) {
     case 0:
     case 1:
@@ -14,13 +14,23 @@ switch (v) {
 
 The **switch type** statement is used to match the type of a discriminant value.
 
-```
+```sx
 switch type (v) {
     case (d : double) {
         // double
     }
     default {
         // no matching case
+    }
+}
+```
+
+The **switch type** statement also supports matching algebraic data type variants, typically omitting the case's type annotation.
+
+```sx
+switch type (exp) {
+    case (Plus(10, right)) {
+        //
     }
 }
 ```

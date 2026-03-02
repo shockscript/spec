@@ -38,6 +38,8 @@ If the initializer of a variable is a constant, then the variable consists of a 
 var x = 0
 ```
 
+It's not mandatory for variables to have an initialiser, in which case accessing it without assigning a value may throw an error (if its type contains no default value).
+
 ## Local shadowing
 
 Re-declaring a variable is allowed inside activation blocks.

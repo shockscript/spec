@@ -16,6 +16,16 @@ f = { hotfix: true, lazy: true }
 x = Variant()
 ```
 
+## Unicode Code Points
+
+You can assign a string literal to an `uint`, `int`, `byte` or `Number` as long as it contains exactly one character, resulting into an Unicode Code Point value.
+
+```sx
+ch = "A"
+// equality
+ch == "A"
+```
+
 ## Other object initialisers
 
 Object initialisers are also applicable to:

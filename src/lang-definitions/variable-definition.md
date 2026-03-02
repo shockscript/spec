@@ -5,7 +5,7 @@
 - `var` and `let` are equivalent.
 - `const` and `let const` are equivalent.
 
-> **Note**: The `let` and `let const` kinds compared to `var` and `const` are a matter of personal taste. They are introduced in ShockScript since they were proposed in ECMAScript 4.
+> **Note**: The `let` and `let const` kinds compared to `var` and `const` are a matter of personal taste. They are introduced in ShockScript since they were proposed in the non-existing ECMAScript 4.
 
 <ul>
     <i>VariableDefinition</i><sup>β</sup> :
@@ -35,7 +35,7 @@
 <ul>
     <i>VariableBinding</i><sup>β</sup> :
     <ul>
-        <i>TypedDestructuring</i> <i>VariableInitialization</i><sup>β</sup>
+        <i>TypedPattern</i> <i>VariableInitialization</i><sup>β</sup>
     </ul>
 </ul>
 
