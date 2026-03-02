@@ -4,7 +4,7 @@ Record types `{ ... }` are simple property records. Record types are memory-effi
 
 > **Note**: The decision for having record types compiling into hash-map structures is because these types use to contain many fields, for instance, in Whack DS components and in operations requiring a large number of options.
 
-```
+```sx
 type N1 = { x : decimal, y : decimal };
 
 type N2 = {
@@ -22,7 +22,7 @@ type N2 = {
 
 Fields of a record type may be tied to a namespace, which is useful for version control.
 
-```
+```sx
 // ===== Flexible.sx =====
 
 
@@ -72,7 +72,7 @@ Due to sensitive field order, record types with equivalent fields but in differe
 
 Fields may have a preceding ShockDoc comment, as in:
 
-```
+```sx
 type R = {
     /**
      * Comment.
@@ -89,7 +89,7 @@ Two record types are compatible only if either a\) one is used as a subset of an
 
 One trailing `...rest` component may appear in a record, where `rest` must be another record type. The resulting type is a subtype of `rest` and properties **must not** collide.
 
-```
+```sx
 // A
 type A = { x:double };
 // B < A

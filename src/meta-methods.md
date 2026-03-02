@@ -6,7 +6,7 @@
 
 A static `meta::call()` method may be defined with any number of parameters and any result type, overriding the behavior of calling the class object.
 
-```
+```sx
 meta static function call():T {}
 ```
 
@@ -22,7 +22,7 @@ A multi-method may be used, allowing for multiple call signatures.
 > <?fixed={object.q::n}?>
 > ```
 
-```
+```sx
 meta function get(key:K):V {
     //
 }
@@ -32,7 +32,7 @@ meta function get(key:K):V {
 
 > **Note**: Overriding the property accessor with a possibly `string` or `QName` key type (including base types `*` and `Object`) will override all names (like `.x`), except when calling a method (like `.m()`). In that case, a class is said to be *dynamic*.
 
-```
+```sx
 meta function set(key:K, value:V):void {
     //
 }
@@ -42,7 +42,7 @@ meta function set(key:K, value:V):void {
 
 > **Note**: Overriding the property accessor with a possibly `string` or `QName` key type (including base types `*` and `Object`) will override all names (like `.x`), except when calling a method (like `.m()`). In that case, a class is said to be *dynamic*.
 
-```
+```sx
 meta function delete(key:K):boolean {
     //
 }
@@ -52,7 +52,7 @@ meta function delete(key:K):boolean {
 
 Overrides the behavior of the `in` operator.
 
-```
+```sx
 meta function has(key:K):boolean {
     //
 }
@@ -62,7 +62,7 @@ meta function has(key:K):boolean {
 
 Overrides the behavior of the `.@k` accessor.
 
-```
+```sx
 meta function getAttribute(key:K):V {
     //
 }
@@ -72,7 +72,7 @@ meta function getAttribute(key:K):V {
 
 Overrides the behavior of the `.@k = v` accessor.
 
-```
+```sx
 meta function setAttribute(key:K, value:V):void {
     //
 }
@@ -82,7 +82,7 @@ meta function setAttribute(key:K, value:V):void {
 
 Overrides the behavior of the `delete (...).@k` accessor.
 
-```
+```sx
 meta function deleteAttribute(key:K):boolean {
     //
 }
@@ -92,7 +92,7 @@ meta function deleteAttribute(key:K):boolean {
 
 Overrides the behavior of the filter operator (`.(test)`).
 
-```
+```sx
 meta function filter(testFn:function(T):boolean):E {
     //
 }
@@ -102,7 +102,7 @@ meta function filter(testFn:function(T):boolean):E {
 
 Overrides the behavior of the descendants operator (`..x`). The parameter is expected to be typed `string` or `QName`.
 
-```
+```sx
 meta function descendants(name:QName):E {
     //
 }

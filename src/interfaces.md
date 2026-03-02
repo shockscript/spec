@@ -2,7 +2,7 @@
 
 Interfaces are user defined, non opaque types that may be implemented by classes through their `implements` clause.
 
-```
+```sx
 interface I {
     //
     function m() : void;
@@ -25,7 +25,7 @@ An `interface` is a subtype of `Object`, although compile-time property lookups 
 
 An interface may be prefixed by a ShockDoc comment.
 
-```
+```sx
 /** Comment */
 interface I {}
 ```
@@ -34,7 +34,7 @@ interface I {}
 
 An interface may have zero or more meta-data.
 
-```
+```sx
 [M1]
 [M2]
 interface I {}
@@ -44,7 +44,7 @@ interface I {}
 
 An interface may extend other interfaces through the `extends` clause.
 
-```
+```sx
 interface I3 extends I1, I2 {}
 ```
 
@@ -52,7 +52,7 @@ interface I3 extends I1, I2 {}
 
 Members from base interfaces **must not** be shadowed.
 
-```
+```sx
 interface I1 {
     function m() {}
 }
@@ -65,7 +65,7 @@ interface I2 extends I1 {
 
 When interface methods omit their body, they are classified as *required* methods.
 
-```
+```sx
 interface I {
     function m():void;
 }
@@ -75,7 +75,7 @@ interface I {
 
 When interface methods contain a body, they are classified as *provided* methods.
 
-```
+```sx
 interface I {
     function m() {
         //
@@ -87,7 +87,7 @@ interface I {
 
 As annotations, interface methods may have nothing but an access modifier that is allowed to be anything but a direct reserved namespace.
 
-```
+```sx
 interface I {
     meta function get(key:string):string;
 }
@@ -97,7 +97,7 @@ interface I {
 
 The interface, in convention when implementing `IEventTarget`, may define possibly emitted events through using multiple `Event` meta-data.
 
-```
+```sx
 /**
  * Event.
  */

@@ -45,7 +45,7 @@ Types except `*` are non-nullable by default. Use `T?` or `?T` as a shorthand to
 - Instance methods may override another method and include additional optional parameters (including the rest parameter).
 - Instance methods may override another method and return a more contravariant result type.
 
-```
+```sx
 class A {
     function m() {}
 }
@@ -58,7 +58,7 @@ class B extends A {
 
 The `in` operator behaves differently. It triggers `meta::has()` which is in general used for determining whether a collection contains a specific value; for `Map`s it determines whether a pair key exists; for `XML` and `XMLList` objects it performs the same E4X behavior.
 
-```
+```sx
 trace(e in arr);
 trace(k in m);
 ```
@@ -67,7 +67,7 @@ trace(k in m);
 
 The filter operator has been modified to use a `*` identifier rather than cluttering the lexical scope with dynamic names.
 
-```
+```sx
 xnode.(*.@x.startsWith("abc"))
 ```
 
@@ -75,7 +75,7 @@ xnode.(*.@x.startsWith("abc"))
 
 The with statement is modified to use the `*` identifier to avoid cluttering the lexical scope.
 
-```
+```sx
 with (o) {
     *.x =
     *.y = 10;
@@ -86,7 +86,7 @@ with (o) {
 
 The `this` object is always captured from the parent activation in nested activations; there is no way to override the `this` object with another value.
 
-```
+```sx
 class A {
     function m() {
         function n() {
@@ -103,7 +103,7 @@ XML literals do not produce `XML` or `XMLList` unless the inference type is one 
 - `<t a/>` equals `<t a={true}/>`
 - `<t e&={}/>` equals `<t e={function(event){}}/>` or `<t e={function(){}}/>`
 
-```
+```sx
 <w:VGroup>
     <w:Label variant="heading">Welcome</w:Label>
     <w:Button click&={trace("clicked me");}>Click me</w:Button>
@@ -116,7 +116,7 @@ XML literals do not produce `XML` or `XMLList` unless the inference type is one 
 
 Events are declared without defining related static constants, as ShockScript performs vast type inference; thus, the ASDoc `@eventType` tag does not exist in ShockScript.
 
-```
+```sx
 /** Some event */
 [Event(name="act", type="Event")]
 /** Some class */
@@ -129,7 +129,7 @@ class A extends EventTarget {}
 
 Embedding files is much easier in ShockScript. The following returns typically an `app://` URI for a file that will be automatically added to the application's installation directory.
 
-```
+```sx
 trace(Embed("flower.webp"));
 ```
 
@@ -137,7 +137,7 @@ trace(Embed("flower.webp"));
 
 **Note**: Implementations may support interpolating an artifact directory at the `Embed` path, such as `{target}`.
 
-```
+```sx
 trace(Embed("{target}/auto.generated.bin"));
 ```
 
@@ -147,7 +147,7 @@ This is useful for when a build script generates a file at an artifact directory
 
 For static embedding, use a second option as either `"text/plain"` or `"application/octet-stream"`.
 
-```
+```sx
 Embed("data.txt", "text/plain")               // :string
 Embed("data.bin", "application/octet-stream") // :ByteArray
 ```
@@ -156,7 +156,7 @@ Embed("data.bin", "application/octet-stream") // :ByteArray
 
 In ShockScript the following is valid in an activation:
 
-```
+```sx
 var m:* = complexCentral.manager;
 // more code...
 var m = Manager(m);
@@ -166,7 +166,7 @@ var m = Manager(m);
 
 The `switch` statement does not support fallthroughs, which helps preventing logical bugs by not requiring the `break` statement.
 
-```
+```sx
 switch (v) {
     case 0:
         trace("zero");

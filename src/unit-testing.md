@@ -2,7 +2,7 @@
 
 Basic unit testing may be done by defining functions annotated with the `Test` meta-data at a package-level.
 
-```
+```sx
 package com.zero.q1.tests {
     [Test]
     public function foo() : void {
@@ -13,7 +13,7 @@ package com.zero.q1.tests {
 
 Or the user may define a class annotated with the `TestSuite` meta-data at a package-level, consisting of an empty constructor and instance methods annotated with the `Test` meta-data.
 
-```
+```sx
 package com.zero.q1.tests {
     [TestSuite]
     public class Tests {

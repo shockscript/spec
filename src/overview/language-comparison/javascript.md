@@ -6,7 +6,7 @@ ShockScript gets too many roots from JavaScript, although more particularly link
 
 The ShockScript's `Map` data type differs fundamentally from JavaScript's `Map` in that key-value pairs are accessed more naturally. ShockScript resolves the ambiguity between pairs and the prototype by differentiating property *read* and *call*.
 
-```
+```sx
 m.x = 10
 m.length()
 ```
@@ -17,7 +17,7 @@ m.length()
 
 In ShockScript the following is valid in an activation:
 
-```
+```sx
 var m:* = complex.manager;
 // more code...
 var m = Manager(m);
@@ -27,7 +27,7 @@ var m = Manager(m);
 
 `not` may be used to negate `in` or `is` operators:
 
-```
+```sx
 e not in a
 v is not T
 ```

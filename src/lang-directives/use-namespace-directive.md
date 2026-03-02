@@ -2,7 +2,7 @@
 
 The **use namespace** directive is used to contribute a namespace to the open namespace list of the enclosing scope.
 
-```
+```sx
 use namespace ns1
 ```
 

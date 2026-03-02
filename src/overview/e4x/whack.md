@@ -26,7 +26,7 @@ The `key` attribute is reserved for uniquely identifying interpolated collection
 
 `<w:Style>` tags are used for linking style sheets to the parent tag and passing arguments to the style sheet (which are referred by the style sheet as `param(color)`).
 
-```
+```sx
 package com.zero.spark.components {
     public function Case():whack.ds.Node {
         return (
@@ -73,7 +73,7 @@ package com.zero.spark.components {
 
 Style blocks can be conditional, as in:
 
-```
+```sx
 <w:Style if={condition}>
     ...
 </w:Style>
@@ -81,7 +81,7 @@ Style blocks can be conditional, as in:
 
 An arbitrary map of parameters (`Map.<string, *>`) may be passed as well:
 
-```
+```sx
 <w:Style {map}>
     ...
 </w:Style>
@@ -109,7 +109,7 @@ The `param(...)` property supports very simple operators without whitespace, lik
 
 For a component to support `<w:Style>` tags, it simply needs to support a `stylesheet : [whack.ds.StyleSheet]` parameter.
 
-```
+```sx
 package com.zero.spark.components {
     public function Case(props: {
         stylesheet? : [ whack.ds.StyleSheet ],
@@ -132,6 +132,6 @@ The `extend` attribute may be used to include externally loaded styles as well.
 
 Use `s:n={v}` attributes as a shortcut to `style={{ ..., n: v }}`.
 
-```
+```sx
 <w:Button s:background="orange">button1</w:Button>
 ```

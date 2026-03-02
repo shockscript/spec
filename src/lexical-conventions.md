@@ -6,7 +6,7 @@ The tokenizer scans one of the following input goal symbols depending on the syn
 
 The following program illustrates how the tokenizer decides which is the input goal symbol to scan:
 
-```
+```sx
 /(?:)/       ;
 a / b        ;
 <a>Text</a>  ;
@@ -153,7 +153,7 @@ The *LineTerminator* token is filtered out by the lexical scanner, however it ma
 
 The *Comment* token is filtered out by the lexical scanner, however it propagates any *LineTerminator* token from its characters.
 
-```
+```sx
 /*
  * /*
  *  *
@@ -662,7 +662,7 @@ The `@` punctuator must not be followed by a single quote <b>'</b> or a double q
 
 Triple string literals use either `"""` or `'''` as delimiter and may span multiple lines. The contents of triple string literals are indentation-based, as can be observed in the following program:
 
-```
+```sx
 const text = """
     foo
     bar
@@ -677,7 +677,7 @@ Triple string literals are processed as follows:
 
 Both regular and triple string literals accept the `@` prefix, designating raw string literals. Raw string literals contain no escape sequences.
 
-```
+```sx
 const text = @"""
     x\y
     """

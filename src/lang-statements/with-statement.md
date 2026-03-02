@@ -2,7 +2,7 @@
 
 The **with** statement is used to declare a **\*** binding to the statement's scope. The **\*** binding holds the value of the parenthesized expression.
 
-```
+```sx
 with (o) {
     *.x += 10;
     *.y += 5;

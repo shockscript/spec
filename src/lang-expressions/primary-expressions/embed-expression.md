@@ -2,7 +2,7 @@
 
 **Syntax**
 
-```
+```sx
 Embed("flower.webp")
 
 // force embedding externally

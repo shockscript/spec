@@ -2,7 +2,7 @@
 
 Structural function types inherit from the `Function` class, taking the form `function(...) : T`.
 
-```
+```sx
 function(T1, T=, ...[T]):T
 ```
 

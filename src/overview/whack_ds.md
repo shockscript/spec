@@ -16,7 +16,7 @@ Whack DS implementation stores previous state or previous properties by performi
 
 Whack DS supports style sheets out of the box. Here is a simple example:
 
-```
+```sx
 <w:VGroup>
     <w:Style>
     <![CDATA[

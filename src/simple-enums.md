@@ -2,7 +2,7 @@
 
 Simple enumerations — specifically those that are not Algebraic Data Types containing `type X()` definitions — are special classes consisting of zero or more variants.
 
-```
+```sx
 enum Variant {
     const VAR_ONE;
     const VAR_TWO = "var_two";
@@ -24,13 +24,13 @@ Enumerations are static, so they cannot be instantiated through the `new` operat
 
 When the inference type in a string literal is an enumeration, the literal may identify a variant by its name.
 
-```
+```sx
 var val : Variant = "var_one";
 ```
 
 When the inference type in an array literal or object initializer is a flag enumeration, the literal may be used to identify multiple variants.
 
-```
+```sx
 [Flags]
 enum F { const A, B, C }
 
@@ -43,7 +43,7 @@ const m:F = { a: true, b: true, c: true };
 
 Flag enumerations differ from regular enumerations by having instances being able to contain zero or more variants.
 
-```
+```sx
 [Flags]
 enum F { const A, B, C }
 ```
@@ -56,7 +56,7 @@ When a flag enumeration's numeric type is a floating point, the values are inter
 
 Obtain all variants of a flag enumeration by using the `**` expression with the enumeration as the inference type:
 
-```
+```sx
 var f:F = **;
 ```
 
@@ -64,7 +64,7 @@ var f:F = **;
 
 Flag enumeration objects are interned so that flags may be compared correctly.
 
-```
+```sx
 [Flags]
 enum E { const A, B, C }
 
@@ -76,7 +76,7 @@ trace(obj == E(["a", "b"]));
 
 Enumerations use the `uint` type by default to represent the variant values. The user is allowed to change the type to another numeric type through using a meta-data named after that numeric type.
 
-```
+```sx
 [decimal]
 enum E1 {
     const A, B, C;
@@ -87,7 +87,7 @@ enum E1 {
 
 The initializer of a variant may be expressed in four different forms, or simply be omitted:
 
-```
+```sx
 StringLiteral
 NumericLiteral
 [StringLiteral, NumericLiteral]
@@ -152,7 +152,7 @@ The variant value as declared by the `const` is determined as follows:
 
 #### valueOf()
 
-```
+```sx
 override public function valueOf():T {
     //
 }
@@ -162,7 +162,7 @@ Returns the numeric value of the enumeration instance, where `T` is the numeric 
 
 #### toString()
 
-```
+```sx
 override public function toString():string {
     //
 }
@@ -174,7 +174,7 @@ Returns the name of the enumeration instance. For a flag enumeration, returns th
 
 #### meta::has()
 
-```
+```sx
 meta function has(v:E):boolean {
     //
 }
@@ -186,7 +186,7 @@ This allows for `f in e` expressions.
 
 #### with()
 
-```
+```sx
 public function with(v:E):E {
     //
 }
@@ -196,7 +196,7 @@ Returns a new value containing the specified flags, where `E` is the enumeration
 
 #### without()
 
-```
+```sx
 public function without(v:E):E {
     //
 }
@@ -206,7 +206,7 @@ Returns a new value removing the specified flags, where `E` is the enumeration i
 
 #### toggled()
 
-```
+```sx
 public function toggled(v:E):E {
     //
 }
@@ -218,7 +218,7 @@ Returns a new value toggling the specified flags, where `E` is the enumeration i
 
 Enumerations support customized methods:
 
-```
+```sx
 enum E {
     const A, B, C;
     function get isA() this == "a";

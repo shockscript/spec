@@ -2,20 +2,20 @@
 
 A method is a function that may be invoked. An instance method is a method defined in a `class`, `enum` or `interface` block which is not marked `static`.
 
-```
+```sx
 function m() {}
 ```
 
 Getters and setters are methods belonging to a virtual variable:
 
-```
+```sx
 function get x():decimal 10;
 function set x(val) {}
 ```
 
 Constructors are methods that implement initialization for a class instance, as in:
 
-```
+```sx
 class A {
     function A() {}
 }
@@ -25,7 +25,7 @@ class A {
 
 A ShockDoc comment can be applied to a method.
 
-```
+```sx
 /** Comment */
 function m() {}
 ```
@@ -34,7 +34,7 @@ function m() {}
 
 A method may have zero or more meta-data.
 
-```
+```sx
 [M1]
 [M2]
 function m() {}
@@ -44,7 +44,7 @@ function m() {}
 
 Instance methods may have a `final` modifier, indicating that they are not to overriden by subclasses.
 
-```
+```sx
 class A {
     final function m() {}
 }
@@ -54,7 +54,7 @@ class A {
 
 Instance methods may have an `abstract` modifier under an `abstract` class, indicating that they must be overriden by subclasses.
 
-```
+```sx
 abstract class A {
     abstract function m():void;
 }
@@ -64,7 +64,7 @@ abstract class A {
 
 A method is a generator if the `yield` operator appears at least once in the method's body. A generator is a method that evaluates like an iterator, consumed in pauses of `yield` operators until it hits a `return` statement or the end of code. A generator returns a `Generator.<T>` object.
 
-```
+```sx
 function g():double {
     yield 100.5;
 }
@@ -76,7 +76,7 @@ If a method uses both `yield` and `await`, it is considered an iterator of `Prom
 
 A method is asynchronous if the `await` operator appears at least once in the method's body. An asynchronous method returns a `Promise.<T>` object.
 
-```
+```sx
 function f():void {
     await otherF();
 }
@@ -90,7 +90,7 @@ By using a `generic`-annotated header method, a method may be defined more than 
 
 A `generic` header method must consist of exactly an untyped rest parameter and must omit the result type. Its purpose is to declare that a method is a multi-method and may be re-defined multiple times in the same scope or in the same directly-enclosing class.
 
-```
+```sx
 generic function f(...);
 
 function f():decimal {
@@ -105,7 +105,7 @@ function f(val:decimal):Chainable {
 
 An instance method may override a method in a base class through using the `override` modifier:
 
-```
+```sx
 override protected function m() {
     //
 }
@@ -132,7 +132,7 @@ The above overriding rules apply to non-multi-methods; for multi methods, the ov
 
 Instance methods are *bound* such that retrieving a method from an instance will return a method tied to the instance.
 
-```
+```sx
 class A {
     function m():A {
         return this;

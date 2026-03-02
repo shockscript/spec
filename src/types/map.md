@@ -2,7 +2,7 @@
 
 The `Map.<K, V>` type represents a hash map.
 
-```
+```sx
 Map.<K, V>
 ```
 
@@ -10,7 +10,7 @@ Map.<K, V>
 
 ## Instance usage
 
-```
+```sx
 const map = new Map.<string, double>();
 
 // x=10

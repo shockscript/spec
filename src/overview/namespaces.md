@@ -48,7 +48,7 @@ package org.lazy.runner.advanced {
 
 Namespaces additionally apply to record types.
 
-```
+```sx
 // ===== Flexible.sx =====
 
 

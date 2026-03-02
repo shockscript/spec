@@ -2,7 +2,7 @@
 
 The `Embed()` expression may be used for embedding files and media into the program. Its default behavior is to return a `data:` (for small files) or external URL (for large files).
 
-```
+```sx
 Embed("thumb.webp")
 ```
 
@@ -12,7 +12,7 @@ Embed("thumb.webp")
 
 **Note**: Implementations may support an artifact path interpolation, as in:
 
-```
+```sx
 Embed("{target}/auto.generated")
 ```
 
@@ -24,7 +24,7 @@ That is useful when a build script is involved that generates files at the artif
 
 With the following, files are never embedded inside the program, even if they are short:
 
-```
+```sx
 Embed("flower.webp", "external")
 ```
 
@@ -32,7 +32,7 @@ Embed("flower.webp", "external")
 
 The user may embed files statically as either an UTF-8 encoded string, or `ByteArray`, rather than obtaining an URL.
 
-```
+```sx
 Embed("data.txt", "text/plain")
 Embed("data.bin", "application/octet-stream")
 ```

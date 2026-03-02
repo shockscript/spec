@@ -4,7 +4,7 @@ Classes, algebraic enumerations, interfaces, type aliases and functions may spec
 
 > **Note**: Array data types of `double`, `float`, `decimal`, `int` and `uint` are specialised so they are represented in a memory efficient way.
 
-```
+```sx
 class A.<T> {
     // code
 }
@@ -26,7 +26,7 @@ function f.<T>() : void {
 
 Type parameters may be attached multiple constraints.
 
-```
+```sx
 [Limit("T extends A, B")]
 /**
  * Some function.
@@ -58,7 +58,7 @@ function f.<E>(value:E) {
 
 `Event()` constraints are allowed to take `this` as the base type, reflecting the current class's events:
 
-```
+```sx
 package com.business.coreRT.events {
     /**
     * Event dispatcher.

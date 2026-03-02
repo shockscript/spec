@@ -4,7 +4,7 @@ A type definition is either used to define an alias to an existing type or used 
 
 **Syntax**
 
-```
+```sx
 type M = Map.<double, double>
 
 

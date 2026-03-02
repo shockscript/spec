@@ -20,13 +20,13 @@ In ShockScript, event handlers are expressed as `e&={statementList}` (note the a
 
 ShockScript allows for `<q:N>`, whose name resolution equals `q::N`. Dots may be used for entities other than namespaces, as in:
 
-```
+```sx
 <com.zero.spark.components.AppBar/>
 ```
 
 For brevity, you do either:
 
-```
+```sx
 import bc = com.zero.spark.components.*;
 
 xn = <bc:AppBar/>
@@ -34,7 +34,7 @@ xn = <bc:AppBar/>
 
 or:
 
-```
+```sx
 import com.zero.spark.components.*
 
 xn = <AppBar/>
@@ -44,7 +44,7 @@ xn = <AppBar/>
 
 Interpolation works similiarly to React.js, except for HTML.
 
-```
+```sx
 <w:VGroup>
     {undefined}
     {null}
@@ -57,7 +57,7 @@ Interpolation works similiarly to React.js, except for HTML.
 
 Interpolating attributes uses `{ object }` and not `{ ...object }` and must appear at most once at the end of all attributes:
 
-```
+```sx
 <w:Button {arguments}>click me</w:Button>
 ```
 
@@ -65,7 +65,7 @@ Interpolating attributes uses `{ object }` and not `{ ...object }` and must appe
 
 Unlike React.js, in Whack DS there is no risk of accessing an outdated state's value, due to how states are constructed.
 
-```
+```sx
 package com.zero.spark.components {
     public function HelloWorld() : whack.ds.Node {
         // x
@@ -87,13 +87,13 @@ The state's initializer represents the state's initial value.
 
 Like React.js, there is no transitive detection of mutation methods; therefore, the following is necessary over an array `.push(v)`:
 
-```
+```sx
 x = [...x, v];
 ```
 
 As to Map objects:
 
-```
+```sx
 m = { ...m, k: v };
 ```
 
@@ -101,7 +101,7 @@ m = { ...m, k: v };
 
 In Whack DS the concept of "refs" is called *bindables*.
 
-```
+```sx
 package com.zero.relic.site {
     //
     public function HelloWorld() : whack.ds.Node {
@@ -124,7 +124,7 @@ package com.zero.relic.site {
 
 Context usage is represented as `whack.ds.ContextValue.<T>` objects, although they are used as natural `Context`-annotated locals.
 
-```
+```sx
 function Example() : whack.ds.Node {
     //
     [Context("ExampleContext")]
@@ -140,7 +140,7 @@ function Example() : whack.ds.Node {
 
 The popular "useEffect" hook requires the second argument, preventing mistakes. For listening to any changes, use `"*"`.
 
-```
+```sx
 whack.ds.useEffect(function() {
     //
     return function() {
@@ -157,7 +157,7 @@ whack.ds.useEffect(function() {
 
 Unlike with React.js, there is built-in support for linking style sheets in a Whack DS component.
 
-```
+```sx
 <w:Group>
     <w:Style><![CDATA[
         :host {

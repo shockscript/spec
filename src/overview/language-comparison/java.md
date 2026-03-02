@@ -4,7 +4,7 @@
 
 While importing definitions, the user can alias a definition, or even a package.
 
-```
+```sx
 // ===== Chart.sx =====
 
 

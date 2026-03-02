@@ -8,7 +8,7 @@ Line contents may start with a tag (such as `@deprecated`). Tags may span multip
 
 Code blocks (whose delimiters consist of at least three backticks **\`\`\`**) as expressed in Markdown cause tags to be ignored in the code content, as in:
 
-```
+```sx
 /**
  * ```plain
  * @deprecated
@@ -37,7 +37,7 @@ Copies ShockDoc comment from another definition. Use a `#x` component to refer t
 
 Default value as a plain expression.
 
-```
+```sx
 @default exp
 ```
 
@@ -49,7 +49,7 @@ Default value as a plain expression.
 
 ### \@example
 
-```
+```sx
 @example
 The following...
 ```

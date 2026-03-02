@@ -24,7 +24,7 @@
 
 *FunctionName* is used inside *FunctionDefinition*.
 
-```
+```sx
 function f(): void {}
 function get x(): double (impl.x)
 function set x(v: double): void { impl.x = v }
@@ -36,7 +36,7 @@ function set x(v: double): void { impl.x = v }
 
 **Syntax**
 
-```
+```sx
 function f():double 10
 
 function f():void {

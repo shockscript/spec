@@ -2,7 +2,7 @@
 
 A class is an inheritable user-defined type that may be used to create objects.
 
-```
+```sx
 class C1 {
     //
 }
@@ -23,7 +23,7 @@ A class owns three namespaces:
 
 A class may be prefixed by a ShockDoc comment.
 
-```
+```sx
 /** Comment */
 class C1 {}
 ```
@@ -32,7 +32,7 @@ class C1 {}
 
 A class may have zero or more meta-data.
 
-```
+```sx
 [M1]
 [M2]
 class C1 {}
@@ -40,7 +40,7 @@ class C1 {}
 
 ## Inheritance
 
-```
+```sx
 class A {}
 class B extends A {}
 ```
@@ -49,7 +49,7 @@ class B extends A {}
 
 Members from base classes **must not** be shadowed except for overriding methods.
 
-```
+```sx
 class C1 {
     function m() {}
 }
@@ -66,7 +66,7 @@ By default a class, excluding `Object`, inherits `Object`. A class can extend at
 
 A final class may not be extended:
 
-```
+```sx
 final class A {}
 
 class B extends A {} // ERROR!
@@ -76,7 +76,7 @@ class B extends A {} // ERROR!
 
 A class may implement zero or more interfaces:
 
-```
+```sx
 class C1 implements I1, I2 {
     //
 }
@@ -86,7 +86,7 @@ class C1 implements I1, I2 {
 
 If the constructor of a class is not explicitly defined, then it is based on the base class's constructor, using the same signature and initializing the instance with default field values:
 
-```
+```sx
 class A {
     var x:double;
     function A(x:double) {
@@ -104,7 +104,7 @@ new B(); // ERROR!
 
 The constructor of a class is a special initialization method named as the class itself, as in:
 
-```
+```sx
 class C1 {
     function C1() {}
 }
@@ -116,7 +116,7 @@ The super statement is used to invoke the constructor from the base class from a
 
 A constructor must contain the super statement if a class is inherited which consists of a required constructor.
 
-```
+```sx
 class A {
     function A(x:double) {}
 }
@@ -131,7 +131,7 @@ class B extends A {
 
 An abstract class may not be directly instantiated through the `new` operator, and may define abstract methods. Non abstract subclasses are allowed to be instantiated.
 
-```
+```sx
 abstract class A {
     abstract function m():void;
 }
@@ -141,7 +141,7 @@ abstract class A {
 
 A static class may not be instantiated or inherited, and by convention consists of static properties and methods.
 
-```
+```sx
 static class MyNamespace {
     static const VALUE:double = 10.5;
 }
@@ -151,7 +151,7 @@ static class MyNamespace {
 
 The class, in convention when either extending `EventTarget` or implementing `IEventTarget`, may define possibly emitted events through using multiple `Event` meta-data.
 
-```
+```sx
 /**
  * Event.
  */
@@ -178,7 +178,7 @@ ShockScript supports nested classes.
 
 Nested classes, due to the scope, may access both `protected` and `private` members of the enclosing classes.
 
-```
+```sx
 //
 static class Outer {
     //

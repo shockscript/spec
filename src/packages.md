@@ -65,7 +65,7 @@ You may omit a package from the API reference by prepending a `<!-- @private -->
 
 A package single import is contributed to the lexical scope for the following directive:
 
-```
+```sx
 import f.q.x;
 ```
 

@@ -4,7 +4,7 @@ The MXML language, as part of the Apache Flex framework, was used for describing
 
 The following demonstrates a basic UI component implemented in Whack DS:
 
-```
+```sx
 package com.zero.spark.components {
     public function AppBar():whack.ds.Node {
         return (
@@ -30,7 +30,7 @@ The Whack Engine's Whack DS feature allows programmers to implement UI component
 
 The `whack.ds.useEffect` hook may be used to detect state, parameter or derived changes as well as the component mount and unmount phases.
 
-```
+```sx
 whack.ds.useEffect(function() {
     // cleanup
     return function() {
@@ -45,7 +45,7 @@ whack.ds.useEffect(function() {
 
 When the dependencies list is empty (`[]`), the hook is equivalent to a component mount/unmount event, with the unmount phase handled through the returned function.
 
-```
+```sx
 whack.ds.useEffect(function() {
     // did mount
     return function() {
@@ -58,7 +58,7 @@ whack.ds.useEffect(function() {
 
 In the top-level of a component, declare states using the `State` meta-data:
 
-```
+```sx
 [State]
 var counter:uint = 0;
 ```
@@ -69,7 +69,7 @@ Overwriting a state with a different value (as by an `equal()` comparison) will 
 
 Note that, like with React.js, arrays and structures as states will not trigger a re-render on operations like `.push()`; instead the programmer needs to reconstruct the array or structure, like in:
 
-```
+```sx
 list = [...list, v];
 ```
 
@@ -77,7 +77,7 @@ list = [...list, v];
 
 In the top-level of a Whack DS component, declare bindables by using the `Bindable` meta-data. Bindables have certain use-cases, such as persisting a value across renders, and extracting class-based components from certain tags (in which case the `bind` attribute is used).
 
-```
+```sx
 [Bindable]
 var button:Button? = null;
 
@@ -90,7 +90,7 @@ return (
 
 In the top-level of a component, reflect inherited contexts by using the `Context` meta-data.
 
-```
+```sx
 [Context("ThemeContext")]
 const theme;
 ```
@@ -103,7 +103,7 @@ Unlike in React.js combined with TypeScript, states, bindables ("refs") and cont
 
 Unlike with React.js, there is built-in support for linking style sheets in a Whack DS component.
 
-```
+```sx
 <w:Group>
     <w:Style><![CDATA[
         :host {

@@ -8,7 +8,7 @@ In addition, the `IEventTarget` interface may be implemented instead of extendin
 
 The following program demonstrates implementing a basic `EventTarget` subclass that is able to emit events:
 
-```
+```sx
 /**
  * Some event.
  */
@@ -30,7 +30,7 @@ class Actor extends EventTarget {
 
 Subscribing to an event looks as follows:
 
-```
+```sx
 actor.on("act", function() { trace("acting") });
 ```
 
@@ -38,7 +38,7 @@ actor.on("act", function() { trace("acting") });
 
 `Event` constructors must always take the event type as the first argument; any other arguments may follow. In the following code the user inherits the `Event` constructor.
 
-```
+```sx
 class SomeEvent extends Event {}
 ```
 
@@ -50,7 +50,7 @@ It is a rare case for the user to need to implement their own `EventTarget` clas
 
 The `emit()` method is defined as follows:
 
-```
+```sx
 [Limit("E extends Event*(this)")]
 /**
  * Dispatches an event.
@@ -66,7 +66,7 @@ When the `emit()` method is used, it will force a `new E(...)` expression to be 
 
 The `on()` method is roughly defined as follows:
 
-```
+```sx
 [Limit("E extends Event(this)")]
 /**
  * Registers an event listener.

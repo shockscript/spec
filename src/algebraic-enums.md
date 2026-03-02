@@ -86,7 +86,7 @@ Fragment.Simple({ location: loc })
 
 Each variant may have its own class block.
 
-```
+```sx
 enum E {
     type A() {
         override public function get x() : double (10)
@@ -103,6 +103,6 @@ enum E {
 
 Variant parameter lists may have follow entirely method signatures, having required parameters, default parameters and a rest parameter.
 
-```
+```sx
 type A(...rest : [decimal])
 ```

@@ -2,7 +2,7 @@
 
 The **for..in** statement is used to iterate the keys of an object.
 
-```
+```sx
 for (const key in map) {
     trace(key)
 }
@@ -10,7 +10,7 @@ for (const key in map) {
 
 The **for each** statement is used to iterate the values of an object.
 
-```
+```sx
 for each (const value in array) {
     trace(value)
 }

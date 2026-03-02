@@ -8,7 +8,7 @@ Virtual variables consist of either:
 
 A virtual variable's type is determined based on the getter or setter.
 
-```
+```sx
 function get x():float 10;
 function set x(val) {
     //
@@ -19,7 +19,7 @@ function set x(val) {
 
 A virtual variable derives ShockDoc comments from its getter or setter.
 
-```
+```sx
 /** Comment */
 function get x():float 10;
 ```
@@ -28,7 +28,7 @@ function get x():float 10;
 
 A virtual variable collects meta-data from its getter or setter.
 
-```
+```sx
 [M1]
 [M2]
 function get x():float 10;

@@ -2,7 +2,7 @@
 
 A variable may be read-only or writeable, and consists of a type.
 
-```
+```sx
 var x = 0
 const y = 10
 
@@ -15,7 +15,7 @@ let const y = 10
 
 A ShockDoc comment can be applied to a variable.
 
-```
+```sx
 /** Comment */
 var x
 ```
@@ -24,7 +24,7 @@ var x
 
 A variable may have zero or more meta-data.
 
-```
+```sx
 [M1]
 [M2]
 var x
@@ -34,7 +34,7 @@ var x
 
 If the initializer of a variable is a constant, then the variable consists of a constant initializer.
 
-```
+```sx
 var x = 0
 ```
 
@@ -44,7 +44,7 @@ It's not mandatory for variables to have an initialiser, in which case accessing
 
 Re-declaring a variable is allowed inside activation blocks.
 
-```
+```sx
 var m:* = central.manager;
 // more code...
 var m = Manager(m);

@@ -12,7 +12,7 @@
 
 ## Descendants operator
 
-```
+```sx
 o..x
 ```
 
@@ -22,7 +22,7 @@ The descendants operator `o..x` looks at `o` for the `meta::descendants()` metho
 
 ## Filter operator
 
-```
+```sx
 o.(*.name.startsWith("A"))
 ```
 

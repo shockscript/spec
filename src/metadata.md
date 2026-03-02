@@ -2,7 +2,7 @@
 
 Meta-data are bracketed, arbitrary entries of textual key-value pairs that may be attached to ShockScript definitions. Meta-data are not unique and may appear more than once, as well as their key-value pairs.
 
-```
+```sx
 [M1]
 class A {}
 

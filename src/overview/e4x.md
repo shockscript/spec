@@ -6,7 +6,7 @@ E4X (ECMAScript for XML) comprises the ShockScript language features specificall
 
 By default XML literals evaluate to one of the `XML` and `XMLList` types; however, depending on the inference type, XML literals may be used for constructing implementation-defined objects with different semantics.
 
-```
+```sx
 // ===== Presentation.sx =====
 
 
@@ -42,7 +42,7 @@ package com.zero.information.generator {
 
 Inline event handlers may be expressed as `eventName&={statementList}` as a shortcut to `eventName={function(event){statementList}}`, as in:
 
-```
+```sx
 <w:Button click&={trace("clicked!")}>Click me</w:Button>
 ```
 
@@ -50,7 +50,7 @@ If the event has no parameters, then the attribute above is equivalent to `event
 
 ### Interpolation
 
-```
+```sx
 <w:VGroup {rest}>
     {undefined}
     {null}
@@ -65,7 +65,7 @@ If the event has no parameters, then the attribute above is equivalent to `event
 
 `XML` and `XMLList` implement the filter operator.
 
-```
+```sx
 people.(*.@name == "John")
 ```
 
@@ -73,6 +73,6 @@ people.(*.@name == "John")
 
 `XML` and `XMLList` implement the descendants operator.
 
-```
+```sx
 xnode..tag
 ```
