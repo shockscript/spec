@@ -28,7 +28,7 @@
 - [70%] Virtual variables
 - [70%] Methods
 - [x] Aliases
-- [x] Generics
+- [x] Parameterized types
 - [x] Lexical scopes
 - [x] Default lexical scope
 - [x] Conditional compilation
@@ -117,6 +117,7 @@
   - [ ] `for each`: `Iterator` and `Iterable` are iterable
   - [ ] `switch type`: Provide context type for type inference on `case(...)` parameters when matching over an algebraic enumeration
 - [x] ShockScript: Directives
+  - [ ] Variable definitions: const/let const (for an instance variable) may still be assigned later a first time in the constructor of a class if the initialiser was omitted.
 - [x] ShockScript: Definitions
 - [ ] Global objects
   - [ ] (Whack engine) w namespace = "http://www.sweaxizone.com/2015/whack"

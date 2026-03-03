@@ -14,7 +14,7 @@ Nested classes are allowed; however, classes are only allowed in package blocks 
 <ul>
     <i>TypeParameters</i> :
     <ul>
-        <b>. &lt;</b> <i>TypeParameterList</i> <i>GenericGreaterThan</i>
+        <b>. &lt;</b> <i>TypeParameterList</i> <i>ParameterizedGreaterThan</i>
     </ul>
 </ul>
 

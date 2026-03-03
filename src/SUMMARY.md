@@ -60,7 +60,7 @@
 - [Methods](./methods.md)
 - [Aliases](./aliases.md)
 - [Meta-data](./metadata.md)
-- [Generics](./generics.md)
+- [Parameterized types](./parameterized-types.md)
 - [Lexical scopes](./lexical-scopes.md)
 - [Implicit lexical scope](./implicit-lexical-scope.md)
 - [Conditional compilation](./conditional-compilation.md)

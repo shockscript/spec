@@ -96,6 +96,10 @@ Even though the constructor is frequently re-evaluated, the initial value of `St
 
 Whack DS considers caching callbacks, since they are naturally ever changing `Function` objects regardless of whether they are lambdas or fixtures ─ for example, since they capture locals, `this` or contexts, they tend to return different `Function` objects.
 
+- Whack DS doesn't attempt to cache a callback if:
+  - It belongs to another code block (like a loop, an `if` or a `switch`) or activation or if there is no surrounding component at all.
+  - If a `return` statement has a chance of evaluating before that callback,
+
 Whack DS does this as it is important for memoization.
 
 ## Auto dependency tracking
@@ -160,7 +164,11 @@ Monochrome icons are filled with the current CSS `color`.
 
 ## Recommendations
 
-- *Derived values*: Use instance methods/virtual accessors in class-based components.
-  - Do not use parent regular-volatile locals in, say, effects and callbacks; using locals derived from only props in effects and callbacks is fine.
+- *Derived values*
+  - For deriveds from states and/or contexts, use instance methods/virtual accessors in class-based components.
+  - For deriveds from props (usually locals in the rendering function), don't depend on states and/or contexts.
+  - Don't use props or their deriveds from functions that are not effects or Whack DS callbacks.
+  - Don't use parent regular-volatile locals in, say, effects and callbacks; using locals derived from only props in effects and callbacks is fine.
 - Don't store props in class-based components.
 - Avoid variables other than `State`, `Context` or `Bindable` annotatated locals inside a component, as that avoids accidental accesses of stale values.
+- If, say, a loop creating Whack DS nodes contains its own event handlers, it might be better to define a separate component (perhaps nested) for that purpose, thus getting advantage of callback caching.

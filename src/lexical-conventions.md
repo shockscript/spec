@@ -414,6 +414,8 @@ The `@` punctuator must not be followed by a single quote <b>'</b> or a double q
 
 ```plain
 0b1011
+0o77777
+0x0A
 1_000
 
 10d     // double(10) or simply 10
@@ -431,7 +433,8 @@ The `@` punctuator must not be followed by a single quote <b>'</b> or a double q
     <ul>
         <i>DecimalLiteral</i> <i>DecimalLiteralSuffix</i><sub>opt</sub> [lookahead ∉ { <i>IdentifierStart</i>, <i>DecimalDigit</i> }]<br>
         <i>HexIntegerLiteral</i> <i>HexLiteralSuffix</i><sub>opt</sub> [lookahead ∉ { <i>IdentifierStart</i>, <i>DecimalDigit</i> }]<br>
-        <i>BinIntegerLiteral</i> <i>BinLiteralSuffix</i><sub>opt</sub> [lookahead ∉ { <i>IdentifierStart</i>, <i>DecimalDigit</i> }]
+        <i>BinIntegerLiteral</i> <i>BinLiteralSuffix</i><sub>opt</sub> [lookahead ∉ { <i>IdentifierStart</i>, <i>DecimalDigit</i> }]<br>
+        <i>OctalIntegerLiteral</i> <i>OctalLiteralSuffix</i><sub>opt</sub> [lookahead ∉ { <i>IdentifierStart</i>, <i>DecimalDigit</i> }]
     </ul>
 </ul>
 
@@ -469,6 +472,13 @@ The `@` punctuator must not be followed by a single quote <b>'</b> or a double q
 
 <ul>
     <i>BinLiteralSuffix</i> ::
+    <ul>
+        <i>DecimalLiteralSuffix</i>
+    </ul>
+</ul>
+
+<ul>
+    <i>OctalLiteralSuffix</i> ::
     <ul>
         <i>DecimalLiteralSuffix</i>
     </ul>
@@ -565,7 +575,7 @@ The `@` punctuator must not be followed by a single quote <b>'</b> or a double q
     <i>UnderscoreHexDigits</i> ::
     <ul>
         <i>HexDigit</i><sub>{1,}</sub><br>
-        <i>UnderscoreDecimalDigits</i> <b>_</b> <i>HexDigit</i><sub>{1,}</sub>
+        <i>UnderscoreHexDigits</i> <b>_</b> <i>HexDigit</i><sub>{1,}</sub>
     </ul>
 </ul>
 
@@ -589,7 +599,30 @@ The `@` punctuator must not be followed by a single quote <b>'</b> or a double q
     <i>UnderscoreBinDigits</i> ::
     <ul>
         <i>BinDigit</i><sub>{1,}</sub><br>
-        <i>UnderscoreDecimalDigits</i> <b>_</b> <i>BinDigit</i><sub>{1,}</sub>
+        <i>UnderscoreBinDigits</i> <b>_</b> <i>BinDigit</i><sub>{1,}</sub>
+    </ul>
+</ul>
+
+<ul>
+    <i>OctalIntegerLiteral</i> ::
+    <ul>
+        <b>0o</b> <i>UnderscoreOctalDigits</i><br>
+        <b>0O</b> <i>UnderscoreOctalDigits</i>
+    </ul>
+</ul>
+
+<ul>
+    <i>OctalDigit</i> ::
+    <ul>
+        <b>0</b>-<b>7</b>
+    </ul>
+</ul>
+
+<ul>
+    <i>UnderscoreOctalDigits</i> ::
+    <ul>
+        <i>OctalDigit</i><sub>{1,}</sub><br>
+        <i>UnderscoreOctalDigits</i> <b>_</b> <i>OctalDigit</i><sub>{1,}</sub>
     </ul>
 </ul>
 

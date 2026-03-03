@@ -8,7 +8,7 @@ if (let Plus(10, right) = exp) {
 }
 ```
 
-It may also be used for extracting a non-nullable variable from a test expression.
+It may also be used for extracting a non-nullable variable from a test expression, without using a matching pattern; that is, a regular identifier binding.
 
 ```sx
 if (let node = parseAtom()) {

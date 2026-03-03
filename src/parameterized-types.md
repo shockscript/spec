@@ -1,8 +1,8 @@
-# Generics
+# Parameterized types
 
-Classes, algebraic enumerations, interfaces, type aliases and functions may specify type parameters, turning into *generic* entities. ShockScript implements generic entities using polymorphism.
+Classes, algebraic enumerations, interfaces, type aliases and functions may specify type parameters, turning into *parameterized types*. ShockScript implements parameterized types using polymorphism.
 
-> **Note**: Array data types of `double`, `float`, `decimal`, `int` and `uint` are specialised so they are represented in a memory efficient way.
+> **Note**: Array data types of `double`, , `float`, `decimal`, `byte`, `short`, `int`, `uint` and `long` are specialised so they are represented in a memory efficient way.
 
 ```sx
 class A.<T> {
@@ -28,35 +28,36 @@ Type parameters may be attached multiple constraints.
 
 ```sx
 [Limit("T extends A, B")]
-/**
- * Some function.
- */
 function f.<T>(o:T) {
     //
 }
 
+[Limit(
+    "X extends Consumer.<Y>",
+    "Y extends Liquid",
+)]
+function f.<X, Y>(x:X, y:Y) {
+    //
+}
+
 [Limit("E extends Event(A)")]
-/**
- * Another function.
- */
-function f.<E>(type:E.name, value:E.type) {
+function f.<E>(type:E.name, o:E.type) {
     //
 }
 
 [Limit("E extends Event*(A)")]
-/**
- * Yet another function.
- */
-function f.<E>(value:E) {
+function f.<E>(o:E) {
     //
 }
 ```
 
-### Event() constraints
+The `Limit` meta-data may appear at most once, specifying multiple constraint expressions as its entries.
 
-`Event()` constraints allow inspecting available events as defined by the `Event` meta-data in classes and interfaces, including the inherited events and events from the implemented interfaces.
+### Event constraints
 
-`Event()` constraints are allowed to take `this` as the base type, reflecting the current class's events:
+`Event` constraints allow inspecting available events as defined by the `Event` meta-data in classes and interfaces, including the inherited events and events from the implemented interfaces.
+
+`Event` constraints are allowed to take `this` as the base type, reflecting the current class's events:
 
 ```sx
 package com.business.coreRT.events {

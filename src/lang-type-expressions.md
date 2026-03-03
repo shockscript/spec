@@ -101,12 +101,12 @@
 <ul>
     <i>TypeArguments</i> :
     <ul>
-        <b>.</b> <b>&lt;</b> <i>TypeArgumentsList</i> <i>GenericGreaterThan</i>
+        <b>.</b> <b>&lt;</b> <i>TypeArgumentsList</i> <i>ParameterizedGreaterThan</i>
     </ul>
 </ul>
 
 <ul>
-    <i>GenericGreaterThan</i> :
+    <i>ParameterizedGreaterThan</i> :
     <ul>
         <b>&gt;</b><br>
         first greater-than <b>&gt;</b> from the offending token
