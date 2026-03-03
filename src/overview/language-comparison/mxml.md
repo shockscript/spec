@@ -20,38 +20,43 @@ package com.zero.spark.components {
 
 In MXML, event handlers were expressed as `e="statements"`. In ShockScript, they are expressed as `e&={statements}` (note the ampersand **\&**) as a shorthand to `e={function(event){statements}}`.
 
-> **Note**: Although not demanded as such, as opposed to React.js + DOM, event handlers are conventionally expressed without a `on` prefix, such as `click&={trace("clicked!")}` rather than React.js `onClick={e=>{console.log("clicked!")}}`. Event parameters are conventionally given the `@event` tag in the ShockDoc comments. Classes continue using the `Event` meta-data, though without needing the `@eventType` tag.
+> **Note**: Although not demanded as such, as opposed to React.js + DOM, event handlers are conventionally expressed without a `on` prefix, such as `click&={trace("clicked!")}` rather than React.js `onClick={e=>{console.log("clicked!")}}`. Event props are conventionally given the `@event` tag in the ShockDoc comments. Classes continue using the `Event` meta-data, though without needing the `@eventType` tag.
 
 ## Rendering components
 
-The Whack Engine's Whack DS feature allows programmers to implement UI components as functions that wrap around the built-in class-based components of Whack Engine. The component is rendered by evaluating the function initially and whenever a state changes.
+The Whack DS framework allows programmers to implement UI components as functions that wrap around the built-in class-based components of Whack Engine. The component is rendered by evaluating the function initially and whenever a state changes.
 
 ## Effects
 
-The `whack.ds.useEffect` hook may be used to detect state, parameter or derived changes as well as the component mount and unmount phases.
+The `whack.ds.useEffect` hook may be used to detect changes to props, state or context as well as the component mount and unmount phases.
+
+Dependencies are auto-tracked.
+
+> **Note**: For tracking dependent props, the compiler does some internal machinery. For the compiler, states and contexts are easier, as they are wrapped objects with a virtual accessor under the hood.
 
 ```sx
 whack.ds.useEffect(function() {
-    // cleanup
+    // Cleanup
     return function() {
         //
     };
-}, [dep1, ...depN]);
+});
 
+// Effect that runs everytime "*"
 whack.ds.useEffect(function() {
     //
 }, "*");
 ```
 
-When the dependencies list is empty (`[]`), the hook is equivalent to a component mount/unmount event, with the unmount phase handled through the returned function.
+When there are no dependencies, the hook is equivalent to a component mount/unmount event, with the unmount phase handled through the returned function.
 
 ```sx
 whack.ds.useEffect(function() {
-    // did mount
+    // Did mount
     return function() {
-        // unmount
+        // Unmount
     };
-}, []);
+});
 ```
 
 ## States

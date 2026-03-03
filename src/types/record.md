@@ -18,6 +18,22 @@ type N2 = {
 
 > **Note**: Record types do not match with types structurally unlike in structural-type-first languages. They are simply structures the user may express inline.
 
+Each field may have associated meta-data.
+
+```sx
+type A = {
+    [Serial("short-if")]
+    shortIf:boolean,
+}
+```
+
+A record type is interned at compile-time only if:
+
+- None of its fields contains meta-data.
+- None if its fields contain ShockDoc.
+
+Otherwise a record type is unique and another record type, even though compatible, cannot be assigned to the other, or vice versa.
+
 ## Version control
 
 Fields of a record type may be tied to a namespace, which is useful for version control.
@@ -83,7 +99,10 @@ type R = {
 
 ## Compatibility
 
-Two record types are compatible only if either a\) one is used as a subset of another or b\) fields are equivalent and appear in the same order.
+Two record types are compatible only if either:
+
+- One is used as a subset of another
+- Fields are equivalent, appear in the same order and include no meta-data and no ShockDoc.
 
 ## Rest
 
@@ -95,5 +114,3 @@ type A = { x:double };
 // B < A
 type B = { y:double, ...A };
 ```
-
-

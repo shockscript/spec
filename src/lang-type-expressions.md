@@ -68,7 +68,7 @@
 <ul>
     <i>RecordTypeField</i> :
     <ul>
-        <i>NonAttributeQualifiedIdentifier</i> <b>:</b> <i>TypeExpression</i>
+        <i>Metadata</i><sub>{0,}</sub> <i>NonAttributeQualifiedIdentifier</i> <b>:</b> <i>TypeExpression</i>
     </ul>
 </ul>
 

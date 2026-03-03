@@ -111,7 +111,7 @@ package com.zero.relic.site {
         //
         whack.ds.useEffect(function() {
             trace(button!);
-        }, []);
+        });
 
         return (
             <w:Button bind={button}>click me</w:Button>
@@ -138,15 +138,17 @@ function Example() : whack.ds.Node {
 
 ## Effects
 
-The popular "useEffect" hook requires the second argument, preventing mistakes. For listening to any changes, use `"*"`.
+The popular "useEffect" hook, differently from ReactJS, auto tracks dependencies, preventing mistakes. For listening to any changes, use `"*"`.
+
+> **Note**: For tracking dependent props, the compiler does some internal machinery. For the compiler, states and contexts are easier, as they are wrapped objects with a virtual accessor under the hood.
 
 ```sx
 whack.ds.useEffect(function() {
     //
     return function() {
-        // cleanup
+        // Cleanup
     };
-}, [dep1, ...depN]);
+});
 
 whack.ds.useEffect(function() {
     //

@@ -97,8 +97,18 @@
     - [ ] Returns `"number"` for any types comprising the `Number` union
   - [ ] Ternary conditional operator
     - [ ] Ensure test is not an accidental binding of a function/method (where the user meant to "call" it)
+- [ ] Conditional test - Accidental method binding prevention (where the user meant to "call" a method, and not obtain its Function object)
+  - [ ] logical !
+  - [ ] &&
+  - [ ] ^^
+  - [ ] ||
+  - [ ] ??
+  - [ ] ,
+  - [ ] ?:
+  - [ ] (x)
 - [x] ShockScript: Type expressions
 - [x] ShockScript: Patterns
+  - [ ] Structural matching automatically asserts objects as non-null (that way, the language doesn't need a "!" operator inside patterns)
 - [x] ShockScript: Statements
   - [ ] If statement
     - [ ] Ensure test is not an accidental binding of a function/method (where the user meant to "call" it)
@@ -168,6 +178,7 @@
     - [ ] `new Array` supports taking iterables or iterators
     - [ ] `meta::get(...)` throws if out of bounds
     - [ ] `meta::filter(...)`
+    - [ ] `meta::has(...)`
     - [ ] `filter(...)` (alternative for the optional chaining operator)
     - [ ] `clone(deep=)`
     - [ ] `shift(): (void, T)`
@@ -178,6 +189,8 @@
     - [ ] +Iterable
     - [ ] `Map(weakKeys:boolean = false)`
     - [ ] `meta::get()` throws if key does not match
+    - [ ] `meta::has(...)`
+    - [ ] other meta hooks (e.g. set, delete)
     - [ ] `length()`
     - [ ] `clear()`
     - [ ] `clone(deep=)`
@@ -198,7 +211,8 @@
   - [ ] RegExpMatches
     - [ ] +Iterable
     - [ ] Implement indexing
-    - [ ] `substr : [string]`
+    - [ ] `substr : [string]` (idx. 0 = whole)
+    - [ ] `length`
     - [ ] `clone(deep=)`
   - [ ] XML
     - [ ] Implement `Iterable`
@@ -213,6 +227,9 @@
     - [ ] Attributes
   - [ ] XMLList
     - [ ] static `meta::call(arg:*):XMLList`
+  - [ ] Namespace
+  - [ ] QName
+    - [ ] `uri:?string` - May be null for "default xns"
   - [ ] ByteArray
     - [ ] +Iterable
     - [ ] Indexing

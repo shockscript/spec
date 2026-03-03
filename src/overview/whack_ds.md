@@ -4,11 +4,11 @@ Whack DS is a feature of the Whack engine used for extending the closed set of W
 
 ## Memoization
 
-Whack DS automatically memoizes components, allowing for user customizable parameter/state equality comparison through overriding the `[object Object].equals(obj)` method. Memoization basically serves the purpose of avoiding re-rendering a component when its parameters do not change.
+Whack DS automatically memoizes components, allowing for user customizable prop/state equality comparison through overriding the `[object Object].equals(obj)` method. Memoization basically serves the purpose of avoiding re-rendering a component when its props do not change.
 
-Just like with React.js, memoizing components has drawbacks such as possibly volatile code regions (such as when internationalizing a product with locale-specific translation strings). In such cases, relying on a Whack DS context will re-render the component when the context changes regardless of whether parameters did or not change.
+Just like with React.js, memoizing components has drawbacks such as possibly volatile code regions (such as when internationalizing a product with locale-specific translation strings). In such cases, relying on a Whack DS context will re-render the component when the context changes regardless of whether props did or not change.
 
-Whack DS skips re-rendering component if the parent re-renders and the parameters are equals to the previous render; the Whack DS component's own states updating with a different value will always re-render it.
+Whack DS skips re-rendering component if the parent re-renders and the props are equals to the previous render; the Whack DS component's own states updating with a different value will always re-render it.
 
 Whack DS implementation stores previous state or previous properties by performing a `generic::clone()`, so you do not have to worry about later reuse and mutation. For using custom classes inside states or properties — like when a tuple, record, `Array` or `Map` is not enough — ensure you implement a `clone()` method that returns an object of the same kind, otherwise you get an error for safety.
 
@@ -92,6 +92,45 @@ Even though the constructor is frequently re-evaluated, the initial value of `St
 
 > **Curiosity**: Class-based components provide not only the advantage of better encapsulating helpers and associated types, but if all fields are compiler special ones as recommended (`State`, `Bindable` or `Context`), it also prevents bugs with stale locals.
 
+## Callback caching
+
+Whack DS considers caching callbacks, since they are naturally ever changing `Function` objects regardless of whether they are lambdas or fixtures ─ for example, since they capture locals, `this` or contexts, they tend to return different `Function` objects.
+
+Whack DS does this as it is important for memoization.
+
+## Auto dependency tracking
+
+- Whack DS presents extra overhead for state/context accessors, so that, say, the surrounding effect or callback is said to be dependent on an used state/context.
+  - Subsequent renders may still accumulate more dependencies, like conditional ones.
+- Whack DS E4X attributes assigned to functions or methods from the same component are cached based on dependency tracking; same for E4X event handlers **&amp;=**.
+
+### Props tracking
+
+For detecting dependencies on props for, say, an effect or callback, the compiler needs to find those internally during codegen.
+
+- Detect the surrounding component, then detect the surrounding rendering function *f*.
+- Visit every node recursively on the body of *f*
+  - *Detecting derived locals*: For each local, detect dependencies on props or their derived locals
+  - For each effect (like `whack.ds.useEffect` or `whack.ds.useLayoutEffect`), detect dependencies on props or their derived locals.
+  - For each E4X literal that applies to Whack DS
+    - For each callback, detect dependencies on props or their derived locals.
+  - For each function, detect dependencies on props or their derived locals.
+
+> **Note**: The best practice for class-based components is not to store props as a field, therefore Whack DS does not try to track prop dependencies on instance methods other than `eval`.
+
+Codegen:
+
+- Track prop name for comparison + previous value
+
+## Component validation
+
+The following apply when using E4X literals to construct `whack.ds.Node`.
+
+- A function component must be of a `function():whack.ds.Node` or `function(Props):whack.ds.Node` signature, where `Props` must be exactly a record type.
+- A class-based component must:
+  - Define an `eval` method of a `function():whack.ds.Node` or `function(Props):whack.ds.Node` signature, where `Props` must be exactly a record type.
+  - Either omit the constructor, or define a constructor that is compatible with the `eval` method, possibly omitting the `Props` parameter.
+
 ## EyeExp
 
 Whack's approach to logotypes and icons is called the EyeExp feature, which uses dynamic icon names rather than `enum`, as well as namespace prefixes to prevent collision between libraries.
@@ -118,3 +157,10 @@ package {
 ```
 
 Monochrome icons are filled with the current CSS `color`.
+
+## Recommendations
+
+- *Derived values*: Use instance methods/virtual accessors in class-based components.
+  - Do not use parent regular-volatile locals in, say, effects and callbacks; using locals derived from only props in effects and callbacks is fine.
+- Don't store props in class-based components.
+- Avoid variables other than `State`, `Context` or `Bindable` annotatated locals inside a component, as that avoids accidental accesses of stale values.
