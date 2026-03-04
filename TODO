@@ -127,6 +127,7 @@
   - [ ] (Whack engine) w namespace = "http://www.sweaxizone.com/2015/whack"
   - [ ] SX namespace = "http://www.sweaxizone.com/2015/shockscript/global"
   - [ ] generic namespace = "http://www.sweaxizone.com/2015/shockscript/generic"
+  - [ ] meta namespace = "http://www.sweaxizone.com/2015/shockscript/meta" (under the hood it's not really that URI; it's the global "meta" system namespace)
   - [ ] Intl namespace = "org.sx.intl"
   - [ ] Temporal namespace = "org.sx.temporal"
   - [ ] Env namespace (Env special qualifier) = "http://www.sweaxizone.com/2015/shockscript/Env"
@@ -171,7 +172,7 @@
       - [ ] Maps
       - [ ] (Other objects just use ===)
     - [ ] `generic::clone(deep:boolean=):Object`
-      - Default implementation clones most objects fine (records, tuples, arrays, maps and so on), but fails for classes with a required constructor.
+      - Default implementation clones most objects fine (records, tuples, arrays, maps and so on), but fails for classes with a required constructor (uses `.clone()` instead if defined and its signature is compatible (may need a deep= parameter if deep=true)).
         - Clones are shallow (not deep) by default
       - Circular references are preserved, like JavaScript's `structuredClone()`.
     - [ ] `meta::class()`
@@ -257,14 +258,19 @@
     - [ ] `shareable:boolean`
     - [ ] `clone(deep=)`
   - [ ] Endian enum
-  - [ ] org.sx.intl.*
+  - [ ] `org.sx.intl.*`
     - [ ] Like ECMA-262 `Intl`. Aliased `Intl::`, as well.
-  - [ ] org.sx.temporal.*
+  - [ ] `org.sx.temporal.*`
     - [ ] Like ECMA-262 like `Temporal`. Aliased `Temporal::`, as well.
-  - [ ] org.sx.meta.*
-    - Used for what the `meta` namespace RTI reflection methods cannot be used for (e.g. perhaps extracting a list of properties from a package name).
-  - [ ] org.sx.meta.context.*
+  - [ ] `org.sx.meta.*`
+    - Used for what the `meta` namespace cannot be used for (e.g. perhaps extracting a list of properties from a package name).
+  - [ ] `org.sx.meta.ty.*`
+    - [ ] Allows most of type inspection during runtime. E.g. most can be obtained from Class or Function objects.
+  - [ ] `org.sx.meta.context.*`
     - Special compiler functions for reflecting lexical contexts.
     - [ ] decimal() - DecimalContext
     - [ ] dxns() - default xml namespace
     - [ ] xml() - XMLContext
+  - [ ] `org.sx.serial.json.*`
+  - [ ] `org.sx.serial.toml.*`
+  - [ ] `org.sx.serial.xml.*`

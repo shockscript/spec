@@ -17,6 +17,12 @@ namespace kunai = "com.inexistentninja.kunai";
 namespace SX = "http://www.sweaxizone.com/2015/shockscript/global";
 ```
 
+A namespace definition is allowed to alias to the system `meta` namespace:
+
+```sx
+namespace meta = "http://www.sweaxizone.com/2015/shockscript/meta";
+```
+
 Namespaces are allowed to nest within blocks regardless of scope. When inside a class block, contributes a static property.
 
 **Syntax**

@@ -40,8 +40,7 @@ q::[k]     ;
         <b>public</b><br>
         <b>private</b><br>
         <b>protected</b><br>
-        <b>internal</b><br>
-        <b>meta</b>
+        <b>internal</b>
     </ul>
 </ul>
 

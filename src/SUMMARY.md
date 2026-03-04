@@ -19,6 +19,8 @@
   - [Environment variables](./overview/env.md)
   - [Type matching](./overview/type-matching.md)
   - [Type inference](./overview/type-inference.md)
+  - [Clone](./overview/clone.md)
+  - [Serial](./overview/serial.md)
   - [Namespace methods](./overview/namespace-methods.md)
 - [Scope](./scope.md)
 - [Definitions](./definitions.md)
