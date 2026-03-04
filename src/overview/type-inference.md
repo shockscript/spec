@@ -32,6 +32,23 @@ Object initialisers are also applicable to:
 
 - `Map.<K, V>`
 - Record types like `{ x:double, y:double }`
+- Certain classes
+
+```sx
+var ctx:Context
+
+ctx = { duck: 10 }
+trace(ctx.inspire())
+
+class Context {
+    var duck:uint
+    var cool:boolean
+
+    public function inspire():uint (
+        Math.random(0, duck + (cool ? 5 : 0))
+    )
+}
+```
 
 ## Where the inference type isn't applicable
 

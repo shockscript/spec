@@ -16,9 +16,9 @@ JSON.stringify(v)
 ### Rename
 
 ```sx
-type U = {
+class U {
     [Serial("short-if")]
-    shortIf:boolean,
+    public var shortIf:boolean
 }
 
 package {
@@ -44,9 +44,9 @@ Remarks:
 ### Skip
 
 ```sx
-type U = {
+class U {
     [Serial(skip="true")]
-    shortIf:boolean,
+    public var shortIf:boolean
 }
 
 package {
@@ -66,7 +66,7 @@ package {
 
 ### Classes as variants
 
-Users may need regular class definitions rather than algebraic type definitions mainly due to inheritance and other factors. The `Serial` meta-data may be used to configure these.
+Users may need hierarchical class definitions rather than algebraic type definitions mainly due to inheritance and other factors. The `Serial` meta-data may be used to configure these.
 
 > **Note**: Lacking content. Migrate some plans from the Whack Engine 2024 for this.
 

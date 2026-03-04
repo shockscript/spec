@@ -34,9 +34,10 @@ When the inference type in an array literal or object initializer is a flag enum
 [Flags]
 enum F { const A, B, C }
 
-const m:F = ["a", "b", "c"];
-    // or
-const m:F = { a: true, b: true, c: true };
+var m:F
+
+m = ["a", "b", "c"]
+m = { a: true, b: true, c: true }
 ```
 
 ## Flag enumerations

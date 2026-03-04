@@ -7,13 +7,13 @@ Embed("flower.webp")
 
 // force embedding externally
 // even if file is short
-Embed("flower.webp", "external")
+Embed("flower.webp", external="true")
 
 // UTF-8 text
-Embed("data.txt", "text/plain")
+Embed("data.txt", type="text/plain")
 
 // ByteArray
-Embed("data.bin", "application/octet-stream")
+Embed("data.bin", type="application/octet-stream")
 ```
 
 <ul>
@@ -25,8 +25,10 @@ Embed("data.bin", "application/octet-stream")
 
 **Semantics**
 
-The default form of the embed expression specifying solely a path is implementation-defined, but always returns a `string` representing an URL.
+The default form of the embed expression specifying solely a path is implementation-defined, but always returns a `string` representing an URL or resource path.
 
-The form that specifies a path followed by a `"text/plain"` option will embed the referenced file at the program's static memory as an UTF-8 encoded text, returning the `string` data type.
+- External resources are typically embedded in a structured way in the final program, using project ID + source path + resource path + filename, which is also useful for embedding licensed resources such as fonts.
 
-The form that specifies a path followed by a `"application/octet-stream"` option will embed the referenced file at the program's static memory as an octet stream, returning the `ByteArray` data type.
+The form that specifies `type="text/plain"` will embed the referenced file at the program's static memory as an UTF-8 encoded text, returning the `string` data type.
+
+The form that specifies `type="application/octet-stream"` will embed the referenced file at the program's static memory as an octet stream, returning the `ByteArray` data type.

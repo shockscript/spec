@@ -145,11 +145,11 @@ This is useful for when a build script generates a file at an artifact directory
 
 </blockquote>
 
-For static embedding, use a second option as either `"text/plain"` or `"application/octet-stream"`.
+For static embedding, use a `type=` option:
 
 ```sx
-Embed("data.txt", "text/plain")               // :string
-Embed("data.bin", "application/octet-stream") // :ByteArray
+Embed("data.txt", type="text/plain")               // string
+Embed("data.bin", type="application/octet-stream") // ByteArray
 ```
 
 ## Variable shadowing

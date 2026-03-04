@@ -18,18 +18,8 @@ type N2 = {
 
 > **Note**: Record types do not match with types structurally unlike in structural-type-first languages. They are simply structures the user may express inline.
 
-Each field may have associated meta-data.
-
-```sx
-type A = {
-    [Serial("short-if")]
-    shortIf:boolean,
-}
-```
-
 A record type is interned at compile-time only if:
 
-- None of its fields contains meta-data.
 - None if its fields contain ShockDoc.
 
 Otherwise a record type is unique and another record type, even though compatible, cannot be assigned to the other, or vice versa.
@@ -102,7 +92,7 @@ type R = {
 Two record types are compatible only if either:
 
 - One is used as a subset of another
-- Fields are equivalent, appear in the same order and include no meta-data and no ShockDoc.
+- Fields are equivalent, appear in the same order and include no ShockDoc.
 
 ## Rest
 
