@@ -111,7 +111,7 @@ For a component to support `<w:Style>` tags, it simply needs to support a `style
 
 ```sx
 package com.zero.spark.components {
-    public function Case(props: {
+    public function Case(props : track {
         stylesheet? : [ whack.ds.StyleSheet ],
     }) : whack.ds.Node {
         //

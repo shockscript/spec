@@ -107,3 +107,9 @@ The interface, in convention when implementing `IEventTarget`, may define possib
  */
 interface I extends IEventTarget {}
 ```
+
+## Dynamic interfaces
+
+An interface is *dynamic* if it defines a `meta::get` meta-method whose key is possibly a `string` or `QName` object. Property read and overwrite are differentiated from method call.
+
+> **Note**: It's best for dynamic interfaces to expose only methods rather than properties.

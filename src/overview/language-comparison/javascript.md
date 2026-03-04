@@ -11,7 +11,7 @@ m.x = 10
 m.length()
 ```
 
-> **Note**: For a customized type, it might be necessary to access a fixed variable rather than an arbitrary key-value pair; for that, the user may use a fixed expression as in `<?fixed={object.q::n}?>`.
+> **Note**: For a dynamic user class, it may very rarely be necessary to access a fixed variable rather than an arbitrary key-value pair; for that, the user may use a fixed expression as in `<?fixed={o.x}?>`. This is mostly useless since ShockScript's lexical resolution ignores dynamic names and most dynamic user classes access their internal variables from the same class block.
 
 ## Variable shadowing
 
@@ -19,7 +19,7 @@ In ShockScript the following is valid in an activation:
 
 ```sx
 var m:* = complex.manager;
-// more code...
+
 var m = Manager(m);
 ```
 

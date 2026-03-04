@@ -1,6 +1,6 @@
 # MXML
 
-The MXML language, as part of the Apache Flex framework, was used for describing UI components in an intuitive way. ShockScript uses XML literals semantically similiar to the React.js + JSX technologies, but designed to feel close to MXML in readability.
+The MXML language, as part of the Apache Flex framework, was used for describing UI components in an intuitive way. ShockScript uses XML literals semantically similar to the React.js + JSX technologies, but designed to feel close to MXML in readability.
 
 The following demonstrates a basic UI component implemented in Whack DS:
 
@@ -31,8 +31,6 @@ The Whack DS framework allows programmers to implement UI components as function
 The `whack.ds.useEffect` hook may be used to detect changes to props, state or context as well as the component mount and unmount phases.
 
 Dependencies are auto-tracked.
-
-> **Note**: For tracking dependent props, the compiler does some internal machinery. For the compiler, states and contexts are easier, as they are wrapped objects with a virtual accessor under the hood.
 
 ```sx
 whack.ds.useEffect(function() {
@@ -103,6 +101,8 @@ const theme;
 ## Capture safety
 
 Unlike in React.js combined with TypeScript, states, bindables ("refs") and context values are captured by reference from nested functions, guaranting the "outdated" value of, say, a state, is never captured, which facilitates development by requiring no additional bindable declaration.
+
+Props are also safe to use anywhere within the component as long as you follow the recommendations (such as avoiding destructuring it).
 
 ## Styling
 

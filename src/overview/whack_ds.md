@@ -1,6 +1,6 @@
 # Whack DS
 
-Whack DS is a feature of the Whack engine used for extending the closed set of Whack's UI component classes with reactive components. It is functionally similiar to React.js, but its syntax is more similiar to Adobe MXML.
+Whack DS is a feature of the Whack engine used for extending the closed set of Whack's UI component classes with reactive components. It is functionally similar to React.js, but its syntax is more similiar to Adobe MXML.
 
 ## Memoization
 
@@ -56,7 +56,7 @@ package com.sweaxizone.metro.components {
             //
         }
 
-        public type Props = {}
+        public type Props = track {}
     }
 }
 ```
@@ -83,7 +83,7 @@ package {
             //
         }
 
-        public type Props = { start:bigint }
+        public type Props = track { start : bigint }
     }
 }
 ```
@@ -110,30 +110,21 @@ Whack DS does this as it is important for memoization.
 
 ### Props tracking
 
-For detecting dependencies on props for, say, an effect or callback, the compiler needs to find those internally during codegen.
+Whack DS automatically tracks not only states and context dependencies in an effect or callback, but also props.
 
-- Detect the surrounding component, then detect the surrounding rendering function *f*.
-- Visit every node recursively on the body of *f*
-  - *Detecting derived locals*: For each local, detect dependencies on props or their derived locals
-    - Also check assignment expressions (the var initialiser isn't the only place to look for)
-  - For each effect (like `whack.ds.useEffect` or `whack.ds.useLayoutEffect`), detect dependencies on props or their derived locals.
-  - For each E4X literal that applies to Whack DS
-    - For each callback, detect dependencies on props or their derived locals.
-  - For each function, detect dependencies on props or their derived locals.
+What Whack DS does internally:
 
-> **Note**: The best practice for class-based components is not to store props as a field, therefore Whack DS does not try to track prop dependencies on instance methods other than `eval`.
-
-Codegen:
-
-- Track prop name for comparison + previous value
+- The Props object is reused across renders. For every render, its internal hash map is cleared and then overwritten.
+- `track` prefixed records, which are used for representing props, desugar into classes which use a hash map internally for storing only props that are specified. Each prop gets its own getter, which detects surrounding effect or callback and returns the current value of the prop at the internal hash map.
+  - Track prop name for comparison + previous value for the surrounding effect/callback if any
 
 ## Component validation
 
 The following apply when using E4X literals to construct `whack.ds.Node`.
 
-- A function component must be of a `function():whack.ds.Node` or `function(Props):whack.ds.Node` signature, where `Props` must be exactly a record type.
+- A function component must be of a `function():whack.ds.Node` or `function(Props):whack.ds.Node` signature, where `Props` must be exactly a `track` prefixed record type.
 - A class-based component must:
-  - Define an `eval` method of a `function():whack.ds.Node` or `function(Props):whack.ds.Node` signature, where `Props` must be exactly a record type.
+  - Define an `eval` method of a `function():whack.ds.Node` or `function(Props):whack.ds.Node` signature, where `Props` must be exactly a `track` prefixed record type.
   - Either omit the constructor, or define a constructor that is compatible with the `eval` method, possibly omitting the `Props` parameter.
 
 ## EyeExp
@@ -165,11 +156,16 @@ Monochrome icons are filled with the current CSS `color`.
 
 ## Recommendations
 
+- *Props*
+  - Don't destructure props.
+  - If you need to store props in a class-based component, you **MUST** store the entire object and not a specific field.
 - *Derived values*
-  - For deriveds from states and/or contexts, use instance methods/virtual accessors in class-based components.
-  - For deriveds from props (usually locals in the rendering function), don't depend on states and/or contexts.
+  - For deriveds from states, props and/or contexts, use instance methods/virtual accessors in class-based components.
   - Don't use props or their deriveds from functions that are not effects or Whack DS callbacks.
-  - Don't use parent regular-volatile locals in, say, effects and callbacks; using locals derived from only props in effects and callbacks is fine.
-- Don't store props in class-based components.
-- Avoid variables other than `State`, `Context` or `Bindable` annotatated locals inside a component, as that avoids accidental accesses of stale values.
+  - Don't use parent regular-volatile locals in, say, effects and callbacks; using the props object is fine.
+- Avoid variables other than `State`, `Context` or `Bindable` annotatated locals and Props inside a component, as that avoids accidental accesses of stale values. It's fine to create locals for using them while constructing the component's final `whack.ds.Node` object.
 - If, say, a loop creating Whack DS nodes contains its own event handlers, it might be better to define a separate component (perhaps nested) for that purpose, thus getting advantage of callback caching.
+
+## Tips
+
+- Remember that user-defined hooks do not take *props* as actual components do.

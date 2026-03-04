@@ -50,6 +50,8 @@ class Context {
 }
 ```
 
+The rest operator has its own rules for each applicable type, so as to avoid programmer bugs.
+
 ## Where the inference type isn't applicable
 
 There may be dynamic spots where compile-time inference is not possible, unless using a syntactic construct like

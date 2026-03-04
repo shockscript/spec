@@ -104,3 +104,16 @@ type A = { x:double };
 // B < A
 type B = { y:double, ...A };
 ```
+
+## The “track” prefix
+
+Record types containing the `track` prefix are not regular record types: they desugar into classes dedicated to reactive systems such as Whack DS, typically for representing UI component properties.
+
+```sx
+type Props = track {
+    x? : double,
+}
+```
+
+- In Whack DS, when the `x` property of the above `Props` type is accessed, the `x` property is auto tracked as a dependency of the surrounding effect or callback.
+- A `track` record type in Whack DS uses a hash map for storing props internally, since components use to define several properties, including several event handlers, which are not always specified by the consumer.

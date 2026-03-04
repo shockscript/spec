@@ -56,8 +56,14 @@
   - [x] All literal `**` (AllLiteral)
   - [ ] Object initializer
     - [ ] Applicable to flag enumerations
+      - [ ] The rest operator may appear at most once and will be written before the actual fields regardless of its position among them. (This avoids programmer bugs.)
+    - [ ] Applicable to Map
     - [ ] Applicable to record types
+      - [ ] The rest operator may appear at most once and will be written before the actual fields regardless of its position among them. (This avoids programmer bugs.)
     - [ ] Applicable to classes that contain an optional constructor or a multi-method constructor that supports an optional signature; equivalent to `var o=new C();with(o){...};return o`
+      - [ ] In this case, the rest operator will reuse the fields of the specified object.
+      - [ ] The rest operator may appear at most once and will be written before the actual fields regardless of its position among them. (This avoids programmer bugs.)
+    - [ ] Rest element may be nullish to indicate absence.
   - [ ] Parenthesized expression
     - [ ] Does not propagate *followedByCall=true*
     - [ ] Propagates *fixed=true* from given context

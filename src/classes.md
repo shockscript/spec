@@ -187,3 +187,17 @@ static class Outer {
     }
 }
 ```
+
+## Dynamic classes
+
+A class is *dynamic* if it defines a `meta::get` meta-method whose key is possibly a `string` or `QName` object. Property read and overwrite are differentiated from method call.
+
+Although useless, if one needs to force fixture access instead of dynamic access, they may use:
+
+```sx
+<?fixed={o.x}?>
+```
+
+This is mostly useless since most dynamic classes only need to access internal variables from their own class block and the lexical name resolution skips dynamic names.
+
+> **Note**: It's best for dynamic classes to expose only methods rather than properties.

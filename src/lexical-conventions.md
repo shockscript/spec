@@ -2,7 +2,7 @@
 
 This section defines the lexical grammar of the ShockScript language.
 
-The tokenizer scans one of the following input goal symbols depending on the syntactic context: *InputElementDiv*, *InputElementRegExp*, *InputElementXMLTag*, *InputElementXMLPI*, *InputElementXMLContent*.
+The tokenizer scans one of the following input goal symbols depending on the syntactic context: *InputElementDiv*, *InputElementRegExp*, *InputElementXMLTag*, *InputElementPI*, *InputElementXMLContent*.
 
 The following program illustrates how the tokenizer decides which is the input goal symbol to scan:
 
@@ -31,7 +31,9 @@ The following table indicates which is the input goal symbol that is scanned for
 | &gt; | *InputElementXMLTag* |
 | ; | *InputElementDiv* |
 
-The *InputElementXMLPI* goal symbol must be used when parsing the `<?fixed={exp}?>` markup.
+The *InputElementPI* goal symbol must be used while parsing a `<?fixed={x}?>` expression.
+
+> **Note**: *InputElementPI* has nothing to do with E4X. It's currently used in the *fixed* expression for escaping out of dynamic properties.
 
 **Syntax**
 
@@ -80,7 +82,7 @@ The *InputElementXMLPI* goal symbol must be used when parsing the `<?fixed={exp}
 </ul>
 
 <ul>
-    <i>InputElementXMLPI</i> ::
+    <i>InputElementPI</i> ::
     <ul>
         <b>?&gt;</b>
     </ul>
@@ -361,6 +363,7 @@ type
 
 Embed
 final
+track
 
 native
 static

@@ -1,6 +1,6 @@
 # React.js
 
-ShockScript incorporates the XML language, and XML literals allow for implementations to produce anything desired, similiar to JSX. There are certain differences to JSX or React.js.
+ShockScript incorporates the XML language, and XML literals allow for implementations to produce anything desired, similiar to JSX. There are many positive differences to JSX or React.js, such as memoization and auto dependency tracking.
 
 The following demonstrates a basic XML literal for Whack DS:
 
@@ -136,11 +136,22 @@ function Example() : whack.ds.Node {
 }
 ```
 
+## Props
+
+Props must use the `track { ... }` type and not a regular record type. It is not recommended to destructure props.
+
+```
+function View(props : track {
+    /** @event */
+    next? : function():void,
+}):whack.ds.Node {
+    //
+}
+```
+
 ## Effects
 
 The popular "useEffect" hook, differently from ReactJS, auto tracks dependencies, preventing mistakes. For listening to any changes, use `"*"`.
-
-> **Note**: For tracking dependent props, the compiler does some internal machinery. For the compiler, states and contexts are easier, as they are wrapped objects with a virtual accessor under the hood.
 
 ```sx
 whack.ds.useEffect(function() {

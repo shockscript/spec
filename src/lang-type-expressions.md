@@ -30,6 +30,7 @@
         <b>&#x28;</b> <i>TypeExpression</i> <b>,</b> <i>TypeExpressionList</i> <b>,</b> <b>&#x29;</b><br>
         <i>TupleTypeExpression</i><br>
         <i>RecordTypeExpression</i><br>
+        <b>track</b> <i>RecordTypeExpression</i><br>
         <i>FunctionTypeExpression</i><br>
         <i>NonPrefixedTypeExpression</i> <i>PropertyOperator</i><br>
         <i>NonPrefixedTypeExpression</i> [lookahead = <b>.</b> ] <i>QueryOperator</i><br>

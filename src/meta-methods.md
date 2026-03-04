@@ -15,12 +15,6 @@ A multi-method may be used, allowing for multiple call signatures.
 ## meta::get()
 
 > **Note**: Overriding the property accessor with a possibly `string` or `QName` key type (including base types `*` and `Object`) will override all names (like `.x`), except when calling a method (like `.m()`). In that case, a class is said to be *dynamic*.
->
-> If the user needs to access an instance variable in such a case it is recommended to use a fixed expression as in
->
-> ```
-> <?fixed={object.q::n}?>
-> ```
 
 ```sx
 meta function get(key:K):V {
