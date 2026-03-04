@@ -185,4 +185,4 @@ Unlike with React.js, there is built-in support for linking style sheets in a Wh
 
 ## Class-based components
 
-[Whack DS supports class-based components](../whack_ds.md#class-based-components), which are more flexible than function-based components.
+[Whack DS supports class-based components](../whack_ds.md#class-based-components), which are preferred over function-based components.

@@ -1,6 +1,6 @@
 # Whack DS
 
-Whack DS is a feature of the Whack engine used for extending the closed set of Whack's UI component classes with reactive components. It is functionally similar to React.js, but its syntax is more similiar to Adobe MXML.
+Whack DS is a feature of the Whack engine used for extending the closed set of Whack's element classes with reactive components. It is functionally similar to React.js, but its syntax is more similar to Adobe MXML.
 
 ## Memoization
 
@@ -48,11 +48,15 @@ package com.pso2.relic {
 
 
 package com.sweaxizone.metro.components {
-    public class TabBar {
-        // Constructor (optional)
-        public function TabBar(props:Props) {}
+    public class TabBar extends whack.ds.UIComponent {
+        let props:Props
 
-        public function eval(props:Props):whack.ds.Node {
+        public function TabBar(props:Props) {
+            super()
+            this.props = props
+        }
+
+        public function eval():whack.ds.Node {
             //
         }
 
@@ -61,29 +65,45 @@ package com.sweaxizone.metro.components {
 }
 ```
 
-It's recommended to avoid locals other than `State`, `Context` or `Bindable` annotatated locals inside a component, as that avoids accidental accesses of stale values.
+It's recommended to avoid variables other than props or `State`, `Context` or `Bindable` annotatated variables inside a component, as that avoids accidental accesses of stale values.
 
 ### Class-based components
 
 Instances of class-based components are throwaway. It's not recommended to explicitly construct such classes or share instances with other code locations.
 
-Such components may define `State`, `Context` and `Bindable` instance fields and assign their initial values in the constructor:
+Such components may define props and `State`, `Context` and `Bindable` instance fields and assign their initial values in the constructor.
 
 ```sx
 package {
-    public class Counter {
+    import whack.util.*
+
+    public class Counter extends whack.ds.UIComponent {
+        let props:Props
         [State]
-        let n:bigint
+        let $n : ?bigint
 
         public function Counter(props:Props) {
-            n = props.start
+            super()
+            this.props = props
+            $n = null
         }
 
-        public function eval(props:Props):whack.ds.Node {
-            //
+        public function eval():whack.ds.Node {
+            whack.ds.useEffect(function() {
+                const itrv = setInterval(function() {
+                    n++
+                }, 1_000)
+                return function() {
+                    clearInterval(itrv)
+                }
+            });
         }
 
         public type Props = track { start : bigint }
+
+        private function get n() : bigint ($n ?? props.start)
+
+        private function set n(val) { $n = val }
     }
 }
 ```
@@ -123,9 +143,17 @@ What Whack DS does internally:
 The following apply when using E4X literals to construct `whack.ds.Node`.
 
 - A function component must be of a `function():whack.ds.Node` or `function(Props):whack.ds.Node` signature, where `Props` must be exactly a `track` prefixed record type.
-- A class-based component must:
-  - Define an `eval` method of a `function():whack.ds.Node` or `function(Props):whack.ds.Node` signature, where `Props` must be exactly a `track` prefixed record type.
-  - Either omit the constructor, or define a constructor that is compatible with the `eval` method, possibly omitting the `Props` parameter.
+- A class-based component must extend `whack.ds.UIComponent`
+
+Class definitions that extend `whack.ds.UIComponent` are validated in a flat way to avoid programmer bugs:
+
+- Every instance variable is either
+  - Of a `track` record type (at most one variable of this kind, which is usually the props object)
+  - A `Bindable` annotatated variable
+  - A `Context` annotatated variable
+  - A `State` annotatated variable
+- The class must define an `eval` method of a `function():whack.ds.Node` signature.
+- The class either omits the constructor, or defines a constructor whose signature is either `function():void` or `function(Props):void`, where `Props` must be exactly a `track` prefixed record type.
 
 ## EyeExp
 

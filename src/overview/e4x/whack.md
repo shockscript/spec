@@ -12,11 +12,13 @@ The `w` prefix may be shadowed by user definitions; in that case, to use native 
 namespace whack = "http://www.sweaxizone.com/2015/whack";
 ```
 
-## DOM arbitrary attributes
+## DOM meta-data
 
-Arbitrary attributes (like `a:x`, or, in CSS selectors, `[a|x]`) may be set over native tags, such as `<w:Button>`, serving as meta-data.
+Meta-data (like `meta:x`, or, in CSS selectors, `[meta|x]`) may be set over native tags, such as `<w:Button>`, serving as meta-data.
 
 Using a Whack DS bindable, the attribute would be accessed as `bindable!.@x`.
+
+For Whack Red, meta-data under the hood map to `data-` prefixed attributes, which can be seen when inspecting the elements in the browser console.
 
 ## “key” attribute
 
