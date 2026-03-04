@@ -115,6 +115,7 @@ For detecting dependencies on props for, say, an effect or callback, the compile
 - Detect the surrounding component, then detect the surrounding rendering function *f*.
 - Visit every node recursively on the body of *f*
   - *Detecting derived locals*: For each local, detect dependencies on props or their derived locals
+    - Also check assignment expressions (the var initialiser isn't the only place to look for)
   - For each effect (like `whack.ds.useEffect` or `whack.ds.useLayoutEffect`), detect dependencies on props or their derived locals.
   - For each E4X literal that applies to Whack DS
     - For each callback, detect dependencies on props or their derived locals.

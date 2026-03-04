@@ -1,6 +1,6 @@
 # Default XML namespace statement
 
-The `default xml namespace` statement is used to specify the default E4X namespace used for lookups where the XML prefix is omitted, influencing the surrounding frame's *\[\[DefaultXMLNamespace\]\]* internal property; in other words, it can be said that `default xml namespace` is block-scoped.
+The `default xml namespace` statement is used to specify the default E4X namespace used for lookups where the XML prefix is omitted, influencing the surrounding frame's *\[\[DefaultNamespace\]\]* internal property; in other words, it can be said that `default xml namespace` is block-scoped.
 
 ```sx
 namespace Samurai = "http://www.samurai.com/2007"

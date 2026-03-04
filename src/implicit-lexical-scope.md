@@ -12,8 +12,8 @@ The top-level package defines an `SX` property, which is an alias to a package w
 
 ## Intl
 
-The top-level package defines an `Intl` property, which is an alias to a package wildcard import of the `com.sweaxizone.shock.intl` package.
+The top-level package defines an `Intl` property, which is an alias to a package wildcard import of the `org.sx.intl` package.
 
 ## Temporal
 
-The top-level package defines an `Temporal` property, which is an alias to a package wildcard import of the `com.sweaxizone.shock.temporal` package.
+The top-level package defines an `Temporal` property, which is an alias to a package wildcard import of the `org.sx.temporal` package.

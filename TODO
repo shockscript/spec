@@ -11,7 +11,7 @@
   - [ ] InScopeLookup
     - [ ] Lookups with an algebraic enum as context type may infer a variant/variant namespace (e.g. `var exp : Exp = Sum(left, right)`, `var i : I = Loc.Get(idx)`)
     - [ ] Introduce lazily imported source files based in source paths.
-    - [ ] `DotEnv` qualifier causes DotEnv variable retrieval (or, depending on the implementation, may resolve to a predefined variable).
+    - [ ] `Env` qualifier causes DotEnv variable retrieval (or, depending on the implementation, may resolve to a predefined variable).
     - [ ] Use `fixed=true` access when doing property lookup in activation's `this` (e.g. user should use `this` if the enclosing class is dynamic and needs to access a dynamic property).
 - [ ] Constants
   - [ ] *EnumConstant* for both regular enumerations and flag enumerations
@@ -65,7 +65,8 @@
     - [ ] Propagates *fixed=true* from given context
   - [ ] Descendants operator
     - [ ] Takes a non-attribute qualified identifier.
-  - [ ] Relational, arithmetic and bitwise operations using the `Number` union (from the ShockScript global objects) at either or both sides should be allowed, causing a forced conversion if necessary.
+  - [ ] Equality, relational, arithmetic and bitwise operations using the `Number` union (from the ShockScript global objects) at either or both sides should be allowed, causing a forced conversion if necessary.
+  - [ ] Equality allows mixing compatible operands with void and/or null.
   - [ ] Call operator
     - [ ] Base is passed *followedByCall=true*
     - [ ] Watch for static `meta::call` when calling classes (supports multiple signatures too)
@@ -123,9 +124,9 @@
   - [ ] (Whack engine) w namespace = "http://www.sweaxizone.com/2015/whack"
   - [ ] SX namespace = "http://www.sweaxizone.com/2015/shockscript/global"
   - [ ] generic namespace = "http://www.sweaxizone.com/2015/shockscript/generic"
-  - [ ] Intl namespace = "com.sweaxizone.shock.intl"
-  - [ ] Temporal namespace = "com.sweaxizone.shock.temporal"
-  - [ ] DotEnv namespace (DotEnv special qualifier) = "http://www.sweaxizone.com/2015/shockscript/DotEnv"
+  - [ ] Intl namespace = "org.sx.intl"
+  - [ ] Temporal namespace = "org.sx.temporal"
+  - [ ] Env namespace (Env special qualifier) = "http://www.sweaxizone.com/2015/shockscript/Env"
   - [ ] trace()
   - [ ] etrace()
   - [ ] assert() (a namespace-method)
@@ -198,6 +199,15 @@
   - [ ] string
     - [ ] +Iterable
     - [ ] static `fromByte(...):string`
+    - [ ] length (in UTF-8 bytes)
+    - [ ] `byteAt():byte`
+    - [ ] `bytes():Iterator.<byte>`
+    - [ ] charAt()
+      - [ ] Returns empty string if out of bounds
+    - [ ] `charCodeAt():uint`
+      - [ ] Reads Unicode Code Point at given UTF offset
+      - [ ] Returns U+00 if out of bounds
+    - [ ] `chars():Chars`
     - [ ] `format(vars:Map.<string, string>):string`
       - Formats `$varName`, `${varName}` and `$$`
   - [ ] Chars
@@ -229,21 +239,25 @@
   - [ ] XMLList
     - [ ] static `meta::call(arg:*):XMLList`
   - [ ] Namespace
+    - [ ] unlike QName, fully writable
   - [ ] QName
-    - [ ] `uri:?string` - May be null for "default xns"
+    - [ ] QName constructor
+      - [ ] If uri is undefined or unspecified: if name = "*", then uri=null; otherwise uri=default namespace
+    - [ ] `uri:?string` - May be null for "match any namespace"
+    - [ ] fully read-only
   - [ ] ByteArray
     - [ ] +Iterable
     - [ ] Indexing
     - [ ] `shareable:boolean`
     - [ ] `clone(deep=)`
   - [ ] Endian enum
-  - [ ] com.sweaxizone.shock.intl.*
+  - [ ] org.sx.intl.*
     - [ ] Like ECMA-262 `Intl`. Aliased `Intl::`, as well.
-  - [ ] com.sweaxizone.shock.temporal.*
+  - [ ] org.sx.temporal.*
     - [ ] Like ECMA-262 like `Temporal`. Aliased `Temporal::`, as well.
-  - [ ] com.sweaxizone.shock.meta.*
+  - [ ] org.sx.meta.*
     - Used for what the `meta` namespace RTI reflection methods cannot be used for (e.g. perhaps extracting a list of properties from a package name).
-  - [ ] com.sweaxizone.shock.meta.context.*
+  - [ ] org.sx.meta.context.*
     - Special compiler functions for reflecting lexical contexts.
     - [ ] decimal() - DecimalContext
     - [ ] dxns() - default xml namespace
