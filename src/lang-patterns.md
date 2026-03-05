@@ -20,7 +20,7 @@ if (let Plus(*, 10) = exp) {
         <i>IdentifierPattern</i><br>
         <i>ArrayPattern</i><br>
         <i>ObjectPattern</i><br>
-        <i>ConstantPattern</i>
+        <i>ConstantPattern</i> [if not the root of the whole matching pattern]
     </ul>
 </ul>
 
