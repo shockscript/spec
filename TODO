@@ -182,12 +182,20 @@
       - [ ] Array
       - [ ] Tuples
       - [ ] Records
+      - [ ] "track" prefixed records (special kinds of classes)
       - [ ] Maps
+      - [ ] ByteArray
+      - [ ] Most Temporal::* data types (just override equals())
+      - [ ] Date (just override equals())
+      - [ ] Most Intl::* data types (just override equals())
       - [ ] (Other objects just use ===)
     - [ ] `genericq::clone(deep:boolean=):Object` (used mostly as `generic::clone`, but the access modifier needs to use genericq)
-      - Default implementation clones most objects fine (records, tuples, arrays, maps and so on), but fails for classes with a required constructor (uses a `clone` method instead if defined and its signature is compatible (may need a deep= parameter if deep=true); `generic::clone` will also ensure the result is of the exact same constructor or otherwise throw a TypeError).
-        - Clones are shallow (not deep) by default
-      - Circular references are preserved, like JavaScript's `structuredClone()`.
+      - [ ] deep=true by default
+      - [ ] Default implementation clones most objects fine (records, "track" prefixed records, tuples, arrays, maps and so on), but fails for classes with a required constructor (uses a `clone` method instead if defined and its signature is compatible (if deep=true and there is no deep parameter, just calls the method anyway (that's what most people do if lazy to care about deep=)); `generic::clone` will also ensure the result is of the exact same constructor or otherwise throw a TypeError).
+        - [ ] "track" prefixed records (special kinds of classes)
+        - [ ] Clones are shallow (not deep) by default
+      - [ ] When deep=true, circular references are preserved, like JavaScript's `structuredClone()`.
+        - [ ] In this case, use a global push-pop stack surrounded by a `try..catch`. On `catch`, clear the stack and re-throw the error; on success (after the `try..catch` block), clear the stack and return the resulting object.
     - [ ] `meta::class()`
     - [ ] toString()
     - [ ] toLocaleString()
@@ -275,10 +283,17 @@
     - [ ] `shareable:boolean`
     - [ ] `clone(deep=)`
   - [ ] Endian enum
+  - [ ] Date
+    - [ ] clone(deep=)
+    - [ ] override equals()
   - [ ] `org.sx.intl.*`
     - [ ] Like ECMA-262 `Intl`. Aliased `Intl::`, as well.
+    - [ ] Most data types implement clone(deep=)
+    - [ ] Most data types override equals()
   - [ ] `org.sx.temporal.*`
     - [ ] Like ECMA-262 like `Temporal`. Aliased `Temporal::`, as well.
+    - [ ] Most data types implement clone(deep=)
+    - [ ] Most data types override equals()
   - [ ] `org.sx.meta.*`
     - Used for what the `meta` namespace cannot be used for (e.g. perhaps extracting a list of properties from a package name).
   - [ ] `org.sx.meta.ty.*`
