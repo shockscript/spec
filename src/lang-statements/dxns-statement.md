@@ -7,7 +7,7 @@ namespace Samurai = "http://www.samurai.com/2007"
 
 {
     default xml namespace = Samurai
-    xn = <Envato> swiss </Envato>
+    xn = <Envato>swiss</Envato>
 }
 ```
 

@@ -9,7 +9,7 @@ ctx = { ignoreWhitespace: true }
 
 {
     use xml ctx
-    xn = <information>  content  </information>
+    xn = <information>{"  content  "}</information>
 }
 ```
 
