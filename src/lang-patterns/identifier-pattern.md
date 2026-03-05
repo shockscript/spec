@@ -4,7 +4,7 @@
 x
 Wildcard
 Vector(x, y)
-Vector(, y)
+Vector(*, y)      // skips "x"
 Vector({ x, y })
 ```
 
@@ -44,8 +44,6 @@ Vector({ x, y })
     <i>IdentifierPatternArgument</i> :
     <ul>
         <i>Pattern</i><br>
-        <b>,</b><br>
-        <i>IdentifierPatternArgument</i> <b>,</b> <i>Pattern</i><br>
-        <i>IdentifierPatternArgument</i> <b>,</b> <b>,</b>
+        <i>IdentifierPatternArgument</i> <b>,</b> <i>Pattern</i>
     </ul>
 </ul>
