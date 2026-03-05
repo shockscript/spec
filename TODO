@@ -270,6 +270,9 @@
     - [ ] Attributes
   - [ ] XMLList
     - [ ] static `meta::call(arg:*):XMLList`
+  - [ ] XMLContext
+    - [ ] Represent this as a class and not a record type (object literal works on classes now)
+    - [ ] ignoreWhitespace defaults to true, which means "trim any whitespace at the beginning and end of text nodes". Unlike AS3/E4X, XML literals always ignore whitespace. (If whitespace is desired on text nodes, one may use CDATA.
   - [ ] Namespace
     - [ ] unlike QName, fully writable
   - [ ] QName

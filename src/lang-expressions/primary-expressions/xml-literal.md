@@ -63,3 +63,11 @@
         «empty»
     </ul>
 </ul>
+
+**Semantics**
+
+Unlike the E4X standard, ShockScript always trims any whitespace at the beginning and end of text nodes within XML literals regardless of the `XMLContext` object.
+
+> **Note**: If whitespace is desired on text nodes, one may use a CDATA section.
+>
+> One reason for always trimming whitespace is that the source text may be autoformatted without breaking certain rules; although, CDATA sections may be trickier to format due to indentation, thus requiring type checking for determining whether the compiler understands such a section as an actual computer language such as a style block.

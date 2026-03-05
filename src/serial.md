@@ -16,6 +16,8 @@ js::object(v)
 js::stringify(v)
 ```
 
+`stringify` also accepts an options object for pretty formatting.
+
 ### Rename
 
 ```sx
