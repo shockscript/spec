@@ -47,3 +47,13 @@ Vector({ x, y })
         <i>IdentifierPatternArgument</i> <b>,</b> <i>Pattern</i>
     </ul>
 </ul>
+
+**Semantics**
+
+An *IdentifierPattern* representing exactly a single wildcard **\*** identifier is treated as a parameter skip.
+
+```sx
+if (let Plus(*, 10) = exp) {
+    f = true
+}
+```
