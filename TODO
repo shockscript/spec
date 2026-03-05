@@ -184,7 +184,7 @@
       - [ ] Records
       - [ ] Maps
       - [ ] (Other objects just use ===)
-    - [ ] `generic::clone(deep:boolean=):Object`
+    - [ ] `genericq::clone(deep:boolean=):Object` (used mostly as `generic::clone`, but the access modifier needs to use genericq)
       - Default implementation clones most objects fine (records, tuples, arrays, maps and so on), but fails for classes with a required constructor (uses `.clone()` instead if defined and its signature is compatible (may need a deep= parameter if deep=true)).
         - Clones are shallow (not deep) by default
       - Circular references are preserved, like JavaScript's `structuredClone()`.
