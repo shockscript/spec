@@ -139,6 +139,7 @@
   - [ ] (Whack engine) w namespace = "http://www.sweaxizone.com/2015/whack"
   - [ ] SX namespace = "http://www.sweaxizone.com/2015/shockscript/global"
   - [ ] generic namespace = "http://www.sweaxizone.com/2015/shockscript/generic"
+  - [ ] genericq = same as generic, but can be used as an access modifier in definitions
   - [ ] meta namespace = "http://www.sweaxizone.com/2015/shockscript/meta" (under the hood it's not really that URI; it's the global "meta" system namespace)
   - [ ] Intl namespace = "org.sx.intl"
   - [ ] Temporal namespace = "org.sx.temporal"
