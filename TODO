@@ -244,6 +244,10 @@
     - [ ] `substr : [string]` (idx. 0 = whole)
     - [ ] `length`
     - [ ] `clone(deep=)`
+  - [ ] Function
+    - [ ] `clone(deep=)` returns the same Function reference back without cloning
+  - [ ] whack.ds.BindableObject
+    - [ ] `clone(deep=)` returns the same BindableObject reference back without cloning
   - [ ] XML
     - [ ] Implement `Iterable`
     - [ ] static `meta::call(arg:*):XML`

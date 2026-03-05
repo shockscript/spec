@@ -94,13 +94,13 @@ Even though the constructor is frequently re-evaluated, objects originating the 
 
 ## Callback caching
 
-Whack DS considers caching callbacks, since they are naturally ever changing `Function` objects regardless of whether they are lambdas or fixtures ─ for example, since they capture locals, `this` or contexts, they tend to return different `Function` objects.
+Whack DS considers caching callbacks, since they are naturally ever changing `Function` objects regardless of whether they are lambdas or fixtures ─ for example, since they capture locals, `this` or contexts, they tend to return different `Function` objects ─ and this is crucial for memoization.
 
 - Whack DS doesn't attempt to cache a callback if either:
   - It belongs to another code block (like a loop, an `if`, a `switch` or a `switch type`) and not the component's constructor main block.
   - If a `return` statement has a chance of evaluating before that callback.
 
-Whack DS does this as it is important for memoization.
+The compiler generates a warning at a tag's attribute if its callback does not meet this criteria.
 
 ## Auto dependency tracking
 
@@ -201,7 +201,7 @@ package zero.components {
                         if (props.bind is Function) {
                             Function(props.bind)(element_)
                         } else if (props.bind) {
-                            whack.ds.BindableObject.<?Div>(props.bind).val = element_
+                            whack.ds.BindableObject.<?Div>(props.bind).value = element_
                         }
                     }}>
                     <!-- Element content -->
