@@ -66,7 +66,6 @@
 - [Lexical scopes](./lexical-scopes.md)
 - [Implicit lexical scope](./implicit-lexical-scope.md)
 - [Conditional compilation](./conditional-compilation.md)
-- [Implicit configuration constants](./implicit-configuration-constants.md)
 - [Unit testing](./unit-testing.md)
 - [ShockDoc comments](./shockdoc.md)
 - [Meta-methods](./meta-methods.md)
