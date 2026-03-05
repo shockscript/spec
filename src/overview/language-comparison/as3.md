@@ -98,19 +98,17 @@ class A {
 
 ## E4X
 
-XML literals do not produce `XML` or `XMLList` unless the inference type is one of these; they are implementation-defined by default. Such expressions have also undergone incremental syntax additions:
+XML literals produce by default `XML` or `XMLList` unless the inference type is an implementation-defined component type (such as for the Whack Engine, `whack.ds.Node`). Such expressions have also undergone incremental syntax additions:
 
 - `<t a/>` equals `<t a={true}/>`
 - `<t e&={}/>` equals `<t e={function(event){}}/>` or `<t e={function(){}}/>`
 
 ```sx
 <w:VGroup>
-    <w:Label variant="heading">Welcome</w:Label>
-    <w:Button click&={trace("clicked me");}>Click me</w:Button>
+    <h1>welcome</h1>
+    <button click&={trace("clicked me");}>Click me</button>
 </w:VGroup>
 ```
-
-> **Note**: `XML(<tag/>)` equals `var _loc_0:XML = <tag/>;`.
 
 ## Events
 

@@ -69,7 +69,7 @@
       - [ ] In this case, the rest operator will reuse the fields of the specified object.
       - [ ] The rest operator may appear at most once and will be written before the actual fields regardless of its position among them. (This avoids programmer bugs.)
         - [ ] For the rest operator, filter out subtype fields
-    - [ ] Rest element may be nullish to indicate absence.
+    - [ ] Rest expression may be nullish to indicate absence.
   - [ ] Parenthesized expression
     - [ ] Does not propagate *followedByCall=true*
     - [ ] Propagates *fixed=true* from given context

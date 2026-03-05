@@ -5,13 +5,16 @@ The MXML language, as part of the Apache Flex framework, was used for describing
 The following demonstrates a basic UI component implemented in Whack DS:
 
 ```sx
-package com.zero.spark.components {
-    public function AppBar():whack.ds.Node {
-        return (
-            <w:HGroup>
-                <w:Button click&={trace("clicked!")}>button 1</w:Button>
-            </w:HGroup>
-        );
+package zero.components {
+    public class Ark extends whack.ds.UIComponent {
+        public function Ark() {
+            super();
+            final = (
+                <div>
+                    <button click&={trace("clicked!")}>Click me</button>
+                </div>
+            );
+        }
     }
 }
 ```
@@ -24,13 +27,13 @@ In MXML, event handlers were expressed as `e="statements"`. In ShockScript, they
 
 ## Rendering components
 
-The Whack DS framework allows programmers to implement UI components as functions that wrap around the built-in class-based components of Whack Engine. The component is rendered by evaluating the function initially and whenever a state changes.
+The Whack DS framework allows programmers to implement UI components as throwaway classes that wrap around the DOM elements of Whack Engine. The component is rendered by constructing the class initially and whenever states, props and/or contexts change.
 
 ## Effects
 
-The `whack.ds.useEffect` hook may be used to detect changes to props, state or context as well as the component mount and unmount phases.
+*Effect* hooks like `whack.ds.useEffect` may be used to detect changes to props, state or context as well as the component mount and unmount phases.
 
-Dependencies are auto-tracked.
+The effect dependencies — states, props and contexts it relies on — are auto-tracked.
 
 ```sx
 whack.ds.useEffect(function() {
@@ -51,76 +54,95 @@ When there are no dependencies, the hook is equivalent to a component mount/unmo
 ```sx
 whack.ds.useEffect(function() {
     // Did mount
+
     return function() {
         // Unmount
     };
 });
 ```
 
+## Callbacks
+
+Similarly to effects, callbacks that appear in E4X literals applied to the `whack.ds.Node` type auto track dependencies, since most of them are cached for aiding on memoization.
+
 ## States
 
-In the top-level of a component, declare states using the `State` meta-data:
+Declare State variables using the `State` meta-data:
 
 ```sx
-[State]
-var counter:uint = 0;
+public class Main extends whack.ds.UIComponent {
+    [State]
+    var counter : uint = 0;
+}
 ```
 
 The initial value of `counter` is zero, although that initializer evaluates only the first time the component renders.
 
-Overwriting a state with a different value (as by an `equal()` comparison) will re-render the component.
+Overwriting a state with a different value (as by an `equals` comparison) will indirectly re-render the component.
 
-Note that, like with React.js, arrays and structures as states will not trigger a re-render on operations like `.push()`; instead the programmer needs to reconstruct the array or structure, like in:
+Note that, like with React.js, arrays and structures as states will not trigger a re-render during `push` like operations; instead the programmer needs to reconstruct the object, as in:
 
 ```sx
-list = [...list, v];
+x = [...x, 10]
 ```
 
 ## Bindables
 
-In the top-level of a Whack DS component, declare bindables by using the `Bindable` meta-data. Bindables have certain use-cases, such as persisting a value across renders, and extracting class-based components from certain tags (in which case the `bind` attribute is used).
+In the top-level of a Whack DS component, declare bindables by using the `Bindable` meta-data. Bindables have certain use-cases, such as persisting a value across renders, and extracting DOM elements from certain tags (in which case the `bind` attribute is used).
 
 ```sx
-[Bindable]
-var button:Button? = null;
+public class Main extends whack.ds.UIComponent {
+    [Bindable]
+    var button : ?org.w3.web.Button;
 
-return (
-    <w:Button bind={button}>click me</w:Button>
-);
+    public function Main() {
+        super()
+        final = (
+            <button bind={button}>Click me</button>
+        )
+    }
+}
 ```
 
 ## Contexts
 
-In the top-level of a component, reflect inherited contexts by using the `Context` meta-data.
+Obtain inherited contexts by using a Context variable.
 
 ```sx
-[Context("ThemeContext")]
-const theme;
+public class Main extends whack.ds.UIComponent {
+    [Context("metro.context.Theme")]
+    const theme;
+
+    public function Main() {
+        super()
+        final = (
+            <></>
+        )
+    }
+}
 ```
 
 ## Capture safety
 
-Unlike in React.js combined with TypeScript, states, bindables ("refs") and context values are captured by reference from nested functions, guaranting the "outdated" value of, say, a state, is never captured, which facilitates development by requiring no additional bindable declaration.
+Unlike in React.js combined with TypeScript, states, bindables ("refs") and context values (if following the recommendations) are captured by reference from nested functions, guaranting the "outdated" value of, say, a state, is never captured, which facilitates development by requiring no additional Bindable declaration.
 
-Props are also safe to use anywhere within the component as long as you follow the recommendations (such as avoiding destructuring it).
+Props are also safe to use anywhere within the component as long as you follow the recommendations (such as avoiding destructuring it in large method bodies).
 
 ## Styling
 
 Unlike with React.js, there is built-in support for linking style sheets in a Whack DS component.
 
 ```sx
-<w:Group>
-    <w:Style><![CDATA[
-        :host {
-            background: red;
-        }
-    ]]></w:Style>
-</w:Group>
+<div>
+    <w:Style>
+    <![CDATA[
+        :host { background: red }
+    ]]>
+    </w:Style>
+</div>
 ```
 
+## Helpful resources
 
-[More on style sheets](../e4x/whack.md#linking-cascading-style-sheets)
-
-## Class-based components
-
-[Whack DS supports class-based components](../whack_ds.md#class-based-components), which are preferred over function-based components.
+- [See: Whack DS - E4X](../e4x/whack.md)
+- [See: Whack DS](../whack_ds.md)

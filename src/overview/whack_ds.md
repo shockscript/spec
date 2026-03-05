@@ -28,36 +28,23 @@ Whack DS supports style sheets out of the box. Here is a simple example:
 </w:VGroup>
 ```
 
-## How a component is defined
+[See: Linking cascading style sheets](./e4x/whack.md#linking-cascading-style-sheets)
 
-There are different ways to declare a component. Here are some examples:
+## Very basic components
+
+Here is a little code snippet:
 
 ```sx
-// ===== Main.sx =====
-
-
-package com.pso2.relic {
-    public function Main():whack.ds.Node {
-        //
-    }
-}
-
-
-
-// ===== TabBar.sx =====
-
-
-package com.sweaxizone.metro.components {
+package metro.components {
     public class TabBar extends whack.ds.UIComponent {
-        let props:Props
+        var props : Props
 
-        public function TabBar(props:Props) {
+        public function TabBar(props : Props) {
             super()
             this.props = props
-        }
-
-        public function eval():whack.ds.Node {
-            //
+            final = (
+                <></>
+            )
         }
 
         public type Props = track {}
@@ -65,66 +52,59 @@ package com.sweaxizone.metro.components {
 }
 ```
 
-It's recommended to avoid variables other than props or `State`, `Context` or `Bindable` annotatated variables inside a component, as that avoids accidental accesses of stale values.
+Notet that instances of a component class are throwaway. It's not recommended to explicitly construct such classes or share instances with other code locations.
 
-### Class-based components
-
-Instances of class-based components are throwaway. It's not recommended to explicitly construct such classes or share instances with other code locations.
-
-Such components may define props and `State`, `Context` and `Bindable` instance fields and assign their initial values in the constructor.
+Here's a slightly bigger code snippet for a linear second accumulator:
 
 ```sx
 package {
     import whack.util.*
 
-    public class Counter extends whack.ds.UIComponent {
-        let props:Props
+    public class Clock extends whack.ds.UIComponent {
+        var props : Props ;
         [State]
-        let $n : ?bigint
+        var mSecs : ?bigint ;
 
-        public function Counter(props:Props) {
+        public function Clock(props : Props) {
             super()
             this.props = props
-            $n = null
-        }
 
-        public function eval():whack.ds.Node {
             whack.ds.useEffect(function() {
                 const itrv = setInterval(function() {
-                    n++
+                    secs++
                 }, 1_000)
                 return function() {
                     clearInterval(itrv)
                 }
-            });
+            })
+            final = (
+                <span>{secs}</span>
+            )
         }
 
         public type Props = track { start : bigint }
 
-        private function get n() : bigint ($n ?? props.start)
-
-        private function set n(val) { $n = val }
+        private function get secs() : bigint ( mSecs ?? props.start )
+        private function set secs(val) { mSecs = val }
     }
 }
 ```
 
-Even though the constructor is frequently re-evaluated, the initial value of `State` or `Bindable` fields only runs in the initial rendering phase.
-
-> **Curiosity**: Class-based components provide not only the advantage of better encapsulating helpers and associated types, but if all fields are compiler special ones as recommended (`State`, `Bindable` or `Context`), it also prevents bugs with stale locals.
+Even though the constructor is frequently re-evaluated, objects originating the initial rendering phase are reused for the instance fields.
 
 ## Callback caching
 
 Whack DS considers caching callbacks, since they are naturally ever changing `Function` objects regardless of whether they are lambdas or fixtures ─ for example, since they capture locals, `this` or contexts, they tend to return different `Function` objects.
 
-- Whack DS doesn't attempt to cache a callback if:
-  - It belongs to another code block (like a loop, an `if` or a `switch`) or activation or if there is no surrounding component at all.
-  - If a `return` statement has a chance of evaluating before that callback,
+- Whack DS doesn't attempt to cache a callback if either:
+  - It belongs to another code block (like a loop, an `if`, a `switch` or a `switch type`) and not the component's constructor main block.
+  - If a `return` statement has a chance of evaluating before that callback.
 
 Whack DS does this as it is important for memoization.
 
 ## Auto dependency tracking
 
-- Whack DS presents extra overhead for state/context accessors, so that, say, the surrounding effect or callback is said to be dependent on an used state/context.
+- Whack DS presents extra overhead for State/Context/Prop accessors, so that, say, the surrounding effect or callback is said to be dependent on an used State/Context/Prop.
   - Subsequent renders may still accumulate more dependencies, like conditional ones.
 - Whack DS E4X attributes assigned to functions or methods from the same component are cached based on dependency tracking; same for E4X event handlers **&amp;=**.
 
@@ -138,12 +118,26 @@ What Whack DS does internally:
 - `track` prefixed records, which are used for representing props, desugar into classes which use a hash map internally for storing only props that are specified. Each prop gets its own getter, which detects surrounding effect or callback and returns the current value of the prop at the internal hash map.
   - Track prop name for comparison + previous value for the surrounding effect/callback if any
 
+## Deriveds
+
+Variables derived from States, Contexts, Bindables or Props are often expressed as virtual accessors, as in:
+
+```sx
+private function get combination() : decimal {
+    use decimal ctx
+    return x + y
+}
+```
+
+Using methods is also an option.
+
 ## Component validation
 
 The following apply when using E4X literals to construct `whack.ds.Node`.
 
-- A function component must be of a `function():whack.ds.Node` or `function(Props):whack.ds.Node` signature, where `Props` must be exactly a `track` prefixed record type.
-- A class-based component must extend `whack.ds.UIComponent`
+- A tag name must resolve to either
+  - A component class that extends `whack.ds.UIComponent`
+  - A context provider
 
 Class definitions that extend `whack.ds.UIComponent` are validated in a flat way to avoid programmer bugs:
 
@@ -152,47 +146,84 @@ Class definitions that extend `whack.ds.UIComponent` are validated in a flat way
   - A `Bindable` annotatated variable
   - A `Context` annotatated variable
   - A `State` annotatated variable
-- The class must define an `eval` method of a `function():whack.ds.Node` signature.
-- The class either omits the constructor, or defines a constructor whose signature is either `function():void` or `function(Props):void`, where `Props` must be exactly a `track` prefixed record type.
+- The class either omits the constructor, or defines a constructor whose signature is either `function():void` or `function(Props):void`, where `Props` must be a `track` prefixed record type.
 
 ## EyeExp
 
 Whack's approach to logotypes and icons is called the EyeExp feature, which uses dynamic icon names rather than `enum`, as well as namespace prefixes to prevent collision between libraries.
 
 ```sx
-// ===== HelloWorld.sx =====
-
-
 package {
-    import mx = com.sweaxizone.metro.components.*;
+    import mx = metro.components.*;
 
-    public function HelloWorld():whack.ds.Node {
-        return (
-            <mx:Wrap>
-                <w:EyeExp name="camera" size={37}/>
-
-                <!-- usage as a css background -->
-
-                <w:Group s:background="eyexp(camera) noRepeat center / contain"/>
-            </mx:Wrap>
-        );
+    public class Main extends whack.ds.UIComponent {
+        public function Main() {
+            super()
+            final = (
+                <mx:Wrap>
+                    <w:EyeExp name="camera" size={37}/>
+                </mx:Wrap>
+            )
+        }
     }
 }
 ```
 
 Monochrome icons are filled with the current CSS `color`.
 
+## Understanding Bindables
+
+Under the hood, a Bindable variable is represented as a `whack.ds.BindableObject.<T>` object, which must not be mistaken as the `whack.ds.Bindable.<T>` type that is typically:
+
+```sx
+public type Bindable.<T> = (
+    whack.ds.BindableObject.<T>,
+    function(T):void,
+);
+```
+
+The `function` case allows tag attributes such as `bind` to specify a receiver that executes code, as in:
+
+```sx
+package zero.components {
+    import org.w3.web.Div;
+
+    public class Binding extends whack.ds.UIComponent {
+        [Bindable]
+        var element : ?Div ;
+
+        public function Binding(props : Props) {
+            super();
+            final = (
+                <div
+                    bind={function(element_) {
+                        element = element_
+                        if (props.bind is Function) {
+                            Function(props.bind)(element_)
+                        } else if (props.bind) {
+                            whack.ds.BindableObject.<?Div>(props.bind).val = element_
+                        }
+                    }}>
+                    <!-- Element content -->
+                </div>
+            );
+        }
+
+        public type Props = track {
+            bind? : whack.ds.Bindable.<?Div>,
+        };
+    }
+}
+```
+
 ## Recommendations
 
 - *Props*
-  - Don't destructure props.
-  - If you need to store props in a class-based component, you **MUST** store the entire object and not a specific field.
-- *Derived values*
-  - For deriveds from states, props and/or contexts, use instance methods/virtual accessors in class-based components.
-  - Don't use props or their deriveds from functions that are not effects or Whack DS callbacks.
-  - Don't use parent regular-volatile locals in, say, effects and callbacks; using the props object is fine.
-- Avoid variables other than `State`, `Context` or `Bindable` annotatated locals and Props inside a component, as that avoids accidental accesses of stale values. It's fine to create locals for using them while constructing the component's final `whack.ds.Node` object.
-- If, say, a loop creating Whack DS nodes contains its own event handlers, it might be better to define a separate component (perhaps nested) for that purpose, thus getting advantage of callback caching.
+  - Don't destructure the props object in large method bodies.
+  - Don't mutate props (although their fields are read-only, unfortunately they are not transitively read-only).
+    - Say you want to reuse a `style` prop from the component inside a `final` tag but also set specific fields: You better create a new `style` object spreading that prop, then pass it to that tag.
+- A best order for a component's constructor may be 1. `super` statement followed by 2. any initial values for instance variables (e.g. Props, States and/or Bindables) followed by 3. effects followed by 4. any custom hooks followed by 5. the `final` construction.
+- If, say, a loop or `switch` creating Whack DS nodes contains its own event handlers, it might be better to define a separate component (perhaps nested) for that purpose, thus getting advantage of callback caching.
 
 ## Tips
 

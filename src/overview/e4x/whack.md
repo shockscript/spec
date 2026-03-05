@@ -4,17 +4,23 @@ This section describes E4X features specifically when applied as Whack DS nodes.
 
 ## Native tags
 
-Native tags belong to the implicit `w` namespace, such as `<w:Button>`.
+Native tags belong to the implicit `w` namespace, such as `<w:VGroup>`.
 
-The `w` prefix may be shadowed by user definitions; in that case, to use native tags the user needs to define a namespace like follows:
+The `w` prefix may be shadowed by user definitions; in such a case, to use native tags the user needs to define a namespace like follows:
 
 ```sx
 namespace whack = "http://www.sweaxizone.com/2015/whack";
 ```
 
-## DOM meta-data
+Or perhaps just:
 
-Meta-data (like `meta:x`, or, in CSS selectors, `[meta|x]`) may be set over native tags, such as `<w:Button>`, serving as meta-data.
+```sx
+namespace whack = SX::w;
+```
+
+## Tag meta-data
+
+Meta-data (like `meta:x`, or, in CSS selectors, `[meta|x]`) may be set mainly over native DOM tags, serving as meta-data. For a component to support these, it is required to define a `metadata? : Map.<string, string>` prop.
 
 Using a Whack DS bindable, the attribute would be accessed as `bindable!.@x`.
 
@@ -29,18 +35,21 @@ The `key` attribute is reserved for uniquely identifying interpolated collection
 `<w:Style>` tags are used for linking style sheets to the parent tag and passing arguments to the style sheet (which are referred by the style sheet as `param(color)`).
 
 ```sx
-package com.zero.spark.components {
-    public function Case():whack.ds.Node {
-        return (
-            <w:Button>
-                <w:Style color="yellow">
-                <![CDATA[
-                    :host { color: param(color) }
-                ]]>
-                </w:Style>
-                click me
-            </w:Button>
-        );
+package zero.components {
+    public class Ark extends whack.ds.UIComponent {
+        public function Ark() {
+            super();
+            final = (
+                <div>
+                    <w:Style color="yellow">
+                    <![CDATA[
+                        :host { color: param(color) }
+                    ]]>
+                    </w:Style>
+                    click me
+                </div>
+            );
+        }
     }
 }
 ```
@@ -48,24 +57,27 @@ package com.zero.spark.components {
 If the style sheet is too large, it may be moved out of the ShockScript file; for instance:
 
 ```plain
-// ===== Case.sx =====
+// ===== Ark.sx =====
 
 
-package com.zero.spark.components {
-    public function Case() : whack.ds.Node {
-        return (
-            <w:Button>
-                <w:Style source="Case.css"
-                         color="yellow" />
-                click me
-            </w:Button>
-        );
+package zero.components {
+    public class Ark extends whack.ds.UIComponent {
+        public function Ark() {
+            super();
+            final = (
+                <div>
+                    <w:Style source="Ark.css"
+                             color="yellow" />
+                    click me
+                </div>
+            );
+        }
     }
 }
 
 
 
-// ===== Case.css =====
+// ===== Ark.css =====
 
 
 :host {
@@ -91,7 +103,7 @@ An arbitrary map of parameters (`Map.<string, *>`) may be passed as well:
 
 #### Objects as style sheet parameters
 
-A style sheet parameter passed as an object will be treated as immutable. If it is set to, say, a surrounding component's property, context or state, it is said to be reactive to that.
+A style sheet parameter passed as an object will be treated as immutable. If it is set to, say, a surrounding component's prop, context, state or derived, it is said to be reactive to that.
 
 The `param(...)` property supports very simple operators without whitespace, like dot (`.x`, `.q::x` (relies on the `@namespace` CSS declarations)) and brackets (`[0]`, `["x"]`, `['x']`).
 
@@ -112,18 +124,21 @@ The `param(...)` property supports very simple operators without whitespace, lik
 For a component to support `<w:Style>` tags, it simply needs to support a `stylesheet : [whack.ds.StyleSheet]` parameter.
 
 ```sx
-package com.zero.spark.components {
-    public function Case(props : track {
-        stylesheet? : [ whack.ds.StyleSheet ],
-    }) : whack.ds.Node {
-        //
+package zero.components {
+    public class Ark extends whack.ds.UIComponent {
+        public function Ark(props : Props) {
+            super();
+            final = (
+                <div>
+                    <w:Style extend={props.stylesheet}/>
+                    click me
+                </div>
+            );
+        }
 
-        return (
-            <w:Button>
-                <w:Style extend={props.stylesheet}/>
-                click me
-            </w:Button>
-        );
+        public type Props = track {
+            stylesheet? : [ whack.ds.StyleSheet ],
+        };
     }
 }
 ```
@@ -135,5 +150,5 @@ The `extend` attribute may be used to include externally loaded styles as well.
 Use `s:n={v}` attributes as a shortcut to `style={{ ..., n: v }}`.
 
 ```sx
-<w:Button s:background="orange">button1</w:Button>
+<button s:background="orange">Button</button>
 ```

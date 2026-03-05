@@ -7,16 +7,19 @@ E4X (ECMAScript for XML) comprises the ShockScript language features specificall
 By default XML literals evaluate to one of the `XML` and `XMLList` types; however, depending on the inference type, XML literals may be used for constructing implementation-defined objects with different semantics.
 
 ```sx
-// ===== Presentation.sx =====
+// ===== Bar.sx =====
 
 
-package com.zero.relic {
-    public function Presentation():whack.ds.Node {
-        return (
-            <w:VGroup>
-                <w:Button click&={trace("clicked!")}>button 1</w:Button>
-            </w:VGroup>
-        );
+package zero.components {
+    public class Bar extends whack.ds.UIComponent {
+        public function Bar() {
+            super()
+            final = (
+                <div>
+                    <button click&={trace("clicked!")}>Click me</button>
+                </div>
+            )
+        }
     }
 }
 
@@ -25,8 +28,8 @@ package com.zero.relic {
 // ===== fn.sx =====
 
 
-package com.zero.information.generator {
-    public function retrieve(a:string):XML {
+package zero.information.generator {
+    public function retrieve(a : string) : XML {
         return (
             <information>{a}</information>
         );
@@ -43,7 +46,7 @@ package com.zero.information.generator {
 Inline event handlers may be expressed as `eventName&={statementList}` as a shortcut to `eventName={function(event){statementList}}`, as in:
 
 ```sx
-<w:Button click&={trace("clicked!")}>Click me</w:Button>
+<button click&={trace("clicked!")}>Click me</button>
 ```
 
 If the event has no parameters, then the attribute above is equivalent to `eventName={function(){statementList}}`.
@@ -51,14 +54,15 @@ If the event has no parameters, then the attribute above is equivalent to `event
 ### Interpolation
 
 ```sx
-<w:VGroup {rest}>
+<div {rest}>
     {undefined}
     {null}
     {node}
     {node_list}
     {plain_text}
-    {number}
-</w:VGroup>
+    {number}       <!-- The Number union -->
+    {boolean}
+</div>
 ```
 
 ## Filtering

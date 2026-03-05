@@ -1,14 +1,14 @@
 # React.js
 
-ShockScript incorporates the XML language, and XML literals allow for implementations to produce anything desired, similiar to JSX. There are many positive differences to JSX or React.js, such as memoization and auto dependency tracking.
+ShockScript incorporates the XML language just like the ECMAScript for XML (E4X) specification, however XML literals allow for implementations to produce anything desired based on type inference, similar to JSX. There are many positive differences to JSX or React.js, such as memoization and auto dependency tracking.
 
 The following demonstrates a basic XML literal for Whack DS:
 
 ```sx
 const xn : whack.ds.Node = (
-    <w:VGroup>
-        <w:Button click&={trace("clicked!")}>button 1</w:Button>
-    </w:VGroup>
+    <div>
+        <button>Click me</button>
+    </div>
 );
 ```
 
@@ -16,26 +16,28 @@ const xn : whack.ds.Node = (
 
 In ShockScript, event handlers are expressed as `e&={statementList}` (note the ampersand **\&**) as a shorthand to `e={function(event){statementList}}`. Furthermore, event handlers are conventionally expressed without an `on` prefix (for instance, `click` instead of `onClick`), and they are documented with the `@event` tag.
 
+When specifying event handlers, note that the callback is cached only if .
+
 ## Prefixes
 
 ShockScript allows for `<q:N>`, whose name resolution equals `q::N`. Dots may be used for entities other than namespaces, as in:
 
 ```sx
-<com.zero.spark.components.AppBar/>
+<zero.components.AppBar/>
 ```
 
 For brevity, you do either:
 
 ```sx
-import bc = com.zero.spark.components.*;
+import zx = zero.components.*;
 
-xn = <bc:AppBar/>
+xn = <zx:AppBar/>
 ```
 
 or:
 
 ```sx
-import com.zero.spark.components.*
+import zero.components.*
 
 xn = <AppBar/>
 ```
@@ -45,40 +47,46 @@ xn = <AppBar/>
 Interpolation works similiarly to React.js, except for HTML.
 
 ```sx
-<w:VGroup>
+<div>
     {undefined}
     {null}
     {node}
-    {nodeList}
-    {plainText}
-    {number}
-</w:VGroup>
+    {node_list}
+    {plain_text}
+    {number}       <!-- The Number union -->
+    {boolean}
+</div>
 ```
 
 Interpolating attributes uses `{ object }` and not `{ ...object }` and must appear at most once at the end of all attributes:
 
 ```sx
-<w:Button {arguments}>click me</w:Button>
+<button {arguments}>click me</button>
 ```
+
+## Component definition
+
+Components are defined as classes extending the `UIComponent` class and not regular functions. It is far different from ReactJS legacy class components.
 
 ## States
 
 Unlike React.js, in Whack DS there is no risk of accessing an outdated state's value, due to how states are constructed.
 
 ```sx
-package com.zero.spark.components {
-    public function HelloWorld() : whack.ds.Node {
-        // x
+package spark.components {
+    public class Ark extends whack.ds.UIComponent {
         [State]
-        var x:uint = 0;
+        var x : uint = 0;
 
-        // layout
-        return (
-            <w:VGroup>
-                <w:Label>clicked {x} times</w:Label>
-                <w:Button click&={x++}>click me</w:Button>
-            </w:VGroup>
-        );
+        public function Ark() {
+            super();
+            final = (
+                <w:VGroup>
+                    <span>clicked {x} times</span>
+                    <button click&={x++}>click me</button>
+                </w:VGroup>
+            );
+        }
     }
 }
 ```
@@ -102,37 +110,43 @@ m = { ...m, k: v };
 In Whack DS the concept of "refs" is called *bindables*.
 
 ```sx
-package com.zero.relic.site {
-    //
-    public function HelloWorld() : whack.ds.Node {
+package spark.components {
+    public class Ark extends whack.ds.UIComponent {
         [Bindable]
-        var button:Button?;
+        var button : ?org.w3.web.Button;
 
-        //
-        whack.ds.useEffect(function() {
-            trace(button!);
-        });
+        public function Ark() {
+            super();
 
-        return (
-            <w:Button bind={button}>click me</w:Button>
-        );
+            whack.ds.useEffect(function() {
+                trace(button!.@x);
+            });
+
+            final = (
+                <button bind={button}>click me</button>
+            );
+        }
     }
 }
 ```
+
+Note `.@x` is a meta-data attribute accessor for DOM elements.
 
 ## Contexts
 
 Context usage is represented as `whack.ds.ContextValue.<T>` objects, although they are used as natural `Context`-annotated locals.
 
 ```sx
-function Example() : whack.ds.Node {
-    //
-    [Context("ExampleContext")]
+public class View extends whack.ds.UIComponent {
+    [Context("zero.context.Example")]
     const example;
 
-    return (
-        <></>
-    );
+    public function View() {
+        super()
+        final = (
+            <></>
+        )
+    }
 }
 ```
 
@@ -140,12 +154,19 @@ function Example() : whack.ds.Node {
 
 Props must use the `track { ... }` type and not a regular record type. It is not recommended to destructure props.
 
-```
-function View(props : track {
-    /** @event */
-    next? : function():void,
-}):whack.ds.Node {
-    //
+```sx
+public class View extends whack.ds.UIComponent {
+    public function View(props : Props) {
+        super()
+        final = (
+            <></>
+        )
+    }
+
+    public type Props = track {
+        /** @event */
+        next? : function() : void,
+    }
 }
 ```
 
@@ -171,18 +192,19 @@ whack.ds.useEffect(function() {
 Unlike with React.js, there is built-in support for linking style sheets in a Whack DS component.
 
 ```sx
-<w:Group>
-    <w:Style><![CDATA[
+<div>
+    <w:Style>
+    <![CDATA[
         :host {
             background: red;
         }
-    ]]></w:Style>
-</w:Group>
+    ]]>
+    </w:Style>
+</div>
 ```
 
+## Helpful resources
 
-[More on style sheets](../e4x/whack.md#linking-cascading-style-sheets)
-
-## Class-based components
-
-[Whack DS supports class-based components](../whack_ds.md#class-based-components), which are preferred over function-based components.
+- [See: Style sheets](../e4x/whack.md#linking-cascading-style-sheets)
+- [See: Whack DS - E4X](../e4x/whack.md)
+- [See: Whack DS](../whack_ds.md)
