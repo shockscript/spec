@@ -177,33 +177,50 @@
     - [ ] This is used by default on array sorting.
   - [ ] Object
     - [ ] `equals(obj:Object):boolean`
-      - [ ] First of all, try a `===` comparison and return true if that is already true.
-      - [ ] Advise: equals() is by default structural
-      - [ ] Boolean ===
-      - [ ] Number union
+      - [ ] 1. First of all, try a `===` comparison and return true if that is already true.
+      - [ ] 2. Advise: equals() is by default structural
+      - [ ] 3. Boolean: return false
+      - [ ] 4. Number union
         - [ ] floating points: NaN = NaN
         - [ ] floating points: 0 = 0
         - [ ] floating points: -0 = -0
         - [ ] floating points: -0 != 0
-      - [ ] String ===
-      - [ ] Maps
-      - [ ] Array
-      - [ ] Tuples
-      - [ ] Records
-      - [ ] "track" prefixed records (special kinds of classes)
-      - [ ] Maps
-      - [ ] ByteArray
-      - [ ] Most Temporal::* data types (just override equals())
-      - [ ] Date (just override equals())
-      - [ ] Most Intl::* data types (just override equals())
-      - [ ] For user classes, default behavior is deep field equality comparison (not ===)
+        - [ ] Otherwise return false
+      - [ ] 5. String: return false
+      - [ ] 6. Tuples
+      - [ ] 7. Records
+      - [ ] 8. "track" prefixed records (special kind of classes)
+      - [ ] 9. Simple enums === (flags are interned, so that would work)
+      - [ ] 10. Perform a deep field equality comparison -- Last case (not ===)
       - [ ] Field/element equality goes as `x === undefined ? y === undefined : x === null ? y === null : x.equals(y)`
     - [ ] `genericq::clone(deep:boolean=):Object` (used mostly as `generic::clone`, but the access modifier needs to use genericq)
+      - [ ] final
       - [ ] deep=true by default
-      - [ ] Default implementation clones most objects fine (records, "track" prefixed records, tuples, arrays, maps and so on), but fails for classes with a required constructor (uses a `clone` method instead if defined and its signature is compatible (if deep=true and there is no deep parameter, just calls the method anyway (that's what most people do if lazy to care about deep=)); `generic::clone` will also ensure the result is of the exact same constructor or otherwise throw a TypeError).
-        - [ ] "track" prefixed records (special kinds of classes)
-        - [ ] Clones are shallow (not deep) by default
-      - [ ] Unlike JavaScript's `structuredClone()`, circular references are not preserved. If it's necessary to avoid cloning objects that represent an unique symbol, it's recommended to define a `clone` method that returns the same reference, which `generic::clone` detects and calls.
+      - [ ] Circular references are not preserved.
+      - [ ] Steps
+        - [ ] 1. Have we cached the cloning method (without using a bound method) of the object's exact constructor? Then return the result of calling it.
+          - [ ] To clarify, org.sx.meta.* should provide a function somewhere for retrieving a class's instance method as a Function that clearly takes the `this` receiver as a regular parameter. We call it with either 1 or 2 parameters (deep=) depending on the Function's length (which is 1 or 2).
+          - [ ] For Boolean, Number union and String, provide a pre-cached Function (self):* that returns self as is
+        - [ ] 1. Tuples
+        - [ ] 2. Records
+        - [ ] 3. "track" prefixed records (special kind of classes)
+        - [ ] 4. For simple enums, return as is
+        - [ ] 6. Detect a fixture, compatible clone method (optional deep=?)
+          - [ ] If not found, skip the step 6.
+          - [ ] Cache it as a non-bound-method.
+          - [ ] Let o = The resulting of calling it with (this) or (this, deep).
+          - [ ] Throw a TypeError if o is undefined or null or o's constructor is not exactly this's constructor.
+          - [ ] Return o
+        - [ ] 7. Let f = DefaultCloneBehavior
+        - [ ] 8. Cache f as the cloning method of this
+        - [ ] 9. Return the result of calling f with (this) or (this, deep).
+      - [ ] DefaultCloneBehavior(self, deep)
+        - [ ] Let c = self.meta::class
+        - [ ] Throw a TypeError if c.length != 0
+        - [ ] Let o = new c()
+        - [ ] Copy instance fields from self to o
+          - [ ] If deep=true, map the field value to val?.generic::clone()
+        - [ ] Return o
     - [ ] `meta::class()`
     - [ ] toString()
     - [ ] toLocaleString()
@@ -215,6 +232,7 @@
     - [ ] `meta::filter(...)`
     - [ ] `meta::has(...)`
     - [ ] `filter(...)` (alternative for the optional chaining operator)
+    - [ ] `equals(o)` - Structural equality
     - [ ] `clone(deep=)`
     - [ ] `shift(): (void, T)`
     - [ ] `pop(): (void, T)`
@@ -227,6 +245,7 @@
     - [ ] `meta::has(...)`
     - [ ] other meta hooks (e.g. set, delete)
     - [ ] `length()`
+    - [ ] `equals(o)` - Structural equality
     - [ ] `clear()`
     - [ ] `clone(deep=)`
   - [ ] Math
@@ -265,6 +284,7 @@
     - [ ] `length`
     - [ ] `clone()`
   - [ ] Function
+    - [ ] `length` = number of required parameters (optional or rest parameters do not count)
     - [ ] `equals(obj)` override just using `===`
     - [ ] `clone()` returns the same Function reference back without cloning
   - [ ] whack.ds.BindableObject
