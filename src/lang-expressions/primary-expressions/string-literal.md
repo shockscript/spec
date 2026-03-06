@@ -9,12 +9,10 @@
 Triple string literals span multiple lines and are indentation-aware:
 
 ```sx
-(
-    """
+"""
     shockscript, nicely beauty
     scripting.
-    """
-) == "shockscript, nicely beauty\nscripting."
+""" == "shockscript, nicely beauty\nscripting."
 ```
 
 **Semantics**

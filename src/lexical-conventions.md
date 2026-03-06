@@ -702,14 +702,11 @@ Triple string literals use either `"""` or `'''` as delimiter and may span multi
 const text = """
     foo
     bar
-    """
+"""
 text == "foo\nbar"
 ```
 
-Triple string literals are processed as follows:
-
-* The first empty line is ignored.
-* The base indentation of a triple string literal is that of the last string line.
+Triple strings eliminate insignificant indentation characters. The base line for determining nested indentation characters is the first line that contains the lowest-indentation level after whitespace characters.
 
 Both regular and triple string literals accept the `@` prefix, designating raw string literals. Raw string literals contain no escape sequences.
 
