@@ -13,6 +13,8 @@ The default behavior while deserializing into a class, unless defining a self-at
 3. Assign each field of *fields* to the respective data document field with the appropriate parsing of the field's data type, applying any configured rename.
 4. Return *o*
 
+The reason for requiring the Serial or XS meta-data is for making the default behavior more explicit, which may be adjusted with methods like `fromJSON` and `toJSON`.
+
 > **Note**: This section lacks certain contents yet.
 
 ## JSON
@@ -108,14 +110,19 @@ How one serializes or deserializes into/from XML:
 
 ```sx
 import xs = org.sx.serial.xml.*
-xs::parse(str, T)
-xs::parse(xn, T)
-xs::parse(xlist, T)
-xs::xml(v)             // XML
-xs::stringify(v)
+xs::parse(str, T, options)
+xs::parse(xn, T, options)
+xs::parse(xlist, T, options)
+xs::xml(v, options)           // XML
+xs::stringify(v, options)
 ```
 
 The `XS` meta-data is used for custom configuration which differs slightly from `Serial` as used by JSON or TOML, since it may be desired to configure whether a field should be a tag or an attribute and declare namespace prefixes and use them.
+
+Supported options:
+
+- A `prefixes` Array containing `Namespace` objects. It must be specified, otherwise an error is thrown.
+- Pretty-formatting options for `stringify`.
 
 The `default xml namespace = ns` statement influences serialization or deserialization.
 
@@ -137,7 +144,7 @@ package {
 
 ### Document element
 
-The root class for serialization or deserialization must have a configuration meta-data with at least `[XS(docElement="true")]`. It may also use a rename with an optional prefix, as in:
+The root class for serialization or deserialization must have a configuration meta-data with at least `[XS(docElement="true")]`, otherwise an error is thrown. It may also use a rename with an optional prefix, as in:
 
 ```sx
 package {
@@ -176,7 +183,15 @@ If a field contains no rename, its name is deduced from its data type (either it
 
 ### Prefixes
 
+Prefixes must be given while serializing or deserializing, as that allows for more concise XS meta-data.
 
+```sx
+docStr = xs::stringify(obj, {
+    prefixes: [
+        new Namespace("e", "http://www.eve.org"),
+    ],
+})
+```
 
 ### Custom implementation
 

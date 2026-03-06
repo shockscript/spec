@@ -322,3 +322,4 @@
   - [ ] `org.sx.serial.json.*`
   - [ ] `org.sx.serial.toml.*`
   - [ ] `org.sx.serial.xml.*`
+    - [ ] Every serialization/deserialization methods require options that require at least the Namespace prefixes.
