@@ -706,7 +706,11 @@ const text = """
 text == "foo\nbar"
 ```
 
-Triple strings eliminate insignificant indentation characters. The base line for determining nested indentation characters is the first line that contains the lowest-indentation level after whitespace characters. Beginning and end lines that contain only whitespace are discarded.
+Triple strings are processed as follows:
+
+- The base line for determining nested indentation characters is the non-empty (i.e. not a whitespace only line) first line that contains the lowest-indentation level after whitespace characters.
+- Every line contents start from the base line's first non-whitespace character.
+- Beginning and end lines that are empty or consist only of whitespace are discarded.
 
 Both regular and triple strings accept the `@` prefix, designating raw string literals. Raw string literals contain no escape sequences.
 
@@ -1030,3 +1034,11 @@ If a *XMLMarkup*, *XMLAttributeValue* or *XMLText* contains a *LineTerminator* a
         <b>/&gt;</b>
     </ul>
 </ul>
+
+**Semantics**
+
+*XMLCDATA* contents, excluding the **\<!\[CDATA\[** opening sequence and the **\]\]>** closing sequence, are processed the same way as triple strings:
+
+- The base line for determining nested indentation characters is the non-empty (i.e. not a whitespace only line) first line that contains the lowest-indentation level after whitespace characters.
+- Every line contents start from the base line's first non-whitespace character.
+- Beginning and end lines that are empty or consist only of whitespace are discarded.

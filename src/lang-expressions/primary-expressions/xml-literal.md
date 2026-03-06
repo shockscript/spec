@@ -68,7 +68,7 @@
 
 Unlike the E4X standard, ShockScript always trims any whitespace at the beginning and end of text nodes within XML literals regardless of the `XMLContext` object.
 
-CDATA is indentation-aware similar to triple string literals, and will eliminate insignificant indentation characters. The base line for determining nested indentation characters is the first line that contains the lowest-indentation level after whitespace characters. Beginning and end lines that contain only whitespace are discarded.
+CDATA is indentation-aware similar to triple strings.
 
 > **Note**: If whitespace is desired on text nodes, one may use a CDATA section.
 >
