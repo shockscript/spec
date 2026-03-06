@@ -198,19 +198,22 @@
       - [ ] deep=true by default
       - [ ] Circular references are not preserved.
       - [ ] Steps
-        - [ ] 1. Have we cached the cloning method (without using a bound method) of the object's exact constructor? Then return the result of calling it.
-          - [ ] To clarify, org.sx.meta.* should provide a function somewhere for retrieving a class's instance method as a Function that clearly takes the `this` receiver as a regular parameter. We call it with either 1 or 2 parameters (deep=) depending on the Function's length (which is 1 or 2).
-          - [ ] For Boolean, Number union and String, provide a pre-cached Function (self):* that returns self as is
-        - [ ] 1. Tuples
-        - [ ] 2. Records
-        - [ ] 3. "track" prefixed records (special kind of classes)
-        - [ ] 4. For simple enums, return as is
+        - [ ] 1. Have we cached the cloning method f (without using a bound method) of the object's exact constructor?
+          - [ ] 1. Let o = The resulting of calling f with (this) or (this, deep). -- Check f Function length (1 or 2 (deep=))
+          - [ ] 2. Throw a TypeError if o is undefined or null or o's constructor is not exactly this's constructor.
+          - [ ] 3. Return o
+          - [ ] A MUST: For Boolean, String and each Number data type's Class provide a pre-cached Function (self):* that returns self as is
+          - [ ] NOTE: To clarify, org.sx.meta.* should provide a function somewhere for retrieving a class's instance method as a Function that clearly takes the `this` receiver as a regular parameter.
+        - [ ] 2. Tuples
+        - [ ] 3. Records
+        - [ ] 4. "track" prefixed records (special kind of classes)
+        - [ ] 5. For simple enums, return as is
         - [ ] 6. Detect a fixture, compatible clone method (optional deep=?)
-          - [ ] If not found, skip the step 6.
-          - [ ] Cache it as a non-bound-method.
-          - [ ] Let o = The resulting of calling it with (this) or (this, deep).
-          - [ ] Throw a TypeError if o is undefined or null or o's constructor is not exactly this's constructor.
-          - [ ] Return o
+          - [ ] If found
+            - [ ] Cache it as a non-bound-method.
+            - [ ] Let o = The resulting of calling f with (this) or (this, deep). -- Check f Function length (1 or 2 (deep=))
+            - [ ] Throw a TypeError if o is undefined or null or o's constructor is not exactly this's constructor.
+            - [ ] Return o
         - [ ] 7. Let f = DefaultCloneBehavior
         - [ ] 8. Cache f as the cloning method of this
         - [ ] 9. Return the result of calling f with (this) or (this, deep).
@@ -284,6 +287,7 @@
     - [ ] `length`
     - [ ] `clone()`
   - [ ] Function
+    - [ ] NOTE: Function internally holds some context (e.g. this receiver, captured locals, DecimalContext, DefaultNamespace, XMLContext).
     - [ ] `length` = number of required parameters (optional or rest parameters do not count)
     - [ ] `equals(obj)` override just using `===`
     - [ ] `clone()` returns the same Function reference back without cloning
