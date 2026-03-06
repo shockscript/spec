@@ -2,6 +2,17 @@
 
 The Serial feature allows serializing and deserializing complex types into data formats like JSON and possibly other user types.
 
+This feature may only be used with classes that are annotatated with either the `Serial` or `XS` meta-data, otherwise a TypeError is thrown while serializing or deserializing.
+
+Variants of an algebraic data type do not need to specify the `Serial` or `XS` meta-data.
+
+The default behavior while deserializing into a class, unless defining a self-attached `fromJSON` or `fromXML` method, is roughly:
+
+1. Create a new instance *o* of the class without evaluating the constructor
+2. Let *fields* = Each *o*\[*k*\] field that is not configured with the `skip="true"` option.
+3. Assign each field of *fields* to the respective data document field with the appropriate parsing of the field's data type, applying any configured rename.
+4. Return *o*
+
 > **Note**: This section lacks certain contents yet.
 
 ## JSON
@@ -21,24 +32,23 @@ js::stringify(v)
 ### Rename
 
 ```sx
+[Serial]
 class U {
     [Serial("short-if")]
     public var shortIf:boolean
 }
 
-package {
-    [Serial(tag="type")]
-    public enum Item {
-        [Serial(
-            "flyout",
-            f="color=c",
-            f="backdropBlur=backdrop_blur",
-        )]
-        type Flyout(
-            color:uint,
-            backdropBlur:boolean,
-        );
-    }
+[Serial(tag="type")]
+enum Item {
+    [Serial(
+        "flyout",
+        f="color=c",
+        f="backdropBlur=backdrop_blur",
+    )]
+    type Flyout(
+        color:uint,
+        backdropBlur:boolean,
+    );
 }
 ```
 
@@ -49,23 +59,22 @@ Remarks:
 ### Skip
 
 ```sx
+[Serial]
 class U {
     [Serial(skip="true")]
     public var shortIf:boolean
 }
 
-package {
-    [Serial(tag="type")]
-    public enum Item {
-        [Serial(
-            "flyout",
-            f="!backdropBlur",
-        )]
-        type Flyout(
-            color:uint,
-            backdropBlur:boolean,
-        );
-    }
+[Serial(tag="type")]
+enum Item {
+    [Serial(
+        "flyout",
+        f="!backdropBlur",
+    )]
+    type Flyout(
+        color:uint,
+        backdropBlur:boolean,
+    );
 }
 ```
 
@@ -106,7 +115,7 @@ xs::xml(v)             // XML
 xs::stringify(v)
 ```
 
-The `XSerial` meta-data is used for custom configuration which differs slightly from `Serial` as used by JSON or TOML, since it may be desired to configure whether a field should be a tag or an attribute and declare namespace prefixes and use them.
+The `XS` meta-data is used for custom configuration which differs slightly from `Serial` as used by JSON or TOML, since it may be desired to configure whether a field should be a tag or an attribute and declare namespace prefixes and use them.
 
 The `default xml namespace = ns` statement influences serialization or deserialization.
 
@@ -114,14 +123,64 @@ The `default xml namespace = ns` statement influences serialization or deseriali
 
 ### Marking a field as a tag
 
+A field is implicitly a tag only if it represents a composite object; otherwise it is treated as an attribute. It may be marked as always a tag using `tag="true"`.
+
 ```sx
 package {
+    [XS]
     public class Person {
-        [XSerial(tag="true")]
+        [XS(tag="true")]
         public var name:string;
     }
 }
 ```
+
+### Document element
+
+The root class for serialization or deserialization must have a configuration meta-data with at least `[XS(docElement="true")]`. It may also use a rename with an optional prefix, as in:
+
+```sx
+package {
+    [XS(docElement="true", "e:example")]
+    public class Document {
+    }
+}
+```
+
+### Rename
+
+Renames are pretty much like when working with the `Serial` meta-data, except a prefix can be specified:
+
+```sx
+[XS("e:U")]
+class U {
+    [XS("e:short-if")]
+    public var shortIf:boolean
+}
+
+[XS(tag="type")]
+enum Item {
+    [XS(
+        "e:flyout",
+        f="color=e:c",
+        f="backdropBlur=e:backdrop_blur",
+    )]
+    type Flyout(
+        color:uint,
+        backdropBlur:boolean,
+    );
+}
+```
+
+If a field contains no rename, its name is deduced from its data type (either its class name or its `XS` meta-data).
+
+### Prefixes
+
+
+
+### Custom implementation
+
+A class may implement a self-attached `fromXML` method and/or an instance `toXML` method for manually controlling serialization or deserialization. Both methods may take or return one of { XML, XMLList }.
 
 ## Patching data
 

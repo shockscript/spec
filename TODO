@@ -147,7 +147,8 @@
   - [ ] trace()
   - [ ] etrace()
   - [ ] assert() (a namespace-method)
-  - [ ] assert.equal() (uses `Object#equals()`)
+    - [ ] Assert methods have an optional Class constructor (usual Error signature). Their ShockDoc should include `@throws` for both `Error` and `AssertionError`.
+  - [ ] assert.equal() (uses `Object#equals()`, thus it's not a reference equality; advise care when using this; one might want `assert(x === y)` instead)
   - [ ] assert.throws()
   - [ ] encodeURI()
   - [ ] decodeURI()
@@ -176,8 +177,15 @@
     - [ ] This is used by default on array sorting.
   - [ ] Object
     - [ ] `equals(obj:Object):boolean`
-      - Structural and appropriate for e.g. Whack DS
-      - [ ] NaN = NaN
+      - [ ] First of all, try a `===` comparison and return true if that is already true.
+      - [ ] Advise: equals() is by default structural
+      - [ ] Boolean ===
+      - [ ] Number union
+        - [ ] floating points: NaN = NaN
+        - [ ] floating points: 0 = 0
+        - [ ] floating points: -0 = -0
+        - [ ] floating points: -0 != 0
+      - [ ] String ===
       - [ ] Maps
       - [ ] Array
       - [ ] Tuples
@@ -188,14 +196,14 @@
       - [ ] Most Temporal::* data types (just override equals())
       - [ ] Date (just override equals())
       - [ ] Most Intl::* data types (just override equals())
-      - [ ] (Other objects just use ===)
+      - [ ] For user classes, default behavior is deep field equality comparison (not ===)
+      - [ ] Field/element equality goes as `x === undefined ? y === undefined : x === null ? y === null : x.equals(y)`
     - [ ] `genericq::clone(deep:boolean=):Object` (used mostly as `generic::clone`, but the access modifier needs to use genericq)
       - [ ] deep=true by default
       - [ ] Default implementation clones most objects fine (records, "track" prefixed records, tuples, arrays, maps and so on), but fails for classes with a required constructor (uses a `clone` method instead if defined and its signature is compatible (if deep=true and there is no deep parameter, just calls the method anyway (that's what most people do if lazy to care about deep=)); `generic::clone` will also ensure the result is of the exact same constructor or otherwise throw a TypeError).
         - [ ] "track" prefixed records (special kinds of classes)
         - [ ] Clones are shallow (not deep) by default
-      - [ ] When deep=true, circular references are preserved, like JavaScript's `structuredClone()`.
-        - [ ] In this case, use a global push-pop stack surrounded by a `try..catch`. On `catch`, clear the stack and re-throw the error; on success (after the `try..catch` block), clear the stack and return the resulting object.
+      - [ ] Unlike JavaScript's `structuredClone()`, circular references are not preserved. If it's necessary to avoid cloning objects that represent an unique symbol, it's recommended to define a `clone` method that returns the same reference, which `generic::clone` detects and calls.
     - [ ] `meta::class()`
     - [ ] toString()
     - [ ] toLocaleString()
@@ -246,17 +254,22 @@
     - [ ] `peek():uint` (equivalent to `chars[0]`)
     - [ ] `reachedEnd:boolean`
     - [ ] `hasRemaining:boolean`
-    - [ ] `clone(deep=):Chars`
+    - [ ] `clone():Chars`
+  - [ ] RegExp
+    - [ ] `equals(obj)`
+    - [ ] `clone():RegExp`
   - [ ] RegExpMatches
     - [ ] +Iterable
     - [ ] Implement indexing
     - [ ] `substr : [string]` (idx. 0 = whole)
     - [ ] `length`
-    - [ ] `clone(deep=)`
+    - [ ] `clone()`
   - [ ] Function
-    - [ ] `clone(deep=)` returns the same Function reference back without cloning
+    - [ ] `equals(obj)` override just using `===`
+    - [ ] `clone()` returns the same Function reference back without cloning
   - [ ] whack.ds.BindableObject
-    - [ ] `clone(deep=)` returns the same BindableObject reference back without cloning
+    - [ ] `equals(obj)` override just using `===`
+    - [ ] `clone()` returns the same BindableObject reference back without cloning
   - [ ] XML
     - [ ] Implement `Iterable`
     - [ ] static `meta::call(arg:*):XML`
@@ -284,18 +297,18 @@
     - [ ] +Iterable
     - [ ] Indexing
     - [ ] `shareable:boolean`
-    - [ ] `clone(deep=)`
+    - [ ] `clone()`
   - [ ] Endian enum
   - [ ] Date
-    - [ ] clone(deep=)
+    - [ ] clone()
     - [ ] override equals()
   - [ ] `org.sx.intl.*`
     - [ ] Like ECMA-262 `Intl`. Aliased `Intl::`, as well.
-    - [ ] Most data types implement clone(deep=)
+    - [ ] Most data types implement clone()
     - [ ] Most data types override equals()
   - [ ] `org.sx.temporal.*`
     - [ ] Like ECMA-262 like `Temporal`. Aliased `Temporal::`, as well.
-    - [ ] Most data types implement clone(deep=)
+    - [ ] Most data types implement clone()
     - [ ] Most data types override equals()
   - [ ] `org.sx.meta.*`
     - Used for what the `meta` namespace cannot be used for (e.g. perhaps extracting a list of properties from a package name).
