@@ -230,6 +230,7 @@
     - [ ] valueOf()
   - [ ] Array
     - [ ] +Iterable
+    - [ ] length : int (not uint)
     - [ ] `new Array` supports taking iterables or iterators
     - [ ] `meta::get(...)` throws if out of bounds
     - [ ] `meta::filter(...)`
@@ -247,7 +248,7 @@
     - [ ] `meta::get()` throws if key does not match
     - [ ] `meta::has(...)`
     - [ ] other meta hooks (e.g. set, delete)
-    - [ ] `length()`
+    - [ ] `length()` (int, not uint)
     - [ ] `equals(o)` - Structural equality
     - [ ] `clear()`
     - [ ] `clone(deep=)`
@@ -257,7 +258,7 @@
   - [ ] string
     - [ ] +Iterable
     - [ ] static `fromByte(...):string`
-    - [ ] length (in UTF-8 bytes)
+    - [ ] length (in UTF-8 bytes; int, not uint)
     - [ ] `byteAt():byte`
     - [ ] `bytes():Iterator.<byte>`
     - [ ] charAt()
@@ -284,7 +285,7 @@
     - [ ] +Iterable
     - [ ] Implement indexing
     - [ ] `substr : [string]` (idx. 0 = whole)
-    - [ ] `length`
+    - [ ] `length` (int, not uint)
     - [ ] `clone()`
   - [ ] Function
     - [ ] NOTE: Function internally holds some context (e.g. this receiver, captured locals, DecimalContext, DefaultNamespace, XMLContext).
@@ -319,6 +320,7 @@
     - [ ] fully read-only
   - [ ] ByteArray
     - [ ] +Iterable
+    - [ ] length (int, not uint)
     - [ ] Indexing
     - [ ] `shareable:boolean`
     - [ ] `clone()`
