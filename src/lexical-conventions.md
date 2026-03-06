@@ -693,8 +693,8 @@ The `@` punctuator must not be followed by a single quote <b>'</b> or a double q
 *StringLiteral* is similiar to the *StringLiteral* symbol from the ECMA-262 third edition. The following additional features are included:
 
 * Scalar *UnicodeEscapeSequence* using the `\u{...}` or `\x{...}` form
-* Triple string literals
-* Raw string literals using the `@` prefix
+* Triple strings
+* Raw strings using the `@` prefix
 
 Triple string literals use either `"""` or `'''` as delimiter and may span multiple lines. The contents of triple string literals are indentation-based, as can be observed in the following program:
 
@@ -706,14 +706,14 @@ const text = """
 text == "foo\nbar"
 ```
 
-Triple strings eliminate insignificant indentation characters. The base line for determining nested indentation characters is the first line that contains the lowest-indentation level after whitespace characters.
+Triple strings eliminate insignificant indentation characters. The base line for determining nested indentation characters is the first line that contains the lowest-indentation level after whitespace characters. Beginning and end lines that contain only whitespace are discarded.
 
-Both regular and triple string literals accept the `@` prefix, designating raw string literals. Raw string literals contain no escape sequences.
+Both regular and triple strings accept the `@` prefix, designating raw string literals. Raw string literals contain no escape sequences.
 
 ```sx
 const text = @"""
     x\y
-    """
+"""
 ```
 
 Escape sequences are described by the following table:
