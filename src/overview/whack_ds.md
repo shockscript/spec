@@ -173,11 +173,11 @@ Monochrome icons are filled with the current CSS `color`.
 
 ## Understanding Bindables
 
-Under the hood, a Bindable variable is represented as a `whack.ds.BindableObject.<T>` object, which must not be mistaken as the `whack.ds.Bindable.<T>` type that is typically:
+Under the hood, a Bindable variable is represented as a `whack.ds.BindableReference.<T>` object, which must not be mistaken as the `whack.ds.Bindable.<T>` type that is typically:
 
 ```sx
 public type Bindable.<T> = (
-    whack.ds.BindableObject.<T>,
+    BindableReference.<T>,
     function(T):void,
 );
 ```
@@ -201,7 +201,7 @@ package zero.components {
                         if (props.bind is Function) {
                             Function(props.bind)(element_)
                         } else if (props.bind) {
-                            whack.ds.BindableObject.<?Div>(props.bind).value = element_
+                            whack.ds.BindableReference.<?Div>(props.bind).value = element_
                         }
                     }}>
                     <!-- Element content -->
@@ -215,6 +215,8 @@ package zero.components {
     }
 }
 ```
+
+A `Bindable` annotatated variable may be assigned, in addition to its expected value type, a compatible `whack.ds.BindableReference.<T>`.
 
 ## Recommendations
 

@@ -298,9 +298,9 @@
     - [ ] `length` = number of required parameters (optional or rest parameters do not count)
     - [ ] `equals(obj)` override just using `===`
     - [ ] `clone()` returns the same Function reference back without cloning
-  - [ ] whack.ds.BindableObject
+  - [ ] whack.ds.BindableReference
     - [ ] `equals(obj)` override just using `===`
-    - [ ] `clone()` returns the same BindableObject reference back without cloning
+    - [ ] `clone()` returns the same BindableReference reference back without cloning
   - [ ] XML
     - [ ] Implement `Iterable`
     - [ ] static `meta::call(arg:*):XML`
