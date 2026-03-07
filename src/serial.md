@@ -142,6 +142,16 @@ package {
 }
 ```
 
+### Arrays
+
+Arrays or tuples translate to roughly:
+
+```xml
+<value>x</value>
+<value>y</value>
+<value>z</value>
+```
+
 ### Document element
 
 The root class for serialization or deserialization must have a configuration meta-data with at least `[XS(docElement="true")]`, otherwise an error is thrown. It may also use a rename with an optional prefix, as in:
