@@ -59,6 +59,8 @@ Implicit coercions occur implicitly both at compile-time and runtime, after tryi
 ShockScript allows implicit coercions from `C.<...>` to `C.<...>` where `C` is a parameterized type, where the final type contains type arguments which the original type's type arguments implicitly coerce to.
 
 > **Note**: Implicitly coercing an Array, Map or Set type to use covariant element types is allowed; however overwriting the collection later with unexpected element values may throw a TypeError during runtime.
+>
+> For other types, using an unexpected type somewhere in place of type parameters may lead to an internal error during runtime.
 
 ## Explicit conversions
 
@@ -95,4 +97,6 @@ Explicit conversions occur when resolving `v as T` or `T(v)`, after trying an im
 
 ShockScript allows explicit convertions from `C.<...>` to `C.<...>` where `C` is a parameterized type, where the final type contains type arguments which the original type's type arguments may explicitly convert to.
 
-These conversions are always safe for Array, Map and Set types, as they create new objects.
+> **Note**: These conversions are always safe for Array, Map and Set types, as they create new objects.
+>
+> For other types, the resulting object is the same, therefore unexpected type or property related errors can occur during runtimes.
