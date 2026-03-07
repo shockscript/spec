@@ -182,7 +182,19 @@ A `Bindable` annotatated variable may be assigned, in addition to its expected v
 
 ## Understading Contexts
 
-Context annotatated variables are represented as `ContextReference.<T>` instances.
+A Context annotatated variable may be read as "a variable associated to the surrounding component that uses a context provided by a parent component, which triggers a re-render when the parent assigns a different value for that context".
+
+Context annotatated variables are represented as `ContextReference.<T>` instances.  
+
+Those may be not be reused from other components.
+
+## Understanding States
+
+A State annotatated variable may be read as "a variable associated to the surrounding component that triggers a re-render when it is assigned a different value".
+
+State annotatated variables are represented as `State.<T>` instances.
+
+A `State` annotatated variable may be assigned, in addition to its expected value type, a compatible `whack.ds.State.<T>`.
 
 ## Component validation
 
