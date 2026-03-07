@@ -353,6 +353,9 @@
     - [ ] Provide ways of creating Array, Map and Set objects with given type arguments (plus weak? for Map/Set)
   - [ ] `org.sx.meta.ty.*`
     - [ ] Allows most of type inspection during runtime. E.g. most can be obtained from Class or Function objects.
+    - [ ] ArrayType (T)
+    - [ ] MapType (K, V)
+    - [ ] SetType (T)
   - [ ] `org.sx.meta.context.*`
     - Special compiler functions for reflecting lexical contexts.
     - [ ] decimal() - DecimalContext
