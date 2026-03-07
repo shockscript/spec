@@ -134,7 +134,7 @@ Note `.@x` is a meta-data attribute accessor for DOM elements.
 
 ## Contexts
 
-Context usage is represented as `whack.ds.ContextValue.<T>` objects, although they are used as natural `Context`-annotated locals.
+Using contexts results in `ContextReference.<T>` objects, although they are used as natural `Context`-annotated variables.
 
 ```sx
 public class View extends whack.ds.UIComponent {
