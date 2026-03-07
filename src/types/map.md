@@ -16,6 +16,8 @@ const map = new Map.<string, double>();
 // x=10
 map.x = 10;
 
+map.y // TypeError. use "in" before
+
 const fns = new Map.<string, Function>();
 
 // m=function

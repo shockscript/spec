@@ -31,6 +31,7 @@ ch == "A"
 Object initialisers are also applicable to:
 
 - `Map.<K, V>`
+- `Set.<T>`
 - Record types like `{ x:double, y:double }`
 - `track` record types
 - Certain classes
@@ -52,6 +53,12 @@ class Context {
 ```
 
 The rest operator has its own rules for each applicable type, so as to avoid programmer bugs.
+
+## Other array literals
+
+Array literals are also applicable to:
+
+- `Set.<T>`
 
 ## Where the inference type isn't applicable
 

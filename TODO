@@ -53,11 +53,13 @@
   - [ ] Null literal
   - [ ] Array literal
     - [ ] Is applicable to flag enumerations
+    - [ ] Is applicable to Set
   - [x] All literal `**` (AllLiteral)
   - [ ] Object initializer
     - [ ] Applicable to flag enumerations
       - [ ] The rest operator may appear at most once and will be written before the actual fields regardless of its position among them. (This avoids programmer bugs.)
     - [ ] Applicable to Map
+    - [ ] Applicable to Set
     - [ ] Applicable to record types
       - [ ] The rest operator may appear at most once and will be written before the actual fields regardless of its position among them. (This avoids programmer bugs.)
         - [ ] Filter out subtype fields
@@ -252,6 +254,10 @@
     - [ ] `equals(o)` - Structural equality
     - [ ] `clear()`
     - [ ] `clone(deep=)`
+  - [ ] Set.<T>
+    - [ ] Uses a Map.<K, V> internally.
+    - [ ] Supports weak elements.
+    - [ ] Unlike a Map, accessing properties never throws a ReferenceError. It returns either false or true; that is mainly why Set was introduced, since Map based sets work worse (e.g. has value is basically 'k in set && set[k]')
   - [ ] Math
     - [ ] `random()`
     - [ ] `random(start, end)` (inclusive; most Number types supported)
@@ -338,6 +344,7 @@
     - [ ] Most data types override equals()
   - [ ] `org.sx.meta.*`
     - Used for what the `meta` namespace cannot be used for (e.g. perhaps extracting a list of properties from a package name).
+    - [ ] Provide ways of creating Array and Map objects with given type arguments
   - [ ] `org.sx.meta.ty.*`
     - [ ] Allows most of type inspection during runtime. E.g. most can be obtained from Class or Function objects.
   - [ ] `org.sx.meta.context.*`

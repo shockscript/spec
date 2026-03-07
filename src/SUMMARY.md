@@ -43,6 +43,7 @@
   - [bigint type](./types/bigint.md)
   - [Array type](./types/array.md)
   - [Map type](./types/map.md)
+  - [Set type](./types/set.md)
   - [Tuple types](./types/tuple.md)
   - [Function types](./types/function.md)
   - [Record types](./types/record.md)

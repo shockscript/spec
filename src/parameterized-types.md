@@ -2,11 +2,11 @@
 
 Classes, algebraic enumerations, interfaces, type aliases and functions may specify type parameters, turning into *parameterized types*. ShockScript implements parameterized types using polymorphism.
 
-> **Note**: Array and Map data types have certain specializations in their runtime representation internally for more efficient memory usage.
+> **Note**: Array, Map and Set data types have certain specializations in their runtime representation internally for more efficient memory usage.
 >
-> Array and Map are the only types that store the specified type arguments to ensure the collection is strictly valid during runtime.
+> Array, Map and Set are the only types that store the specified type arguments to ensure the collection is strictly valid during runtime.
 
-Any parameterized type other than Array and Map gets its type arguments fully erased and their type parameters are replaced by `*` during evaluation.
+Any parameterized type other than Array, Map and Set gets its type arguments fully erased and their type parameters are replaced by `*` during evaluation.
 
 ```sx
 class A.<T> {
@@ -26,12 +26,13 @@ function f.<T>() : void {
 }
 ```
 
-## Related operators
+## Type operations
 
 - `v is Array` (matches an Array of any underlying type)
 - `v is Map` (matches a Map of any underlying K/V types)
-- The is/as/as-strict operators and `T(v)` casts are implemented at runtime receiving an optional type arguments list, which are used for proper Array or Map check. Involved type arguments may be `*`, in which case any type may be matched.
-- is/as/as-strict and `T(v)` completely ignore type arguments for parameterized types other than Array or Map.
+- `v is Set` (matches a Set of any underlying K/V types)
+- The is/as/as-strict operators and `T(v)` casts are implemented at runtime receiving an optional type arguments list, which are used for proper Array, Map or Set check. Involved type arguments may be `*`, in which case any type may be matched.
+- is/as/as-strict and `T(v)` completely ignore type arguments for parameterized types other than Array, Map or Set.
 
 ## Parameter constraints
 
