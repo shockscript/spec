@@ -33,3 +33,7 @@
         <i>ShortNewExpression</i>
     </ul>
 </ul>
+
+**Semantics**
+
+The `new` expression is specialized for the `Array` and `Map` types. If the class of `new` expression is untyped and it's an `Array` or `Map`, it uses `*` for all expected type parameters.

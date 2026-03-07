@@ -47,12 +47,18 @@ Implicit coercions occur implicitly both at compile-time and runtime, after tryi
 | From `*`                                  | |
 | To `*`                                    | |
 | From numeric type to compatible numeric type | |
-| To covariant (includes base classes, implemented interfaces, unions and inherited record type) | |
+| To covariant (includes base classes, same parameterized type (if current type arguments implicitly coerce to the target type arguments), implemented interfaces, unions and inherited record type) | |
 | From union to compatible union            | |
 | From union member to union                | |
 | From structural function type to another compatible function type | |
 
 > **Note**: `interface` types inherit `Object`.
+
+**Parameterized types**
+
+ShockScript allows implicit coercions from `C.<...>` to `C.<...>` where `C` is a parameterized type, where the final type contains type arguments which the original type's type arguments implicitly coerce to.
+
+> **Note**: Implicitly coercing an Array or Map type to use covariant element types is allowed; however overwriting the collection later with unexpected element values may throw a TypeError during runtime.
 
 ## Explicit conversions
 
@@ -63,7 +69,8 @@ Explicit conversions occur when resolving `v as T` or `T(v)`, after trying an im
 | To contravariant (from `interface` to `interface` subtype, from `class` to subclass, or record type subtype)  | |
 | To union member                           | |
 | From `*` or `Object` to `interface`       | |
-| To another `[T]` type                     | An array filtering out incompatible elements. |
+| To a contravariant `[T]` type             | An array filtering out incompatible elements. |
+| To same parameterized type if not Array and current type arguments can explicitly convert to the target type arguments | E.g. `Map.<*, *>` to `Map.<double, double>` |
 | `string` to enumeration                   | Identification of an enumeration variant by its `string` name. |
 | Number to enumeration (using the same numeric type) | For regular enumerations, identifies a variant by its numeric value. For flag enumerations, identifies variant bits. |
 | To `string`                               | For `undefined`, returns `"undefined"`; for `null`, returns `"null"`; for other types, invokes `toString()`. |
@@ -81,3 +88,7 @@ Explicit conversions occur when resolving `v as T` or `T(v)`, after trying an im
 | From type parameter                       | |
 
 > **Note**: `interface` types inherit `Object`.
+
+**Parameterized types**
+
+ShockScript allows explicit convertions from `C.<...>` to `C.<...>` where `C` is a parameterized type, where the final type contains type arguments which the original type's type arguments may explicitly convert to.
