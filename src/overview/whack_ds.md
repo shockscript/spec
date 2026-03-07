@@ -131,51 +131,11 @@ private function get combination() : decimal {
 
 Using methods is also an option.
 
-## Component validation
-
-The following apply when using E4X literals to construct `whack.ds.Node`.
-
-- A tag name must resolve to either
-  - A component class that extends `whack.ds.UIComponent`
-  - A context provider
-
-Class definitions that extend `whack.ds.UIComponent` are validated in a flat way to avoid programmer bugs:
-
-- Every instance variable is either
-  - Of a `track` record type (at most one variable of this kind, which is usually the props object)
-  - A `Bindable` annotatated variable
-  - A `Context` annotatated variable
-  - A `State` annotatated variable
-- The class either omits the constructor, or defines a constructor whose signature is either `function():void` or `function(Props):void`, where `Props` must be a `track` prefixed record type.
-
-## EyeExp
-
-Whack's approach to logotypes and icons is called the EyeExp feature, which uses dynamic icon names rather than `enum`, as well as namespace prefixes to prevent collision between libraries.
-
-```sx
-package {
-    import mx = metro.components.*;
-
-    public class Main extends whack.ds.UIComponent {
-        public function Main() {
-            super()
-            final = (
-                <mx:Wrap>
-                    <w:EyeExp name="camera" size={37}/>
-                </mx:Wrap>
-            )
-        }
-    }
-}
-```
-
-Monochrome icons are filled with the current CSS `color`.
-
 ## Understanding Bindables
 
 A Bindable may be read as "a variable associated with the surrounding component that does not trigger re-render on write", and is frequently used for purposes like cache and obtaining DOM elements for manipulation, as opposed to States.
 
-Under the hood, a Bindable variable is represented as a `BindableReference.<T>` object, which must not be mistaken as the `Bindable.<T>` type that is typically:
+Under the hood, a Bindable variable is represented as a `BindableReference.<T>` instance, which must not be mistaken as the `Bindable.<T>` type that is typically:
 
 ```sx
 public type Bindable.<T> = (
@@ -219,6 +179,50 @@ package zero.components {
 ```
 
 A `Bindable` annotatated variable may be assigned, in addition to its expected value type, a compatible `whack.ds.BindableReference.<T>`.
+
+## Understading Contexts
+
+Context annotatated variables are represented as `ContextReference.<T>` instances.
+
+## Component validation
+
+The following apply when using E4X literals to construct `whack.ds.Node`.
+
+- A tag name must resolve to either
+  - A component class that extends `whack.ds.UIComponent`
+  - A context provider
+
+Class definitions that extend `whack.ds.UIComponent` are validated in a flat way to avoid programmer bugs:
+
+- Every instance variable is either
+  - Of a `track` record type (at most one variable of this kind, which is usually the props object)
+  - A `Bindable` annotatated variable
+  - A `Context` annotatated variable
+  - A `State` annotatated variable
+- The class either omits the constructor, or defines a constructor whose signature is either `function():void` or `function(Props):void`, where `Props` must be a `track` prefixed record type.
+
+## EyeExp
+
+Whack's approach to logotypes and icons is called the EyeExp feature, which uses dynamic icon names rather than `enum`, as well as namespace prefixes to prevent collision between libraries.
+
+```sx
+package {
+    import mx = metro.components.*;
+
+    public class Main extends whack.ds.UIComponent {
+        public function Main() {
+            super()
+            final = (
+                <mx:Wrap>
+                    <w:EyeExp name="camera" size={37}/>
+                </mx:Wrap>
+            )
+        }
+    }
+}
+```
+
+Monochrome icons are filled with the current CSS `color`.
 
 ## Recommendations
 
