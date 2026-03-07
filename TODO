@@ -298,9 +298,15 @@
     - [ ] `length` = number of required parameters (optional or rest parameters do not count)
     - [ ] `equals(obj)` override just using `===`
     - [ ] `clone()` returns the same Function reference back without cloning
-  - [ ] whack.ds.BindableReference
+  - [ ] (Whack DS) whack.ds.State
+    - [ ] `equals(obj)` override just using `===`
+    - [ ] `clone()` returns the same State reference back without cloning
+  - [ ] (Whack DS) whack.ds.BindableReference
     - [ ] `equals(obj)` override just using `===`
     - [ ] `clone()` returns the same BindableReference reference back without cloning
+  - [ ] (Whack DS) whack.ds.ContextReference
+    - [ ] `equals(obj)` override just using `===`
+    - [ ] `clone()` returns the same ContextReference reference back without cloning
   - [ ] XML
     - [ ] Implement `Iterable`
     - [ ] static `meta::call(arg:*):XML`
