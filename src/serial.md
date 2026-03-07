@@ -130,13 +130,13 @@ The `default xml namespace = ns` statement influences serialization or deseriali
 
 ### Marking a field as a tag
 
-A field is implicitly a tag only if it represents a composite object; otherwise it is treated as an attribute. It may be marked as always a tag using `tag="true"`.
+A field is implicitly a tag. For using an attribute instead for a field of a primitive type or whose type implements `fromXML` and `toXML` methods that take or return a text node, that field may be marked as an attribute using `attribute="true"`.
 
 ```sx
 package {
     [XS]
     public class Person {
-        [XS(tag="true")]
+        [XS(attribute="true")]
         public var name:string;
     }
 }
