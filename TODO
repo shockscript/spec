@@ -56,6 +56,8 @@
     - [ ] Is applicable to Set
   - [x] All literal `**` (AllLiteral)
   - [ ] Object initializer
+    - [ ] Do not forget shorthands (identifier-only fields)
+      - [ ] For qualified identifiers, the specified namespace is only used over the pattern input; the target name only covers the local name.
     - [ ] Applicable to flag enumerations
       - [ ] The rest operator may appear at most once and will be written before the actual fields regardless of its position among them. (This avoids programmer bugs.)
     - [ ] Applicable to Map
