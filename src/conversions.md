@@ -69,8 +69,9 @@ Explicit conversions occur when resolving `v as T` or `T(v)`, after trying an im
 | To contravariant (from `interface` to `interface` subtype, from `class` to subclass, or record type subtype)  | |
 | To union member                           | |
 | From `*` or `Object` to `interface`       | |
-| To a contravariant `[T]` type             | An array filtering out incompatible elements. |
-| To same parameterized type if not Array and current type arguments can explicitly convert to the target type arguments | E.g. `Map.<*, *>` to `Map.<double, double>` |
+| To a contravariant `[T]` type             | A new Array filtering out incompatible elements. |
+| To a possibly incompatible `Map.<K, V>` type | A new Map filtering out incompatible fields. |
+| To same parameterized type if not Array nor Map and current type arguments can explicitly convert to the target type arguments | E.g. `Map.<*, *>` to `Map.<double, double>` |
 | `string` to enumeration                   | Identification of an enumeration variant by its `string` name. |
 | Number to enumeration (using the same numeric type) | For regular enumerations, identifies a variant by its numeric value. For flag enumerations, identifies variant bits. |
 | To `string`                               | For `undefined`, returns `"undefined"`; for `null`, returns `"null"`; for other types, invokes `toString()`. |
@@ -92,3 +93,5 @@ Explicit conversions occur when resolving `v as T` or `T(v)`, after trying an im
 **Parameterized types**
 
 ShockScript allows explicit convertions from `C.<...>` to `C.<...>` where `C` is a parameterized type, where the final type contains type arguments which the original type's type arguments may explicitly convert to.
+
+These conversions are always safe for Array and Map types, as they create new objects.
