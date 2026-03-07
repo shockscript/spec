@@ -52,6 +52,7 @@
     - [ ] XML literals applied as `XML`/`XMLList` shall still resolve namespace prefixes to lexical ShockScript names. (`namespace` definitions may be used as prefixes as well (definition name = URI); with implicit prefix.)
   - [ ] Null literal
   - [ ] Array literal
+    - [ ] Do not forget the post type annotation (if present, used instead of the context type)
     - [ ] Is applicable to flag enumerations
     - [ ] Is applicable to Set
   - [x] All literal `**` (AllLiteral)
