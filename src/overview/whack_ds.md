@@ -173,7 +173,9 @@ Monochrome icons are filled with the current CSS `color`.
 
 ## Understanding Bindables
 
-Under the hood, a Bindable variable is represented as a `whack.ds.BindableReference.<T>` object, which must not be mistaken as the `whack.ds.Bindable.<T>` type that is typically:
+A Bindable may be read as "a variable associated with the surrounding component that does not trigger re-render on write", and is frequently used for purposes like cache and obtaining DOM elements for manipulation, as opposed to States.
+
+Under the hood, a Bindable variable is represented as a `BindableReference.<T>` object, which must not be mistaken as the `Bindable.<T>` type that is typically:
 
 ```sx
 public type Bindable.<T> = (
@@ -201,7 +203,7 @@ package zero.components {
                         if (props.bind is Function) {
                             Function(props.bind)(element_)
                         } else if (props.bind) {
-                            whack.ds.BindableReference.<?Div>(props.bind).value = element_
+                            whack.ds.BindableReference.<Div>(props.bind).value = element_
                         }
                     }}>
                     <!-- Element content -->
