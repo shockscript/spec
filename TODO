@@ -344,7 +344,7 @@
     - [ ] Most data types override equals()
   - [ ] `org.sx.meta.*`
     - Used for what the `meta` namespace cannot be used for (e.g. perhaps extracting a list of properties from a package name).
-    - [ ] Provide ways of creating Array and Map objects with given type arguments
+    - [ ] Provide ways of creating Array, Map and Set objects with given type arguments (plus weak? for Map/Set)
   - [ ] `org.sx.meta.ty.*`
     - [ ] Allows most of type inspection during runtime. E.g. most can be obtained from Class or Function objects.
   - [ ] `org.sx.meta.context.*`
