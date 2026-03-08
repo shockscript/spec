@@ -1042,3 +1042,5 @@ If a *XMLMarkup*, *XMLAttributeValue* or *XMLText* contains a *LineTerminator* a
 - The base line for determining nested indentation characters is the non-empty (i.e. not a whitespace only line) first line that contains the lowest-indentation level after whitespace characters.
 - Every line contents start from the base line's first non-whitespace character.
 - Beginning and end lines that are empty or consist only of whitespace are discarded.
+
+For *XMLText*, unlike the E4X standard, ShockScript always trims any whitespace at the beginning and end of the text. The parser can skip the token if its empty after trimming whitespace. Note that this does not apply to the `XML` or `XMLList` parsers during runtime; they ignore whitespace depending on the `XMLContext` object specified by the `use xml` pragma.

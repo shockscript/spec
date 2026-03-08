@@ -1,6 +1,6 @@
 # Use namespace directive
 
-The **use namespace** directive is used to contribute a namespace to the compile-time open namespace list of the enclosing scope.
+The **use namespace** pragma is used to contribute a namespace to the compile-time open namespace list of the enclosing scope.
 
 ```sx
 use namespace ns1

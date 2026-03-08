@@ -1,6 +1,6 @@
 # Use decimal directive
 
-The `use decimal` directive is used to provide a `DecimalContext` instance at the surrounding frame for configuring the `decimal` data type.
+The `use decimal` pragma is used to provide a `DecimalContext` instance at the surrounding frame for configuring the `decimal` data type.
 
 ```sx
 var ctx:DecimalContext, x:decimal

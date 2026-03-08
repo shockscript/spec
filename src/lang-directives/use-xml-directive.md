@@ -1,6 +1,6 @@
 # Use XML directive
 
-The `use xml` directive is used to provide a `XMLContext` object at the surrounding frame for configuring the `XML`/`XMLList` data types.
+The `use xml` pragma is used to provide a `XMLContext` object at the surrounding frame for configuring the `XML`/`XMLList` data types.
 
 ```sx
 var ctx:XMLContext, xn:XML
