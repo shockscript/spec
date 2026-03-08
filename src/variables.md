@@ -38,7 +38,7 @@ If the initializer of a variable is a constant, then the variable consists of a 
 var x = 0
 ```
 
-It's not mandatory for variables to have an initialiser, in which case accessing it without assigning a value may throw an error (if its type contains no default value).
+Variables do not need to have an immediate initialiser, in which case they must be initially assigned later.
 
 ## Local shadowing
 
@@ -49,3 +49,5 @@ var m:* = central.manager;
 // more code...
 var m = Manager(m);
 ```
+
+This is typically used to declare a new variable with a different data type.
