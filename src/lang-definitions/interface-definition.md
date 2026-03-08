@@ -9,9 +9,13 @@ The interface block must only contain function definitions, which may only conta
 <ul>
     <i>InterfaceDefinition</i> :
     <ul>
-        <b>interface</b> <i>IdentifierName</i> <i>TypeParameters</i><sub>opt</sub> <i>ExtendsList</i> <i>Block</i>
+        <b>interface</b> <i>IdentifierName</i> <i>ClassNullability</i><sub>opt</sub> <i>TypeParameters</i><sub>opt</sub> <i>ExtendsList</i> <i>Block</i>
     </ul>
 </ul>
+
+**Semantics**
+
+*ClassNullability* is currently ignored as exclamation **!** is the default for every interface.
 
 ## Interface inheritance
 

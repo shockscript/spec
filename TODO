@@ -89,16 +89,18 @@
   - [ ] Call operator
     - [ ] Base is passed *followedByCall=true*
     - [ ] Watch for static `meta::call` when calling classes (supports multiple signatures too)
-    - [ ] `XML` and `XMLList` being called statically shall still pass themselves as the context type to the first call argument, even if they define `meta::call()`.
     - [ ] Perform type inference for omitted generic parameters.
+    - [ ] `T(v)` cast - Semantic patch: Exclude null and/or undefined from T
   - [ ] `v is T` operator
     - [ ] Verify `v` first
     - [ ] Verify `T` with `v`'s static type as the context type (for allowing algebraic enumeration's variant inference).
+    - [ ] Semantic patch: Exclude null and/or undefined from T
     - [ ] Evaluation: Support matching union members
-  - [ ] `v as T` operator
+  - [ ] `v as T` operator (or as-strict)
     - (... different from `T(v)`, do not verify T first ... this is mostly useless... and it being that way helps algebraic enum's variant inference)
     - [ ] Verify `v` first
     - [ ] Verify `T` with `v`'s static type as the context type (for allowing algebraic enumeration's variant inference).
+    - [ ] Semantic patch: Exclude null and/or undefined from T
   - [ ] Assignment expression
     - [ ] When base is *KeyValuePairReferenceValue*, `meta::set()`
     - [ ] When base is *AttributeReferenceValue*, `meta::setAttribute()`
@@ -135,8 +137,11 @@
     - [ ] Ensure test is not an accidental binding of a function/method (where the user meant to "call" it)
   - [ ] If let statement
     - [ ] For non-nullable assignment, ensure test is not an accidental binding of a function/method (where the user meant to "call" it)
+    - [ ] Apply non-nullability to type annotation if any
   - [ ] `for each`: `Iterator` and `Iterable` are iterable
-  - [ ] `switch type`: Provide context type for type inference on `case(...)` parameters when matching over an algebraic enumeration
+  - [ ] `switch type`
+    - [ ] Provide context type for type inference on `case(...)` parameters when matching over an algebraic enumeration
+    - [ ] Apply non-nullability to each case's type annotation if any
 - [x] ShockScript: Directives
   - [ ] Variable definitions: const/let const (for an instance variable) may still be assigned later a first time in the constructor of a class if the initialiser was omitted.
 - [x] ShockScript: Definitions

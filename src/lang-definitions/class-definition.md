@@ -7,7 +7,14 @@ Nested classes are allowed; however, classes are only allowed in package blocks 
 <ul>
     <i>ClassDefinition</i> :
     <ul>
-        <b>class</b> <i>IdentifierName</i> <i>TypeParameters</i><sub>opt</sub> <i>Inheritance</i> <i>Block</i>
+        <b>class</b> <i>IdentifierName</i> <i>ClassNullability</i><sub>opt</sub> <i>TypeParameters</i><sub>opt</sub> <i>Inheritance</i> <i>Block</i>
+    </ul>
+</ul>
+
+<ul>
+    <i>ClassNullability</i> :
+    <ul>
+        <b>!</b>
     </ul>
 </ul>
 
@@ -32,6 +39,10 @@ Nested classes are allowed; however, classes are only allowed in package blocks 
         <i>Identifier</i>
     </ul>
 </ul>
+
+**Semantics**
+
+*ClassNullability* is currently ignored as exclamation **!** is the default for every class.
 
 ## Class inheritance
 
