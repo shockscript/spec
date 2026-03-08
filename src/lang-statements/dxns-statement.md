@@ -11,7 +11,9 @@ namespace Samurai = "http://www.samurai.com/2007"
 }
 ```
 
-> **Note**: Internally functions receive a *context* object, which holds a hierarchical *environment* frame reference, which is decently optimized, where every frame contains a mandatory local for the *\[\[DefaultNamespace\]\]* that may be a null pointer (which means *skip to parent frame*).
+This affects not only the lexical scope, but also external function calls that are called subsequently from the same scope or nested scopes during runtime.
+
+> **Note**: Internally functions receive a hierarchical *environment* frame reference, which is decently optimized, where every frame contains a ?context local that includes the *\[\[DefaultNamespace\]\]* internal property that may be a null pointer (which means *skip to parent frame*).
 >
 > Thus, that syntactic construct should work with both synchronous and asynchronous code.
 
