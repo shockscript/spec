@@ -302,7 +302,7 @@
     - [ ] `length` (int, not uint)
     - [ ] `clone()`
   - [ ] Function
-    - [ ] NOTE: Function internally holds some context (e.g. this receiver, captured locals, DecimalContext, DefaultNamespace, XMLContext).
+    - [ ] NOTE: Function internally holds some context (e.g. the internal function pointer, the this receiver and the parent environment frame).
     - [ ] `length` = number of required parameters (optional or rest parameters do not count)
     - [ ] `equals(obj)` override just using `===`
     - [ ] `clone()` returns the same Function reference back without cloning
