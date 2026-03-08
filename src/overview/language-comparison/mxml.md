@@ -136,7 +136,9 @@ Unlike with React.js, there is built-in support for linking style sheets in a Wh
 <div>
     <w:Style>
     <![CDATA[
-        :host { background: red }
+        self {
+            background: red
+        }
     ]]>
     </w:Style>
 </div>

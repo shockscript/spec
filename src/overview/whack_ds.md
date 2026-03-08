@@ -20,8 +20,8 @@ Whack DS supports style sheets out of the box. Here is a simple example:
 <w:VGroup>
     <w:Style>
     <![CDATA[
-        :host {
-            background: red;
+        self {
+            background: red
         }
     ]]>
     </w:Style>

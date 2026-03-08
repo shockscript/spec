@@ -32,7 +32,7 @@ The `key` attribute is reserved for uniquely identifying interpolated collection
 
 ## Linking cascading style sheets
 
-`<w:Style>` tags are used for linking style sheets to the parent tag and passing non-tracked properties to the style sheet (which are referred by the style sheet as `Property(color)`).
+`<w:Style>` tags are used for linking style sheets to the parent tag and passing properties to the style sheet (which are referred by the style sheet as `Property(color)`).
 
 ```sx
 package zero.components {
@@ -43,7 +43,9 @@ package zero.components {
                 <div>
                     <w:Style color="yellow">
                     <![CDATA[
-                        :host { color: Property(color) }
+                        self {
+                            color: Property(color)
+                        }
                     ]]>
                     </w:Style>
                     click me
@@ -80,7 +82,7 @@ package zero.components {
 // ===== Ark.css =====
 
 
-:host {
+self {
     color: Property(color);
 }
 ```
@@ -103,7 +105,7 @@ An arbitrary map of properties (`Map.<string, *>`) may be passed as well:
 
 #### Objects as style sheet properties
 
-A style sheet property passed as an object will be treated as immutable. If it is set to, say, a surrounding component's prop, context, state or derived, it is said to be reactive to that during the final `whack.ds.Node` creation.
+Takeaway: Whatever you pass to a style sheet is reactive together with the component's `final` assignment (States, Props and Contexts). A style sheet property passed as an object isn't necessarily reactive if you're explicitly constructing a whack.ds.StyleSheet instance yourself and have not passed it to a final `whack.ds.Node` creation directly for a component's evaluation.
 
 The `Property(...)` property supports very simple operators without whitespace, like dot (`.x`, `.q::x` (relies on the `@namespace` CSS declarations)) and brackets (`[0]`, `["x"]`, `['x']`).
 
