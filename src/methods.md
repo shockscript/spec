@@ -115,7 +115,8 @@ override protected function m() {
 
 - A getter must override a getter, and a setter must override a setter.
 - For a multi method, the override shall match a specific signature.
-- It is not allowed to have a `generic`-annotated function that overrides another function (whether `generic` or not).
+- It is not allowed to introduce more signatures to a multi method in a base class.
+- It is not allowed to override a regular function in a base class with a multi method.
 
 ### Overriding rules
 
