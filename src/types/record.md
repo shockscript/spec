@@ -4,17 +4,12 @@ Record types `{ ... }` are simple property records. Record types are memory-effi
 
 Unlike with classes, record types do box the value of any fields typed as primitive types into an object, since they use a hash-map internally.
 
-> **Note**: The decision for having record types compiling into hash-map structures is because these types use to contain many fields, for instance, in Whack DS components and in operations requiring a large number of options.
+> **Note**: Record types are designed for structures that have the tendency to contain many optional fields.
 
 ```sx
-type N1 = { x : decimal, y : decimal };
-
-type N2 = {
-    /** x */
-    x : double,
-
-    /** y */
-    y? : boolean,
+type Options = {
+    quack? : uint,
+    shot? : boolean,
 };
 ```
 
@@ -50,7 +45,7 @@ package zero.hit {
 
 ```sx
 package zero.hit {
-    public type Pair = {
+    public type Information = {
         Flexible::strength : [decimal],
         Judgement::strength : [decimal],
     };
@@ -59,7 +54,9 @@ package zero.hit {
 
 ## Field omission
 
-All fields are required unless they contain `undefined` or `null`. A field such as `x?:T` is equivalent to `x:(void, T)`.
+A field is required to be initialized in object literals unless it contains `undefined`. A field such as `x? : T` is equivalent to `x : (void, T)`.
+
+A field containing `null` but not `undefined` must be initialized.
 
 ## Field order
 
