@@ -1,38 +1,38 @@
 # E4X
 
-E4X (ECMAScript for XML) comprises the ShockScript language features specifically designed for eXtensible Markup Language.
+ShockScript implements a modified version of the ECMA-357 2nd edition (E4X) standard, which facilitates XML processing and manipulation.
 
 ## XML literals
 
-By default XML literals evaluate to one of the `XML` and `XMLList` types; however, depending on the inference type, XML literals may be used for constructing implementation-defined objects with different semantics.
+By default XML literals evaluate to one of the `XML` and `XMLList` types.
 
 ```sx
-// ===== Bar.sx =====
-
-
-package zero.components {
-    public class Bar extends whack.ds.UIComponent {
-        public function Bar() {
-            super()
-            final = (
-                <div>
-                    <button click&={trace("clicked!")}>Click me</button>
-                </div>
-            )
-        }
-    }
-}
-
-
-
-// ===== fn.sx =====
-
-
 package zero.information.generator {
     public function retrieve(a : string) : XML {
         return (
             <information>{a}</information>
         );
+    }
+}
+```
+
+> **Note**: XML literals ignore beginning and end whitespace on character sequence tokens regardless of the active XMLContext. The XML or XMLList constructors may be used instead where applicable with a XMLContext whose `ignoreWhitespace` option is set to false.
+
+Depending on the inference type, XML literals may be used for constructing implementation-defined objects, which apply implementation-specific verification rules.
+
+```sx
+package zero {
+    import s = spark.components.*
+
+    public class Main extends whack.ds.UIComponent {
+        public function Main() {
+            super()
+            final = (
+                <s:Application>
+                    <s:Label>Hello World!</s:Label>
+                </s:Application>
+            )
+        }
     }
 }
 ```
@@ -73,10 +73,28 @@ If the event has no parameters, then the attribute above is equivalent to `event
 people.(*.@name == "John")
 ```
 
+> **Note**: Unlike E4X 2nd, ShockScript does not clutter the lexical scope; the test variable is a wildcard **\*** binding.
+
 ## Descendants
 
 `XML` and `XMLList` implement the descendants operator.
 
 ```sx
 xnode..tag
+```
+
+## Lexical contexts
+
+The **default xml namespace** statement sets the default Namespace used in XML literals and name lookups during runtime.
+
+```sx
+default xml namespace = n
+```
+
+> *Note**: Unlike E4X 2nd, ShockScript makes the **default xml namespace** statement block-scoped, and not necessarily activation-scoped.
+
+In addition, instead of E4X 2nd XML settings self-attached to the XML class, ShockScript includes an **use xml** pragma that acts similar to **default xml namespace**, but used for specifying a `XMLContext` object.
+
+```sx
+use xml ctx
 ```

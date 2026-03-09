@@ -1,6 +1,6 @@
-# React.js
+# ReactJS
 
-ShockScript incorporates the XML language just like the ECMAScript for XML (E4X) specification, however XML literals allow for implementations to produce anything desired based on type inference, similar to JSX. There are many positive differences to JSX or React.js, such as memoization and auto dependency tracking.
+ShockScript incorporates the XML language just like the ECMAScript for XML (E4X) specification, however XML literals allow for implementations to produce anything desired based on type inference, similar to JSX. There are many positive differences to JSX or ReactJS, such as memoization and auto dependency tracking.
 
 The following demonstrates a basic XML literal for Whack DS:
 
@@ -44,7 +44,7 @@ xn = <AppBar/>
 
 ## Interpolation
 
-Interpolation works similiarly to React.js, except for HTML.
+Interpolation works similiarly to ReactJS, except for HTML.
 
 ```sx
 <div>
@@ -70,7 +70,7 @@ Components are defined as classes extending the `UIComponent` class and not regu
 
 ## States
 
-Unlike React.js, in Whack DS there is no risk of accessing an outdated state's value, due to how states are constructed.
+Unlike ReactJS, in Whack DS there is no risk of accessing an outdated state's value, due to how states are constructed.
 
 ```sx
 package spark.components {
@@ -93,7 +93,7 @@ package spark.components {
 
 The state's initializer represents the state's initial value.
 
-Like React.js, there is no transitive detection of mutation methods; therefore, the following is necessary over an array `.push(v)`:
+Like ReactJS, there is no transitive detection of mutation methods; therefore, the following is necessary over an array `.push(v)`:
 
 ```sx
 x = [...x, v];
@@ -189,7 +189,7 @@ whack.ds.useEffect(function() {
 
 ## Styling
 
-Unlike with React.js, there is built-in support for linking style sheets in a Whack DS component.
+Unlike with ReactJS, there is built-in support for linking style sheets in a Whack DS component.
 
 ```sx
 <div>

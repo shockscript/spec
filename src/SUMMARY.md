@@ -3,7 +3,7 @@
 - [Overview](./overview.md)
   - [Embed](./overview/embed.md)
   - [Language comparison](./overview/language-comparison.md)
-    - [React.js](./overview/language-comparison/reactjs.md)
+    - [ReactJS](./overview/language-comparison/reactjs.md)
     - [MXML](./overview/language-comparison/mxml.md)
     - [ActionScript 3](./overview/language-comparison/as3.md)
     - [JavaScript](./overview/language-comparison/javascript.md)
