@@ -16,7 +16,7 @@ package zero.information.generator {
 }
 ```
 
-> **Note**: XML literals ignore beginning and end whitespace on character sequence tokens regardless of the active XMLContext. The XML or XMLList constructors may be used instead where applicable with a XMLContext whose `ignoreWhitespace` option is set to false.
+> **Note**: XML literals ignore beginning and end whitespace on character sequence tokens regardless of the active XMLContext. Interpolation or the XML or XMLList constructors may be used instead where applicable with a XMLContext whose `ignoreWhitespace` option is set to false.
 
 Depending on the inference type, XML literals may be used for constructing implementation-defined objects, which apply implementation-specific verification rules.
 

@@ -4,14 +4,13 @@ A `class` that implements the static `meta::call` hook may act as a *namespace m
 
 ```sx
 package zero.fn {
-    public class N {
-        meta static function call(options:Options? = null):double {
-            //
-        }
+    public class f {
+        meta static function call(options:Options? = null):double (
+            n
+        )
 
-        public type Options = {
-            //
-        };
+        public type Options = dynamic {
+        }
     }
 }
 ```

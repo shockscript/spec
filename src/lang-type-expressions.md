@@ -29,7 +29,7 @@
         <b>&#x28;</b> <i>TypeExpression</i> <b>,</b> <i>TypeExpressionList</i> <b>&#x29;</b><br>
         <b>&#x28;</b> <i>TypeExpression</i> <b>,</b> <i>TypeExpressionList</i> <b>,</b> <b>&#x29;</b><br>
         <i>TupleTypeExpression</i><br>
-        <i>RecordTypeExpression</i><br>
+        <b>dynamic</b> <i>RecordTypeExpression</i><br>
         <b>track</b> <i>RecordTypeExpression</i><br>
         <i>FunctionTypeExpression</i><br>
         <i>NonPrefixedTypeExpression</i> <i>PropertyOperator</i><br>

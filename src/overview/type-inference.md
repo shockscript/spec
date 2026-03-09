@@ -32,8 +32,8 @@ Object initialisers are also applicable to:
 
 - `Map.<K, V>`
 - `Set.<T>`
-- Record types like `{ x:double, y:double }`
-- `track` record types
+- `dynamic { }` types
+- `track { }` types
 - Certain classes
 
 ```sx

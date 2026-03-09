@@ -120,7 +120,7 @@ Whack DS automatically tracks not only states and context dependencies in an eff
 What Whack DS does internally:
 
 - The Props object is reused across renders. For every render, its internal hash map is cleared and then overwritten.
-- `track` prefixed records, which are used for representing props, desugar into classes which use a hash map internally for storing only props that are specified. Each prop gets its own getter, which detects surrounding effect or callback and returns the current value of the prop at the internal hash map.
+- **track \{\}** types, which are used for representing props, desugar into classes which use a hash map internally for storing only props that are specified. Each prop gets its own getter, which detects surrounding effect or callback and returns the current value of the prop at the internal hash map.
   - Track prop name for comparison + previous value for the surrounding effect/callback if any
 
 ## Deriveds
@@ -212,11 +212,11 @@ The following apply when using E4X literals to construct `whack.ds.Node`.
 Class definitions that extend `whack.ds.UIComponent` are validated in a flat way to avoid programmer bugs:
 
 - Every instance variable is either
-  - Of a `track` record type (at most one variable of this kind, which is usually the props object)
+  - **track \{\}** typed (at most one variable of this kind, which is usually the Props object)
   - A `Bindable` annotatated variable
   - A `Context` annotatated variable
   - A `State` annotatated variable
-- The class either omits the constructor, or defines a constructor whose signature is either `function():void` or `function(Props):void`, where `Props` must be a `track` prefixed record type.
+- The class either omits the constructor, or defines a constructor whose signature is either `function():void` or `function(Props):void`, where `Props` must be a **track \{\}** type.
 
 ## EyeExp
 

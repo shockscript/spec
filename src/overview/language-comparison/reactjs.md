@@ -163,7 +163,7 @@ public class View extends whack.ds.UIComponent {
 
 ## Props
 
-Props must use the `track { ... }` type and not a regular record type. It is not recommended to destructure props.
+Props must be typed **track \{\}**. It is not recommended to destructure Props.
 
 ```sx
 public class View extends whack.ds.UIComponent {

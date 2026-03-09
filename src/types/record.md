@@ -1,25 +1,21 @@
 # Record types
 
-Record types `{ ... }` are simple property records. Record types are memory-efficient in cost of a hash-map-like field access. For example, fields that are not specified are not inserted into the structure.
+Record types **\{\}** are simple property records.
 
-Unlike with classes, record types do box the value of any fields typed as primitive types into an object, since they use a hash-map internally.
+Specifically, there are variants of record types, which are each represented and used in a different way.
 
-> **Note**: Record types are designed for structures that have the tendency to contain many optional fields.
+**dynamic \{\}** types are like a hash-map internally, using boxing for primitive types. Fields that are not specified are not inserted into the structure.
 
 ```sx
-type Options = {
+type Options = dynamic {
     quack? : uint,
     shot? : boolean,
 };
 ```
 
-> **Note**: Record types do not match with types structurally unlike in structural-type-first languages. They are simply structures the user may express inline.
+**track \{\}** types are similar to **dynamic \{\}**, but their creation and field accessors are implementation-defined, and they desugar to classes.
 
-A record type is interned at compile-time only if:
-
-- None if its fields contain ShockDoc.
-
-Otherwise a record type is unique and another record type, even though compatible, cannot be assigned to the other, or vice versa.
+Although **dynamic \{\}** and **track \{\}** types appear as type expressions, they are unique; structurally-matching records cannot be assigned to the other, or vice versa.
 
 ## Version control
 
@@ -45,7 +41,7 @@ package zero.hit {
 
 ```sx
 package zero.hit {
-    public type Information = {
+    public type Information = dynamic {
         Flexible::strength : [decimal],
         Judgement::strength : [decimal],
     };
@@ -67,7 +63,7 @@ Due to sensitive field order, record types with equivalent fields but in differe
 Fields may have a preceding ShockDoc comment, as in:
 
 ```sx
-type R = {
+type R = dynamic {
     /**
      * Comment.
      */
@@ -88,14 +84,14 @@ One trailing `...rest` component may appear in a record, where `rest` must be an
 
 ```sx
 // A
-type A = { x:double };
+type A = dynamic { x : double };
 // B < A
-type B = { y:double, ...A };
+type B = dynamic { y : double, ...A };
 ```
 
-## The “track” prefix
+## “track \{\}”
 
-Record types containing the `track` prefix are not regular record types: they desugar into classes dedicated to reactive systems such as Whack DS, typically for representing UI component properties.
+**track \{\}** types desugar into classes dedicated to reactive systems like Whack DS, typically for representing UI component properties.
 
 ```sx
 type Props = track {
@@ -104,4 +100,4 @@ type Props = track {
 ```
 
 - In Whack DS, when the `x` property of the above `Props` type is accessed, the `x` property is auto tracked as a dependency of the surrounding effect or callback.
-- A `track` record type in Whack DS uses a hash map for storing props internally, since components use to define several properties, including several event handlers, which are not always specified by the consumer.
+- A **track \{\}** type in Whack DS uses a hash map for storing props internally, since components use to define several properties, including several event handlers, which are not always specified by the consumer.

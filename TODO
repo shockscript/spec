@@ -63,10 +63,10 @@
       - [ ] The rest operator may appear at most once and will be written before the actual fields regardless of its position among them. (This avoids programmer bugs.)
     - [ ] Applicable to Map
     - [ ] Applicable to Set
-    - [ ] Applicable to record types
+    - [ ] Applicable to dynamic { } records
       - [ ] The rest operator may appear at most once and will be written before the actual fields regardless of its position among them. (This avoids programmer bugs.)
         - [ ] Filter out subtype fields
-    - [ ] Applicable to "track" record types
+    - [ ] Applicable to track { } records
       - [ ] The compiler contains different codegen for initializers of this such variant of record types (which writes to the inner hash map, and for the rest operator it reads its record's inner hash map).
       - [ ] The rest operator may appear at most once and will be written before the actual fields regardless of its position among them. (This avoids programmer bugs.)
         - [ ] For the rest operator, filter out subtype fields
@@ -199,8 +199,8 @@
         - [ ] Otherwise return false
       - [ ] 5. String: return false
       - [ ] 6. Tuples
-      - [ ] 7. Records
-      - [ ] 8. "track" prefixed records (special kind of classes)
+      - [ ] 7. dynamic{} records
+      - [ ] 8. track{} records (special kind of classes)
       - [ ] 9. Simple enums === (flags are interned, so that would work)
       - [ ] 10. Perform a deep field equality comparison -- Last case (not ===)
       - [ ] Field/element equality goes as `x === undefined ? y === undefined : x === null ? y === null : x.equals(y)`
@@ -216,8 +216,8 @@
           - [ ] A MUST: For Boolean, String and each Number data type's Class provide a pre-cached Function (self):* that returns self as is
           - [ ] NOTE: To clarify, org.sx.meta.* should provide a function somewhere for retrieving a class's instance method as a Function that clearly takes the `this` receiver as a regular parameter.
         - [ ] 2. Tuples
-        - [ ] 3. Records
-        - [ ] 4. "track" prefixed records (special kind of classes)
+        - [ ] 3. dynamic { } records
+        - [ ] 4. track { } records (special kind of classes)
         - [ ] 5. For simple enums, return as is
         - [ ] 6. Detect a fixture, compatible clone method (optional deep=?)
           - [ ] If found
@@ -332,7 +332,7 @@
     - [ ] static `meta::call(arg:*):XMLList`
   - [ ] XMLContext
     - [ ] Represent this as a class and not a record type (object literal works on classes now)
-    - [ ] ignoreWhitespace defaults to true, which means "trim any whitespace at the beginning and end of text nodes". Unlike AS3/E4X, XML literals always ignore whitespace. (If whitespace is desired on text nodes, one may use CDATA.
+    - [ ] ignoreWhitespace defaults to true, which means "trim any whitespace at the beginning and end of text nodes". Unlike AS3/E4X, XML literals always ignore whitespace. (If whitespace is desired on text nodes, use interpolation.)
   - [ ] Namespace
     - [ ] unlike QName, fully writable
   - [ ] QName
