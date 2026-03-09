@@ -1,4 +1,4 @@
-# The Serial feature
+# Serial
 
 The Serial feature allows serializing and deserializing complex types into data formats like JSON and possibly other user types.
 
@@ -117,6 +117,8 @@ xs::xml(v, options)           // XML
 xs::stringify(v, options)
 ```
 
+Fields that are null or undefined are omitted while serializing.
+
 The `XS` meta-data is used for custom configuration which differs slightly from `Serial` as used by JSON or TOML, since it may be desired to configure whether a field should be a tag or an attribute and declare namespace prefixes and use them.
 
 Supported options:
@@ -221,3 +223,5 @@ The `org.sx.serial.<data format>.*` subpackages provide a function for serializi
 - `org.sx.serial.xml.xml(o)`
 
 A third-party library may be used for patching the data document, which will typically take at least (*originalDoc* text, *modification* object), figure out what has changed and return a new document text.
+
+- Such libraries should omit null or undefined fields or sections only if they did not appear in the original document.

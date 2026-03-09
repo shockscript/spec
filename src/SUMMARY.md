@@ -57,7 +57,7 @@
 - [Simple enumerations](./simple-enums.md)
 - [Algebraic enumerations](./algebraic-enums.md)
 - [Interfaces](./interfaces.md)
-- [The Serial feature](./serial.md)
+- [Serial](./serial.md)
 - [Variables](./variables.md)
 - [Virtual variables](./virtual-variables.md)
 - [Methods](./methods.md)
