@@ -1,6 +1,8 @@
 # Record types
 
-Record types `{ ... }` are simple property records. Record types are memory-efficient in cost of a hash-map-like field access.
+Record types `{ ... }` are simple property records. Record types are memory-efficient in cost of a hash-map-like field access. For example, fields that are not specified are not inserted into the structure.
+
+Unlike with classes, record types do box the value of any fields typed as primitive types into an object, since they use a hash-map internally.
 
 > **Note**: The decision for having record types compiling into hash-map structures is because these types use to contain many fields, for instance, in Whack DS components and in operations requiring a large number of options.
 
@@ -9,10 +11,10 @@ type N1 = { x : decimal, y : decimal };
 
 type N2 = {
     /** x */
-    x:double,
+    x : double,
 
     /** y */
-    y?:boolean,
+    y? : boolean,
 };
 ```
 
