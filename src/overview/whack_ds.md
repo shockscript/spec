@@ -1,6 +1,6 @@
 # Whack DS
 
-Whack DS is a feature of the Whack engine used for extending the closed set of Whack's element classes with reactive components. It is functionally similar to React.js, but its syntax is more similar to Adobe MXML.
+Whack DS is a feature of the Whack engine used for extending the closed set of Whack element classes with reactive UI components. It is functionally similar to ReactJS, but its syntax is more similar to Adobe MXML.
 
 ## Memoization
 
@@ -28,7 +28,7 @@ Whack DS supports style sheets out of the box. Here is a simple example:
 </w:VGroup>
 ```
 
-[See: Linking cascading style sheets](./e4x/whack.md#linking-cascading-style-sheets)
+[See: Linking cascading style sheets](./whack_ds/mxml_like.md#linking-cascading-style-sheets)
 
 ## Very basic components
 
@@ -94,7 +94,7 @@ Even though the constructor is frequently re-evaluated, objects originating the 
 
 ## Callback caching
 
-Whack DS considers caching callbacks, since they are naturally ever changing `Function` objects regardless of whether they are lambdas or fixtures ─ for example, since they capture locals, `this` or contexts, they tend to return different `Function` objects ─ and this is crucial for memoization.
+Whack DS caches callbacks, since they are naturally ever changing `Function` objects regardless of whether they are lambdas or fixtures ─ for example, since they capture locals, `this` or ShockScript lexical contexts, they tend to return different `Function` objects ─ and this is crucial for memoization.
 
 - Whack DS doesn't attempt to cache a callback if either:
   - It belongs to another code block (like a loop, an `if`, a `switch` or a `switch type`) and not the component's constructor main block.
@@ -249,4 +249,4 @@ Monochrome icons are filled with the current CSS `color`.
 
 ## Tips
 
-- Remember that user-defined hooks do not take *props* as actual components do.
+- Remember that user-defined hooks do not take *props* as actual components do. If an user-defined hook returns any result, it should typically be either a `State` or `BindableReference` which can be assigned to a State or Bindable annotatated variable.

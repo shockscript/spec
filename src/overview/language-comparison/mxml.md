@@ -146,5 +146,5 @@ Unlike with React.js, there is built-in support for linking style sheets in a Wh
 
 ## Helpful resources
 
-- [See: Whack DS - E4X](../e4x/whack.md)
+- [See: Whack DS - E4X](../whack_ds/mxml_like.md)
 - [See: Whack DS](../whack_ds.md)

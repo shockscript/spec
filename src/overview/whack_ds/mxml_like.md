@@ -1,21 +1,23 @@
-# E4X application to Whack
+# MXML like constructs
 
-This section describes E4X features specifically when applied as Whack DS nodes.
+This section describes E4X syntactic constructs applied as Whack DS nodes.
 
 ## Native tags
 
-Native tags belong to the implicit `w` namespace, such as `<w:VGroup>`.
+Native tags belong to the implicit `w` namespace, such as `<w:VGroup>`, and a few to `fx` for an Adobe MXML feel, such as `<fx:Style>`.
 
-The `w` prefix may be shadowed by user definitions; in such a case, to use native tags the user needs to define a namespace like follows:
+These prefixes may be shadowed by user definitions; in such cases, to use these, the user may define them with any lexical name as follows:
 
 ```sx
-namespace whack = "http://www.sweaxizone.com/2015/whack";
+namespace w = "http://www.sweaxizone.com/2015/whack";
+namespace fx = "http://www.sweaxizone.com/2015/whack/fx";
 ```
 
-Or perhaps just:
+The user may do this short however:
 
 ```sx
-namespace whack = SX::w;
+namespace w = SX::w;
+namespace fx = SX::fx;
 ```
 
 ## Tag meta-data
@@ -69,7 +71,7 @@ package zero.components {
             final = (
                 <div>
                     <fx:Style source="Ark.css"
-                             color="yellow" />
+                              color="yellow" />
                     click me
                 </div>
             );
