@@ -221,5 +221,5 @@ Callbacks are cached within XML attributes for memoization, if it matters.
 ## Helpful resources
 
 - [See: Style sheets](../whack_ds/mxml_like.md#style-sheets)
-- [See: Whack DS - E4X](../whack_ds/mxml_like.md)
+- [See: Whack DS - MXML like constructs](../whack_ds/mxml_like.md)
 - [See: Whack DS](../whack_ds.md)
