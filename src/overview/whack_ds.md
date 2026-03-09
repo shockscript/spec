@@ -10,9 +10,12 @@ Just like with ReactJS, memoizing components has drawbacks such as possibly vola
 
 Whack DS skips re-rendering component if the parent re-renders and the props are equals to the previous render; the Whack DS component's own states updating with a different value will always re-render it.
 
-Whack DS implementation stores previous state or previous properties by performing a `generic::clone()`, so you do not have to worry about later reuse and mutation. For using custom classes inside states or properties — like when a tuple, record, `Array` or `Map` is not enough — ensure you implement a `clone()` method that returns an object of the same kind, otherwise you get an error for safety.
+Whack DS implementation stores previous state or previous properties by performing a `generic::clone()`, so you do not have to worry about later reuse and mutation. For using custom classes inside states or properties — like when a tuple, record, `Array` or `Map` is not enough — ensure you implement a `clone` method that returns an object of the same kind, otherwise you get an error for safety.
 
-## Style blocks
+- Custom classes do not need a `clone` method if they are, say, purely data that do not rely on the constructor.
+- Custom classes representing "unique references" should implement a `clone` method that returns the this receiver as is.
+
+## Style sheets
 
 Whack DS supports style sheets out of the box. Here is a simple example:
 
