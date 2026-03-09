@@ -12,7 +12,7 @@ Whack DS skips re-rendering component if the parent re-renders and the props are
 
 Whack DS implementation stores previous state or previous properties by performing a `generic::clone()`, so you do not have to worry about later reuse and mutation. For using custom classes inside states or properties — like when a tuple, record, `Array` or `Map` is not enough — ensure you implement a `clone` method that returns an object of the same kind, otherwise you get an error for safety.
 
-- Custom classes do not need a `clone` method if they are, say, purely data that do not rely on the constructor.
+- Custom classes do not need a `clone` method if they are, say, purely data with an optional constructor.
 - Custom classes representing "unique references" should implement a `clone` method that returns the this receiver as is.
 
 ## Style sheets
