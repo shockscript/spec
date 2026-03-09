@@ -10,4 +10,4 @@ For classes that need their own clone implementation and need to be used with `g
 
 > **Note**: It is best for the `deep` parameter to default to `true` for consistency. If you forget or don't care about the `deep` parameter, make sure the method indeed clones deeply for consistency.
 
-Depending on the use-case, `clone` methods may be implemented for skipping the clone (i.e. returning the same object reference).
+Depending on the use-case, `clone` methods may be implemented for skipping the clone (i.e. returning the same object reference), accompanied by an `equals` method that does simply `===`.

@@ -4,16 +4,18 @@ Whack DS is a feature of the Whack engine used for extending the closed set of W
 
 ## Memoization
 
-Whack DS automatically memoizes components, allowing for user customizable prop/state equality comparison through overriding the `[object Object].equals(obj)` method. Memoization basically serves the purpose of avoiding re-rendering a component when its props do not change.
+Whack DS automatically memoizes components, allowing for user customizable Prop/State equality comparison and clones through overriding the `equals` method and implementing a `clone` method.
+
+Memoization allows to skip re-rendering a component when its Props do not change.
 
 Just like with ReactJS, memoizing components has drawbacks such as possibly volatile code regions (such as when internationalizing a product with locale-specific translation strings). In such cases, relying on a Whack DS context will re-render the component when the context changes regardless of whether props did or not change.
 
 Whack DS skips re-rendering component if the parent re-renders and the props are equals to the previous render; the Whack DS component's own states updating with a different value will always re-render it.
 
-Whack DS implementation stores previous state or previous properties by performing a `generic::clone()`, so you do not have to worry about later reuse and mutation. For using custom classes inside states or properties — like when a tuple, record, `Array` or `Map` is not enough — ensure you implement a `clone` method that returns an object of the same kind, otherwise you get an error for safety.
+Whack DS implementation stores previous state or previous properties by performing a `generic::clone`. For using custom classes inside states or Properties — like when a tuple, record, `Array` or `Map` is not enough — you may need a `clone` method that returns an object of the same kind and perhaps an `equals` method.
 
 - Custom classes do not need a `clone` method if they are, say, purely data with an optional constructor.
-- Custom classes representing "unique references" should implement a `clone` method that returns the this receiver as is.
+- Custom classes whose instances should be references (that is, cloned by reference and equal by reference) should implement a `clone` method that returns the this receiver as is and an `equals` method that does simply `===`.
 
 ## Style sheets
 

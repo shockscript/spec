@@ -229,7 +229,7 @@
         - [ ] 8. Cache f as the cloning method of this
         - [ ] 9. Return the result of calling f with (this) or (this, deep).
       - [ ] DefaultCloneBehavior(self, deep)
-        - [ ] Let c = self.meta::class
+        - [ ] Let c = self.meta::class()
         - [ ] Throw a TypeError if c.length != 0
         - [ ] Let o = new c()
         - [ ] Copy instance fields from self to o
