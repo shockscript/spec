@@ -236,6 +236,7 @@
           - [ ] If deep=true, map the field value to val?.generic::clone()
         - [ ] Return o
     - [ ] `meta::class()`
+      - [ ] Final
     - [ ] toString()
     - [ ] toLocaleString()
     - [ ] valueOf()
