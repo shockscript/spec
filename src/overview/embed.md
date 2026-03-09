@@ -30,7 +30,7 @@ Embed("flower.gif", external="true")
 
 ## Where external files go and license
 
-External files are typically embedded in a structured way in the final program, using project ID + source path + resource path + filename, which is also useful for embedding licensed resources such as fonts.
+External files are typically embedded in a structured way in the final program, using project ID + resource path + filename, which is also useful for embedding licensed resources such as fonts.
 
 > **Note**: When using Whack Red, do not worry about web cache. Files respond with appropriate HTTP ETag (like a SHA-512 hash of the file contents), Last-Modified and Cache-Control headers.
 
