@@ -134,13 +134,13 @@ Unlike with React.js, there is built-in support for linking style sheets in a Wh
 
 ```sx
 <div>
-    <w:Style>
+    <fx:Style>
     <![CDATA[
-        self {
+        root {
             background: red
         }
     ]]>
-    </w:Style>
+    </fx:Style>
 </div>
 ```
 

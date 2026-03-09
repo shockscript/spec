@@ -146,7 +146,8 @@
   - [ ] Variable definitions: const/let const (for an instance variable) may still be assigned later a first time in the constructor of a class if the initialiser was omitted.
 - [x] ShockScript: Definitions
 - [ ] Global objects
-  - [ ] (Whack engine) w namespace = "http://www.sweaxizone.com/2015/whack"
+  - [ ] (Whack (?Red) engine) w namespace = "http://www.sweaxizone.com/2015/whack"
+  - [ ] (Whack (?Red) engine) fx namespace = "http://www.sweaxizone.com/2015/whack/fx"
   - [ ] SX namespace = "http://www.sweaxizone.com/2015/shockscript/global"
   - [ ] generic namespace = "http://www.sweaxizone.com/2015/shockscript/generic"
   - [ ] genericq = same as generic, but can be used as an access modifier in definitions

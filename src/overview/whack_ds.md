@@ -18,13 +18,13 @@ Whack DS supports style sheets out of the box. Here is a simple example:
 
 ```sx
 <w:VGroup>
-    <w:Style>
+    <fx:Style>
     <![CDATA[
-        self {
+        root {
             background: red
         }
     ]]>
-    </w:Style>
+    </fx:Style>
 </w:VGroup>
 ```
 
@@ -217,6 +217,8 @@ Class definitions that extend `whack.ds.UIComponent` are validated in a flat way
 
 Whack's approach to logotypes and icons is called the EyeExp feature, which uses dynamic icon names rather than `enum`, as well as namespace prefixes to prevent collision between libraries.
 
+A component library typically provides an Application component so you do not have to specify its EyeExp namespace prefix explicitly.
+
 ```sx
 package {
     import mx = metro.components.*;
@@ -225,9 +227,9 @@ package {
         public function Main() {
             super()
             final = (
-                <mx:Wrap>
+                <mx:Application>
                     <w:EyeExp name="camera" size={37}/>
-                </mx:Wrap>
+                </mx:Application>
             )
         }
     }

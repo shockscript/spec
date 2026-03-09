@@ -32,7 +32,7 @@ The `key` attribute is reserved for uniquely identifying interpolated collection
 
 ## Linking cascading style sheets
 
-`<w:Style>` tags are used for linking style sheets to the parent tag and passing properties to the style sheet (which are referred by the style sheet as `Property(color)`).
+`<fx:Style>` tags are used for linking style sheets to the parent tag and passing properties to the style sheet (which are referred by the style sheet as `Property(color)`).
 
 ```sx
 package zero.components {
@@ -41,13 +41,13 @@ package zero.components {
             super();
             final = (
                 <div>
-                    <w:Style color="yellow">
+                    <fx:Style color="yellow">
                     <![CDATA[
-                        self {
+                        root {
                             color: Property(color)
                         }
                     ]]>
-                    </w:Style>
+                    </fx:Style>
                     click me
                 </div>
             );
@@ -68,7 +68,7 @@ package zero.components {
             super();
             final = (
                 <div>
-                    <w:Style source="Ark.css"
+                    <fx:Style source="Ark.css"
                              color="yellow" />
                     click me
                 </div>
@@ -82,7 +82,7 @@ package zero.components {
 // ===== Ark.css =====
 
 
-self {
+root {
     color: Property(color);
 }
 ```
@@ -90,17 +90,17 @@ self {
 Style blocks can be conditional, as in:
 
 ```sx
-<w:Style if={condition}>
+<fx:Style if={condition}>
     ...
-</w:Style>
+</fx:Style>
 ```
 
 An arbitrary map of properties (`Map.<string, *>`) may be passed as well:
 
 ```sx
-<w:Style {map}>
+<fx:Style {map}>
     ...
-</w:Style>
+</fx:Style>
 ```
 
 #### Objects as style sheet properties
@@ -123,7 +123,7 @@ The `Property(...)` property supports very simple operators without whitespace, 
 
 #### Linking style sheets in custom components
 
-For a component to support `<w:Style>` tags, it simply needs to support a `stylesheet? : [whack.ds.StyleSheet]` prop.
+For a component to support `<fx:Style>` tags, it simply needs to support a `stylesheet? : [whack.ds.StyleSheet]` prop.
 
 ```sx
 package zero.components {
@@ -132,7 +132,7 @@ package zero.components {
             super();
             final = (
                 <div>
-                    <w:Style extend={props.stylesheet}/>
+                    <fx:Style extend={props.stylesheet}/>
                     click me
                 </div>
             );
