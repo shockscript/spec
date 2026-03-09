@@ -163,12 +163,12 @@ package zero.components {
             super();
             final = (
                 <div
-                    bind={function(element_) {
-                        element = element_
+                    bind={function($element) {
+                        element = $element
                         if (props.bind is Function) {
-                            Function(props.bind)(element_)
+                            Function(props.bind)($element)
                         } else if (props.bind) {
-                            whack.ds.BindableReference.<Div>(props.bind).value = element_
+                            whack.ds.BindableReference.<Div>(props.bind).value = $element
                         }
                     }}>
                     <!-- Element content -->
