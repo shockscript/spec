@@ -1,15 +1,26 @@
 # ReactJS
 
-ShockScript incorporates the XML language just like the ECMAScript for XML (E4X) specification, however XML literals allow for implementations to produce anything desired based on type inference, similar to JSX. There are many positive differences to JSX or ReactJS, such as memoization and auto dependency tracking.
+ShockScript embeds the XML language closely as the E4X standard, however XML literals allow for implementations to produce anything desired based on type inference. The Whack DS framework for ShockScript, a reactive UI layer over the DOM, is based on the ReactJS principles and uses E4X constructs that may remind of JSX.
 
-The following demonstrates a basic XML literal for Whack DS:
+There are, however, many positive differences to ReactJS, such as memoization and auto dependency tracking.
+
+**HelloWorld.sx**
 
 ```sx
-const xn : whack.ds.Node = (
-    <div>
-        <button>Click me</button>
-    </div>
-);
+package zero {
+    import s = spark.components.*
+
+    public class HelloWorld extends whack.ds.UIComponent {
+        public function HelloWorld() {
+            super()
+            final = (
+                <s:Application>
+                    <s:Label>Hello World!</s:Label>
+                </s:Application>
+            );
+        }
+    }
+}
 ```
 
 ## Event handlers
@@ -202,6 +213,10 @@ Unlike with ReactJS, there is built-in support for linking style sheets in a Wha
     </fx:Style>
 </div>
 ```
+
+## Callbacks
+
+Callbacks are cached within XML attributes for memoization, if it matters.
 
 ## Helpful resources
 

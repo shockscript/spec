@@ -1,18 +1,20 @@
 # MXML
 
-The MXML language, as part of the Apache Flex framework, was used for describing UI components in an intuitive way. ShockScript uses XML literals semantically similar to the ReactJS + JSX technologies, but designed to feel close to MXML in readability.
+The MXML language, as part of the Apache Flex framework, was used for describing UI components in an intuitive way. ShockScript uses XML constructs semantically similar to the ReactJS + JSX technologies, but designed to feel close to MXML.
 
-The following demonstrates a basic UI component implemented in Whack DS:
+**HelloWorld.sx**
 
 ```sx
-package zero.components {
-    public class Ark extends whack.ds.UIComponent {
-        public function Ark() {
-            super();
+package zero {
+    import s = spark.components.*
+
+    public class HelloWorld extends whack.ds.UIComponent {
+        public function HelloWorld() {
+            super()
             final = (
-                <div>
-                    <button click&={trace("clicked!")}>Click me</button>
-                </div>
+                <s:Application>
+                    <s:Label>Hello World!</s:Label>
+                </s:Application>
             );
         }
     }
@@ -63,7 +65,7 @@ whack.ds.useEffect(function() {
 
 ## Callbacks
 
-Similarly to effects, callbacks that appear in E4X literals applied to the `whack.ds.Node` type auto track dependencies, since most of them are cached for aiding on memoization.
+Similarly to effects, callbacks that appear in E4X literals applied to the `whack.ds.Node` type auto track dependencies, since they are cached for aiding on memoization.
 
 ## States
 

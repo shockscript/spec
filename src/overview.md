@@ -6,11 +6,11 @@ ShockScript is a strongly typed, multi-paradigm scripting language.
 
 ## E4X
 
-ShockScript is mixed with the eXtensible Markup Language (XML), based on the legacy ECMAScript for XML (E4X) extension. It is, in addition, suitable for implementing reactive UI components.
+ShockScript embeds the XML language, based on the legacy E4X standard. It is, besides XML processing, suitable for implementing reactive UI components.
 
 For the Whack Engine, E4X literals may create Whack DS nodes in addition to the E4X data types.
 
-## Event model
+## Event
 
 ShockScript incorporates a basic event model and allows easily declaring event types and documenting them. Implementations may extend the event model for working with a Document Object Model.
 
