@@ -205,6 +205,6 @@ Unlike with ReactJS, there is built-in support for linking style sheets in a Wha
 
 ## Helpful resources
 
-- [See: Style sheets](../whack_ds/mxml_like.md#linking-cascading-style-sheets)
+- [See: Style sheets](../whack_ds/mxml_like.md#style-sheets)
 - [See: Whack DS - E4X](../whack_ds/mxml_like.md)
 - [See: Whack DS](../whack_ds.md)

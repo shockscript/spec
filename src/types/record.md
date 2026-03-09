@@ -28,37 +28,26 @@ Otherwise a record type is unique and another record type, even though compatibl
 
 Fields of a record type may be tied to a namespace, which is useful for version control.
 
+**Flexible.sx**
+
 ```sx
-// ===== Flexible.sx =====
-
-
-package com.zero.xy {
-    /**
-     * Flexible version control namespace.
-     */
-    public namespace Flexible = "http://www.yveltal.me/xy/flexible";
+package zero.hit {
+    public namespace Flexible = "http://www.zero.org/hit/Flexible";
 }
+```
 
+**Judgement.sx**
 
-// ===== Judgement.sx =====
-
-
-package com.zero.xy {
-    /**
-    * Judgement version control namespace.
-    */
-    public namespace Judgement = "http://www.yveltal.me/xy/judgement";
+```sx
+package zero.hit {
+    public namespace Judgement = "http://www.zero.org/hit/Judgement";
 }
+```
 
+**Pair.sx**
 
-
-// ===== Pair.sx =====
-
-
-package com.zero.xy {
-    /**
-    * Pair.
-    */
+```sx
+package zero.hit {
     public type Pair = {
         Flexible::strength : [decimal],
         Judgement::strength : [decimal],

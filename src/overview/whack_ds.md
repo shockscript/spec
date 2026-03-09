@@ -28,7 +28,7 @@ Whack DS supports style sheets out of the box. Here is a simple example:
 </w:VGroup>
 ```
 
-[See: Linking cascading style sheets](./whack_ds/mxml_like.md#linking-cascading-style-sheets)
+[See: Style sheets](./whack_ds/mxml_like.md#style-sheets)
 
 ## Very basic components
 

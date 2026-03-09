@@ -2,27 +2,21 @@
 
 ShockScript defines properties whose name is tied to a namespace, which is useful for version control and protection.
 
+**FunInternal.sx**
+
 ```sx
-// ===== FunInternal.sx =====
-
-
 package org.lazy.runner {
-    /**
-    * @private
-    */
+    /** @private */
     public namespace FunInternal = "http://www.fun.com/2007/runner/internals";
 }
+```
 
+**Helper.sx**
 
-
-// ===== Helper.sx =====
-
-
+```sx
 package org.lazy.runner {
     public class Helper {
-        /**
-        * @private
-        */
+        /** @private */
         FunInternal const cache : [double] = [];
 
         //
@@ -31,12 +25,11 @@ package org.lazy.runner {
         }
     }
 }
+```
 
+**friend.sx**
 
-
-// ===== friend.sx =====
-
-
+```sx
 package org.lazy.runner.advanced {
     import org.lazy.runner.*;
 
@@ -48,37 +41,26 @@ package org.lazy.runner.advanced {
 
 Namespaces additionally apply to record types.
 
+**Flexible.sx**
+
 ```sx
-// ===== Flexible.sx =====
-
-
-package com.zero.xy {
-    /**
-     * Flexible version control namespace.
-     */
-    public namespace Flexible = "http://www.yveltal.me/xy/flexible";
+package zero.hit {
+    public namespace Flexible = "http://www.zero.org/hit/Flexible";
 }
+```
 
+**Judgement.sx**
 
-// ===== Judgement.sx =====
-
-
-package com.zero.xy {
-    /**
-    * Judgement version control namespace.
-    */
-    public namespace Judgement = "http://www.yveltal.me/xy/judgement";
+```sx
+package zero.hit {
+    public namespace Judgement = "http://www.zero.org/hit/Judgement";
 }
+```
 
+**Pair.sx**
 
-
-// ===== Pair.sx =====
-
-
-package com.zero.xy {
-    /**
-    * Pair.
-    */
+```sx
+package zero.hit {
     public type Pair = {
         Flexible::strength : [decimal],
         Judgement::strength : [decimal],

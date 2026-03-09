@@ -4,36 +4,32 @@
 
 While importing definitions, the user can alias a definition, or even a package.
 
+**Chart.sx**
+
 ```sx
-// ===== Chart.sx =====
-
-
-package com.zero.q1.core {
+package zero.chart {
     public class Chart {
-        //
     }
 }
+```
 
+**ChartType.sx**
 
-
-// ===== ChartType.sx =====
-
-
-package com.zero.q1.core {
+```sx
+package zero.chart {
     public enum ChartType {
         const BAR;
         const FLOW;
     }
 }
+```
 
+**Consumer**
 
-
-// ===== usage =====
-
-
-import p = com.zero.q1.core.*;
+```sx
+import cn = zero.chart.*;
 //
-const chartType : p::ChartType = "flow";
+const chartType : cn::ChartType = "flow";
 //
-const chart = new p::Chart(chartType);
+const chart = new cn::Chart(chartType);
 ```

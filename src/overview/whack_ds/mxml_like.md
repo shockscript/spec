@@ -32,9 +32,9 @@ For Whack Red, meta-data under the hood map to `data-` prefixed attributes, whic
 
 The `key` attribute is reserved for uniquely identifying interpolated collection items.
 
-## Linking cascading style sheets
+## Style sheets
 
-`<fx:Style>` tags are used for linking style sheets to the parent tag and passing properties to the style sheet (which are referred by the style sheet as `Property(color)`).
+**&lt;fx:Style&gt;** tags are used for linking style sheets to the parent tag and passing properties to the style sheet (which are referred by the style sheet as `Property(color)`).
 
 ```sx
 package zero.components {
@@ -60,10 +60,9 @@ package zero.components {
 
 If the style sheet is too large, it may be moved out of the ShockScript file; for instance:
 
-```plain
-// ===== Ark.sx =====
+**Ark.sx**
 
-
+```sx
 package zero.components {
     public class Ark extends whack.ds.UIComponent {
         public function Ark() {
@@ -78,12 +77,11 @@ package zero.components {
         }
     }
 }
+```
 
+**Ark.css**
 
-
-// ===== Ark.css =====
-
-
+```css
 root {
     color: Property(color);
 }
