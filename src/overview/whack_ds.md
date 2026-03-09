@@ -95,7 +95,7 @@ package {
 }
 ```
 
-Even though the constructor is frequently re-evaluated, objects originating the initial rendering phase are reused for the instance fields.
+Even though the constructor is frequently re-evaluated, objects originating from the initial rendering phase are reused for the instance fields.
 
 ## Callback caching
 
