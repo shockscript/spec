@@ -2,7 +2,7 @@
 
 ```sx
 x
-Wildcard
+Nothing
 Vector(x, y)
 Vector(*, y)      // skips "x"
 Vector({ x, y })
