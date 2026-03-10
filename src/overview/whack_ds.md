@@ -235,31 +235,6 @@ package spark.components {
 
 The Alias meta-data is verified in such a way only for classes that extend whack.ds.UIComponent.
 
-## Prop tags
-
-Child tags may be used as parent-attached Props as long as they always use a prefix and it matches the parent's prefix.
-
-```sx
-package {
-    import whack.ds.UIComponent;
-    import s = spark.components.*;
-
-    public class HelloWorld extends UIComponent {
-        public function HelloWorld() {
-            super();
-
-            final = (
-                <s:Group>
-                    <s:layout>
-                        <s:VerticalLayout gap={10}/>
-                    </s:layout>
-                </s:Group>
-            );
-        }
-    }
-}
-```
-
 ## EyeExp
 
 Whack's approach to logotypes and icons is called the EyeExp feature, which uses dynamic icon names rather than `enum`, as well as namespace prefixes to prevent collision between libraries.

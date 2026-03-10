@@ -154,3 +154,30 @@ Use `s:n={v}` attributes as a shortcut to `style={{ ..., n: v }}`.
 ```sx
 <button s:background="orange">Button</button>
 ```
+
+## Prop tags
+
+Child tags may be used as parent-attached Props as long as they always use a prefix and it matches the parent's prefix.
+
+If not an interpolation, the child tag of a Prop tag is interpreted similarly to an object literal.
+
+```sx
+package {
+    import whack.ds.UIComponent;
+    import s = spark.components.*;
+
+    public class HelloWorld extends UIComponent {
+        public function HelloWorld() {
+            super();
+
+            final = (
+                <s:Group>
+                    <s:layout>
+                        <s:VerticalLayout gap={10}/>
+                    </s:layout>
+                </s:Group>
+            );
+        }
+    }
+}
+```
