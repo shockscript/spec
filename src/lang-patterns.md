@@ -17,10 +17,10 @@ if (let Plus(*, 10) = exp) {
 <ul>
     <i>Pattern</i> :
     <ul>
-        <i>IdentifierPattern</i><br>
+        [lookahead ≠ <b>undefined</b> if pattern is nested] <i>IdentifierPattern</i><br>
         <i>ArrayPattern</i><br>
         <i>ObjectPattern</i><br>
-        <i>ConstantPattern</i> [if not the root of the whole matching pattern]
+        <i>ConstantPattern</i> [if pattern is nested]
     </ul>
 </ul>
 
