@@ -20,14 +20,14 @@ Vector({ x, y })
 <ul>
     <i>IdentifierPatternStart</i> :
     <ul>
-        <i>QualifiedIdentifier</i>
+        <i>PropertyIdentifier</i>
     </ul>
 </ul>
 
 <ul>
     <i>IdentifierPatternContinue</i> :
     <ul>
-        <b>.</b> <i>QualifiedIdentifier</i>
+        <b>.</b> <i>IdentifierName</i>
     </ul>
 </ul>
 
