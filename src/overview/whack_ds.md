@@ -209,7 +209,7 @@ The following apply when using E4X literals to construct `whack.ds.Node`.
   - A component class that extends `whack.ds.UIComponent`
     - May be an Alias itself
   - A context provider
-  - A native tag
+  - An intrinsic element
 
 Class definitions that extend `whack.ds.UIComponent` are validated in a flat way to avoid programmer bugs:
 

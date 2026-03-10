@@ -2,9 +2,9 @@
 
 This section describes E4X syntactic constructs applied as Whack DS nodes.
 
-## Native tags
+## Intrinsic elements
 
-Native tags belong to the implicit `w` namespace, such as `<w:VGroup>`, and a few to `fx` for an Adobe MXML feel, such as `<fx:Style>`.
+Intrinsic elements belong to the implicit `w` namespace, such as `<w:VGroup>`. Compiler special elements belong to the implicit `fx` namespace for an Adobe MXML feel, such as `<fx:Style>`.
 
 These prefixes may be shadowed by user definitions; in such cases, to use these, the user may define them with any lexical name as follows:
 
