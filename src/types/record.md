@@ -4,18 +4,18 @@ Record types **\{\}** are simple property records.
 
 Specifically, there are variants of record types, which are each represented and used in a different way.
 
-**dynamic \{\}** types are like a hash-map internally, using boxing for primitive types. Fields that are not specified are not inserted into the structure.
+**map \{\}** types are like a hash-map internally, using boxing for primitive types. Fields that are not specified are not inserted into the structure.
 
 ```sx
-type Options = dynamic {
+type Options = map {
     quack? : uint,
     shot? : boolean,
 };
 ```
 
-**track \{\}** types are similar to **dynamic \{\}**, but their creation and field accessors are implementation-defined, and they desugar to classes.
+**tap \{\}** types are similar to **map \{\}**, but their creation and field accessors are implementation-defined, and they desugar to classes.
 
-Although **dynamic \{\}** and **track \{\}** types appear as type expressions, they are unique; structurally-matching records cannot be assigned to the other, or vice versa.
+Although **map \{\}** and **tap \{\}** types appear as type expressions, they are unique; structurally-matching records cannot be assigned to the other, or vice versa.
 
 ## Version control
 
@@ -41,7 +41,7 @@ package zero.hit {
 
 ```sx
 package zero.hit {
-    public type Information = dynamic {
+    public type Information = map {
         Flexible::strength : [decimal],
         Judgement::strength : [decimal],
     };
@@ -63,7 +63,7 @@ Due to sensitive field order, record types with equivalent fields but in differe
 Fields may have a preceding ShockDoc comment, as in:
 
 ```sx
-type R = dynamic {
+type R = map {
     /**
      * Comment.
      */
@@ -84,20 +84,20 @@ One trailing `...rest` component may appear in a record, where `rest` must be an
 
 ```sx
 // A
-type A = dynamic { x : double };
+type A = map { x : double };
 // B < A
-type B = dynamic { y : double, ...A };
+type B = map { y : double, ...A };
 ```
 
-## “track \{\}”
+## “tap \{\}”
 
-**track \{\}** types desugar into classes dedicated to reactive systems like Whack DS, typically for representing UI component properties.
+**tap \{\}** types desugar into classes dedicated to reactive systems like Whack DS, typically for representing UI component properties.
 
 ```sx
-type Props = track {
+type Props = tap {
     x? : double,
 }
 ```
 
 - In Whack DS, when the `x` property of the above `Props` type is accessed, the `x` property is auto tracked as a dependency of the surrounding effect or callback.
-- A **track \{\}** type in Whack DS uses a hash map for storing props internally, since components use to define several properties, including several event handlers, which are not always specified by the consumer.
+- A **tap \{\}** type in Whack DS uses a hash map for storing props internally, since components use to define several properties, including several event handlers, which are not always specified by the consumer.

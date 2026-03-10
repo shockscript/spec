@@ -63,10 +63,10 @@
       - [ ] The rest operator may appear at most once and will be written before the actual fields regardless of its position among them. (This avoids programmer bugs.)
     - [ ] Applicable to Map
     - [ ] Applicable to Set
-    - [ ] Applicable to dynamic { } records
+    - [ ] Applicable to map { } records
       - [ ] The rest operator may appear at most once and will be written before the actual fields regardless of its position among them. (This avoids programmer bugs.)
         - [ ] Filter out subtype fields
-    - [ ] Applicable to track { } records
+    - [ ] Applicable to tap { } records
       - [ ] The compiler contains different codegen for initializers of this such variant of record types (which writes to the inner hash map, and for the rest operator it reads its record's inner hash map).
       - [ ] The rest operator may appear at most once and will be written before the actual fields regardless of its position among them. (This avoids programmer bugs.)
         - [ ] For the rest operator, filter out subtype fields
@@ -190,8 +190,8 @@
         - [ ] Otherwise return false
       - [ ] 5. String: return false
       - [ ] 6. Tuples
-      - [ ] 7. dynamic{} records
-      - [ ] 8. track{} records (special kind of classes)
+      - [ ] 7. map{} records
+      - [ ] 8. tap{} records (special kind of classes)
       - [ ] 9. Simple enums === (flags are interned, so that would work)
       - [ ] 10. Perform a deep field equality comparison -- Last case (not ===)
       - [ ] Field/element equality goes as `x === undefined ? y === undefined : x === null ? y === null : x.equals(y)`
@@ -207,8 +207,8 @@
           - [ ] A MUST: For boolean, string and each Number data type's Class provide a pre-cached Function (self):* that returns self as is
           - [ ] NOTE: To clarify, org.sx.meta.* should provide a function somewhere for retrieving a class's instance method as a Function that clearly takes the `this` receiver as a regular parameter.
         - [ ] 2. Tuples
-        - [ ] 3. dynamic { } records
-        - [ ] 4. track { } records (special kind of classes)
+        - [ ] 3. map { } records
+        - [ ] 4. tap { } records (special kind of classes)
         - [ ] 5. For simple enums, return as is
         - [ ] 6. Detect a fixture, compatible clone method (optional deep=?)
           - [ ] If found

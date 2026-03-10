@@ -163,7 +163,7 @@ public class View extends whack.ds.UIComponent {
 
 ## Props
 
-Props must be typed **track \{\}**. It is not recommended to destructure Props.
+Props must be typed **tap \{\}**. It is not recommended to destructure Props.
 
 ```sx
 public class View extends whack.ds.UIComponent {
@@ -174,7 +174,7 @@ public class View extends whack.ds.UIComponent {
         )
     }
 
-    public type Props = track {
+    public type Props = tap {
         /** @event */
         next? : function() : void,
     }

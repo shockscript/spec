@@ -138,7 +138,7 @@ package zero.components {
             );
         }
 
-        public type Props = track {
+        public type Props = tap {
             stylesheet? : [ whack.ds.StyleSheet ],
         };
     }

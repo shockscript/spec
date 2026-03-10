@@ -8,13 +8,13 @@
         <b>*</b><br>
         <b>void</b><br>
         <b>null</b><br>
-        [lookahead ≠ <b>&#x28;</b> ] <i>QualifiedIdentifier</i><br>
+        [lookahead ≠ <b>&#x28;</b> ] [lookahead ≠ <b>map &#x7b;</b> ] [lookahead ≠ <b>tap &#x7b;</b> ] <i>QualifiedIdentifier</i><br>
         <b>&#x28;</b> <i>TypeExpression</i> <b>&#x29;</b><br>
         <b>&#x28;</b> <i>TypeExpression</i> <b>,</b> <i>TypeExpressionList</i> <b>&#x29;</b><br>
         <b>&#x28;</b> <i>TypeExpression</i> <b>,</b> <i>TypeExpressionList</i> <b>,</b> <b>&#x29;</b><br>
         <i>TupleTypeExpression</i><br>
-        <b>dynamic</b> <i>RecordTypeExpression</i><br>
-        <b>track</b> <i>RecordTypeExpression</i><br>
+        <b>map</b> <i>RecordTypeExpression</i><br>
+        <b>tap</b> <i>RecordTypeExpression</i><br>
         <i>FunctionTypeExpression</i><br>
         <i>TypeExpression</i> <i>PropertyOperator</i><br>
         <i>TypeExpression</i> [lookahead = <b>.</b> ] <i>QueryOperator</i><br>

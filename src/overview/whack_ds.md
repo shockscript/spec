@@ -52,7 +52,7 @@ package metro.components {
             )
         }
 
-        public type Props = track {}
+        public type Props = tap {}
     }
 }
 ```
@@ -87,7 +87,7 @@ package {
             )
         }
 
-        public type Props = track { start : bigint }
+        public type Props = tap { start : bigint }
 
         private function get secs() : bigint ( mSecs ?? props.start )
         private function set secs(val) { mSecs = val }
@@ -120,7 +120,7 @@ Whack DS automatically tracks not only states and context dependencies in an eff
 What Whack DS does internally:
 
 - The Props object is reused across renders. For every render, its internal hash map is cleared and then overwritten.
-- **track \{\}** types, which are used for representing props, desugar into classes which use a hash map internally for storing only props that are specified. Each prop gets its own getter, which detects surrounding effect or callback and returns the current value of the prop at the internal hash map.
+- **tap \{\}** types, which are used for representing props, desugar into classes which use a hash map internally for storing only props that are specified. Each prop gets its own getter, which detects surrounding effect or callback and returns the current value of the prop at the internal hash map.
   - Track prop name for comparison + previous value for the surrounding effect/callback if any
 
 ## Deriveds
@@ -176,7 +176,7 @@ package zero.components {
             );
         }
 
-        public type Props = track {
+        public type Props = tap {
             bind? : whack.ds.Bindable.<?Div>,
         };
     }
@@ -216,11 +216,11 @@ Class definitions that extend `whack.ds.UIComponent` are validated in a flat way
 
 - The `Alias` meta-data
 - Every instance variable is either
-  - **track \{\}** typed (at most one variable of this kind, which is usually the Props object)
+  - **tap \{\}** typed (at most one variable of this kind, which is usually the Props object)
   - A `Bindable` annotatated variable
   - A `Context` annotatated variable
   - A `State` annotatated variable
-- The class either omits the constructor, or defines a constructor whose signature is either `function():void` or `function(Props):void`, where `Props` must be a **track \{\}** type.
+- The class either omits the constructor, or defines a constructor whose signature is either `function():void` or `function(Props):void`, where `Props` must be a **tap \{\}** type.
 
 ## Aliases
 

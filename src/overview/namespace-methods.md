@@ -9,7 +9,7 @@ package zero.fn {
             n
         )
 
-        public type Options = dynamic {
+        public type Options = map {
         }
     }
 }

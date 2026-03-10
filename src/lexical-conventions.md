@@ -353,7 +353,9 @@ implements
 
 ```plain
 get
+map
 set
+tap
 xml
 
 each
@@ -363,13 +365,11 @@ type
 
 Embed
 final
-track
 
 native
 static
 
 decimal
-dynamic
 generic
 
 abstract

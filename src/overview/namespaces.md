@@ -61,7 +61,7 @@ package zero.hit {
 
 ```sx
 package zero.hit {
-    public type Pair = dynamic {
+    public type Pair = map {
         Flexible::strength : [decimal],
         Judgement::strength : [decimal],
     };

@@ -32,8 +32,8 @@ Object initialisers are also applicable to:
 
 - `Map.<k, v>`
 - `Set.<t>`
-- `dynamic { }` types
-- `track { }` types
+- `map { }` types
+- `tap { }` types
 - Certain classes
 
 ```sx

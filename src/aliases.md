@@ -15,7 +15,7 @@ An alias may be prefixed by a ShockDoc comment.
 
 ```sx
 /** Comment */
-type Params = dynamic {
+type Params = map {
     x : decimal,
 }
 ```
