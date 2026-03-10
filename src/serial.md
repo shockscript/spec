@@ -29,6 +29,8 @@ js::object(v)
 js::stringify(v)
 ```
 
+It is an error if while deserializing a required field (one whose type has no default value) is missing from the input.
+
 `stringify` also accepts an options object for pretty formatting.
 
 ### Rename
