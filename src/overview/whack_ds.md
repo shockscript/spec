@@ -207,16 +207,33 @@ The following apply when using E4X literals to construct `whack.ds.Node`.
 
 - A tag name must resolve to either
   - A component class that extends `whack.ds.UIComponent`
+    - May be an Alias itself
   - A context provider
+  - A native tag
 
 Class definitions that extend `whack.ds.UIComponent` are validated in a flat way to avoid programmer bugs:
 
+- The `Alias` meta-data
 - Every instance variable is either
   - **track \{\}** typed (at most one variable of this kind, which is usually the Props object)
   - A `Bindable` annotatated variable
   - A `Context` annotatated variable
   - A `State` annotatated variable
 - The class either omits the constructor, or defines a constructor whose signature is either `function():void` or `function(Props):void`, where `Props` must be a **track \{\}** type.
+
+## Aliases
+
+A component may be an alias by using the Alias meta-data, which specifies a ShockScript qualified identifier which is treated like a tag name.
+
+```sx
+package spark.components {
+    [Alias("w::VGroup")]
+    public class VGroup extends whack.ds.UIComponent {
+    }
+}
+```
+
+The Alias meta-data is verified in such a way only for classes that extend whack.ds.UIComponent.
 
 ## EyeExp
 
