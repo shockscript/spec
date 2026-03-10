@@ -1,23 +1,19 @@
 # Algebraic enumerations
 
-Algebraic enumerations, as opposed to simple enumerations, contain `type X()` definitions instead of just `const X` definitions; they desugar to an one-level hierarchy of classes, with the enum being an abstract class, and each variant into a class with a self-attached `meta::invoke` method (so you can specify either the defined signature, or an object literal).
+Algebraic enumerations, as opposed to simple enumerations, contain `type X()` definitions instead of just `const X` definitions; they desugar to an one-level hierarchy of classes, with the enum being an abstract class, and with each variant being a class with a `meta::invoke` method (so you can specify either the defined signature, or an object literal).
 
 ## Example
 
 ```sx
-package no.calculator {
-    public enum Exp {
-        /**
-         * @param left Left-hand side.
-         * @param right Right-hand side.
-         */
-        type Plus(left : Exp, right : Exp)
-        type Number(value : decimal)
-        type Empty()
-    }
+enum Exp {
+    /**
+     * @param left Left-hand side.
+     * @param right Right-hand side.
+     */
+    type Plus(left : Exp, right : Exp)
+    type Number(value : decimal)
+    type Empty()
 }
-
-import no.calculator.*
 
 var exp : Exp
 
