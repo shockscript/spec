@@ -88,7 +88,7 @@
   - [ ] Equality allows mixing compatible operands with void and/or null.
   - [ ] Call operator
     - [ ] Base is passed *followedByCall=true*
-    - [ ] Watch for static `meta::call` when calling classes (supports multiple signatures too)
+    - [ ] Watch for class-self-attached `meta::call` when calling classes (supports multiple signatures too)
     - [ ] Perform type inference for omitted generic parameters.
     - [ ] `T(v)` cast - Semantic patch: Exclude null and/or undefined from T
   - [ ] `v is T` operator
@@ -138,6 +138,7 @@
   - [ ] If let statement
     - [ ] For non-nullable assignment, ensure test is not an accidental binding of a function/method (where the user meant to "call" it)
     - [ ] Apply non-nullability to type annotation if any
+    - [ ] Provide context type for algebraic matching pattern
   - [ ] `for each`: `Iterator` and `Iterable` are iterable
   - [ ] `switch type`
     - [ ] Provide context type for type inference on `case(...)` parameters when matching over an algebraic enumeration
@@ -319,7 +320,7 @@
     - [ ] `clone()` returns the same ContextReference reference back without cloning
   - [ ] XML
     - [ ] Implement `Iterable`
-    - [ ] static `meta::call(arg:*):XML`
+    - [ ] self-attached `meta::call(arg:*):XML`
     - [ ] `meta::has(name:QName):boolean`
       - [ ] `@` prefix in name = attribute
     - [ ] `meta::get(index:int):XML` (throws if out of bounds)
@@ -329,7 +330,7 @@
     - [ ] `sibling(n)` - e.g. `sibling(-1)` (previous) and `sibling(1)` (next) - uses `parent` internally.
     - [ ] Attributes
   - [ ] XMLList
-    - [ ] static `meta::call(arg:*):XMLList`
+    - [ ] self-attached `meta::call(arg:*):XMLList`
   - [ ] XMLContext
     - [ ] Represent this as a class and not a record type (object literal works on classes now)
     - [ ] ignoreWhitespace defaults to true, which means "trim any whitespace at the beginning and end of text nodes". Unlike AS3/E4X, XML literals always ignore whitespace. (If whitespace is desired on text nodes, use interpolation.)

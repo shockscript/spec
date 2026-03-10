@@ -4,7 +4,7 @@
 
 ## meta::call()
 
-A static `meta::call()` method may be defined with any number of parameters and any result type, overriding the behavior of calling the class object.
+A class self-attached `meta::call()` method may be defined with any number of parameters and any result type, overriding the behavior of calling the class object.
 
 ```sx
 meta static function call():T {}

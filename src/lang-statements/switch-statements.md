@@ -1,6 +1,6 @@
 # Switch statements
 
-The switch statement is similiar to that of Java. Unlike in Java, the switch statement does not include fallthroughs.
+The **switch** statement is similiar to that of Java. Unlike Java, the switch statement does not include fallthroughs.
 
 ```sx
 switch (v) {
@@ -16,21 +16,18 @@ The **switch type** statement is used to match the type of a discriminant value.
 
 ```sx
 switch type (v) {
-    case (d : double) {
-        // double
+    case (d : Date) {
     }
     default {
-        // no matching case
     }
 }
 ```
 
-The **switch type** statement also supports matching algebraic data type variants, typically omitting the case's type annotation.
+The **switch type** statement also supports pattern matching on algebraic data types.
 
 ```sx
 switch type (exp) {
     case (Plus(10, right)) {
-        //
     }
 }
 ```

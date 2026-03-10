@@ -1,6 +1,6 @@
 # Namespace methods
 
-A `class` that implements the static `meta::call` hook may act as a *namespace method*.
+A `class` that implements the self-attached `meta::call` hook may act as a *namespace method*.
 
 ```sx
 package zero.fn {

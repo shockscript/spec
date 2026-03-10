@@ -2,7 +2,7 @@
 
 This section describes which type conversions are available.
 
-Explicit conversions may occur as either `T(v)` (strict conversion) or `v as T` (optional conversion). The behavior of the call operator over a type may not always be a conversion depending on if `T` implements the static `meta::call()` hook.
+Explicit conversions may occur as either `T(v)` (strict conversion) or `v as T` (optional conversion). The behavior of the call operator over a type may not always be a conversion depending on if `T` implements the self-attached `meta::call()` hook.
 
 ```sx
 v as T     // returns T?. failure returns null

@@ -1,11 +1,11 @@
 # Algebraic enumerations
 
-Algebraic enumerations, as opposed to simple enumerations, contain `type X()` definitions instead of just `const X` definitions; they desugar to an one-level hierarchy of classes, with the enum being an abstract class.
+Algebraic enumerations, as opposed to simple enumerations, contain `type X()` definitions instead of just `const X` definitions; they desugar to an one-level hierarchy of classes, with the enum being an abstract class, and each variant into a class with a self-attached `meta::call` method (so you can specify either the defined signature, or an object literal).
 
 ## Example
 
 ```sx
-package com.q.calculator {
+package no.calculator {
     public enum Exp {
         /**
          * @param left Left-hand side.
@@ -17,26 +17,20 @@ package com.q.calculator {
     }
 }
 
-import com.q.calculator.*
+import no.calculator.*
 
-// type inference -
-// use a basemost lexical name
+var exp : Exp
 
-// each variant implements a meta::call multi-method,
-// so it can accept values in different ways.
-var exp : Exp = Empty()
-var exp : Exp = Plus({ left: x, right: y })
-var exp : Exp = Plus(x, y)
+exp = Empty()
+exp = Plus({ left: x, right: y })
+exp = Plus(x, y)
 
 switch type (exp) {
-    case ({ value } : Number) {
-        //
+    case (Number(value)) {
     }
-    case ({ left, right } : Plus) {
-        //
+    case (Plus(x, y)) {
     }
-    case ({} : Empty) {
-        //
+    case (Empty()) {
     }
 }
 ```

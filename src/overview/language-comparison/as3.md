@@ -177,15 +177,20 @@ switch (v) {
 
 ## Switch type
 
-The `switch type` statement allows for simple type matching:
+The `switch type` statement allows for type and pattern matching:
 
 ```sx
 switch type (v) {
     case (d : Date) {
-        //
     }
     default {
-        //
+    }
+}
+
+switch type (exp) {
+    case (Plus(x, y)) {
+    }
+    case (Nothing()) {
     }
 }
 ```

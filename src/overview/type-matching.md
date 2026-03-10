@@ -10,14 +10,9 @@ v is T
 
 ```sx
 switch type (v) {
-    case (regex : RegExp) {
-        trace("a regex");
-    }
-    case ([x, y] : [double, double]) {
-        trace("a tuple of double");
+    case (d : Date) {
     }
     default {
-        trace("any other");
     }
 }
 ```
@@ -27,7 +22,6 @@ switch type (v) {
 ```sx
 switch type (exp) {
     case (Plus(10, right)) {
-        //
     }
 }
 ```
@@ -36,6 +30,5 @@ switch type (exp) {
 
 ```sx
 if (let Plus(10, right) = exp) {
-    //
 }
 ```
