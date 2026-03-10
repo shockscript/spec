@@ -33,9 +33,9 @@ The Whack DS framework allows programmers to implement UI components as throwawa
 
 ## Effects
 
-*Effect* hooks like `whack.ds.useEffect` may be used to detect changes to props, state or context as well as the component mount and unmount phases.
+*Effect* hooks like `whack.ds.useEffect` may be used to run code when specific Props, State or Context change, or solely for running code during the component mount and unmount phases.
 
-The effect dependencies — states, props and contexts it relies on — are auto-tracked.
+The effect dependencies — States, Props and Contexts it relies on — are auto-tracked as the effect function evaluates.
 
 ```sx
 whack.ds.useEffect(function() {
@@ -45,7 +45,7 @@ whack.ds.useEffect(function() {
     };
 });
 
-// Effect that runs everytime "*"
+// Effect that runs everytime (*)
 whack.ds.useEffect(function() {
     //
 }, "*");
