@@ -2,12 +2,12 @@
 
 This section describes which type conversions are available.
 
-Explicit conversions may occur as either `T(v)` (strict conversion) or `v as T` (optional conversion). The behavior of the call operator over a type may not always be a conversion depending on if `T` implements the self-attached `meta::call()` hook.
+Explicit conversions may occur as either `t(v)` (strict conversion) or `v as t` (optional conversion). The behavior of the call operator over a type may not always be a conversion depending on if `t` implements the self-attached `meta::invoke()` meta-method.
 
 ```sx
-v as T     // returns T?. failure returns null
-v as! T    // failure throws a TypeError (as-strict)
-T(v)       // same as "v as! T"
+v as t     // returns t?. failure returns null
+v as! t    // failure throws a TypeError (as-strict)
+t(v)       // same as "v as! t"
 ```
 
 ## Constant coercions
@@ -18,12 +18,12 @@ Constant coercions occur implicitly both at compile-time and runtime, converting
 | ----------------------------------------- | ------------------------ |
 | `undefined` to flag enumeration           | Interned instance whose value is zero (**0**). |
 | `null` to flag enumeration                | Interned instance whose value is zero (**0**). |
-| `undefined` to `T` containing both `undefined` and `null` | `undefined` |
-| `undefined` to `T` containing `undefined` and no `null`   | `undefined` |
-| `undefined` to `T` containing `null` and no `undefined`   | `null` |
-| `null` to `T` containing `undefined` but not `null`       | `undefined` |
-| `null` to `T` containing `null` but not `undefined`       | `null` |
-| `null` to `T` containing both `undefined` or `null`       | `null` |
+| `undefined` to `t` containing both `undefined` and `null` | `undefined` |
+| `undefined` to `t` containing `undefined` and no `null`   | `undefined` |
+| `undefined` to `t` containing `null` and no `undefined`   | `null` |
+| `null` to `t` containing `undefined` but not `null`       | `undefined` |
+| `null` to `t` containing `null` but not `undefined`       | `null` |
+| `null` to `t` containing both `undefined` or `null`       | `null` |
 | Numeric constant to `*` or `Object`  | Equivalent constant of the target type. |
 | String constant to `*` or `Object` or union containing `string` | Equivalent constant of the target type. |
 | Boolean constant to `*` or `Object` or union containing `boolean` | Equivalent constant of the target type. |
@@ -57,7 +57,7 @@ Implicit coercions occur implicitly both at compile-time and runtime, after tryi
 
 **Parameterized types**
 
-ShockScript allows implicit coercions from `C.<...>` to `C.<...>` where `C` is a parameterized type, where the final type contains type arguments which the original type's type arguments implicitly coerce to.
+ShockScript allows implicit coercions from `t.<...>` to `t.<...>` where `t` is a parameterized type, where the final type contains type arguments which the original type's type arguments implicitly coerce to.
 
 > **Note**: Implicitly coercing an Array, Map or Set type to use covariant element types is allowed; however overwriting the collection later with unexpected element values may throw a TypeError during runtime.
 >
@@ -65,17 +65,17 @@ ShockScript allows implicit coercions from `C.<...>` to `C.<...>` where `C` is a
 
 ## Explicit conversions
 
-Explicit conversions occur when resolving `v as T` or `T(v)`, after trying an implicit coercion.
+Explicit conversions occur when resolving `v as t` or `t(v)`, after trying an implicit coercion.
 
 | Kind                                      | Result                  |
 | ----------------------------------------- | ----------------------- |
 | To contravariant (from `interface` to `interface` subtype, from `class` to subclass, or record type subtype)  | |
 | To union member                           | |
 | From `*` or `Object` to `interface`       | |
-| To a contravariant `[T]` type             | A new Array filtering out incompatible elements. |
+| To a contravariant `[t]` type             | A new Array filtering out incompatible elements. |
 | To a possibly incompatible `Map.<K, V>` type | A new Map filtering out incompatible fields. |
-| To a contravariant `Set.<T>` type | A new Set filtering out incompatible elements. |
-| To same parameterized type if not Array, nor Map and nor Set and current type arguments can explicitly convert to the target type arguments | E.g. `C.<*>` to `C.<double>` |
+| To a contravariant `Set.<t>` type | A new Set filtering out incompatible elements. |
+| To same parameterized type if not Array, nor Map and nor Set and current type arguments can explicitly convert to the target type arguments | E.g. `c.<*>` to `c.<double>` |
 | `string` to enumeration                   | Identification of an enumeration variant by its `string` name. |
 | Number to enumeration (using the same numeric type) | For regular enumerations, identifies a variant by its numeric value. For flag enumerations, identifies variant bits. |
 | To `string`                               | For `undefined`, returns `"undefined"`; for `null`, returns `"null"`; for other types, invokes `toString()`. |
@@ -96,7 +96,7 @@ Explicit conversions occur when resolving `v as T` or `T(v)`, after trying an im
 
 **Parameterized types**
 
-ShockScript allows explicit convertions from `C.<...>` to `C.<...>` where `C` is a parameterized type, where the final type contains type arguments which the original type's type arguments may explicitly convert to.
+ShockScript allows explicit convertions from `t.<...>` to `t.<...>` where `t` is a parameterized type, where the final type contains type arguments which the original type's type arguments may explicitly convert to.
 
 > **Note**: These conversions are always safe for Array, Map and Set types, as they create new objects.
 >

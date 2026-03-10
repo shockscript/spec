@@ -154,12 +154,12 @@ The variant value as declared by the `const` is determined as follows:
 #### valueOf()
 
 ```sx
-override public function valueOf():T {
+override public function valueOf():t {
     //
 }
 ```
 
-Returns the numeric value of the enumeration instance, where `T` is the numeric type.
+Returns the numeric value of the enumeration instance, where `t` is the numeric type.
 
 #### toString()
 

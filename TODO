@@ -70,7 +70,7 @@
       - [ ] The compiler contains different codegen for initializers of this such variant of record types (which writes to the inner hash map, and for the rest operator it reads its record's inner hash map).
       - [ ] The rest operator may appear at most once and will be written before the actual fields regardless of its position among them. (This avoids programmer bugs.)
         - [ ] For the rest operator, filter out subtype fields
-    - [ ] Applicable to classes that contain an optional constructor or a multi-method constructor that supports an optional signature, assigning any properties; equivalent to `var o=new C();with(o){...};return o`
+    - [ ] Applicable to classes that contain an optional constructor or a multi-method constructor that supports an optional signature, assigning any properties; equivalent to `var o=new c();with(o){...};return o`
       - [ ] In this case, the rest operator will reuse the instance variables of the specified object.
       - [ ] The rest operator may appear at most once and will be written before the actual fields regardless of its position among them. (This avoids programmer bugs.)
         - [ ] For the rest operator, filter out subtype fields
@@ -88,19 +88,19 @@
   - [ ] Equality allows mixing compatible operands with void and/or null.
   - [ ] Call operator
     - [ ] Base is passed *followedByCall=true*
-    - [ ] Watch for class-self-attached `meta::call` when calling classes (supports multiple signatures too)
+    - [ ] Watch for class-self-attached `meta::invoke` when calling classes (supports multiple signatures too)
     - [ ] Perform type inference for omitted generic parameters.
-    - [ ] `T(v)` cast - Semantic patch: Exclude null and/or undefined from T
-  - [ ] `v is T` operator
+    - [ ] `t(v)` cast - Semantic patch: Exclude null and/or undefined from T
+  - [ ] `v is t` operator
     - [ ] Verify `v` first
-    - [ ] Verify `T` with `v`'s static type as the context type (for allowing algebraic enumeration's variant inference).
+    - [ ] Verify `t` with `v`'s static type as the context type (for allowing algebraic enumeration's variant inference).
     - [ ] Semantic patch: Exclude null and/or undefined from T
     - [ ] Evaluation: Support matching union members
-  - [ ] `v as T` operator (or as-strict)
-    - (... different from `T(v)`, do not verify T first ... this is mostly useless... and it being that way helps algebraic enum's variant inference)
+  - [ ] `v as t` operator (or as-strict that doesn't return t? but t!)
+    - (... different from `t(v)`, do not verify t first ... this is mostly useless... and it being that way helps algebraic enum's variant inference)
     - [ ] Verify `v` first
-    - [ ] Verify `T` with `v`'s static type as the context type (for allowing algebraic enumeration's variant inference).
-    - [ ] Semantic patch: Exclude null and/or undefined from T
+    - [ ] Verify `t` with `v`'s static type as the context type (for allowing algebraic enumeration's variant inference).
+    - [ ] Semantic patch: Exclude null and/or undefined from t
   - [ ] Assignment expression
     - [ ] When base is *KeyValuePairReferenceValue*, `meta::set()`
     - [ ] When base is *AttributeReferenceValue*, `meta::setAttribute()`
@@ -177,7 +177,7 @@
   - [ ] DecimalContext
     - [ ] Supports "precision" and "rounding" options for now (look at decimal.js's API to get some ideas)
   - [ ] Iterator.\<T> (interface)
-    - [ ] required `next():[T]?` (the returned array must be of length 1)
+    - [ ] required `next() : [t]?` (the returned array must be of length 1)
     - [ ] `length():int` (consumes the whole iterator)
     - [ ] `skip(count:int):void`
     - [ ] `meta::filter(...)` (returns another iterator)
@@ -250,16 +250,16 @@
     - [ ] `filter(...)` (alternative for the optional chaining operator)
     - [ ] `equals(o)` - Structural equality
     - [ ] `clone(deep=)`
-    - [ ] `shift(): (void, T)`
-    - [ ] `pop(): (void, T)`
-    - [ ] `first : (void, T)`
-    - [ ] `last : (void, T)`
+    - [ ] `shift(): (t,void)`
+    - [ ] `pop(): (t,void)`
+    - [ ] `first : (t,void)`
+    - [ ] `last : (t,void)`
   - [ ] Map
     - [ ] +Iterable
     - [ ] `Map(weakKeys:boolean = false)`
     - [ ] `meta::get()` throws if key does not match
     - [ ] `meta::has(...)`
-    - [ ] other meta hooks (e.g. set, delete)
+    - [ ] other meta-methods (e.g. set, delete)
     - [ ] `length()` (int, not uint)
     - [ ] `equals(o)` - Structural equality
     - [ ] `clear()`
@@ -321,7 +321,7 @@
     - [ ] `clone()` returns the same ContextReference reference back without cloning
   - [ ] XML
     - [ ] Implement `Iterable`
-    - [ ] self-attached `meta::call(arg:*):XML`
+    - [ ] self-attached `meta::invoke(arg:*):XML`
     - [ ] `meta::has(name:QName):boolean`
       - [ ] `@` prefix in name = attribute
     - [ ] `meta::get(index:int):XML` (throws if out of bounds)
@@ -331,7 +331,7 @@
     - [ ] `sibling(n)` - e.g. `sibling(-1)` (previous) and `sibling(1)` (next) - uses `parent` internally.
     - [ ] Attributes
   - [ ] XMLList
-    - [ ] self-attached `meta::call(arg:*):XMLList`
+    - [ ] self-attached `meta::invoke(arg:*):XMLList`
   - [ ] XMLContext
     - [ ] Represent this as a class and not a record type (object literal works on classes now)
     - [ ] ignoreWhitespace defaults to true, which means "trim any whitespace at the beginning and end of text nodes". Unlike AS3/E4X, XML literals always ignore whitespace. (If whitespace is desired on text nodes, use interpolation.)
@@ -340,7 +340,7 @@
   - [ ] QName
     - [ ] QName constructor
       - [ ] If uri is undefined or unspecified: if name = "*", then uri=null; otherwise uri=default namespace
-    - [ ] `uri:?string` - May be null for "match any namespace"
+    - [ ] `uri : string?` - May be null for "match any namespace"
     - [ ] fully read-only
   - [ ] ByteArray
     - [ ] +Iterable

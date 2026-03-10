@@ -30,8 +30,8 @@ ch == "A"
 
 Object initialisers are also applicable to:
 
-- `Map.<K, V>`
-- `Set.<T>`
+- `Map.<k, v>`
+- `Set.<t>`
 - `dynamic { }` types
 - `track { }` types
 - Certain classes
@@ -73,14 +73,14 @@ a variable definition containing a type annotation. If you need inline type infe
 10f    // float
 10m    // decimal. "m" for money
 10n    // bigint
-T(v)
-[] : [T]
+t(v)
+[] : [t]
 ```
 
 Note that:
 
 - Not all `Number` data types have a suffix available.
-- `T(v)` may be equivalent to a `v as! T` cast, except that `T` is verified before `v` and `v` is verified with `T` as the inference type
-  - `T(v)` is not necessarily a cast for certain classes that define a class-attached `meta::call` meta-method.
-  - `T(v)` is a cast at least for enumerations, structural types (like unions, tuples, records and functions), primitive types and most global objects.
-  - `T(v)` is definitely not a cast for the classes comprising algebraic enumeration variants.
+- `t(v)` may be equivalent to a `v as! t` cast, except that `t` is verified before `v` and `v` is verified with `t` as the inference type
+  - `t(v)` is not necessarily a cast for certain classes that define a class-attached `meta::invoke` meta-method.
+  - `t(v)` is a cast at least for enumerations, structural types (like unions, tuples, records and functions), primitive types and most global objects.
+  - `t(v)` is definitely not a cast for the classes comprising algebraic enumeration variants.

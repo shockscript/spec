@@ -2,12 +2,12 @@
 
 *Certain* methods of the `meta` namespace may be implemented in a class or interface for overriding language behavior; those are referred to as *meta-methods*.
 
-## meta::call()
+## meta::invoke()
 
-A class self-attached `meta::call()` method may be defined with any number of parameters and any result type, overriding the behavior of calling the class object.
+A class self-attached `meta::invoke()` method may be defined with any number of parameters and any result type, overriding the behavior of calling the class object.
 
 ```sx
-meta static function call():T {}
+meta function invoke():t {}
 ```
 
 A multi-method may be used, allowing for multiple call signatures.

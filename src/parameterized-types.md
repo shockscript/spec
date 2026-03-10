@@ -19,7 +19,7 @@ interface I.<T> {
     // code
 }
 
-type Alias.<T> = (decimal, [T])
+type Alias.<T> = (decimal,[T])
 
 function f.<T>() : void {
     // code
@@ -31,8 +31,8 @@ function f.<T>() : void {
 - `v is Array` (matches an Array of any underlying type)
 - `v is Map` (matches a Map of any underlying K/V types)
 - `v is Set` (matches a Set of any underlying K/V types)
-- The is/as/as-strict operators and `T(v)` casts are implemented at runtime receiving an optional type arguments list, which are used for proper Array, Map or Set check. Involved type arguments may be `*`, in which case any type may be matched.
-- is/as/as-strict and `T(v)` completely ignore type arguments for parameterized types other than Array, Map or Set.
+- The is/as/as-strict operators and `t(v)` casts are implemented at runtime receiving an optional type arguments list, which are used for proper Array, Map or Set check. Involved type arguments may be `*`, in which case any type may be matched.
+- is/as/as-strict and `t(v)` completely ignore type arguments for parameterized types other than Array, Map or Set.
 
 ## Parameter constraints
 

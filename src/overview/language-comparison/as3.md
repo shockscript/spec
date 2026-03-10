@@ -38,7 +38,7 @@ The `Object` type is not dynamic per se, nor does it contain `undefined`, nor ar
 
 ## Nullability
 
-Types except `*` are non-nullable by default. Use `T?` or `?T` as a shorthand to `(null, T)`, and `T!` as a way to exclude `undefined` and/or `null`.
+Types except `*` are non-nullable by default. Use “`t?`” as a shorthand notation for `(t,null)`, and “`t!`” as a way to exclude `undefined` and/or `null`.
 
 ## Overriding methods
 

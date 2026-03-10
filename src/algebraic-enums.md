@@ -1,6 +1,6 @@
 # Algebraic enumerations
 
-Algebraic enumerations, as opposed to simple enumerations, contain `type X()` definitions instead of just `const X` definitions; they desugar to an one-level hierarchy of classes, with the enum being an abstract class, and each variant into a class with a self-attached `meta::call` method (so you can specify either the defined signature, or an object literal).
+Algebraic enumerations, as opposed to simple enumerations, contain `type X()` definitions instead of just `const X` definitions; they desugar to an one-level hierarchy of classes, with the enum being an abstract class, and each variant into a class with a self-attached `meta::invoke` method (so you can specify either the defined signature, or an object literal).
 
 ## Example
 

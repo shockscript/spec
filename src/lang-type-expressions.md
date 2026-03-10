@@ -5,22 +5,6 @@
 <ul>
     <i>TypeExpression</i> :
     <ul>
-        <i>NonPrefixedTypeExpression</i><br>
-        <b>?</b> <i>NonPrefixedTypeExpression</i>
-    </ul>
-</ul>
-
-<ul>
-    <i>TypeExpressionList</i> :
-    <ul>
-        <i>TypeExpression</i><br>
-        <i>TypeExpressionList</i> <b>,</b> <i>TypeExpression</i>
-    </ul>
-</ul>
-
-<ul>
-    <i>NonPrefixedTypeExpression</i> :
-    <ul>
         <b>*</b><br>
         <b>void</b><br>
         <b>null</b><br>
@@ -32,11 +16,19 @@
         <b>dynamic</b> <i>RecordTypeExpression</i><br>
         <b>track</b> <i>RecordTypeExpression</i><br>
         <i>FunctionTypeExpression</i><br>
-        <i>NonPrefixedTypeExpression</i> <i>PropertyOperator</i><br>
-        <i>NonPrefixedTypeExpression</i> [lookahead = <b>.</b> ] <i>QueryOperator</i><br>
-        <i>NonPrefixedTypeExpression</i> <i>TypeArguments</i><br>
-        <i>NonPrefixedTypeExpression</i> <i>NonNull</i><br>
-        <i>NonPrefixedTypeExpression</i> <b>?</b>
+        <i>TypeExpression</i> <i>PropertyOperator</i><br>
+        <i>TypeExpression</i> [lookahead = <b>.</b> ] <i>QueryOperator</i><br>
+        <i>TypeExpression</i> <i>TypeArguments</i><br>
+        <i>TypeExpression</i> <i>NonNull</i><br>
+        <i>TypeExpression</i> <b>?</b>
+    </ul>
+</ul>
+
+<ul>
+    <i>TypeExpressionList</i> :
+    <ul>
+        <i>TypeExpression</i><br>
+        <i>TypeExpressionList</i> <b>,</b> <i>TypeExpression</i>
     </ul>
 </ul>
 

@@ -9,6 +9,10 @@
     </ul>
 </ul>
 
+**Semantics**
+
+A normal function definition that belongs to the **meta** namespace and whose name equals **invoke** is implicitly marked **static**.
+
 ## Function name
 
 **Syntax**

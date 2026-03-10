@@ -4,4 +4,4 @@ The `Array.<T>` type, abbreviated `[T]`, represents a growable list of elements.
 
 ## Numeric optimization
 
-`[T]` is optimized for when `T` is a number type; for instance, `[uint]` will use a growable buffer optimized specifically for 32-bit unsigned integers.
+`[t]` is optimized for when `t` is a number or boolean type; for instance, `[uint]` uses a growable buffer optimized specifically for 32-bit integers.

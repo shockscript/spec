@@ -68,7 +68,7 @@ package {
     public class Clock extends whack.ds.UIComponent {
         var props : Props ;
         [State]
-        var mSecs : ?bigint ;
+        var mSecs : bigint? = null;
 
         public function Clock(props : Props) {
             super()
@@ -157,7 +157,7 @@ package zero.components {
 
     public class Binding extends whack.ds.UIComponent {
         [Bindable]
-        var element : ?Div ;
+        var element : Div? = null;
 
         public function Binding(props : Props) {
             super();

@@ -95,7 +95,7 @@ In the top-level of a Whack DS component, declare bindables by using the `Bindab
 ```sx
 public class Main extends whack.ds.UIComponent {
     [Bindable]
-    var button : ?org.w3.web.Button;
+    var button : org.w3.web.Button? = null;
 
     public function Main() {
         super()

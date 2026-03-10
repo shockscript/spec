@@ -1,9 +1,9 @@
 # Union types
 
-The structural union type, written `(m1, m2, ...mN)`, consists of two or more member types, containing all possible values of the member types.
+The structural union type, written `(t1, t2, tN)`, consists of two or more member types, containing all possible values of the member types.
 
 ```sx
-(decimal, string)
+(decimal,string)
 ```
 
 ## Restrictions
@@ -22,5 +22,5 @@ The default value of an union type is determined as follows:
 
 The following shorthands are available for nullability:
 
-- `T?` or `?T` is equivalent to `(null, T)`.
-- `T!` removes `null` and/or `void` from `T`.
+- “`t?`” is equivalent to `(t,null)`.
+- “`t!`” removes `null` and/or `void` from `t`.

@@ -124,7 +124,7 @@ In Whack DS the concept of "refs" is called *bindables*.
 package spark.components {
     public class Ark extends whack.ds.UIComponent {
         [Bindable]
-        var button : ?org.w3.web.Button;
+        var button : org.w3.web.Button? = null;
 
         public function Ark() {
             super();
