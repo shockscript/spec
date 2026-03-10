@@ -1,5 +1,7 @@
 # Identifier pattern
 
+An identifier pattern is most commonly used for variable bindings; however it can also be used for pattern matching within algebraic data types, where it can also match parameters or fields using compile-time constants.
+
 ```sx
 x
 Nothing
