@@ -1,16 +1,8 @@
 # ShockScript: Patterns
 
-Matching patterns may be used in a number of contexts, including variable bindings, `try..catch` clauses, `switch type` cases, `if`-let and assignment left-hand sides.
+Matching patterns may be used in a number of contexts, including variable bindings, `try..catch` clauses, `switch type` cases, `if..let` and assignment left-hand sides.
 
 Where applicable, expressions are disambiguated into those patterns, in which case any incompatible or illegal expression results in a syntax error; for example, an expression is disambiguated into a pattern inside an assignment whose left-hand side is either an array or object literal.
-
-An *IdentifierPattern* representing exactly a single wildcard **\*** identifier, when inside a variant arguments pattern, is treated as a parameter skip.
-
-```sx
-if (let Plus(*, 10) = exp) {
-    f = true
-}
-```
 
 **Syntax**
 

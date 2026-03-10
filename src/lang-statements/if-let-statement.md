@@ -1,6 +1,6 @@
 # If let statement
 
-The `if let` statement may be used for pattern matching on algebraic data types.
+The `if..let` statement may be used for pattern matching on algebraic data types.
 
 ```sx
 if (let Plus(10, right) = exp) {
@@ -16,7 +16,7 @@ if (let node = parseAtom()) {
 }
 ```
 
-`if let` can also be useful for, say, iterator results.
+`if..let` can also be useful for, say, iterator results.
 
 ```sx
 if (let [x] = characters.next()) {

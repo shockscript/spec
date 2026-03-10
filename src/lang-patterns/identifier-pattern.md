@@ -22,7 +22,8 @@ Vector({ x, y })
 <ul>
     <i>IdentifierPatternStart</i> :
     <ul>
-        <i>PropertyIdentifier</i>
+        <i>Identifier</i> [when keywords are enabled]<br>
+        <i>IdentifierName</i> [when keywords are disabled]
     </ul>
 </ul>
 
@@ -45,17 +46,9 @@ Vector({ x, y })
 <ul>
     <i>IdentifierPatternArgument</i> :
     <ul>
+        <b>*</b><br>
         <i>Pattern</i><br>
-        <i>IdentifierPatternArgument</i> <b>,</b> <i>Pattern</i>
+        <i>IdentifierPatternArgument</i> <b>,</b> <i>Pattern</i><br>
+        <i>IdentifierPatternArgument</i> <b>,</b> <b>*</b>
     </ul>
 </ul>
-
-**Semantics**
-
-An *IdentifierPattern* representing exactly a single wildcard **\*** identifier is treated as a parameter skip.
-
-```sx
-if (let Plus(*, 10) = exp) {
-    f = true
-}
-```
