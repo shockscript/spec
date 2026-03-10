@@ -45,6 +45,7 @@
     <i>RecordTypeExpression</i> :
     <ul>
         <b>&#x7B;&#x7D;</b><br>
+        <b>&#x7B;</b> <i>RecordTypeItemList</i> <b>&#x7D;</b><br>
         <b>&#x7B;</b> <i>RecordTypeItemList</i> <b>&#x7D;</b>
     </ul>
 </ul>
