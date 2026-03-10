@@ -211,7 +211,6 @@ html:not(.js) .left-buttons button {
 
 :not(pre) > .hljs {
     display: inline;
-    padding: 0.1em 0.3em;
     border-radius: 3px;
 }
 
