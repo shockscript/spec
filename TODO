@@ -309,6 +309,8 @@
     - [ ] `length` = number of required parameters (optional or rest parameters do not count)
     - [ ] `equals(obj)` override just using `===`
     - [ ] `clone()` returns the same Function reference back without cloning
+    - [ ] apply(arguments)
+    - [ ] call(arg1, arg2, argN)
   - [ ] (Whack DS) whack.ds.State
     - [ ] `equals(obj)` override just using `===`
     - [ ] `clone()` returns the same State reference back without cloning
