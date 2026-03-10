@@ -13,6 +13,8 @@ The default behavior while deserializing into a class other than primitive types
 3. Assign each field of *fields* to the respective data document field with the appropriate parsing of the field's data type, applying any configured rename.
 4. Return *o*
 
+Simple enums, including Flags enums, are serialized and deserialized in a different way from algebraic enums.
+
 The reason for requiring the Serial or XS meta-data is for making the default behavior more explicit, which may be adjusted with methods like `fromJSON` and `toJSON`.
 
 > **Note**: This section lacks certain contents yet.
