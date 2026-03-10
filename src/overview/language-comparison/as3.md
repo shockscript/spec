@@ -5,15 +5,16 @@ ShockScript looks like ActionScript 3. This section describes several details th
 ## Primitive types
 
 - ShockScript does have more numeric types close to ECMAScript 4.
-- Primitive types are in a lowercase form, adapting more from the ECMAScript 4 proposal, but without backwards compatibility.
+- The Boolean and String type names are as they are, although they are alternatively aliased `boolean` and `string` in the top-level package.
 
-## string type
+## String type
 
-The `string` type stores an UTF-8 encoded text, not an UTF-16 encoded text.
+The String type stores an UTF-8 encoded text, not an UTF-16 encoded text.
 
 ```sx
-"\u{10ffff}".length    // utf-8 length
-"\u{10ffff}".charAt(0) // code point at byte 0
+"\u{10ffff}".length    // UTF-8 length
+"\u{10ffff}".charAt(0) // Code Point at byte 0
+"\u{10ffff}".charCodeAt(0)
 
 
 for each (var ch in "shockscript".chars()) {
@@ -26,7 +27,7 @@ for each (var ch in "shockscript".chars()) {
 
 ## Include directive
 
-The `include` directive is not included in ShockScript.
+The `include` directive is not included in ShockScript. It was attempted before, even though it imposes certain efforts for language servers. That may be reconsidered in the future.
 
 ## Dynamic
 
@@ -68,7 +69,7 @@ trace(k in m);
 The filter operator has been modified to use a `*` identifier rather than cluttering the lexical scope with dynamic names.
 
 ```sx
-xnode.(*.@x.startsWith("abc"))
+xn.(*.@x.startsWith("abc"))
 ```
 
 ## With statement

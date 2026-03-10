@@ -1,3 +1,3 @@
-# boolean type
+# Boolean type
 
-The `boolean` type consists of the values `false` and `true`.
+The Boolean type (or its alias `boolean`) consists of the values `false` and `true`.

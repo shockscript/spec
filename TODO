@@ -162,6 +162,8 @@
   - [ ] NaN
   - [ ] undefined
   - [ ] Number = union `(byte, short, int, uint, long, bigint, float, double, decimal)`
+  - [ ] boolean alias = Boolean
+  - [ ] string alias = String
   - [ ] DecimalContext
     - [ ] Supports "precision" and "rounding" options for now (look at decimal.js's API to get some ideas)
   - [ ] Iterator.\<T> (interface)
@@ -228,6 +230,7 @@
     - [ ] toString()
     - [ ] toLocaleString()
     - [ ] valueOf()
+  - [ ] Boolean class
   - [ ] Array
     - [ ] +Iterable
     - [ ] length : int (not uint)
@@ -259,7 +262,7 @@
   - [ ] Math
     - [ ] `random()`
     - [ ] `random(start, end)` (inclusive; most Number types supported)
-  - [ ] string
+  - [ ] String class
     - [ ] +Iterable
     - [ ] static `fromByte(...):string`
     - [ ] length (in UTF-8 bytes; int, not uint)
