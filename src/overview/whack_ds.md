@@ -208,6 +208,7 @@ The following apply when using E4X literals to construct `whack.ds.Node`.
 - A tag name must resolve to either
   - A component class that extends `whack.ds.UIComponent`
     - May be an Alias itself
+  - A Prop (clarified in the subsections)
   - A context provider
   - An intrinsic element
 
