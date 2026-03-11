@@ -38,11 +38,20 @@ External files are typically embedded in a structured way in the final program, 
 
 The user may embed files statically as either an UTF-8 encoded String, or `ByteArray`, or CSS node depending on the framework, rather than obtaining an URL.
 
+For a String:
+
 ```sx
-// String
 Embed("BeautySecrets.txt", type="text/plain")
-// ByteArray
+```
+
+For a ByteArray:
+
+```sx
 Embed("Hacker.bin", type="application/octet-stream")
-// For Whack, a whack.ds.StyleSheetNode
+```
+
+For a style sheet node (like `whack.ds.StyleSheetNode` for Whack):
+
+```sx
 Embed("AppBarSkin.css", type="text/css")
 ```
