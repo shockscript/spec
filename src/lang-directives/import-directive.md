@@ -1,5 +1,13 @@
 # Import directive
 
+The **import** pragma may be used to import properties from a package.
+
+The **import\@** pragma may be used to import annotations from a package.
+
+```sx
+import@ bridge.annotations.*;
+```
+
 **Syntax**
 
 <ul>
