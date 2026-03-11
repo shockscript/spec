@@ -11,3 +11,11 @@
         <b>import</b> <i>Identifier</i> <b>=</b> <i>PackageName</i> <b>.</b> <i>IdentifierName</i>
     </ul>
 </ul>
+
+<ul>
+    <i>ImportAnnotationDirective</i> :
+    <ul>
+        <b>import @</b> <i>PackageName</i> <b>. *</b><br>
+        <b>import @</b> <i>PackageName</i> <b>.</b> <i>IdentifierName</i>
+    </ul>
+</ul>

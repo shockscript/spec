@@ -43,8 +43,8 @@ ctx = { duck: 10 }
 trace(ctx.inspire())
 
 class Context {
-    var duck:uint
-    var cool:boolean
+    var duck : uint = 0
+    var cool : boolean = false
 
     public function inspire():uint (
         Math.random(0, duck + (cool ? 5 : 0))
