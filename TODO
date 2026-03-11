@@ -234,7 +234,10 @@
   - [ ] Array
     - [ ] +Iterable
     - [ ] length : int (not uint)
-    - [ ] `new Array` supports taking iterables or iterators
+    - [ ] `new Array`
+      - The constructor overloads are native, but nor do their native part implement any actual stuff, since type arguments are received.
+      - [ ] `new Array.<T>(length)`
+      - [ ] `new Array.<T>(iterableOrIterator)`
     - [ ] `meta::get(...)` throws if out of bounds
     - [ ] `meta::filter(...)`
     - [ ] `meta::has(...)`
@@ -247,7 +250,10 @@
     - [ ] `last : (t,void)`
   - [ ] Map
     - [ ] +Iterable
-    - [ ] `Map(weakKeys:boolean = false)`
+    - [ ] `new Map`
+      - The constructor overloads are native, but nor do their native part implement any actual stuff, since type arguments are received.
+      - [ ] `new Map.<K, V>(weakKeys:boolean = false)`
+      - [ ] `new Map.<K, V>(iterableOrIterator, weakKeys=)`
     - [ ] `meta::get()` throws if key does not match
     - [ ] `meta::has(...)`
     - [ ] other meta-methods (e.g. set, delete)
@@ -257,8 +263,16 @@
     - [ ] `clone(deep=)`
   - [ ] Set.<T>
     - [ ] Uses a Map.<K, V> internally.
+    - [ ] +Iterable
+    - [ ] `new Set`
+      - The constructor overloads are native, but nor do their native part implement any actual stuff, since type arguments are received.
+      - [ ] `new Set.<T>(weak:boolean = false)`
+      - [ ] `new Set.<T>(iterableOrIterator, weak=)`
     - [ ] Supports weak elements.
-    - [ ] Unlike a Map, accessing properties never throws a ReferenceError. It returns either false or true; that is mainly why Set was introduced, since Map based sets work worse (e.g. has value is basically 'k in set && set[k]')
+    - [ ] Unlike a Map, accessing properties never throws a ReferenceError. It returns either false or true; that is mainly why Set was introduced, since Map based sets work worse (e.g. has value is basically 'k in set && set[k]'). Set's implementation just does an 'k in set' and doesn't care about the Booleans it internally assigns.
+    - [ ] `equals(o)` - Structural equality
+    - [ ] `clear()`
+    - [ ] `clone(deep=)`
   - [ ] Math
     - [ ] `random()`
     - [ ] `random(start, end)` (inclusive; most Number types supported)
