@@ -40,8 +40,10 @@ Whack DS supports style sheets out of the box. Here is a simple example:
 Here is a little code snippet:
 
 ```sx
-package metro.components {
-    public class TabBar extends whack.ds.UIComponent {
+package spark.components {
+    import whack.ds.UIComponent;
+
+    public class TabBar extends UIComponent {
         var props : Props
 
         public function TabBar(props : Props) {
@@ -63,9 +65,10 @@ Here's a slightly bigger code snippet for a linear second accumulator:
 
 ```sx
 package {
+    import whack.ds.UIComponent;
     import whack.util.*
 
-    public class Clock extends whack.ds.UIComponent {
+    public class Clock extends UIComponent {
         var props : Props ;
         [State]
         var mSecs : bigint? = null;
@@ -151,9 +154,10 @@ The `function` case allows tag attributes such as `bind` to specify a receiver t
 
 ```sx
 package zero.components {
+    import whack.ds.UIComponent;
     import org.w3.web.Div;
 
-    public class Binding extends whack.ds.UIComponent {
+    public class Binding extends UIComponent {
         [Bindable]
         var element : Div? = null;
 
@@ -226,8 +230,10 @@ A component may be an alias by using the Alias meta-data, which specifies a Shoc
 
 ```sx
 package spark.components {
+    import whack.ds.UIComponent;
+
     [Alias("w::VGroup")]
-    public class VGroup extends whack.ds.UIComponent {
+    public class VGroup extends UIComponent {
     }
 }
 ```
@@ -242,15 +248,16 @@ A component library typically provides an Application component so you do not ha
 
 ```sx
 package {
-    import mx = metro.components.*;
+    import whack.ds.UIComponent;
+    import s = spark.components.*;
 
-    public class Main extends whack.ds.UIComponent {
+    public class Main extends UIComponent {
         public function Main() {
             super()
             final = (
-                <mx:Application>
+                <s:Application>
                     <w:EyeExp name="camera" size={37}/>
-                </mx:Application>
+                </s:Application>
             )
         }
     }

@@ -6,12 +6,15 @@ This feature may only be used with classes that are annotatated with either the 
 
 Variants of an algebraic data type do not need to specify the `Serial` or `XS` meta-data.
 
-The default behavior while deserializing into a class other than primitive types and certain global classes, unless defining a self-attached `fromJSON` or `fromXML` method, is roughly:
+The default behavior while deserializing into a class *c* other than primitive types and certain global classes, unless defining a self-attached `fromJSON` or `fromXML` method, is roughly:
 
-1. Create a new instance *o* of the class without evaluating the constructor
-2. Let *fields* = Each *o*\[*k*\] field that is not configured with the `skip="true"` option.
-3. Assign each field of *fields* to the respective data document field with the appropriate parsing of the field's data type, applying any configured rename.
-4. Return *o*
+1. If *c*<i>[[Constructor]]</i>.length == 0
+  1. Let o = new *c*()
+2. Else
+  1. Let o = Create a new instance of *c* without evaluating the constructor
+3. Let *fields* = Each *o*\[*k*\] field that is not configured with the `skip="true"` option.
+4. Assign each field of *fields* to the respective data document field with the appropriate parsing of the field's data type, applying any configured rename.
+5. Return *o*
 
 Simple enums, including Flags enums, are serialized and deserialized in a different way from algebraic enums.
 

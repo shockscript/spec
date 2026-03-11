@@ -8,9 +8,10 @@ There are, however, many positive differences to ReactJS, such as memoization an
 
 ```sx
 package zero {
+    import whack.ds.UIComponent;
     import s = spark.components.*
 
-    public class HelloWorld extends whack.ds.UIComponent {
+    public class HelloWorld extends UIComponent {
         public function HelloWorld() {
             super()
             final = (
@@ -85,7 +86,9 @@ Unlike ReactJS, in Whack DS there is no risk of accessing an outdated state's va
 
 ```sx
 package spark.components {
-    public class Ark extends whack.ds.UIComponent {
+    import whack.ds.UIComponent;
+
+    public class Ark extends UIComponent {
         [State]
         var x : uint = 0;
 
@@ -122,7 +125,9 @@ In Whack DS the concept of "refs" is called *bindables*.
 
 ```sx
 package spark.components {
-    public class Ark extends whack.ds.UIComponent {
+    import whack.ds.UIComponent;
+
+    public class Ark extends UIComponent {
         [Bindable]
         var button : org.w3.web.Button? = null;
 
@@ -148,8 +153,8 @@ Note `.@x` is a meta-data attribute accessor for DOM elements.
 Using contexts results in `ContextReference.<T>` objects, although they are used as natural `Context`-annotated variables.
 
 ```sx
-public class View extends whack.ds.UIComponent {
-    [Context("zero.context.Example")]
+public class View extends UIComponent {
+    [Context("zero.contexts.Example")]
     const example;
 
     public function View() {
@@ -166,7 +171,7 @@ public class View extends whack.ds.UIComponent {
 Props must be typed **tap \{\}**. It is not recommended to destructure Props.
 
 ```sx
-public class View extends whack.ds.UIComponent {
+public class View extends UIComponent {
     public function View(props : Props) {
         super()
         final = (

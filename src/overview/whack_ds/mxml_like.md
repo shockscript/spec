@@ -38,7 +38,9 @@ The `key` attribute is reserved for uniquely identifying interpolated collection
 
 ```sx
 package zero.components {
-    public class Ark extends whack.ds.UIComponent {
+    import whack.ds.UIComponent;
+
+    public class Ark extends UIComponent {
         public function Ark() {
             super();
             final = (
@@ -64,7 +66,9 @@ If the style sheet is too large, it may be moved out of the ShockScript file; fo
 
 ```sx
 package zero.components {
-    public class Ark extends whack.ds.UIComponent {
+    import whack.ds.UIComponent;
+
+    public class Ark extends UIComponent {
         public function Ark() {
             super();
             final = (
@@ -127,7 +131,9 @@ For a component to support `<fx:Style>` tags, it simply needs to support a `styl
 
 ```sx
 package zero.components {
-    public class Ark extends whack.ds.UIComponent {
+    import whack.ds.UIComponent;
+
+    public class Ark extends UIComponent {
         public function Ark(props : Props) {
             super();
             final = (

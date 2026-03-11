@@ -22,9 +22,10 @@ Depending on the inference type, XML literals may be used for constructing imple
 
 ```sx
 package zero {
+    import whack.ds.UIComponent;
     import s = spark.components.*
 
-    public class Main extends whack.ds.UIComponent {
+    public class Main extends UIComponent {
         public function Main() {
             super()
             final = (

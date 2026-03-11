@@ -6,9 +6,10 @@ The MXML language, as part of the Apache Flex framework, was used for describing
 
 ```sx
 package zero {
+    import whack.ds.UIComponent;
     import s = spark.components.*
 
-    public class HelloWorld extends whack.ds.UIComponent {
+    public class HelloWorld extends UIComponent {
         public function HelloWorld() {
             super()
             final = (
@@ -72,7 +73,7 @@ Similarly to effects, callbacks that appear in E4X literals applied to the `whac
 Declare State variables using the `State` meta-data:
 
 ```sx
-public class Main extends whack.ds.UIComponent {
+public class Main extends UIComponent {
     [State]
     var counter : uint = 0;
 }
@@ -93,7 +94,7 @@ x = [...x, 10]
 In the top-level of a Whack DS component, declare bindables by using the `Bindable` meta-data. Bindables have certain use-cases, such as persisting a value across renders, and extracting DOM elements from certain tags (in which case the `bind` attribute is used).
 
 ```sx
-public class Main extends whack.ds.UIComponent {
+public class Main extends UIComponent {
     [Bindable]
     var button : org.w3.web.Button? = null;
 
@@ -111,8 +112,8 @@ public class Main extends whack.ds.UIComponent {
 Obtain inherited contexts by using a Context variable.
 
 ```sx
-public class Main extends whack.ds.UIComponent {
-    [Context("metro.context.Theme")]
+public class Main extends UIComponent {
+    [Context("spark.contexts.Theme")]
     const theme;
 
     public function Main() {
