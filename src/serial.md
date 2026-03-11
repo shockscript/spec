@@ -24,7 +24,7 @@ The reason for requiring the Serial or XS meta-data is for making the default be
 How one serializes or deserializes into/from JSON using the Serial feature:
 
 ```sx
-import js = org.sx.serial.json.*
+import js = sx.serial.json.*
 js::parse(str, T)
 js::parse(obj, T)
 js::object(v)
@@ -99,7 +99,7 @@ A class may implement a self-attached `fromJSON` method and/or an instance `toJS
 How one serializes or deserializes into/from TOML:
 
 ```sx
-import toml = org.sx.serial.toml.*
+import toml = sx.serial.toml.*
 toml::parse(str, T)
 toml::parse(obj, T)
 toml::object(v)
@@ -113,7 +113,7 @@ TOML is handled the same way as JSON. The stringifier decides if it's best to de
 How one serializes or deserializes into/from XML:
 
 ```sx
-import xs = org.sx.serial.xml.*
+import xs = sx.serial.xml.*
 xs::parse(str, T, options)
 xs::parse(xn, T, options)
 xs::parse(xlist, T, options)
@@ -220,11 +220,11 @@ The best way to patch data while retaining formatting and structure is having:
 - The original document text
 - A modified object, obtained from parsing the original document text
 
-The `org.sx.serial.<data format>.*` subpackages provide a function for serializing an object into the data format's most adequate object:
+The `sx.serial.<data format>.*` subpackages provide a function for serializing an object into the data format's most adequate object:
 
-- `org.sx.serial.json.object(o)`
-- `org.sx.serial.toml.object(o)`
-- `org.sx.serial.xml.xml(o)`
+- `sx.serial.json.object(o)`
+- `sx.serial.toml.object(o)`
+- `sx.serial.xml.xml(o)`
 
 A third-party library may be used for patching the data document, which will typically take at least (*originalDoc* text, *modification* object), figure out what has changed and return a new document text.
 

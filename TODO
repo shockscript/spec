@@ -141,8 +141,8 @@
   - [ ] generic namespace = "http://www.sweaxizone.com/2015/shockscript/generic"
   - [ ] GenericQualifier = same as generic, but can be used as an access modifier in definitions
   - [ ] meta namespace = "http://www.sweaxizone.com/2015/shockscript/meta" (under the hood it's not really that URI; it's the global "meta" system namespace)
-  - [ ] Intl namespace = "org.sx.intl"
-  - [ ] Temporal namespace = "org.sx.temporal"
+  - [ ] Intl namespace = "sx.intl"
+  - [ ] Temporal namespace = "sx.temporal"
   - [ ] Env namespace (Env special qualifier) = "http://www.sweaxizone.com/2015/shockscript/Env"
   - [ ] trace()
   - [ ] etrace()
@@ -205,7 +205,7 @@
           - [ ] 2. Throw a TypeError if o is undefined or null or o's constructor is not exactly this's constructor.
           - [ ] 3. Return o
           - [ ] A MUST: For boolean, string and each Number data type's Class provide a pre-cached Function (self):* that returns self as is
-          - [ ] NOTE: To clarify, org.sx.meta.* should provide a function somewhere for retrieving a class's instance method as a Function that clearly takes the `this` receiver as a regular parameter.
+          - [ ] NOTE: To clarify, sx.meta.* should provide a function somewhere for retrieving a class's instance method as a Function that clearly takes the `this` receiver as a regular parameter.
         - [ ] 2. Tuples
         - [ ] 3. map { } records
         - [ ] 4. tap { } records (special kind of classes)
@@ -344,28 +344,30 @@
     - [ ] meta::invoke(...) (same as Date(...) in JS, which returns a timestamp)
     - [ ] clone()
     - [ ] override equals()
-  - [ ] `org.sx.intl.*`
+  - [ ] `sx.annotations.*`
+    - [ ] Language support meta-data. (See spec/src/metadata.md)
+  - [ ] `sx.intl.*`
     - [ ] Like ECMA-262 `Intl`. Aliased `Intl::`, as well.
     - [ ] Most data types implement clone()
     - [ ] Most data types override equals()
-  - [ ] `org.sx.temporal.*`
+  - [ ] `sx.temporal.*`
     - [ ] Like ECMA-262 like `Temporal`. Aliased `Temporal::`, as well.
     - [ ] Most data types implement clone()
     - [ ] Most data types override equals()
-  - [ ] `org.sx.meta.*`
+  - [ ] `sx.meta.*`
     - Used for what the `meta` namespace cannot be used for (e.g. perhaps extracting a list of properties from a package name).
     - [ ] Provide ways of creating Array, Map and Set objects with given type arguments (plus weak? for Map/Set)
-  - [ ] `org.sx.meta.ty.*`
+  - [ ] `sx.meta.ty.*`
     - [ ] Allows most of type inspection during runtime. E.g. most can be obtained from Class or Function objects.
     - [ ] ArrayType (T)
     - [ ] MapType (K, V)
     - [ ] SetType (T)
-  - [ ] `org.sx.meta.context.*`
+  - [ ] `sx.meta.context.*`
     - Special compiler functions for reflecting lexical contexts.
     - [ ] decimal() - DecimalContext
     - [ ] dxns() - default xml namespace
     - [ ] xml() - XMLContext
-  - [ ] `org.sx.serial.json.*`
-  - [ ] `org.sx.serial.toml.*`
-  - [ ] `org.sx.serial.xml.*`
+  - [ ] `sx.serial.json.*`
+  - [ ] `sx.serial.toml.*`
+  - [ ] `sx.serial.xml.*`
     - [ ] Every serialization/deserialization methods require options that require at least the Namespace prefixes.

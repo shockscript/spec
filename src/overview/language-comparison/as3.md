@@ -195,3 +195,7 @@ switch type (exp) {
     }
 }
 ```
+
+## Typed meta-data
+
+Meta-data are typed on a surface-level to avoid typos. For custom meta-data, the convention is to define an `annotations.*` subpackage for a project, which contains Annotation classes, and use the **import\@** pragma, as shown in [Meta-data annotations](../../metadata.md).

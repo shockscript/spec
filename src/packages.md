@@ -16,7 +16,8 @@ The user defines properties under the package inside the `package` block, as in:
 
 ```sx
 package f.q {
-    public function f():void {}
+    public function f():void {
+    }
 }
 ```
 

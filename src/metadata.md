@@ -1,4 +1,4 @@
-# Meta-data
+# Meta-data annotations
 
 Meta-data are bracketed, entries of textual key-value pairs that may be attached to annotatable directives, that are typed on a surface level during compile-time, but are dynamic during runtime. Meta-data are not unique and may appear more than once, as well as their key-value pairs.
 
@@ -14,8 +14,6 @@ class A {}
 ```
 
 Keyless entries are a single identifier (equivalent to a string) or a string literal not accompanied by a key.
-
-The
 
 ## Typing meta-data
 
@@ -50,3 +48,5 @@ Then the **import\@** pragma may be used to import annotations from a package.
 ```sx
 import@ bridge.annotations.*;
 ```
+
+> **Note**: Libraries can alias to annotations from other libraries by using, say, `type` definitions.
