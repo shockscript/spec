@@ -99,13 +99,16 @@ Even though the constructor is frequently re-evaluated, objects originating from
 
 ## Callback caching
 
-Whack DS caches callbacks, since they are naturally ever changing `Function` objects regardless of whether they are lambdas or fixtures ─ for example, since they capture locals, `this` or ShockScript lexical contexts, they tend to return different `Function` objects ─ and this is crucial for memoization.
+Whack DS caches callbacks (either lambdas, inline event handlers, instance methods of the same component or Functions declared inside the constructor) within applicable E4X tags, since they are naturally ever changing `Function` objects regardless of whether they are lambdas or fixtures ─ for example, since they capture locals, `this` or ShockScript lexical contexts, they tend to return different `Function` objects ─ and this is crucial for memoization.
 
-- Whack DS doesn't attempt to cache a callback if either:
-  - It belongs to another code block (like a loop, an `if`, a `switch` or a `switch type`) and not the component's constructor main block.
-  - If a `return` statement has a chance of evaluating before that callback.
+If a callback appears within a nested block, Whack tries contributing it as a `whack.ds.useCallback` to the component main evaluation's body.
 
-The compiler generates a warning at a tag's attribute if its callback does not meet this criteria.
+Whack DS doesn't attempt to cache such a callback if either:
+
+1. It it does not belong to a component's constructor.
+2. If a `return`, `break` or `continue` statement has a chance of evaluating before that callback.
+
+For the item 2, the compiler generates a warning at a tag's attribute if its callback does not meet this criteria.
 
 ## Auto dependency tracking
 
