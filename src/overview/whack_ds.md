@@ -102,7 +102,11 @@ Even though the constructor is frequently re-evaluated, objects originating from
 
 ## Callback caching
 
-Whack DS caches callbacks (either lambdas, inline event handlers, instance methods of the same component or Functions declared inside the constructor) within applicable E4X tags, since they are naturally ever changing `Function` objects regardless of whether they are lambdas or fixtures ─ for example, since they capture locals, `this` or ShockScript lexical contexts, they tend to return different `Function` objects ─ and this is crucial for memoization.
+Whack DS caches callbacks (either lambdas, inline event handlers, instance methods of the same component or Functions declared inside the constructor) within applicable E4X attributes, since they are naturally ever changing `Function` objects regardless of whether they are lambdas or fixtures ─ for example, since they capture locals, `this` or ShockScript lexical contexts, they tend to return different `Function` objects ─ and this is crucial for memoization.
+
+> **Note**: Whack currently **does not cache** callbacks nested in objects. It is not recommended to use lambdas or ever changing Functions inside Prop objects within an E4X literal, as Whack will not give an error or warning for now.
+>
+> For the tag-form of setting a Prop in an E4X literal (as in `<s:f>{function(){}}</s:f>`), we have not considered caching either, since this is not very common; although that is easy to support in the future as well.
 
 If a callback appears within a nested block, Whack tries contributing it as a `whack.ds.useCallback` to the component main evaluation's body.
 
