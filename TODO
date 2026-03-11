@@ -231,7 +231,9 @@
     - [ ] toLocaleString()
     - [ ] valueOf()
   - [ ] Boolean class
+    - [ ] mark as final
   - [ ] Array
+    - [ ] mark as final
     - [ ] +Iterable
     - [ ] length : int (not uint)
     - [ ] `new Array`
@@ -249,6 +251,7 @@
     - [ ] `first : (t,void)`
     - [ ] `last : (t,void)`
   - [ ] Map
+    - [ ] mark as final
     - [ ] +Iterable
     - [ ] `new Map`
       - The constructor overloads are native, but nor do their native part implement any actual stuff, since type arguments are received.
@@ -263,6 +266,7 @@
     - [ ] `clone(deep=)`
   - [ ] Set.<T>
     - [ ] Uses a Map.<K, V> internally.
+    - [ ] mark as final
     - [ ] +Iterable
     - [ ] `new Set`
       - The constructor overloads are native, but nor do their native part implement any actual stuff, since type arguments are received.
@@ -278,6 +282,7 @@
     - [ ] `random(start, end)` (inclusive; most Number types supported)
   - [ ] String class
     - [ ] +Iterable
+    - [ ] mark as final
     - [ ] static `fromByte(...):string`
     - [ ] length (in UTF-8 bytes; int, not uint)
     - [ ] `byteAt():byte`
@@ -341,13 +346,16 @@
     - [ ] Represent this as a class and not a record type (object literal works on classes now)
     - [ ] ignoreWhitespace defaults to true, which means "trim any whitespace at the beginning and end of text nodes". Unlike AS3/E4X, XML literals always ignore whitespace. (If whitespace is desired on text nodes, use interpolation.)
   - [ ] Namespace
+    - [ ] mark as final
     - [ ] unlike QName, fully writable
   - [ ] QName
+    - [ ] mark as final
     - [ ] QName constructor
       - [ ] If uri is undefined or unspecified: if name = "*", then uri=null; otherwise uri=default namespace
     - [ ] `uri : string?` - May be null for "match any namespace"
     - [ ] fully read-only
   - [ ] ByteArray
+    - [ ] mark as final
     - [ ] +Iterable
     - [ ] length (int, not uint)
     - [ ] Indexing
@@ -355,6 +363,7 @@
     - [ ] `clone()`
   - [ ] Endian enum
   - [ ] Date
+    - [ ] mark as final
     - [ ] meta::invoke(...) (same as Date(...) in JS, which returns a timestamp)
     - [ ] clone()
     - [ ] override equals()
