@@ -105,6 +105,8 @@ If a callback appears within a nested block, Whack tries contributing it as a `w
 
 Whack DS doesn't attempt to cache such a callback if it it does not belong to a component's constructor. If it does, the callback is cached; but after IR generation, if there is a chance of the constructor exiting execution before the generated `whack.ds.useCallback` callback, the compiler generates an error at the respective tag's attribute.
 
+The compiler generates an error if the callback is preceded by context pragmas (`default xml namespace`, `use xml`, `use decimal`) unless those pragmas are in the constructor main body itself.
+
 ## Auto dependency tracking
 
 - Whack DS presents extra overhead for State/Context/Prop accessors, so that, say, the surrounding effect or callback is said to be dependent on an used State/Context/Prop.
