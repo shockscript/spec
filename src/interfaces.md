@@ -85,7 +85,7 @@ interface I {
 
 ## Method annotations
 
-As annotations, interface methods may have nothing but an access modifier that is allowed to be anything but a direct reserved namespace.
+As annotations, interface methods may have nothing but an access modifier that is allowed to be anything but a direct reserved namespace, as well as any meta-data.
 
 ```sx
 interface I {
