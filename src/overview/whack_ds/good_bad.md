@@ -48,3 +48,35 @@ final = (
 ```
 
 <sup>Callback caching (`whack.ds.useCallback`) only occurs implicitly for Functions assigned to the whole attribute.</sup>
+
+## :&#x28; Callbacks
+
+```sx
+final = (
+    <cset:Evaluator>
+        <cset:finish>
+            {function(){doIt()} /* BAD */}
+        </cset:finish>
+    </cset:Evaluator>
+)
+```
+
+<sup>Callback caching (`whack.ds.useCallback`) only occurs implicitly for Functions assigned to the whole attribute when using a syntactic XML attribute.</sup>
+
+## :&#x29; Callbacks
+
+```sx
+final = (
+    <cset:Evaluator
+        finish&={doIt()}  />
+)       // GOOD
+```
+
+## :&#x29; Callbacks
+
+```sx
+final = (
+    <cset:Evaluator
+        finish={function(e){doIt()}} />
+)       // GOOD
+```
