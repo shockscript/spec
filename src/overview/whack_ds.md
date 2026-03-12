@@ -114,6 +114,28 @@ x = [...x, 10] // pushes 10
                //   never .push(10)
 ```
 
+In the same component, you may also define deriveds, like:
+
+```sx
+public function add(n:double):void {
+    x = [...x, n]
+}
+```
+
+Then you can do:
+
+```sx
+add(10)
+```
+
+Anywhere in the component, although this is an insignificant example of how deriveds can be used.
+
+> **Note**: ReactJS and Adobe Flex also present the same limitation.
+>
+> For a language compiler to implement any actual transitive immutability,
+> significant effort is required, and it may end up increasing the language
+> complexity.
+
 ## Callback caching
 
 Whack DS caches callbacks (either lambdas, inline event handlers, instance methods of the same component or Functions declared inside the constructor) within applicable E4X attributes, since they are naturally ever changing `Function` objects regardless of whether they are lambdas or fixtures ─ for example, since they capture locals, `this` or ShockScript lexical contexts, they tend to return different `Function` objects ─ and this is crucial for memoization.
