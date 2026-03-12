@@ -11,6 +11,7 @@
   - [E4X](./overview/e4x.md)
   - [Whack DS](./overview/whack_ds.md)
     - [MXML like constructs](./overview/whack_ds/mxml_like.md)
+    - [The good, the bad](./overview/whack_ds/good_bad.md)
   - [Tooling](./overview/tooling.md)
   - [Namespaces](./overview/namespaces.md)
   - [Event model](./overview/event-model.md)

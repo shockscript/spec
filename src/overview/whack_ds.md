@@ -102,33 +102,7 @@ Even though the constructor is frequently re-evaluated, objects originating from
 
 ## Immutability
 
-Because of possible inconsistencies when reading or comparing States, Contexts and Props, which may also affect `<fx:Style>` elements, it is best to treat those as immutable (e.g. not to overwrite any field or element of a Prop, Context or State). Overwriting a field or element of such a thing involves rather overwriting the whole thing, such as:
-
-```sx
-[State]
-var x : [double] = [];
-
-// Somewhere
-
-x = [...x, 10] // pushes 10
-               //   never .push(10)
-```
-
-In the same component, you may also define deriveds, like:
-
-```sx
-public function add(n:double):void {
-    x = [...x, n]
-}
-```
-
-Then you can do:
-
-```sx
-add(10)
-```
-
-Anywhere in the component, although this is an insignificant example of how deriveds can be used.
+Ensure you follow immutability principles with States, Contexts and Props.
 
 > **Note**: ReactJS and Adobe Flex also present the same limitation.
 >
