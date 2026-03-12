@@ -111,6 +111,8 @@ An arbitrary map of properties (`Map.<string, *>`) may be passed as well:
 
 Takeaway: Whatever you pass to a style sheet is reactive together with the component's `final` assignment (States, Props and Contexts). A style sheet property passed as an object isn't necessarily reactive if you're explicitly constructing a whack.ds.StyleSheet instance yourself and have not passed it to a final `whack.ds.Node` creation directly for a component's evaluation.
 
+> **Note**: Follow immutability principles when it comes to passing and using properties in such a way with CSS.
+
 The `Property(...)` property supports very simple operators without whitespace, like dot (`.x`, `.q::x` (relies on the `@namespace` CSS declarations)) and brackets (`[0]`, `["x"]`, `['x']`).
 
 ```css
