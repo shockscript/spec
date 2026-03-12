@@ -1,0 +1,264 @@
+- [ ] (Whack (?Red) engine) w namespace = "http://www.sweaxizone.com/2015/whack"
+- [ ] (Whack (?Red) engine) fx namespace = "http://www.sweaxizone.com/2015/whack/fx"
+- [ ] SX namespace = "http://www.sweaxizone.com/2015/shockscript/global"
+- [ ] generic namespace = "http://www.sweaxizone.com/2015/shockscript/generic"
+- [ ] GenericQualifier = same as generic, but can be used as an access modifier in definitions
+- [ ] meta namespace = "http://www.sweaxizone.com/2015/shockscript/meta" (under the hood it's not really that URI; it's the global "meta" system namespace)
+- [ ] Intl namespace = "sx.intl"
+- [ ] Temporal namespace = "sx.temporal"
+- [ ] Env namespace (Env special qualifier) = "http://www.sweaxizone.com/2015/shockscript/Env"
+- [ ] trace()
+- [ ] etrace()
+- [ ] assert() (a namespace-method)
+  - [ ] Assert methods have an optional Class constructor (usual Error signature). Their ShockDoc should include `@throws` for both `Error` and `AssertionError`.
+- [ ] assert.equal() (uses `Object#equals()`, thus it's not a reference equality; advise care when using this; one might want `assert(x === y)` instead)
+- [ ] assert.throws()
+- [ ] encodeURI()
+- [ ] decodeURI()
+- [ ] encodeURIComponent()
+- [ ] decodeURIComponent()
+- [ ] isNaN()
+- [ ] isFinite()
+- [ ] parseInt()
+- [ ] parseFloat()
+- [ ] Infinity
+- [ ] NaN
+- [ ] undefined
+- [ ] Number = union `(byte, short, int, uint, long, bigint, float, double, decimal)`
+- [ ] boolean alias = Boolean
+- [ ] string alias = String
+- [ ] DecimalContext
+  - [ ] Supports "precision" and "rounding" options for now (look at decimal.js's API to get some ideas)
+- [ ] Iterator.\<T> (interface)
+  - [ ] required `next() : [t]?` (the returned array must be of length 1)
+  - [ ] `length():int` (consumes the whole iterator)
+  - [ ] `skip(count:int):void`
+  - [ ] `meta::filter(...)` (returns another iterator)
+  - [ ] Other functional methods (iterator *helper methods* like `map`, `every`, `some`, `reduce`...)
+- [ ] Iterable.\<K, V> (interface) requires keys() and values()
+- [ ] Generator.\<T>
+- [ ] Comparable interface
+  - [ ] `compareTo(obj:Object):int`
+  - [ ] This is used by default on array sorting.
+- [ ] Object
+  - [ ] `equals(obj:Object):boolean`
+    - [ ] 1. First of all, try a `===` comparison and return true if that is already true.
+    - [ ] 2. Advise: equals() is by default structural
+    - [ ] 3. Boolean: return false
+    - [ ] 4. Number union
+      - [ ] floating points: NaN = NaN
+      - [ ] floating points: 0 = 0
+      - [ ] floating points: -0 = -0
+      - [ ] floating points: -0 != 0
+      - [ ] Otherwise return false
+    - [ ] 5. String: return false
+    - [ ] 6. Tuples
+    - [ ] 7. map{} records
+    - [ ] 8. tap{} records (special kind of classes)
+    - [ ] 9. Simple enums === (flags are interned, so that would work)
+    - [ ] 10. Perform a deep field equality comparison -- Last case (not ===)
+    - [ ] Field/element equality goes as `x === undefined ? y === undefined : x === null ? y === null : x.equals(y)`
+  - [ ] `GenericQualifier::clone(deep:boolean=):Object` (used mostly as `generic::clone`, but the access modifier needs to use GenericQualifier due to `generic` being reserved as an attribute for multi-methods)
+    - [ ] final
+    - [ ] deep=true by default
+    - [ ] Circular references are not preserved.
+    - [ ] Steps
+      - [ ] 1. Have we cached the cloning method f (without using a bound method) of the object's exact constructor?
+        - [ ] 1. Let o = The resulting of calling f with (this) or (this, deep). -- Check f Function length (1 or 2 (deep=))
+        - [ ] 2. Throw a TypeError if o is undefined or null or o's constructor is not exactly this's constructor.
+        - [ ] 3. Return o
+        - [ ] A MUST: For boolean, string and each Number data type's Class provide a pre-cached Function (self):* that returns self as is
+        - [ ] NOTE: To clarify, sx.meta.* should provide a function somewhere for retrieving a class's instance method as a Function that clearly takes the `this` receiver as a regular parameter.
+      - [ ] 2. Tuples
+      - [ ] 3. map { } records
+      - [ ] 4. tap { } records (special kind of classes)
+      - [ ] 5. For simple enums, return as is
+      - [ ] 6. Detect a fixture, compatible clone method (optional deep=?)
+        - [ ] If found
+          - [ ] Cache it as a non-bound-method.
+          - [ ] Let o = The resulting of calling f with (this) or (this, deep). -- Check f Function length (1 or 2 (deep=))
+          - [ ] Throw a TypeError if o is undefined or null or o's constructor is not exactly this's constructor.
+          - [ ] Return o
+      - [ ] 7. Let f = DefaultCloneBehavior
+      - [ ] 8. Cache f as the cloning method of this
+      - [ ] 9. Return the result of calling f with (this) or (this, deep).
+    - [ ] DefaultCloneBehavior(self, deep)
+      - [ ] Let c = self.meta::class()
+      - [ ] If c[[Constructor]].length == 0
+        - [ ] Let o = new c()
+      - [ ] Else
+        - [ ] Let o = Create a new instance of c without evaluating the constructor
+      - [ ] Copy instance fields from self to o
+        - [ ] If deep=true, map the field value to val?.generic::clone()
+      - [ ] Return o
+  - [ ] `meta::class()`
+    - [ ] Final
+  - [ ] toString()
+  - [ ] toLocaleString()
+  - [ ] valueOf()
+- [ ] Boolean class
+  - [ ] mark as final
+- [ ] Array
+  - [ ] mark as final
+  - [ ] +Iterable
+  - [ ] length : int (not uint)
+  - [ ] `new Array`
+    - The constructor overloads are native, but nor do their native part implement any actual stuff, since type arguments are received.
+    - [ ] `new Array.<T>(length)`
+    - [ ] `new Array.<T>(iterableOrIterator)`
+  - [ ] `meta::get(...)` throws if out of bounds
+  - [ ] `meta::filter(...)`
+  - [ ] `meta::has(...)`
+  - [ ] `filter(...)` (alternative for the optional chaining operator)
+  - [ ] `equals(o)` - Structural equality
+  - [ ] `clone(deep=)`
+  - [ ] `shift(): (t,void)`
+  - [ ] `pop(): (t,void)`
+  - [ ] `first : (t,void)`
+  - [ ] `last : (t,void)`
+- [ ] Map
+  - [ ] mark as final
+  - [ ] +Iterable
+  - [ ] `new Map`
+    - The constructor overloads are native, but nor do their native part implement any actual stuff, since type arguments are received.
+    - [ ] `new Map.<K, V>(weakKeys:boolean = false)`
+    - [ ] `new Map.<K, V>(iterableOrIterator, weakKeys=)`
+  - [ ] `meta::get()` throws if key does not match
+  - [ ] `meta::has(...)`
+  - [ ] other meta-methods (e.g. set, delete)
+  - [ ] `length()` (int, not uint)
+  - [ ] `equals(o)` - Structural equality
+  - [ ] `clear()`
+  - [ ] `clone(deep=)`
+- [ ] Set.<T>
+  - [ ] Uses a Map.<K, V> internally.
+  - [ ] mark as final
+  - [ ] +Iterable
+  - [ ] `new Set`
+    - The constructor overloads are native, but nor do their native part implement any actual stuff, since type arguments are received.
+    - [ ] `new Set.<T>(weak:boolean = false)`
+    - [ ] `new Set.<T>(iterableOrIterator, weak=)`
+  - [ ] Supports weak elements.
+  - [ ] Unlike a Map, accessing properties never throws a ReferenceError. It returns either false or true; that is mainly why Set was introduced, since Map based sets work worse (e.g. has value is basically 'k in set && set[k]'). Set's implementation just does an 'k in set' and doesn't care about the Booleans it internally assigns.
+  - [ ] `equals(o)` - Structural equality
+  - [ ] `clear()`
+  - [ ] `clone(deep=)`
+- [ ] FinalizationRegistry (as in JS)
+- [ ] Weak (WeakRef as in JS)
+- [ ] Math
+  - [ ] `random()`
+  - [ ] `random(start, end)` (inclusive; most Number types supported)
+- [ ] String class
+  - [ ] +Iterable
+  - [ ] mark as final
+  - [ ] static `fromByte(...):string`
+  - [ ] length (in UTF-8 bytes; int, not uint)
+  - [ ] `byteAt():byte`
+  - [ ] `bytes():Iterator.<byte>`
+  - [ ] charAt()
+    - [ ] Returns empty string if out of bounds
+  - [ ] `charCodeAt():uint`
+    - [ ] Reads Unicode Code Point at given UTF offset
+    - [ ] Returns U+00 if out of bounds
+  - [ ] `chars():Chars`
+  - [ ] `format(vars:Map.<string, string>):string`
+    - Formats `$varName`, `${varName}` and `$$`
+- [ ] Chars
+  - [ ] +Iterator
+  - [ ] `new Chars(str:string, offset:int = 0)`
+  - [ ] Indexing (peeking using zero-based Unicode code point positions; returns U+00 if out of bounds)
+  - [ ] `seq(numCodePoints:int):string` (stops on end of stream)
+  - [ ] `peek():uint` (equivalent to `chars[0]`)
+  - [ ] `reachedEnd:boolean`
+  - [ ] `hasRemaining:boolean`
+  - [ ] `clone():Chars`
+- [ ] RegExp
+  - [ ] `equals(obj)`
+  - [ ] `clone():RegExp`
+- [ ] RegExpMatches
+  - [ ] +Iterable
+  - [ ] Implement indexing
+  - [ ] `substr : [string]` (idx. 0 = whole)
+  - [ ] `length` (int, not uint)
+  - [ ] `clone()`
+- [ ] Function
+  - [ ] NOTE: Function internally holds some context (e.g. the internal function pointer, the this receiver and the parent environment frame).
+  - [ ] `length` = number of required parameters (optional or rest parameters do not count)
+  - [ ] `equals(obj)` override just using `===`
+  - [ ] `clone()` returns the same Function reference back without cloning
+  - [ ] apply(arguments)
+  - [ ] call(arg1, arg2, argN)
+- [ ] (Whack DS) whack.ds.State
+  - [ ] `equals(obj)` override just using `===`
+  - [ ] `clone()` returns the same State reference back without cloning
+- [ ] (Whack DS) whack.ds.BindableReference
+  - [ ] `equals(obj)` override just using `===`
+  - [ ] `clone()` returns the same BindableReference reference back without cloning
+- [ ] (Whack DS) whack.ds.ContextReference
+  - [ ] `equals(obj)` override just using `===`
+  - [ ] `clone()` returns the same ContextReference reference back without cloning
+- [ ] XML
+  - [ ] Implement `Iterable`
+  - [ ] `meta::invoke(arg:*):XML`
+  - [ ] `meta::has(name:QName):boolean`
+    - [ ] `@` prefix in name = attribute
+  - [ ] `meta::get(index:int):XML` (throws if out of bounds)
+  - [ ] `meta::get(name:QName):XMLList`
+  - [ ] `meta::set(key:(int, QName), value:(XML, XMLList)):void`
+  - [ ] `meta::delete(arg:(int, QName)):boolean`
+  - [ ] `sibling(n)` - e.g. `sibling(-1)` (previous) and `sibling(1)` (next) - uses `parent` internally.
+  - [ ] Attributes
+- [ ] XMLList
+  - [ ] `meta::invoke(arg:*):XMLList`
+- [ ] XMLContext
+  - [ ] Represent this as a class and not a record type (object literal works on classes now)
+  - [ ] ignoreWhitespace defaults to true, which means "trim any whitespace at the beginning and end of text nodes". Unlike AS3/E4X, XML literals always ignore whitespace. (If whitespace is desired on text nodes, use interpolation.)
+- [ ] Namespace
+  - [ ] mark as final
+  - [ ] unlike QName, fully writable
+- [ ] QName
+  - [ ] mark as final
+  - [ ] QName constructor
+    - [ ] If uri is undefined or unspecified: if name = "*", then uri=null; otherwise uri=default namespace
+  - [ ] `uri : string?` - May be null for "match any namespace"
+  - [ ] fully read-only
+- [ ] ByteArray
+  - [ ] mark as final
+  - [ ] +Iterable
+  - [ ] length (int, not uint)
+  - [ ] Indexing
+  - [ ] `shareable:boolean`
+  - [ ] `clone()`
+- [ ] Endian enum
+- [ ] Date
+  - [ ] mark as final
+  - [ ] meta::invoke(...) (same as Date(...) in JS, which returns a timestamp)
+  - [ ] clone()
+  - [ ] override equals()
+- [ ] `sx.annotations.*`
+  - [ ] Language support meta-data. (See spec/src/metadata.md)
+- [ ] `sx.intl.*`
+  - [ ] Like ECMA-262 `Intl`. Aliased `Intl::`, as well.
+  - [ ] Most data types implement clone()
+  - [ ] Most data types override equals()
+- [ ] `sx.temporal.*`
+  - [ ] Like ECMA-262 like `Temporal`. Aliased `Temporal::`, as well.
+  - [ ] Most data types implement clone()
+  - [ ] Most data types override equals()
+- [ ] `sx.meta.*`
+  - Used for what the `meta` namespace cannot be used for (e.g. perhaps extracting a list of properties from a package name).
+  - [ ] Provide ways of creating Array, Map and Set objects with given type arguments (plus weak? for Map/Set)
+- [ ] `sx.meta.ty.*`
+  - [ ] Allows most of type inspection during runtime. E.g. most can be obtained from Class or Function objects.
+  - [ ] ArrayType (T)
+  - [ ] MapType (K, V)
+  - [ ] SetType (T)
+- [ ] `sx.meta.context.*`
+  - Special compiler functions for reflecting lexical contexts.
+  - [ ] decimal() - DecimalContext
+  - [ ] dxns() - default xml namespace
+  - [ ] xml() - XMLContext
+- [ ] `sx.serial.json.*`
+- [ ] `sx.serial.toml.*`
+- [ ] `sx.serial.xml.*`
+  - [ ] Every serialization/deserialization methods require options that require at least the Namespace prefixes.

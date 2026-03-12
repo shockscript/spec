@@ -1,0 +1,137 @@
+- [70%] Types
+- [x] Conversions
+- [ ] Define "source paths"
+- [ ] Describe operations like GetQNameInNsSetOrAnyPublicNs() and possibly others used in property lookup
+- [70%] Property lookup
+  - https://github.com/whackengine/sdk/blob/master/crates/mxmlsemantics/src/semantics/property_lookup.rs#L353
+  - [x] PropertyLookup: remind of `meta` stuff
+    - [x] `meta::get` allows for multiple signatures
+    - [ ] Introduce lazily imported source files based in source paths, when lookuping from packages.
+    - [ ] Values whose static type is a type parameter will lookup for names in the type parameter's derived types.
+  - [ ] InScopeLookup
+    - [ ] Lookups with an algebraic enum as context type may infer a variant/variant namespace (e.g. `var exp : Exp = Sum(left, right)`, `var i : I = Loc.Get(idx)`)
+    - [ ] Introduce lazily imported source files based in source paths.
+    - [ ] `Env` qualifier causes DotEnv variable retrieval (or, depending on the implementation, may resolve to a predefined variable).
+    - [ ] Use `fixed=true` access when doing property lookup in activation's `this` (e.g. user should use `this` if the enclosing class is dynamic and needs to access a dynamic property).
+- [ ] Constants
+  - [ ] *EnumConstant* for both regular enumerations and flag enumerations
+- [ ] Reference values
+  - [ ] *DynamicReferenceValue*(*base*, *qual*, *key*.Value, *followedByCall*, *fixed*)
+  - [ ] *KeyValuePairReferenceValue*(*base*, *meta-method*, *qual*, *key*)
+  - [ ] Do not include XML reference values from Whack Engine
+- [70%] Packages
+- [70%] Namespaces
+- [70%] Classes
+- [70%] Enumerations
+- [70%] Interfaces
+- [70%] Variables
+- [70%] Virtual variables
+- [70%] Methods
+- [x] Aliases
+- [x] Parameterized types
+- [x] Lexical scopes
+- [x] Default lexical scope
+- [x] Conditional compilation
+- [x] ShockDoc comments
+- [x] Meta-methods
+- [x] Lexical conventions
+- [ ] ShockScript: Expressions
+  - [x] `Embed()`
+    - [x] URL behavior
+    - [x] `"text/plain""`
+    - [x] `"application/octet-stream"`
+  - [ ] Qualified identifier
+  - [x] Fixed expression (FixedExpression)
+    - `<?fixed={}?>`
+  - [ ] String literal
+    - [ ] Is applicable to enumerations (also check for union)
+    - [ ] Is applicable to byte (ASCII), int, uint or the Number union (strictly one character allowed)
+  - [ ] Numeric literal
+    - [ ] Final type, when literal contains no suffix, is decided smartly (e.g. considers unions and possible meta-method parameters (including `meta::get` in a brackets operator)).
+  - [ ] XML expression
+    - [ ] XML literals applied as `XML`/`XMLList` shall still resolve namespace prefixes to lexical ShockScript names. (`namespace` definitions may be used as prefixes as well (definition name = URI); with implicit prefix.)
+  - [ ] Null literal
+  - [ ] Array literal
+    - [ ] Do not forget the post type annotation (if present, used instead of the context type)
+    - [ ] Is applicable to flag enumerations
+    - [ ] Is applicable to Set
+  - [x] All literal `**` (AllLiteral)
+  - [ ] Object initializer
+    - [ ] Do not forget shorthands (identifier-only fields)
+      - [ ] For qualified identifiers, the specified namespace is only used over the pattern input; the target name only covers the local name.
+    - [ ] Applicable to flag enumerations
+      - [ ] The rest operator may appear at most once and will be written before the actual fields regardless of its position among them. (This avoids programmer bugs.)
+    - [ ] Applicable to Map
+    - [ ] Applicable to Set
+    - [ ] Applicable to map { } records
+      - [ ] The rest operator may appear at most once and will be written before the actual fields regardless of its position among them. (This avoids programmer bugs.)
+        - [ ] Filter out subtype fields
+    - [ ] Applicable to tap { } records
+      - [ ] The compiler contains different codegen for initializers of this such variant of record types (which writes to the inner hash map, and for the rest operator it reads its record's inner hash map).
+      - [ ] The rest operator may appear at most once and will be written before the actual fields regardless of its position among them. (This avoids programmer bugs.)
+        - [ ] For the rest operator, filter out subtype fields
+    - [ ] Applicable to classes that contain an optional constructor or a multi-method constructor that supports an optional signature, assigning any properties; equivalent to `var o=new c();with(o){...};return o`
+      - [ ] In this case, the rest operator will reuse the instance variables of the specified object.
+      - [ ] The rest operator may appear at most once and will be written before the actual fields regardless of its position among them. (This avoids programmer bugs.)
+        - [ ] For the rest operator, filter out subtype fields
+    - [ ] Rest expression may be nullish to indicate absence.
+  - [ ] Parenthesized expression
+    - [ ] Does not propagate *followedByCall=true*
+    - [ ] Propagates *fixed=true* from given context
+  - [ ] Dot operator
+    - [ ] Propagates *fixed=true* from given context
+  - [ ] Brackets operator
+    - [ ] Propagates *fixed=true* from given context
+  - [ ] Descendants operator
+    - [ ] Takes a non-attribute qualified identifier.
+  - [ ] Equality, relational, arithmetic and bitwise operations using the `Number` union (from the ShockScript global objects) at either or both sides should be allowed, causing a forced conversion if necessary.
+  - [ ] Equality allows mixing compatible operands with void and/or null.
+  - [ ] Call operator
+    - [ ] Base is passed *followedByCall=true*
+    - [ ] Watch for class-self-attached `meta::invoke` when calling classes (supports multiple signatures too)
+    - [ ] Perform type inference for omitted generic parameters.
+    - [ ] `t(v)` cast - Semantic patch: Exclude null and/or undefined from T
+  - [ ] `v is t` operator
+    - [ ] Verify `v` first
+    - [ ] Verify `t` with `v`'s static type as the context type (for allowing algebraic enumeration's variant inference).
+    - [ ] Semantic patch: Exclude null and/or undefined from T
+    - [ ] Evaluation: Support matching union members
+  - [ ] `v as t` operator (or as-strict that doesn't return t? but t!)
+    - (... different from `t(v)`, do not verify t first ... this is mostly useless... and it being that way helps algebraic enum's variant inference)
+    - [ ] Verify `v` first
+    - [ ] Verify `t` with `v`'s static type as the context type (for allowing algebraic enumeration's variant inference).
+    - [ ] Semantic patch: Exclude null and/or undefined from t
+  - [ ] Assignment expression
+    - [ ] When base is *KeyValuePairReferenceValue*, `meta::set()`
+    - [ ] When base is *AttributeReferenceValue*, `meta::setAttribute()`
+  - [ ] Delete operator
+    - [ ] `meta::delete()`
+    - [ ] `meta::deleteAttribute()`
+  - [ ] New operator
+    - [ ] Base is passed *followedByCall=true*
+    - [ ] Support a dynamically typed base (`*` or `Class`)
+    - [ ] Forbid instantiating `abstract` or `static` classes.
+    - [ ] Forbid instantiating enumerations.
+  - [ ] Null coalescing `x ?? y`
+    - [ ] Pass x type to y
+  - [ ] `typeof`
+    - [ ] Returns `"xml"` for XML/XMLList
+    - [ ] Returns `"number"` for any types comprising the `Number` union
+  - [ ] Ternary conditional operator
+- [x] ShockScript: Type expressions
+  - [ ] `map {}` and `tap {}` must not appear everywhere; they are only allowed as the right side of an alias `type` definition.
+- [x] ShockScript: Patterns
+  - [ ] Structural matching automatically asserts objects as non-null not always necessarily throwing an error depending on pattern context (that way, the language doesn't need a "!" operator inside patterns)
+    - [ ] This is also particularly useful for if let applied to iterator results (e.g. `if (let [ch] = characters.next()) { ... }`)
+- [x] ShockScript: Statements
+  - [ ] If statement
+  - [ ] If let statement
+    - [ ] Apply non-nullability to type annotation if any
+    - [ ] Provide context type for algebraic matching pattern
+  - [ ] `for each`: `Iterator` and `Iterable` are iterable
+  - [ ] `switch type`
+    - [ ] Provide context type for type inference on `case(...)` parameters when matching over an algebraic enumeration
+    - [ ] Apply non-nullability to each case's type annotation if any
+- [x] ShockScript: Directives
+  - [ ] Variable definitions: const/let const (for an instance variable) may still be assigned later a first time in the constructor of a class if the initialiser was omitted.
+- [x] ShockScript: Definitions
