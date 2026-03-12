@@ -1,6 +1,6 @@
 # The good, the bad
 
-## :&#x28; Mutability
+## :&#x28; ⸻ Mutant
 
 ```sx
 [State]
@@ -9,7 +9,7 @@ var x : [uint] = [];
 x.push(10); // BAD
 ```
 
-## :&#x29; Mutability
+## :&#x29; ⸻ Mutant
 
 ```sx
 [State]
@@ -20,7 +20,7 @@ x = [...x, 10] // GOOD
 
 <sup>You can also implement deriveds.</sup>
 
-## :&#x28; Callbacks
+## :&#x28; ⸻ Functions
 
 ```sx
 final = (
@@ -32,7 +32,7 @@ final = (
 
 <sup>Callback caching (`whack.ds.useCallback`) only occurs implicitly for Functions assigned to the whole attribute.</sup>
 
-## :&#x28; Callbacks
+## :&#x28; ⸻ Functions
 
 ```sx
 final = (
@@ -49,7 +49,7 @@ final = (
 
 <sup>Callback caching (`whack.ds.useCallback`) only occurs implicitly for Functions assigned to the whole attribute.</sup>
 
-## :&#x28; Callbacks
+## :&#x28; ⸻ Functions
 
 ```sx
 final = (
@@ -63,7 +63,7 @@ final = (
 
 <sup>Callback caching (`whack.ds.useCallback`) only occurs implicitly for Functions assigned to the whole attribute when using a syntactic XML attribute.</sup>
 
-## :&#x29; Callbacks
+## :&#x29; ⸻ Functions
 
 ```sx
 final = (
@@ -72,7 +72,7 @@ final = (
 )       // GOOD
 ```
 
-## :&#x29; Callbacks
+## :&#x29; ⸻ Functions
 
 ```sx
 final = (
