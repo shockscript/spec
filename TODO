@@ -281,6 +281,8 @@
     - [ ] `equals(o)` - Structural equality
     - [ ] `clear()`
     - [ ] `clone(deep=)`
+  - [ ] FinalizationRegistry (as in JS)
+  - [ ] Weak (WeakRef as in JS)
   - [ ] Math
     - [ ] `random()`
     - [ ] `random(start, end)` (inclusive; most Number types supported)
