@@ -80,3 +80,78 @@ final = (
         finish={function(e){doIt()}} />
 )       // GOOD
 ```
+
+## :&#x28; ⸻ Props
+
+```sx
+class Box extends UIComponent {
+    function Box({ x } : Props) {
+        super()
+        whack.ds.useEffect(function() {
+            if (x == 0) {
+                trace("zero!")
+            }
+        });
+        final = (
+            <></>
+        )
+    }
+
+    type Props = tap {
+        x : uint,
+    }
+}
+```
+
+## :&#x29; ⸻ Props
+
+```sx
+class Box extends UIComponent {
+    function Box(props : Props) {
+        super()
+        whack.ds.useEffect(function() {
+            if (props.x == 0) {
+                trace("zero!")
+            }
+        });
+        final = (
+            <></>
+        )
+    }
+
+    type Props = tap {
+        x : uint,
+    }
+}
+```
+
+## :&#x29; ⸻ Evaluation order
+
+```sx
+class Box extends UIComponent {
+    [Bindable]
+    var outside : uint;
+
+    function Box(props : Props) {
+        // 1 - super
+        super()
+
+        // 2 - variable initials & custom hooks
+        outside = props.outside;
+        ...
+
+        // 3 - effects & custom hooks
+        ...
+
+        // 5 - final
+        ...
+        final = (
+            <></>
+        )
+    }
+
+    type Props = tap {
+        outside : whack.ds.BindableReference.<uint>,
+    }
+}
+```
