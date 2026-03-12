@@ -100,6 +100,20 @@ package {
 
 Even though the constructor is frequently re-evaluated, objects originating from the initial rendering phase are reused for the instance fields.
 
+## Immutability
+
+Because of possible inconsistencies when reading or comparing States, Contexts and Props, which may also affect `<fx:Style>` elements, it is best to treat those as immutable (e.g. not to overwrite any field or element of a Prop, Context or State). Overwriting a field or element of such a thing involves rather overwriting the whole thing, such as:
+
+```sx
+[State]
+var x : [double] = [];
+
+// Somewhere
+
+x = [...x, 10] // pushes 10
+               //   never .push(10)
+```
+
 ## Callback caching
 
 Whack DS caches callbacks (either lambdas, inline event handlers, instance methods of the same component or Functions declared inside the constructor) within applicable E4X attributes, since they are naturally ever changing `Function` objects regardless of whether they are lambdas or fixtures ─ for example, since they capture locals, `this` or ShockScript lexical contexts, they tend to return different `Function` objects ─ and this is crucial for memoization.
