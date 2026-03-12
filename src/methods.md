@@ -60,6 +60,8 @@ abstract class A {
 }
 ```
 
+If a subclass is abstract, it does not need to override a method marked `abstract` in the super class.
+
 ## Generators
 
 A method is a generator if the `yield` operator appears at least once in the method's body. A generator is a method that evaluates like an iterator, consumed in pauses of `yield` operators until it hits a `return` statement or the end of code. A generator returns a `Generator.<T>` object.
