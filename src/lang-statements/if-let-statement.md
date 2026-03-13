@@ -19,7 +19,7 @@ if (let node = parseAtom()) {
 `if..let` can also be useful for, say, iterator results.
 
 ```sx
-if (let [x] = characters.next()) {
+if (let [x!,false] = characters.next()) {
     //
 } else {
     break;

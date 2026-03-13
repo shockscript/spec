@@ -121,8 +121,7 @@
 - [x] ShockScript: Type expressions
   - [ ] `map {}` and `tap {}` must not appear everywhere; they are only allowed as the right side of an alias `type` definition.
 - [x] ShockScript: Patterns
-  - [ ] Structural matching automatically asserts objects as non-null not always necessarily throwing an error depending on pattern context (that way, the language doesn't need a "!" operator inside patterns)
-    - [ ] This is also particularly useful for if let applied to iterator results (e.g. `if (let [ch] = characters.next()) { ... }`)
+  - [ ] Structural matching automatically asserts objects as non-null not always necessarily throwing an error depending on pattern context. Although, the non-null operator is included within patterns as it's still useful for, say, identifier binding patterns.
 - [x] ShockScript: Statements
   - [ ] If statement
   - [ ] If let statement

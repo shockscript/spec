@@ -52,6 +52,7 @@ Implicit coercions occur implicitly both at compile-time and runtime, after tryi
 | From union member to union                | |
 | From union to a common base type          | For example, given `type U = (B, C)`, a `var a:A = u;` declaration is valid as long as B and C share A as a base type. |
 | From structural function type to another compatible function type | |
+| From `t` type parameter to `t?`           | |
 
 > **Note**: `interface` types inherit `Object`.
 

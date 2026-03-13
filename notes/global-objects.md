@@ -30,7 +30,7 @@
 - [ ] DecimalContext
   - [ ] Supports "precision" and "rounding" options for now (look at decimal.js's API to get some ideas)
 - [ ] Iterator.\<T> (interface)
-  - [ ] required `next() : [t]?` (the returned array must be of length 1)
+  - [ ] required `next() : [t?,boolean]` (returns `[item, done]`)
   - [ ] `length():int` (consumes the whole iterator)
   - [ ] `skip(count:int):void`
   - [ ] `meta::filter(...)` (returns another iterator)

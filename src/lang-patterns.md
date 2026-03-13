@@ -12,7 +12,8 @@ Where applicable, expressions are disambiguated into those patterns, in which ca
         [lookahead ≠ <b>undefined</b> if pattern is nested] <i>IdentifierPattern</i><br>
         <i>ArrayPattern</i><br>
         <i>ObjectPattern</i><br>
-        <i>ConstantPattern</i> [if pattern is nested]
+        <i>ConstantPattern</i> [if pattern is nested]<br>
+        <i>Pattern</i> <i>NonNull</i>
     </ul>
 </ul>
 

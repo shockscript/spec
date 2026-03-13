@@ -4,7 +4,7 @@ Record types **\{\}** are simple property records.
 
 Specifically, there are variations of the record type, which are each represented and used in a different way.
 
-**map \{\}** types are like a hash-map internally, using boxing for primitive types. Fields that are not specified are not inserted into the structure. **map \{\}** **MUST NOT** appear anywhere but at the right side of an alias `type` definition.
+**map \{\}** types are like a hash-map internally, using boxing for primitive types. Fields that are not specified are not inserted into the structure.
 
 ```sx
 type Options = map {
@@ -13,7 +13,7 @@ type Options = map {
 };
 ```
 
-**tap \{\}** types are similar to **map \{\}**, but their creation and field accessors are implementation-defined, and they desugar to classes. **tap \{\}** **MUST NOT** appear anywhere but at the right side of an alias `type` definition.
+**tap \{\}** types are similar to **map \{\}**, but their creation and field accessors are implementation-defined, and they desugar to classes.
 
 Although **map \{\}** and **tap \{\}** types appear as type expressions, they are unique; structurally-matching records cannot be assigned to the other, or vice versa.
 

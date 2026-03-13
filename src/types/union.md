@@ -1,6 +1,6 @@
 # Union types
 
-The structural union type, written `(t1, t2, tN)`, consists of two or more member types, containing all possible values of the member types.
+The structural union type, written `(t1,t2,tN)`, consists of two or more member types, containing all possible values of the member types.
 
 ```sx
 (decimal,string)
