@@ -143,7 +143,7 @@ class Box extends UIComponent {
         // 3 - effects & custom hooks
         ...
 
-        // 5 - final
+        // 4 - final
         ...
         final = (
             <></>

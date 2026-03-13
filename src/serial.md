@@ -1,10 +1,12 @@
 # Serial
 
-The Serial feature allows serializing and deserializing complex types into data formats like JSON and possibly other user types.
+The Serial facility allows serializing and deserializing complex types into data formats like JSON and XML. YAML and TOML are mostly compatible with JSON.
 
-This feature may only be used with classes that are annotatated with either the `Serial` or `XS` meta-data, otherwise a TypeError is thrown while serializing or deserializing.
+> **Note**: The compiler generates efficient code for serialization and deserialization.
 
-Variants of an algebraic data type do not need to specify the `Serial` or `XS` meta-data.
+This facility requires annotatating classes with either the `Serial` or `XS` meta-data, otherwise a TypeError is thrown while serializing or deserializing.
+
+Variants of an algebraic data type do not need to specify the `Serial` or `XS` meta-data if the ADT does that already.
 
 The default behavior while deserializing into a class *c* other than primitive types and certain global classes, unless defining a self-attached `fromJSON` or `fromXML` method, is roughly:
 
@@ -13,18 +15,14 @@ The default behavior while deserializing into a class *c* other than primitive t
 2. Else
   1. Let o = Create a new instance of *c* without evaluating the constructor
 3. Let *fields* = Each *o*\[*k*\] field that is not configured with the `skip="true"` option.
-4. Assign each field of *fields* to the respective data document field with the appropriate parsing of the field's data type, applying any configured rename.
+4. Assign each field of *fields* to the respective data document field with appropriate parsing, applying any configured rename.
 5. Return *o*
 
 Simple enums, including Flags enums, are serialized and deserialized in a different way from algebraic enums.
 
-The reason for requiring the Serial or XS meta-data is for making the default behavior more explicit, which may be adjusted with methods like `fromJSON` and `toJSON`.
-
-> **Note**: This section lacks certain contents yet.
-
 ## JSON
 
-How one serializes or deserializes into/from JSON using the Serial feature:
+How one serializes or deserializes into/from JSON using the Serial facility:
 
 ```sx
 import js = sx.serial.json.*
@@ -61,9 +59,10 @@ enum Item {
 }
 ```
 
-Remarks:
-
+- The rename excludes any base namespaces.
 - For enumeration variant's field renames, more than one assign is allowed, in case the user needs an assign in the name of the renamed field.
+- For ADTs, if no rename is specified, the variant name is used (including any base namespaces inside the ADT delimited by dot) instead.
+- For class-hierarchies used as variants, like nodes resulting from a parser, if no rename is specified, the class's fully qualified name (excluding the package name) is used instead.
 
 ### Skip
 
@@ -87,11 +86,35 @@ enum Item {
 }
 ```
 
+### Tag
+
+The Serial `tag` option allows specifying the property used to identify the kind of an ADT or inheritance-based class. If it is not specified, no property is used; instead, a wrapper plain object is used with the variant name, as in:
+
+```json
+{
+    "left": {
+        "Plus": {
+            "left": {
+                "Number": 10
+            },
+            "right": {
+                "Number": 9
+            }
+        }
+    },
+    "right": {
+        "Number": 7
+    }
+}
+```
+
 ### Classes as variants
 
-Users may need hierarchical class definitions rather than algebraic type definitions mainly due to inheritance and other factors. The `Serial` meta-data may be used to configure these.
+Users may want inheritance-based class definitions rather than ADTs (algebraic data types). Those do naturally work.
 
-> **Note**: Lacking content. Migrate some plans from the Whack Engine 2024 for this.
+### Unions
+
+When using union types, there is a small chance of conflict depending on the union members: if two have the same name, one is preferred over the other. This does not happen for most cases though, so we won't bother much with that for now.
 
 ### Custom implementation
 
@@ -137,6 +160,12 @@ The `default xml namespace = ns` statement influences serialization or deseriali
 
 > **Note**: Lacking content.
 
+### Tag
+
+For ADTs, tags representing variants are named either after the variant's name (including any base namespaces inside the ADT delimited by dot), or based on the rename (excluding any base namespaces).
+
+For class-hierarchies used as variants, like nodes resulting from a parser, tags are named either after the class's fully qualified name (excluding the package name), or based on the rename (excluding any base namespaces).
+
 ### Marking a field as a tag
 
 A field is implicitly a tag. For using an attribute instead for a field of a primitive type or whose type implements `fromXML` and `toXML` methods that take or return a text node, that field may be marked as an attribute using `attribute="true"`.
@@ -153,7 +182,7 @@ package {
 
 ### Arrays
 
-Arrays or tuples translate to roughly:
+Arrays or tuples translate to roughly, always unpacked:
 
 ```xml
 <value>x</value>

@@ -2,7 +2,7 @@
 
 This section describes which type conversions are available.
 
-Explicit conversions may occur as either `t(v)` (strict conversion) or `v as t` (optional conversion). The behavior of the call operator over a type may not always be a conversion depending on if `t` implements the self-attached `meta::invoke()` meta-method.
+Casts may occur as either `t(v)` (strict conversion) or `v as t` (optional conversion). The behavior of the call operator over a type may not always be a conversion depending on if `t` implements the self-attached `meta::invoke()` meta-method.
 
 ```sx
 v as t     // returns t?. failure returns null
@@ -64,9 +64,9 @@ ShockScript allows implicit coercions from `t.<...>` to `t.<...>` where `t` is a
 >
 > For other types, using an unexpected type somewhere in place of type parameters may lead to an internal error during runtime.
 
-## Explicit conversions
+## Casts
 
-Explicit conversions occur when resolving `v as t` or `t(v)`, after trying an implicit coercion.
+Casts occur when resolving `v as t` or `t(v)`, after trying an implicit coercion.
 
 | Kind                                      | Result                  |
 | ----------------------------------------- | ----------------------- |
@@ -76,7 +76,7 @@ Explicit conversions occur when resolving `v as t` or `t(v)`, after trying an im
 | To a contravariant `[t]` type             | A new Array filtering out incompatible elements. |
 | To a possibly incompatible `Map.<K, V>` type | A new Map filtering out incompatible fields. |
 | To a contravariant `Set.<t>` type | A new Set filtering out incompatible elements. |
-| To same parameterized type if not Array, nor Map and nor Set and current type arguments can explicitly convert to the target type arguments | E.g. `c.<*>` to `c.<double>` |
+| To same parameterized type if not Array, nor Map and nor Set and if current type arguments can cast to the target type arguments | E.g. `c.<*>` to `c.<double>` |
 | `string` to enumeration                   | Identification of an enumeration variant by its `string` name. |
 | Number to enumeration (using the same numeric type) | For regular enumerations, identifies a variant by its numeric value. For flag enumerations, identifies variant bits. |
 | To `string`                               | For `undefined`, returns `"undefined"`; for `null`, returns `"null"`; for other types, invokes `toString()`. |
@@ -97,7 +97,7 @@ Explicit conversions occur when resolving `v as t` or `t(v)`, after trying an im
 
 **Parameterized types**
 
-ShockScript allows explicit convertions from `t.<...>` to `t.<...>` where `t` is a parameterized type, where the final type contains type arguments which the original type's type arguments may explicitly convert to.
+ShockScript allows casts from `t.<...>` to `t.<...>` where `t` is a parameterized type, where the final type contains type arguments which the original type's type arguments may cast to.
 
 > **Note**: These conversions are always safe for Array, Map and Set types, as they create new objects.
 >

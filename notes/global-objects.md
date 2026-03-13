@@ -2,7 +2,7 @@
 - [ ] (Whack (?Red) engine) fx namespace = "http://www.sweaxizone.com/2015/whack/fx"
 - [ ] SX namespace = "http://www.sweaxizone.com/2015/shockscript/global"
 - [ ] generic namespace = "http://www.sweaxizone.com/2015/shockscript/generic"
-- [ ] GenericNamespace = same as generic, but can be used as an access modifier in definitions
+- [ ] genericn = same as generic, but can be used as an access modifier in definitions
 - [ ] meta namespace = "http://www.sweaxizone.com/2015/shockscript/meta" (under the hood it's not really that URI; it's the global "meta" system namespace)
 - [ ] Intl namespace = "sx.intl"
 - [ ] Temporal namespace = "sx.temporal"
@@ -58,39 +58,12 @@
     - [ ] 9. Simple enums === (flags are interned, so that would work)
     - [ ] 10. Perform a deep field equality comparison -- Last case (not ===)
     - [ ] Field/element equality goes as `x === undefined ? y === undefined : x === null ? y === null : x.equals(y)`
-  - [ ] `GenericNamespace::clone(deep:boolean=):Object` (used mostly as `generic::clone`, but the access modifier needs to use GenericNamespace due to `generic` being reserved as an attribute for multi-methods)
-    - [ ] final
-    - [ ] deep=true by default
-    - [ ] Circular references are not preserved.
-    - [ ] Steps
-      - [ ] 1. Have we cached the cloning method f (without using a bound method) of the object's exact constructor?
-        - [ ] 1. Let o = The resulting of calling f with (this) or (this, deep). -- Check f Function length (1 or 2 (deep=))
-        - [ ] 2. Throw a TypeError if o is undefined or null or o's constructor is not exactly this's constructor.
-        - [ ] 3. Return o
-        - [ ] A MUST: For boolean, string and each Number data type's Class provide a pre-cached Function (self):* that returns self as is
-        - [ ] NOTE: To clarify, sx.meta.* should provide a function somewhere for retrieving a class's instance method as a Function that clearly takes the `this` receiver as a regular parameter.
-      - [ ] 2. Tuples
-      - [ ] 3. map { } records
-      - [ ] 4. tap { } records (special kind of classes)
-      - [ ] 5. For simple enums, return as is
-      - [ ] 6. Detect a fixture, compatible clone method (optional deep=?)
-        - [ ] If found
-          - [ ] Cache it as a non-bound-method.
-          - [ ] Let o = The resulting of calling f with (this) or (this, deep). -- Check f Function length (1 or 2 (deep=))
-          - [ ] Throw a TypeError if o is undefined or null or o's constructor is not exactly this's constructor.
-          - [ ] Return o
-      - [ ] 7. Let f = DefaultCloneBehavior
-      - [ ] 8. Cache f as the cloning method of this
-      - [ ] 9. Return the result of calling f with (this) or (this, deep).
-    - [ ] DefaultCloneBehavior(self, deep)
-      - [ ] Let c = self.meta::class()
-      - [ ] If c[[Constructor]].length == 0
-        - [ ] Let o = new c()
-      - [ ] Else
-        - [ ] Let o = Create a new instance of c without evaluating the constructor
-      - [ ] Copy instance fields from self to o
-        - [ ] If deep=true, map the field value to val?.generic::clone()
-      - [ ] Return o
+  - [ ] `genericn::clone(deep:boolean=):Object` (`generic::clone`)
+    - [ ] See generic_clone.md
+  - [ ] serial_internal::fromJSON(...)
+  - [ ] serial_internal::toJSON(...)
+  - [ ] serial_internal::fromXML(...)
+  - [ ] serial_internal::toXML(...)
   - [ ] `meta::class()`
     - [ ] Final
   - [ ] toString()

@@ -2,20 +2,13 @@
 
 ShockScript defines properties whose name is tied to a namespace, which is useful for version control and protection.
 
-**FunInternal.sx**
-
-```sx
-package org.lazy.runner {
-    /** @private */
-    public namespace FunInternal = "http://www.fun.com/2007/runner/internals";
-}
-```
-
 **Helper.sx**
 
 ```sx
 package org.lazy.runner {
     public class Helper {
+        private namespace FunInternal = "http://www.fun.com/2007/runner/internals";
+
         /** @private */
         FunInternal const cache : [double] = [];
 
@@ -34,6 +27,8 @@ package org.lazy.runner.advanced {
     import org.lazy.runner.*;
 
     public function friend(helper:Helper) {
+        namespace FunInternal = "http://www.fun.com/2007/runner/internals";
+
         helper.FunInternal::cache.push(10);
     }
 }
