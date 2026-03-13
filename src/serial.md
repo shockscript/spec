@@ -2,7 +2,9 @@
 
 The Serial facility allows serializing and deserializing complex types into data formats like JSON and XML. YAML and TOML are mostly compatible with JSON.
 
-> **Note**: The compiler generates efficient code for serialization and deserialization.
+> **Note**: The compiler generates efficient code for serialization and deserialization as `serial::fromJSON`, `serial::toJSON`, `serial::fromXML` and `serial::toXML` overrides.
+>
+> You may call these back from custom (de-)serializer implementations.
 
 This facility requires annotatating classes with either the `Serial` or `XS` meta-data, otherwise a TypeError is thrown while serializing or deserializing.
 
