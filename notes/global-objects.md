@@ -2,7 +2,7 @@
 - [ ] (Whack (?Red) engine) fx namespace = "http://www.sweaxizone.com/2015/whack/fx"
 - [ ] SX namespace = "http://www.sweaxizone.com/2015/shockscript/global"
 - [ ] generic namespace = "http://www.sweaxizone.com/2015/shockscript/generic"
-- [ ] GenericQualifier = same as generic, but can be used as an access modifier in definitions
+- [ ] GenericNamespace = same as generic, but can be used as an access modifier in definitions
 - [ ] meta namespace = "http://www.sweaxizone.com/2015/shockscript/meta" (under the hood it's not really that URI; it's the global "meta" system namespace)
 - [ ] Intl namespace = "sx.intl"
 - [ ] Temporal namespace = "sx.temporal"
@@ -58,7 +58,7 @@
     - [ ] 9. Simple enums === (flags are interned, so that would work)
     - [ ] 10. Perform a deep field equality comparison -- Last case (not ===)
     - [ ] Field/element equality goes as `x === undefined ? y === undefined : x === null ? y === null : x.equals(y)`
-  - [ ] `GenericQualifier::clone(deep:boolean=):Object` (used mostly as `generic::clone`, but the access modifier needs to use GenericQualifier due to `generic` being reserved as an attribute for multi-methods)
+  - [ ] `GenericNamespace::clone(deep:boolean=):Object` (used mostly as `generic::clone`, but the access modifier needs to use GenericNamespace due to `generic` being reserved as an attribute for multi-methods)
     - [ ] final
     - [ ] deep=true by default
     - [ ] Circular references are not preserved.
