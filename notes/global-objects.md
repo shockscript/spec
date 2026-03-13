@@ -143,10 +143,13 @@
   - [ ] `equals(o)` - Structural equality
   - [ ] `clear()`
   - [ ] `clone(deep=)`
-- [ ] FinalizationRegistry (as in JS)
-  - [ ] See https://github.com/shockscript/plans/tree/master/runtime/FinalizationRegistry.md
-- [ ] Weak (WeakRef as in JS)
-  - [ ] https://github.com/shockscript/plans/tree/master/runtime/FinalizationRegistry.md
+- [ ] Finalizer (for when an Object is garbage collected; API similar to JavaScript FinalizationRegistry)
+  - [ ] Mark as final
+  - [ ] `new Finalizer(function(held) {})`
+  - [ ] `track(o:Object, held:* = undefined, untrackToken:* = undefined):void`
+  - [ ] `untrack(untrackToken:*)`
+  - [ ] See https://github.com/shockscript/plans/tree/master/runtime/Finalizer.md
+- [ ] Weak (weak reference)
 - [ ] Math
   - [ ] `random()`
   - [ ] `random(start, end)` (inclusive; most Number types supported)
