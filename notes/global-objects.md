@@ -149,7 +149,9 @@
   - [ ] `track(o:Object, held:* = undefined, untrackToken:* = undefined):void`
   - [ ] `untrack(untrackToken:*)`
   - [ ] See https://github.com/shockscript/plans/tree/master/runtime/Finalizer.md
-- [ ] Weak (weak reference)
+- [ ] Weak.\<t\> (weak reference)
+  - [ ] Mark as final
+  - [ ] `deref():t?`
 - [ ] Math
   - [ ] `random()`
   - [ ] `random(start, end)` (inclusive; most Number types supported)
