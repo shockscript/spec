@@ -60,10 +60,10 @@
     - [ ] Field/element equality goes as `x === undefined ? y === undefined : x === null ? y === null : x.equals(y)`
   - [ ] `genericn::clone(deep:boolean=):Object` (`generic::clone`)
     - [ ] See generic_clone.md
-  - [ ] serial_internal::fromJSON(...)
-  - [ ] serial_internal::toJSON(...)
-  - [ ] serial_internal::fromXML(...)
-  - [ ] serial_internal::toXML(...)
+  - [ ] serial::fromJSON(...)
+  - [ ] serial::toJSON(...)
+  - [ ] serial::fromXML(...)
+  - [ ] serial::toXML(...)
   - [ ] `meta::class()`
     - [ ] Final
   - [ ] toString()
@@ -71,6 +71,64 @@
   - [ ] valueOf()
 - [ ] Boolean class
   - [ ] mark as final
+  - [ ] override serial::fromJSON(...)
+  - [ ] override serial::toJSON(...)
+  - [ ] override serial::fromXML(...)
+  - [ ] override serial::toXML(...)
+- [ ] float class
+  - [ ] mark as final
+  - [ ] override serial::fromJSON(...)
+  - [ ] override serial::toJSON(...)
+  - [ ] override serial::fromXML(...)
+  - [ ] override serial::toXML(...)
+- [ ] double class
+  - [ ] mark as final
+  - [ ] override serial::fromJSON(...)
+  - [ ] override serial::toJSON(...)
+  - [ ] override serial::fromXML(...)
+  - [ ] override serial::toXML(...)
+- [ ] int class
+  - [ ] mark as final
+  - [ ] override serial::fromJSON(...)
+  - [ ] override serial::toJSON(...)
+  - [ ] override serial::fromXML(...)
+  - [ ] override serial::toXML(...)
+- [ ] uint class
+  - [ ] mark as final
+  - [ ] override serial::fromJSON(...)
+  - [ ] override serial::toJSON(...)
+  - [ ] override serial::fromXML(...)
+  - [ ] override serial::toXML(...)
+- [ ] byte class
+  - [ ] mark as final
+  - [ ] override serial::fromJSON(...)
+  - [ ] override serial::toJSON(...)
+  - [ ] override serial::fromXML(...)
+  - [ ] override serial::toXML(...)
+- [ ] short class
+  - [ ] mark as final
+  - [ ] override serial::fromJSON(...)
+  - [ ] override serial::toJSON(...)
+  - [ ] override serial::fromXML(...)
+  - [ ] override serial::toXML(...)
+- [ ] long class
+  - [ ] mark as final
+  - [ ] override serial::fromJSON(...)
+  - [ ] override serial::toJSON(...)
+  - [ ] override serial::fromXML(...)
+  - [ ] override serial::toXML(...)
+- [ ] bigint class
+  - [ ] mark as final
+  - [ ] override serial::fromJSON(...)
+  - [ ] override serial::toJSON(...) -- string
+  - [ ] override serial::fromXML(...)
+  - [ ] override serial::toXML(...)
+- [ ] decimal class
+  - [ ] mark as final
+  - [ ] override serial::fromJSON(...)
+  - [ ] override serial::toJSON(...) -- string
+  - [ ] override serial::fromXML(...)
+  - [ ] override serial::toXML(...)
 - [ ] Array
   - [ ] mark as final
   - [ ] +Iterable
@@ -89,6 +147,10 @@
   - [ ] `pop(): (t,void)`
   - [ ] `first : (t,void)`
   - [ ] `last : (t,void)`
+  - [ ] override serial::fromJSON(...)
+  - [ ] override serial::toJSON(...)
+  - [ ] override serial::fromXML(...)
+  - [ ] override serial::toXML(...)
 - [ ] Map
   - [ ] mark as final
   - [ ] +Iterable
@@ -103,6 +165,10 @@
   - [ ] `equals(o)` - Structural equality
   - [ ] `clear()`
   - [ ] `clone(deep=)`
+  - [ ] override serial::fromJSON(...)
+  - [ ] override serial::toJSON(...)
+  - [ ] override serial::fromXML(...)
+  - [ ] override serial::toXML(...)
 - [ ] Set.<T>
   - [ ] Uses a Map.<K, V> internally.
   - [ ] mark as final
@@ -116,6 +182,10 @@
   - [ ] `equals(o)` - Structural equality
   - [ ] `clear()`
   - [ ] `clone(deep=)`
+  - [ ] override serial::fromJSON(...)
+  - [ ] override serial::toJSON(...)
+  - [ ] override serial::fromXML(...)
+  - [ ] override serial::toXML(...)
 - [ ] Finalizer (for when an Object is garbage collected; API similar to JavaScript FinalizationRegistry)
   - [ ] Mark as final
   - [ ] `new Finalizer(function(held) {})`
@@ -143,6 +213,10 @@
   - [ ] `chars():Chars`
   - [ ] `format(vars:Map.<string, string>):string`
     - Formats `$varName`, `${varName}` and `$$`
+  - [ ] override serial::fromJSON(...)
+  - [ ] override serial::toJSON(...)
+  - [ ] override serial::fromXML(...)
+  - [ ] override serial::toXML(...)
 - [ ] Chars
   - [ ] +Iterator
   - [ ] `new Chars(str:string, offset:int = 0)`

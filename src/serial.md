@@ -20,6 +20,8 @@ The default behavior while deserializing into a class *c* other than primitive t
 
 Simple enums, including Flags enums, are serialized and deserialized in a different way from algebraic enums.
 
+The `map {}` type are handled in the base Object implementation.
+
 ## JSON
 
 How one serializes or deserializes into/from JSON using the Serial facility:
