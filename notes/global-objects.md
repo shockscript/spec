@@ -144,7 +144,9 @@
   - [ ] `clear()`
   - [ ] `clone(deep=)`
 - [ ] FinalizationRegistry (as in JS)
+  - [ ] See https://github.com/shockscript/plans/tree/master/runtime/FinalizationRegistry.md
 - [ ] Weak (WeakRef as in JS)
+  - [ ] https://github.com/shockscript/plans/tree/master/runtime/FinalizationRegistry.md
 - [ ] Math
   - [ ] `random()`
   - [ ] `random(start, end)` (inclusive; most Number types supported)
